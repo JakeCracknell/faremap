@@ -162,17 +162,20 @@ $.getJSON("../api/station/", function (data) {
         map[obj.stationId] = obj.val;
         return map;
     }, {});
-    var circles = [];
+
+    var markers = [];
     for (station of data) {
-        var circle = L.circle([station.latitude, station.longitude], {
-            color: 'black',
-            fillColor: 'black',
-            fillOpacity: 0.5,
-            radius: 100
-        });
-        circles.push(circle);
+        if (station.oysterAccepted) {
+           var icon = L.divIcon({
+             className: 'map-marker',
+             iconSize: null,
+             html: station.stationName[0]
+           });
+            var marker = L.marker([station.latitude, station.longitude], {icon: icon});
+            markers.push(marker);
+        }
     }
-    var group = L.featureGroup(circles).addTo(map);
+    var group = L.featureGroup(markers).addTo(map);
 });
 
 map = L.map("map", {

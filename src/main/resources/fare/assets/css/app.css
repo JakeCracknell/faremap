@@ -37,6 +37,17 @@ input[type="radio"], input[type="checkbox"] {
   -webkit-box-shadow: none;
     box-shadow: none;
 }
+
+.map-marker {
+  background: #f00;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
 #sidebar-hide-btn {
   margin-top: -2px;
 }
