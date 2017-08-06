@@ -155,6 +155,15 @@ var subwayLines = L.geoJson(null, {
   }
 });
 
+var mapLayer = {
+  onAdd: function(map) {
+    map.on('viewreset moveend', drawLayer);
+    drawLayer();
+  }
+};
+
+map.addLayer(mapLayer);
+
 var stationsLayer = L.geoJson(null);
 var stationsById = {}
 $.getJSON("../api/station/", function (data) {
@@ -176,6 +185,25 @@ $.getJSON("../api/station/", function (data) {
         }
     }
     var group = L.featureGroup(markers).addTo(map);
+
+    var svgPoints = svg.selectAll("g")
+      .data(data)
+      .enter()
+      .append("g")
+
+    svgPoints.append("circle")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .attr("r", 2);
+    var voronoi = d3.geom.voronoi()
+               		.x(function(d) { return d.latitude; })
+               		.y(function(d) { return d.longitude; });
+    voronoi(data).forEach(function(v) { v.point.cell = v; });
+    var buildPathFromPoint = function(point) {
+      return "M" + point.cell.join("L") + "Z";
+    }
+
+    svgPoints.append("path")
+      .attr("d", buildPathFromPoint);
 });
 
 map = L.map("map", {
