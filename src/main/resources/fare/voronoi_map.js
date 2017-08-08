@@ -15,6 +15,7 @@ showHide = function(selector) {
 voronoiMap = function(map, url, initialSelections) {
   var pointTypes = d3.map(),
       points = [],
+      pointsMap = {},
       lastSelectedPoint;
 
   var voronoi = d3.geom.voronoi()
@@ -34,6 +35,16 @@ voronoiMap = function(map, url, initialSelections) {
       .html('')
       .append('p')
       .text(point.stationId + " " + point.stationName)
+
+    fareUrl = "/api/fare/from/" + point.stationId
+    d3.json(fareUrl, function(json) {
+      pointsMap.forEach(function(station, stationId, m) {
+        station.fares = []
+      });
+      for (var toStationId in json.fares) {
+        pointsMap.get(toStationId).fares = json.fares[toStationId];
+      }
+    })
   }
 
   var drawPointTypeSelection = function() {
@@ -159,6 +170,7 @@ voronoiMap = function(map, url, initialSelections) {
       points.forEach(function(point) {
         pointTypes.set(point.type, {type: point.type, color: 'black'});
       })
+      pointsMap = new Map(points.map((p) => [p.stationId, p]));
       drawPointTypeSelection();
       map.addLayer(mapLayer);
     })
