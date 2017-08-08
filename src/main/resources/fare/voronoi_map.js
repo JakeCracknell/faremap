@@ -32,10 +32,8 @@ voronoiMap = function(map, url, initialSelections) {
 
     d3.select('#selected h1')
       .html('')
-      .append('a')
-        .text(point.name)
-        .attr('href', point.url)
-        .attr('target', '_blank')
+      .append('p')
+      .text(point.stationId + " " + point.stationName)
   }
 
   var drawPointTypeSelection = function() {
