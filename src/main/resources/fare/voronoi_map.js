@@ -146,7 +146,7 @@ voronoiMap = function(map, url, initialSelections) {
 
     var getFillColourForPoint = function(point) {
       if (point.fares.length == 0) return 'transparent';
-      var proportionAlongScale = point.fares[0].price / 25
+      var proportionAlongScale = Math.max.apply(Math,point.fares.map(function(f){return f.price;})) / 8
       var hue=((1-proportionAlongScale)*120).toString(10);
       return ["hsl(",hue,",100%,50%)"].join("");
     }
