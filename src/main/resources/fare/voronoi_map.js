@@ -44,6 +44,7 @@ voronoiMap = function(map, url, initialSelections) {
       for (var toStationId in json.fares) {
         pointsMap.get(toStationId).fares = json.fares[toStationId];
       }
+      drawWithLoading();
     })
   }
 
@@ -143,9 +144,17 @@ voronoiMap = function(map, url, initialSelections) {
       return "M" + point.cell.join("L") + "Z";
     }
 
+    var getFillColourForPoint = function(point) {
+      if (point.fares.length == 0) return 'transparent';
+      var proportionAlongScale = point.fares[0].price / 25
+      var hue=((1-proportionAlongScale)*120).toString(10);
+      return ["hsl(",hue,",100%,50%)"].join("");
+    }
+
     svgPoints.append("path")
       .attr("class", "point-cell")
       .attr("d", buildPathFromPoint)
+      .style('fill', function(d) { return getFillColourForPoint(d) } )
       .on('click', selectPoint)
       .classed("selected", function(d) { return lastSelectedPoint == d} );
 
@@ -169,6 +178,7 @@ voronoiMap = function(map, url, initialSelections) {
       points = json;
       points.forEach(function(point) {
         pointTypes.set(point.type, {type: point.type, color: 'black'});
+        point.fares = [];
       })
       pointsMap = new Map(points.map((p) => [p.stationId, p]));
       drawPointTypeSelection();
