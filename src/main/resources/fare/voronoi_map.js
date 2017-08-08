@@ -156,10 +156,10 @@ voronoiMap = function(map, url, initialSelections) {
   showHide('#about');
 
   map.on('ready', function() {
-    d3.csv(url, function(csv) {
-      points = csv;
+    d3.json(url, function(json) {
+      points = json;
       points.forEach(function(point) {
-        pointTypes.set(point.type, {type: point.type, color: point.color});
+        pointTypes.set(point.type, {type: point.type, color: 'black'});
       })
       drawPointTypeSelection();
       map.addLayer(mapLayer);
