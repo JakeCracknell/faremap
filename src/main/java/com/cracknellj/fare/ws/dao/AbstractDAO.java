@@ -4,7 +4,7 @@ import java.sql.*;
 
 public abstract class AbstractDAO {
     private static final String DB_USER = "admin";
-    private static final String DB_PATH = "jdbc:mysql://localhost:3306/tfl";
+    private static final String DB_PATH = "jdbc:mysql://localhost:3306/tfl?autoReconnect=true&useSSL=false";
     private static final String DB_PASSWORD = "admin";
 
     Connection cn;
