@@ -13,7 +13,7 @@ showHide = function(selector) {
 }
 
 voronoiMap = function(map, url, initialSelections) {
-  var pointTypes = d3.map(),
+  var pointModes = d3.map(),
       points = [],
       pointsMap = {},
       lastSelectedPoint;
@@ -48,18 +48,18 @@ voronoiMap = function(map, url, initialSelections) {
     })
   }
 
-  var drawPointTypeSelection = function() {
+  var drawPointModeSelection = function() {
     showHide('#selections')
     labels = d3.select('#toggles').selectAll('input')
-      .data(pointTypes.values())
+      .data(pointModes.values())
       .enter().append("label");
 
     labels.append("input")
       .attr('type', 'checkbox')
       .property('checked', function(d) {
-        return initialSelections === undefined || initialSelections.has(d.type)
+        return initialSelections === undefined || initialSelections.has(d.mode)
       })
-      .attr("value", function(d) { return d.type; })
+      .attr("value", function(d) { return d.mode; })
       .on("change", drawWithLoading);
 
     labels.append("span")
@@ -67,10 +67,10 @@ voronoiMap = function(map, url, initialSelections) {
       .style('background-color', function(d) { return '#' + d.color; });
 
     labels.append("span")
-      .text(function(d) { return d.type; });
+      .text(function(d) { return d.mode; });
   }
 
-  var selectedTypes = function() {
+  var selectedModes = function() {
     return d3.selectAll('#toggles input[type=checkbox]')[0].filter(function(elem) {
       return elem.checked;
     }).map(function(elem) {
@@ -78,10 +78,10 @@ voronoiMap = function(map, url, initialSelections) {
     })
   }
 
-  var pointsFilteredToSelectedTypes = function() {
-    var currentSelectedTypes = d3.set(selectedTypes());
+  var pointsFilteredToSelectedModes = function() {
+    var currentSelectedModes = d3.set(selectedModes());
     return points.filter(function(item){
-      return item.modes.some(m => currentSelectedTypes.has(m));
+      return item.modes.some(m => currentSelectedModes.has(m));
     });
   }
 
@@ -105,7 +105,7 @@ voronoiMap = function(map, url, initialSelections) {
         existing = d3.set(),
         drawLimit = bounds.pad(0.4);
 
-    filteredPoints = pointsFilteredToSelectedTypes().filter(function(d) {
+    filteredPoints = pointsFilteredToSelectedModes().filter(function(d) {
       var latlng = new L.LatLng(d.latitude, d.longitude);
 
       if (!drawLimit.contains(latlng)) { return false };
@@ -177,11 +177,11 @@ voronoiMap = function(map, url, initialSelections) {
     d3.json(url, function(json) {
       points = json;
       points.forEach(function(point) {
-        point.modes.forEach(m => pointTypes.set(m, {type: m, color: 'black'}));
+        point.modes.forEach(m => pointModes.set(m, {mode: m, color: 'black'}));
         point.fares = [];
       })
       pointsMap = new Map(points.map((p) => [p.stationId, p]));
-      drawPointTypeSelection();
+      drawPointModeSelection();
       map.addLayer(mapLayer);
     })
   });
