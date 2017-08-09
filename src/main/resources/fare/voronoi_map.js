@@ -22,7 +22,7 @@ voronoiMap = function(map, url, initialSelections) {
       .x(function(d) { return d.x; })
       .y(function(d) { return d.y; });
 
-  var selectPoint = function() {
+  var selectPointForFareQuery = function() {
     d3.selectAll('.selected').classed('selected', false);
 
     var cell = d3.select(this),
@@ -47,6 +47,21 @@ voronoiMap = function(map, url, initialSelections) {
       drawWithLoading();
     })
   }
+
+  var showMouseOverInformationForPoint = function() {
+      var cell = d3.select(this),
+          point = cell.datum();
+
+      d3.select('#selected h1')
+        .html('')
+        .append('p')
+        .text(point.stationId + " " + point.stationName)
+        .append('ul').selectAll('li')
+        .data(point.fares)
+        .enter()
+        .append('li')
+        .html(f => JSON.stringify(f));
+    }
 
   var drawPointModeSelection = function() {
     showHide('#selections')
@@ -155,7 +170,8 @@ voronoiMap = function(map, url, initialSelections) {
       .attr("class", "point-cell")
       .attr("d", buildPathFromPoint)
       .style('fill', function(d) { return getFillColourForPoint(d) } )
-      .on('click', selectPoint)
+      .on('click', selectPointForFareQuery)
+      .on('mouseover', showMouseOverInformationForPoint)
       .classed("selected", function(d) { return lastSelectedPoint == d} );
 
     svgPoints.append("circle")
