@@ -81,7 +81,7 @@ voronoiMap = function(map, url, initialSelections) {
   var pointsFilteredToSelectedTypes = function() {
     var currentSelectedTypes = d3.set(selectedTypes());
     return points.filter(function(item){
-      return currentSelectedTypes.has(item.type);
+      return item.modes.some(m => currentSelectedTypes.has(m));
     });
   }
 

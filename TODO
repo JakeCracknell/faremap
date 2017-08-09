@@ -3,3 +3,10 @@ https://chriszetter.com/blog/2014/06/15/building-a-voronoi-map-with-d3-and-leafl
 http://localhost:7926/api/fare/from/910GBARNES
 
 http://localhost:7926/fare/
+
+select min(station_name), max(station_name), latitude, longitude, count(*)
+from station group by latitude, longitude having count(*)>1;
+
+
+http://transport.data.gov.uk/def/naptan/RailAccessArea/instance.text?min-easting=&_view=description&_metadata=all&_page=94
+
