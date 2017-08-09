@@ -10,3 +10,5 @@ from station group by latitude, longitude having count(*)>1;
 
 http://transport.data.gov.uk/def/naptan/RailAccessArea/instance.text?min-easting=&_view=description&_metadata=all&_page=94
 
+select count(*) from station where modes_list like '%rail%';
+select * from station where modes_list like '%rail%' and crs is null order by station_name;

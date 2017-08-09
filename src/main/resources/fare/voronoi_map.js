@@ -177,7 +177,7 @@ voronoiMap = function(map, url, initialSelections) {
     d3.json(url, function(json) {
       points = json;
       points.forEach(function(point) {
-        pointTypes.set(point.type, {type: point.type, color: 'black'});
+        point.modes.forEach(m => pointTypes.set(m, {type: m, color: 'black'}));
         point.fares = [];
       })
       pointsMap = new Map(points.map((p) => [p.stationId, p]));

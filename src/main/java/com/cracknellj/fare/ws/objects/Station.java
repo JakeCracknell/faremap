@@ -6,7 +6,6 @@ public class Station {
     private final String stationId;
     private final String stationName;
     private final List<String> modes;
-    private final String type;
     private final boolean oysterAccepted;
     private final float latitude;
     private final float longitude;
@@ -18,6 +17,5 @@ public class Station {
         this.oysterAccepted = oysterAccepted;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.type = modes.get(0);
     }
 }
