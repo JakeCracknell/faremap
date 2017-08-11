@@ -1,63 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<link href="base.css" rel="stylesheet" />
-<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link href="base.css" rel="stylesheet" />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <div id='map'>
-  </div>
-  <div id='selections' class="selections">
+<div id='map'></div>
+<div id='selections' class="selections">
     <a href='#' class="show">Display Options</a>
     <div class='content'>
-      <a href='#' class="hide">Hide</a>
-      <div id="mode-toggles">
-        <h3>Station Types</h3>
-          <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
-          <label><input type="checkbox" value="tube" checked="checked">TFL Tube</label>
-          <label><input type="checkbox" value="overground" checked="checked">TFL Overground</label>
-          <label><input type="checkbox" value="tflrail" checked="checked">TFL Rail</label>
-          <label><input type="checkbox" value="dlr" checked="checked">TFL DLR</label>
-      </div>
-      <div id="fare-type-toggles">
-        <h3>Fare Types</h3>
-        <label><input type="checkbox" value="off-peak">Off Peak</label>
-        <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
-        <label><input type="checkbox" value="tfl" checked="checked">TFL / Oyster</label>
-        <label for="fare-selector">Fare price to use as colour:</label>
-        <select class="form-control" id="fare-selector">
-          <option id="default">Default Fare Price</option>
-          <option id="low">Lowest Price</option>
-          <option id="high">Highest Price</option>
-        </select>
-      </div>
+        <a href='#' class="hide">Hide</a>
+        <div id="mode-toggles">
+            <h3>Station Types</h3>
+            <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
+            <label><input type="checkbox" value="tube" checked="checked">TFL Tube</label>
+            <label><input type="checkbox" value="overground" checked="checked">TFL Overground</label>
+            <label><input type="checkbox" value="tflrail" checked="checked">TFL Rail</label>
+            <label><input type="checkbox" value="dlr" checked="checked">TFL DLR</label>
+        </div>
+        <div id="fare-type-toggles">
+            <h3>Fare Types</h3>
+            <label><input type="checkbox" value="off-peak">Off Peak</label>
+            <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
+            <label><input type="checkbox" value="tfl" checked="checked">TFL / Oyster</label>
+            <label for="fare-selector">Fare price to use as colour:</label>
+            <select class="form-control" id="fare-selector">
+                <option id="default">Default Fare Price</option>
+                <option id="low">Lowest Price</option>
+                <option id="high">Highest Price</option>
+            </select>
+        </div>
     </div>
-  </div>
-  <div id='loading'>
-  </div>
-  <div id='selected'>
+</div>
+<div id='loading'></div>
+<div id='selected'>
     <h1>Train Fares</h1>
-  </div>
-  <div id='about'>
+</div>
+<div id='about'>
     <a href='#' class="show">About</a>
     <p class='content'>
-      Compare train fares in the UK! Adapted code written by <a href="http://chriszetter.com">Chris Zetter</a>, maps copyright
-      <a href='https://www.mapbox.com/about/maps/' target='_blank'>Mapbox and OpenStreetMap</a>.
-      <a href='#' class="hide">Hide</a>
-    </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
-  <script src="https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
-  <script src="voronoi_map.js"></script>
-  <script>
-    L.mapbox.accessToken = 'pk.eyJ1IjoiemV0dGVyIiwiYSI6ImVvQ3FGVlEifQ.jGp_PWb6xineYqezpSd7wA';
-    map = L.mapbox.map('map', 'zetter.i73ka9hn')
-      .fitBounds([[59.355596 , -9.052734], [49.894634 , 3.515625]]);
+        Compare train fares in the UK! By Jake Cracknell.
+        Forked from project by <a href="http://chriszetter.com">Chris Zetter</a>.
+        Maps copyright
+        <a href='https://www.mapbox.com/about/maps/' target='_blank'>Mapbox and OpenStreetMap</a>.
+        <a href='#' class="hide">Hide</a>
+</div>
 
-    url = '/api/station';
-    voronoiMap(map, url);
-  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
+<script src="https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
+<script src="voronoi_map.js"></script>
+<script>
+            L.mapbox.accessToken = 'pk.eyJ1IjoiemV0dGVyIiwiYSI6ImVvQ3FGVlEifQ.jGp_PWb6xineYqezpSd7wA';
+            map = L.mapbox.map('map', 'zetter.i73ka9hn')
+              .fitBounds([[59.355596 , -9.052734], [49.894634 , 3.515625]]);
+
+            url = '/api/station';
+            voronoiMap(map, url);
+</script>
+
 </body>
 </html>
