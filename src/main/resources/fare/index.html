@@ -14,15 +14,25 @@
     <div class='content'>
       <a href='#' class="hide">Hide</a>
       <div id="mode-toggles">
-        <ul>
-          <li><input type="checkbox" value="national-rail" checked="checked">National Rail</li>
-          <li><input type="checkbox" value="tube" checked="checked">TFL Tube</li>
-          <li><input type="checkbox" value="overground" checked="checked">TFL Overground</li>
-          <li><input type="checkbox" value="tflrail" checked="checked">TFL Rail</li>
-          <li><input type="checkbox" value="dlr" checked="checked">TFL DLR</li>
-        </ul>
+        <h3>Station Types</h3>
+          <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
+          <label><input type="checkbox" value="tube" checked="checked">TFL Tube</label>
+          <label><input type="checkbox" value="overground" checked="checked">TFL Overground</label>
+          <label><input type="checkbox" value="tflrail" checked="checked">TFL Rail</label>
+          <label><input type="checkbox" value="dlr" checked="checked">TFL DLR</label>
       </div>
-
+      <div id="fare-type-toggles">
+        <h3>Fare Types</h3>
+        <label><input type="checkbox" value="off-peak">Off Peak</label>
+        <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
+        <label><input type="checkbox" value="tfl" checked="checked">TFL / Oyster</label>
+        <label for="fare-selector">Fare price to use as colour:</label>
+        <select class="form-control" id="fare-selector">
+          <option id="default">Default Fare Price</option>
+          <option id="low">Lowest Price</option>
+          <option id="high">Highest Price</option>
+        </select>
+      </div>
     </div>
   </div>
   <div id='loading'>
