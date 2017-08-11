@@ -1,4 +1,4 @@
-showHide = function(selector) {
+addShowHideEventsTo = function(selector) {
   d3.select(selector).select('.hide').on('click', function(){
     d3.select(selector)
       .classed('visible', false)
@@ -12,7 +12,7 @@ showHide = function(selector) {
   });
 }
 
-voronoiMap = function(map, url, initialSelections) {
+voronoiMap = function(map, url) {
   var pointModes = d3.map(),
       points = [],
       pointsMap = {},
@@ -63,30 +63,14 @@ voronoiMap = function(map, url, initialSelections) {
         .html(f => JSON.stringify(f));
     }
 
-  var drawPointModeSelection = function() {
-    showHide('#selections')
-    labels = d3.select('#toggles').selectAll('input')
-      .data(pointModes.values())
-      .enter().append("label");
-
-    labels.append("input")
-      .attr('type', 'checkbox')
-      .property('checked', function(d) {
-        return initialSelections === undefined || initialSelections.has(d.mode)
-      })
-      .attr("value", function(d) { return d.mode; })
-      .on("change", drawWithLoading);
-
-    labels.append("span")
-      .attr('class', 'key')
-      .style('background-color', function(d) { return '#' + d.color; });
-
-    labels.append("span")
-      .text(function(d) { return d.mode; });
+  var setupDisplayOptionsPanel = function() {
+    addShowHideEventsTo('#selections')
+    d3.selectAll('#mode-toggles input[type=checkbox]')
+        .on("change", drawWithLoading);
   }
 
   var selectedModes = function() {
-    return d3.selectAll('#toggles input[type=checkbox]')[0].filter(function(elem) {
+    return d3.selectAll('#mode-toggles input[type=checkbox]')[0].filter(function(elem) {
       return elem.checked;
     }).map(function(elem) {
       return elem.value;
@@ -187,7 +171,7 @@ voronoiMap = function(map, url, initialSelections) {
     }
   };
 
-  showHide('#about');
+  addShowHideEventsTo('#about');
 
   map.on('ready', function() {
     d3.json(url, function(json) {
@@ -197,7 +181,7 @@ voronoiMap = function(map, url, initialSelections) {
         point.fares = [];
       })
       pointsMap = new Map(points.map((p) => [p.stationId, p]));
-      drawPointModeSelection();
+      setupDisplayOptionsPanel();
       map.addLayer(mapLayer);
     })
   });

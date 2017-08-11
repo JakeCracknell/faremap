@@ -13,8 +13,16 @@
     <a href='#' class="show">Display Options</a>
     <div class='content'>
       <a href='#' class="hide">Hide</a>
-      <div id="toggles">
+      <div id="mode-toggles">
+        <ul>
+          <li><input type="checkbox" value="national-rail" checked="checked">National Rail</li>
+          <li><input type="checkbox" value="tube" checked="checked">TFL Tube</li>
+          <li><input type="checkbox" value="overground" checked="checked">TFL Overground</li>
+          <li><input type="checkbox" value="tflrail" checked="checked">TFL Rail</li>
+          <li><input type="checkbox" value="dlr" checked="checked">TFL DLR</li>
+        </ul>
       </div>
+
     </div>
   </div>
   <div id='loading'>
@@ -39,8 +47,7 @@
       .fitBounds([[59.355596 , -9.052734], [49.894634 , 3.515625]]);
 
     url = '/api/station';
-    initialSelection = d3.set(['tube', 'national-rail', 'dlr']);
-    voronoiMap(map, url, initialSelection);
+    voronoiMap(map, url);
   </script>
 </body>
 </html>
