@@ -2,7 +2,7 @@ package com.cracknellj.fare.ws.resource;
 
 import javax.ws.rs.client.ClientBuilder;
 
-import com.cracknellj.fare.ws.Main;
+import com.cracknellj.fare.ws.FareApplication;
 import org.glassfish.grizzly.http.server.HttpServer;
 
 import org.junit.After;
@@ -16,8 +16,8 @@ public class HealthCheckResourceTest {
 
     @Before
     public void setUp() throws Exception {
-        Main.setServerAddress("localhost");
-        server = Main.startServer();
+        FareApplication.setServerAddress("localhost");
+        server = FareApplication.startServer();
     }
 
     @After
@@ -28,7 +28,7 @@ public class HealthCheckResourceTest {
     @Test
     public void testGetHealthCheckEndpoint() {
         String responseMsg = ClientBuilder.newClient()
-                .target(Main.baseUri).path("healthcheck")
+                .target(FareApplication.baseUri).path("healthcheck")
                 .request().get(String.class);
         assertEquals("Got it!", responseMsg);
     }
@@ -36,7 +36,7 @@ public class HealthCheckResourceTest {
     @Test
     public void testGetStaticContent() {
         String css = ClientBuilder.newClient().target(
-                Main.baseUri.replace("fare/", "fare/pricechanges.css")
+                FareApplication.baseUri.replace("fare/", "fare/pricechanges.css")
         ).request().get(String.class);
 
         assertTrue(css.contains("background-color"));

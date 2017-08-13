@@ -11,9 +11,9 @@ import org.glassfish.jersey.server.ResourceConfig;
 import java.net.URI;
 import java.util.Date;
 
-public class Main {
+public class FareApplication {
     // Base URI the Grizzly HTTP server will listen on
-    private final static Logger LOG = LogManager.getLogger(Main.class);
+    private final static Logger LOG = LogManager.getLogger(FareApplication.class);
     public static String baseUri = null;
 
     public static String getBaseURI() {

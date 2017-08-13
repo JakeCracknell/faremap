@@ -4,14 +4,14 @@
     <Console name="Console" target="SYSTEM_OUT">
         <PatternLayout pattern="%d %-5p (%c{1}:%L) - %m%n" />
     </Console>
-    <File name="MyFile" fileName="fare_map.log" immediateFlush="true" append="true">
-        <PatternLayout pattern="%d %-5p (%c{1}:%L) - %m%n" />
-    </File>
+    <!--<File name="MyFile" fileName="fare_map.log" immediateFlush="true" append="true">-->
+        <!--<PatternLayout pattern="%d %-5p (%c{1}:%L) - %m%n" />-->
+    <!--</File>-->
 </Appenders>
 <Loggers>
     <Root level="all">
         <AppenderRef ref="Console" />
-        <AppenderRef ref="MyFile"/>
+        <!--<AppenderRef ref="MyFile"/>-->
     </Root>
 </Loggers>
 </Configuration>

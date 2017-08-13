@@ -96,7 +96,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.cracknellj.fare.ws.Main</mainClass>
+                    <mainClass>com.cracknellj.fare.ws.FareApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
