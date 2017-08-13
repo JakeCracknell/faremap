@@ -1,5 +1,6 @@
 package com.cracknellj.fare.atoc;
 
+import com.cracknellj.fare.objects.AtocTicketCode;
 import com.cracknellj.fare.objects.Fare;
 import com.cracknellj.fare.objects.FareDetail;
 import org.apache.logging.log4j.LogManager;
@@ -20,6 +21,7 @@ public class FareFlowFileReader extends AtocFileReader {
     public static final String FILE_NAME = "RJFAF499.FFL";
 
     public List<Fare> getFaresList() throws IOException {
+        Map<String, AtocTicketCode> ticketCodes = new TicketTypeFileReader().getTicketCodes();
         List<Fare> fares = new ArrayList<>();
         Map<String, String> flowIdToOriginDestinationMap = new HashMap<>();
         try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
@@ -36,17 +38,16 @@ public class FareFlowFileReader extends AtocFileReader {
                     case 'T':
                         String restriction = line.substring(20, 22);
                         if (restriction.charAt(0) == ' ') {
-                            String ticketCode = line.substring(9, 12);
-                            Boolean offPeakOnly = isOffPeakTicketCode(ticketCode);
-                            if (offPeakOnly != null) {
+                            String ticketCodeString = line.substring(9, 12);
+                            if (ticketCodes.containsKey(ticketCodeString)) {
+                                AtocTicketCode ticketCode = ticketCodes.get(ticketCodeString);
                                 String tFlowId = line.substring(2, 9);
                                 String farePence = line.substring(12, 20);
                                 BigDecimal farePrice = BigDecimal.valueOf(Integer.parseInt(farePence)).divide(FARE_DIVISOR, 2, BigDecimal.ROUND_UNNECESSARY);
                                 String tOriginDestination = flowIdToOriginDestinationMap.get(tFlowId);
                                 String nlcFrom = tOriginDestination.substring(0, 4);
                                 String nlcTo = tOriginDestination.substring(4, 8);
-                                String fareDescription = getFareDescriptionForTicketCode(ticketCode);
-                                FareDetail fareDetail = new FareDetail(farePrice, offPeakOnly, fareDescription, !offPeakOnly, "NR");
+                                FareDetail fareDetail = new FareDetail(farePrice, ticketCode.isOffPeak(), ticketCode.description, ticketCode.isDefaultFare(), "NR");
                                 fares.add(new Fare(nlcFrom, nlcTo, fareDetail));
                             }
                         }
@@ -56,28 +57,6 @@ public class FareFlowFileReader extends AtocFileReader {
         }
         LOG.info(fares.size() + " entries found");
         return fares;
-    }
-
-    private Boolean isOffPeakTicketCode(String ticketCode) {
-        switch (ticketCode) {
-            case "SDS": //Anytime Day Single
-                return Boolean.FALSE;
-            case "CDS": //Off-Peak Day Single
-                return Boolean.TRUE;
-            default:
-                return null;
-        }
-    }
-
-    private String getFareDescriptionForTicketCode(String ticketCode) {
-        switch (ticketCode) {
-            case "SDS": //Anytime Day Single
-                return "Anytime Day Single";
-            case "CDS": //Off-Peak Day Single
-                return "Off-Peak Day Single";
-            default:
-                return null;
-        }
     }
 
 }

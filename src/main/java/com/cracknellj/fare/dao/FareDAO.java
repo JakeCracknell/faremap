@@ -43,7 +43,7 @@ public class FareDAO extends AbstractDAO {
         try {
             connectToDatabase();
             ps = cn.prepareStatement("INSERT INTO fare (from_id, to_id, price, mode, off_peak_only, " +
-                    "route_description, is_default_route, accounting) (?, ?, ?, ?, ?, ?, ?, ?)");
+                    "route_description, is_default_route, accounting) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             int i = 0;
             LOG.info("About to insert " + faresList.size() +  " fares");
             for (Fare fare : faresList) {
@@ -58,7 +58,7 @@ public class FareDAO extends AbstractDAO {
                 ps.addBatch();
                 i++;
                 if (i % 1000 == 0 || i == faresList.size()) {
-                    //ps.executeBatch();
+                    ps.executeBatch();
                     LOG.info("Inserting fares in batches, completed so far: " + i);
                 }
             }
