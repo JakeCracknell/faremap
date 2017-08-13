@@ -1,4 +1,4 @@
-package com.cracknellj.fare.ws.objects;
+package com.cracknellj.fare.objects;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

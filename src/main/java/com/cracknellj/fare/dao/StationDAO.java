@@ -1,7 +1,6 @@
 package com.cracknellj.fare.dao;
 
-import com.cracknellj.fare.dao.AbstractDAO;
-import com.cracknellj.fare.ws.objects.Station;
+import com.cracknellj.fare.objects.Station;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

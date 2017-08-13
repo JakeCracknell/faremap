@@ -15,7 +15,7 @@ public class LocationFileReader extends AtocFileReader {
 
     public static final String FILE_NAME = "RJFAF499.LOC";
 
-    public Map<String, String> getNLSToCRSMap() throws IOException {
+    public Map<String, String> getNLCToCRSMap() throws IOException {
         Map<String, String> map = new HashMap<>();
         try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
             lineStream.forEach(line -> {
@@ -27,7 +27,6 @@ public class LocationFileReader extends AtocFileReader {
                             String crs = line.substring(56, 59);
                             if (crs.charAt(0) != ' ') {
                                 map.put(nlc, crs);
-                                LOG.info(line.substring(40, 56));
                             }
                         }
                 }

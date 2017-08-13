@@ -8,9 +8,9 @@ import static org.junit.Assert.*;
 
 public class LocationFileReaderTest {
     @Test
-    public void getNLSToCRSMap() throws Exception {
-        Map<String, String> nlsToCRSMap = new LocationFileReader().getNLSToCRSMap();
-        assertEquals("HAT", nlsToCRSMap.get("6070"));
+    public void getNLCToCRSMap() throws Exception {
+        Map<String, String> nlcToCRSMap = new LocationFileReader().getNLCToCRSMap();
+        assertEquals("HAT", nlcToCRSMap.get("6070"));
     }
 
 }

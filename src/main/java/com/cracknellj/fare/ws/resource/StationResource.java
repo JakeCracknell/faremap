@@ -1,7 +1,7 @@
 package com.cracknellj.fare.ws.resource;
 
 import com.cracknellj.fare.dao.StationDAO;
-import com.cracknellj.fare.ws.objects.Station;
+import com.cracknellj.fare.objects.Station;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
