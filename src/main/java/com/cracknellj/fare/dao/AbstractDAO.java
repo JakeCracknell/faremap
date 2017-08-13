@@ -1,4 +1,4 @@
-package com.cracknellj.fare.ws.dao;
+package com.cracknellj.fare.dao;
 
 import java.sql.*;
 
@@ -7,17 +7,17 @@ public abstract class AbstractDAO {
     private static final String DB_PATH = "jdbc:mysql://localhost:3306/tfl?autoReconnect=true&useSSL=false";
     private static final String DB_PASSWORD = "admin";
 
-    Connection cn;
-    PreparedStatement ps;
-    ResultSet rs;
+    protected Connection cn;
+    protected PreparedStatement ps;
+    protected ResultSet rs;
 
-    void connectToDatabase() throws SQLException {
+    protected void connectToDatabase() throws SQLException {
         if (cn == null || cn.isClosed()) {
             cn = DriverManager.getConnection(DB_PATH, DB_USER, DB_PASSWORD);
         }
     }
 
-    void closeConnection() {
+    protected void closeConnection() {
         for (AutoCloseable closeable : new AutoCloseable[]{rs, ps, cn}) {
             try {
                 closeable.close();

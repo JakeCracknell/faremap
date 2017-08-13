@@ -1,5 +1,6 @@
-package com.cracknellj.fare.ws.dao;
+package com.cracknellj.fare.dao;
 
+import com.cracknellj.fare.dao.AbstractDAO;
 import com.cracknellj.fare.ws.objects.Station;
 
 import java.sql.SQLException;
@@ -15,7 +16,7 @@ public class StationDAO extends AbstractDAO {
             List<Station> stations = new ArrayList<>();
             connectToDatabase();
             ps = cn.prepareStatement(
-                    "SELECT station_id, station_name, modes_list, oyster_accepted, latitude, longitude " +
+                    "SELECT station_id, station_name, modes_list, oyster_accepted, latitude, longitude, crs " +
                             "FROM station ");
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -26,8 +27,8 @@ public class StationDAO extends AbstractDAO {
                         modes,
                         rs.getBoolean("oyster_accepted"),
                         rs.getFloat("latitude"),
-                        rs.getFloat("longitude")
-                        );
+                        rs.getFloat("longitude"),
+                        rs.getString("crs"));
                 stations.add(station);
             }
             return stations;
