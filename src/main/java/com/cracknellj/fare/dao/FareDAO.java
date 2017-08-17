@@ -1,15 +1,12 @@
 package com.cracknellj.fare.dao;
 
-import com.cracknellj.fare.objects.Fare;
-import com.cracknellj.fare.objects.FareSet;
-import com.cracknellj.fare.objects.FareSetBuilder;
-import com.cracknellj.fare.objects.Station;
+import com.cracknellj.fare.objects.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.math.BigDecimal;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FareDAO extends AbstractDAO {
     private static final Logger LOG = LogManager.getLogger(FareDAO.class);
@@ -63,6 +60,29 @@ public class FareDAO extends AbstractDAO {
                 }
             }
             LOG.info("Batch inserted all " + faresList.size() +  " fares");
+        } finally {
+            closeConnection();
+        }
+    }
+
+    public Map<String, Map<String, BigDecimal>> getCheapestTFLFares() throws SQLException {
+        try {
+            Map<String, Map<String, BigDecimal>> fares = new HashMap<>();
+            connectToDatabase();
+            ps = cn.prepareStatement(
+                    "SELECT from_id, to_id, price " +
+                            "FROM fare WHERE accounting = 'Pay as you go' and off_peak_only = false");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Map<String, BigDecimal> fromMap = fares.computeIfAbsent(rs.getString("from_id"), a -> new HashMap<>());
+                String toId = rs.getString("to_id");
+                BigDecimal newPrice = rs.getBigDecimal("price");
+                BigDecimal existingPrice = fromMap.get(toId);
+                if (existingPrice == null || existingPrice.compareTo(newPrice) > 0) {
+                    fromMap.put(toId, newPrice);
+                }
+            }
+            return fares;
         } finally {
             closeConnection();
         }

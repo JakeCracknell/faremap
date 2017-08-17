@@ -20,4 +20,12 @@ public class Station {
         this.longitude = longitude;
         this.crs = crs;
     }
+
+    @Override
+    public String toString() {
+        return "Station{" +
+                "stationId='" + stationId + '\'' +
+                ", stationName='" + stationName + '\'' +
+                '}';
+    }
 }
