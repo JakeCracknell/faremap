@@ -185,7 +185,7 @@ voronoiMap = function (map, url) {
 
         var getFillColourForAdjustedPrice = function (price) {
             if (price === Infinity || price === -Infinity || !price) return 'transparent';
-            var hue = ((1 - price) * 120).toString(10);
+            var hue = (price * 360).toString(10);
             return ["hsl(", hue, ",100%,50%)"].join("");
         };
 
