@@ -149,7 +149,7 @@ voronoiMap = function (map, url) {
             return true;
         });
 
-        var averagePrice = filteredPoints.reduce(function(currentMax, thisPoint) {
+        var maxFarePrice = filteredPoints.reduce(function(currentMax, thisPoint) {
             if (thisPoint.fares.length > 0) {
                 return Math.max(currentMax, fareSelectorFunction(thisPoint.fares));
             } else {
@@ -193,7 +193,7 @@ voronoiMap = function (map, url) {
             .attr("class", "point-cell")
             .attr("d", buildPathFromPoint)
             .style('fill', function (d) {
-                return getFillColourForAdjustedPrice(fareSelectorFunction(d.fares) / averagePrice)
+                return getFillColourForAdjustedPrice(fareSelectorFunction(d.fares) / maxFarePrice)
             })
             .on('click', selectPointForFareQuery)
             .on('mouseover', showMouseOverInformationForPoint)
