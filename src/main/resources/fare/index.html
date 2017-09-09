@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="base.css" rel="stylesheet" />
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
+    <link href="base.css" rel="stylesheet"/>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet'/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -52,12 +52,12 @@
 <script src="https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
 <script src="voronoi_map.js"></script>
 <script>
-            L.mapbox.accessToken = 'pk.eyJ1IjoiemV0dGVyIiwiYSI6ImVvQ3FGVlEifQ.jGp_PWb6xineYqezpSd7wA';
-            map = L.mapbox.map('map', 'zetter.i73ka9hn')
-              .fitBounds([[59.355596 , -9.052734], [49.894634 , 3.515625]]);
+    L.mapbox.accessToken = 'pk.eyJ1IjoiemV0dGVyIiwiYSI6ImVvQ3FGVlEifQ.jGp_PWb6xineYqezpSd7wA';
+    map = L.mapbox.map('map', 'zetter.i73ka9hn')
+        .fitBounds([[59.355596, -9.052734], [49.894634, 3.515625]]);
 
-            url = '/api/station';
-            voronoiMap(map, url);
+    url = '/api/station';
+    voronoiMap(map, url);
 </script>
 
 </body>
