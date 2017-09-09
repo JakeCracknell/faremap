@@ -73,16 +73,13 @@ voronoiMap = function (map, url) {
             .on("change", drawWithLoading);
     };
 
-    var selectedModes = function () {
-        return d3.selectAll('#mode-toggles input[type=checkbox]')[0].filter(function (elem) {
-            return elem.checked;
-        }).map(function (elem) {
-            return elem.value;
-        })
+    var getSelectedModesFromCheckboxes = function () {
+        checkedInputs = document.querySelectorAll('#mode-toggles input[type=checkbox]:checked');
+        return [].slice.call(checkedInputs).map(function(c) { return c.value; });
     };
 
     var pointsFilteredToSelectedModes = function () {
-        var currentSelectedModes = d3.set(selectedModes());
+        var currentSelectedModes = d3.set(getSelectedModesFromCheckboxes());
         return points.filter(function (item) {
             return item.modes.some(m => currentSelectedModes.has(m));
         });
