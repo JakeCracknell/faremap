@@ -108,6 +108,26 @@ voronoiMap = function (map, url) {
             existing = d3.set(),
             drawLimit = bounds.pad(0.4);
 
+        var fareSelectorElement = document.getElementById('fare-price-selector');
+        var fareSelectorFunction;
+        switch (fareSelectorElement.options[fareSelectorElement.selectedIndex].id) {
+            case 'low':
+                fareSelectorFunction = fs => Math.min.apply(Math, fs.map(function (f) {
+                    return f.price;
+                }));
+                break;
+            case 'high':
+                fareSelectorFunction = fs => Math.max.apply(Math, fs.map(function (f) {
+                    return f.price;
+                }));
+                break;
+            default:
+                fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(d => d.isDefaultRoute).map(function (f) {
+                    return f.price;
+                }));
+                break;
+        }
+
         filteredPoints = pointsFilteredToSelectedModes().filter(function (d) {
             var latlng = new L.LatLng(d.latitude, d.longitude);
 
@@ -129,9 +149,18 @@ voronoiMap = function (map, url) {
             return true;
         });
 
+        var averagePrice = filteredPoints.reduce(function(currentMax, thisPoint) {
+            if (thisPoint.fares.length > 0) {
+                return Math.max(currentMax, fareSelectorFunction(thisPoint.fares));
+            } else {
+                return currentMax;
+            }
+        }, 0);
+
         voronoi(filteredPoints).forEach(function (d) {
             d.point.cell = d;
         });
+
 
         var svg = d3.select(map.getPanes().overlayPane).append("svg")
             .attr('id', 'overlay')
@@ -152,34 +181,14 @@ voronoiMap = function (map, url) {
 
         var buildPathFromPoint = function (point) {
             return "M" + point.cell.join("L") + "Z";
-        }
+        };
 
         var getFillColourForAdjustedPrice = function (price) {
-            if (price === Infinity || !price) return 'transparent';
+            if (price === Infinity || price === -Infinity || !price) return 'transparent';
             var hue = ((1 - price) * 120).toString(10);
             return ["hsl(", hue, ",100%,50%)"].join("");
-        }
+        };
 
-        var fareSelectorElement = document.getElementById('fare-price-selector');
-        var fareSelectorFunction;
-        switch (fareSelectorElement.options[fareSelectorElement.selectedIndex].id) {
-            case 'low':
-                fareSelectorFunction = fs => Math.min.apply(Math, fs.map(function (f) {
-                    return f.price;
-                }));
-                break;
-            case 'high':
-                fareSelectorFunction = fs => Math.max.apply(Math, fs.map(function (f) {
-                    return f.price;
-                }));
-                break;
-            default:
-                fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(d => d.isDefaultRoute).map(function (f) {
-                    return f.price;
-                }));
-                break;
-        }
-        var averagePrice = 5.0;
         svgPoints.append("path")
             .attr("class", "point-cell")
             .attr("d", buildPathFromPoint)
