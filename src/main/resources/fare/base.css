@@ -17,13 +17,17 @@ p {
 .point-cell:hover, .point-cell.selected {
     fill: none;
     stroke: #000;
-    stroke-opacity: .6;
     stroke-width: 2px;
 }
 
 .point-cell.selected {
-    stroke-opacity: 1;
     stroke-width: 3px;
+}
+
+/*remove later - only for debugging*/
+.point-cell.nodata {
+    fill: transparent;
+    stroke: black;
 }
 
 .point circle {

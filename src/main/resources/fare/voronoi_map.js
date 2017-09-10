@@ -75,7 +75,9 @@ voronoiMap = function (map, url) {
 
     var getSelectedModesFromCheckboxes = function () {
         checkedInputs = document.querySelectorAll('#mode-toggles input[type=checkbox]:checked');
-        return [].slice.call(checkedInputs).map(function(c) { return c.value; });
+        return [].slice.call(checkedInputs).map(function (c) {
+            return c.value;
+        });
     };
 
     var pointsFilteredToSelectedModes = function () {
@@ -146,7 +148,7 @@ voronoiMap = function (map, url) {
             return true;
         });
 
-        var maxFarePrice = filteredPoints.reduce(function(currentMax, thisPoint) {
+        var maxFarePrice = filteredPoints.reduce(function (currentMax, thisPoint) {
             if (thisPoint.fares.length > 0) {
                 return Math.max(currentMax, fareSelectorFunction(thisPoint.fares));
             } else {
@@ -196,6 +198,9 @@ voronoiMap = function (map, url) {
             .on('mouseover', showMouseOverInformationForPoint)
             .classed("selected", function (d) {
                 return lastSelectedPoint == d;
+            })
+            .classed("nodata", function (d) {
+                return d.fares.length === 0;
             });
 
         svgPoints.append("circle")
