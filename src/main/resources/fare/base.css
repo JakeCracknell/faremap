@@ -1,160 +1,161 @@
 body {
-  margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
 }
 
 p {
-  margin: 0;
-  margin-bottom: 10px;
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 .point-cell {
-  fill-opacity: 0.5;
-  pointer-events: all;
+    fill-opacity: 0.5;
+    pointer-events: all;
 }
 
 .point-cell:hover, .point-cell.selected {
-  fill: none;
-  stroke: #000;
-  stroke-opacity: .6;
-  stroke-width: 2px;
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .6;
+    stroke-width: 2px;
 }
 
 .point-cell.selected {
-  stroke-opacity: 1;
-  stroke-width: 3px;
+    stroke-opacity: 1;
+    stroke-width: 3px;
 }
 
 .point circle {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 #map {
-  position:absolute;
-  top:0;
-  bottom:0;
-  width:100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 #selected,
 #selections,
 #loading:after,
 #about {
-  position:absolute;
-  background-color: #FFF;
-  opacity: 0.8;
-  border-radius: 2px;
-  padding: 10px 10px 0 10px;
+    position: absolute;
+    background-color: #FFF;
+    opacity: 0.8;
+    border-radius: 2px;
+    padding: 10px 10px 0 10px;
 }
 
 #about {
-  bottom: 10px;
-  right: 10px;
+    bottom: 10px;
+    right: 10px;
 }
 
 #about.visible {
-  width: 200px;
+    width: 200px;
 }
 
 #about .hide {
-  padding-bottom: 0;
-  text-align: right;
+    padding-bottom: 0;
+    text-align: right;
 }
 
 #loading.visible:after {
-  top: 50%;
-  left: 50%;
-  height: 28px;
-  width: 80px;
-  margin-left: -50px;
-  margin-top: -30px;
-  content: 'drawing...';
-  font-size: 18px;
+    top: 50%;
+    left: 50%;
+    height: 28px;
+    width: 80px;
+    margin-left: -50px;
+    margin-top: -30px;
+    content: 'drawing...';
+    font-size: 18px;
 }
 
 #selections {
-  right:10px;
-  top:10px;
-  width: 190px;
+    right: 10px;
+    top: 10px;
+    width: 190px;
 }
 
 #selections label {
-  display: block;
-  padding-bottom: 8px;
+    display: block;
+    padding-bottom: 8px;
 }
 
 #selections input[type=checkbox] {
-  position: relative;
-  top: -1px;
+    position: relative;
+    top: -1px;
 }
 
 #selections .key {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 6px;
-  margin: 0 5px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin: 0 5px;
 }
 
 #selected {
-  bottom: 10px;
-  left: 10px;
+    bottom: 10px;
+    left: 10px;
 }
 
 #selected h1 {
-  font-size: 20px;
-  margin: 0px;
-  line-height: 20px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    font-size: 20px;
+    margin: 0;
+    line-height: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .hide,
 .show {
-  padding-bottom: 10px;
-  display: block;
+    padding-bottom: 10px;
+    display: block;
 }
 
 .content {
-  display: none;
+    display: none;
 }
 
 @media (min-width: 480px) {
-  .selections .content {
-    display: block;
-  }
-  .selections .show {
-    display: none;
-  }
+    .selections .content {
+        display: block;
+    }
+
+    .selections .show {
+        display: none;
+    }
 }
 
 .hidden .content,
 .visible .show {
-  display: none;
+    display: none;
 }
 
 .hidden .show,
 .visible .content {
-  display: block;
+    display: block;
 }
 
 @media (max-width: 480px) {
-  #selected {
-    box-sizing: border-box;
-    width: 80%;
-    height: 32px;
-  }
+    #selected {
+        box-sizing: border-box;
+        width: 80%;
+        height: 32px;
+    }
 
-  #selected h1 {
-    font-size: 15px;
-    line-height: 15px;
-    font-weight: bold;
-  }
+    #selected h1 {
+        font-size: 15px;
+        line-height: 15px;
+        font-weight: bold;
+    }
 }
 
 .mapbox-control-info {
-  display: none !important;
+    display: none !important;
 }
