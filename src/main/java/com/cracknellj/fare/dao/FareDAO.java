@@ -24,6 +24,7 @@ public class FareDAO extends AbstractDAO {
                 fareSetBuilder.addFare(
                         rs.getString("to_id"),
                         rs.getBigDecimal("price"),
+                        rs.getString("mode"),
                         rs.getBoolean("off_peak_only"),
                         rs.getString("route_description"),
                         rs.getBoolean("is_default_route"),
@@ -47,7 +48,7 @@ public class FareDAO extends AbstractDAO {
                 ps.setString(1, fare.fromId);
                 ps.setString(2, fare.toId);
                 ps.setBigDecimal(3, fare.fareDetail.price);
-                ps.setString(4, "national-rail");
+                ps.setString(4, fare.fareDetail.mode);
                 ps.setBoolean(5, fare.fareDetail.offPeakOnly);
                 ps.setString(6, fare.fareDetail.routeDescription);
                 ps.setBoolean(7, fare.fareDetail.isDefaultRoute);
