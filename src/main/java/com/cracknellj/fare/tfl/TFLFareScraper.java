@@ -34,8 +34,8 @@ public class TFLFareScraper {
             for (TFLResponseFareSection section : tflResponseFareSections) {
                 for (TFLResponseRow row : section.rows) {
                     for (TFLResponseTicket ticket : row.ticketsAvailable) {
-                        fareDetails.add(new FareDetail(ticket.cost, ticket.mode, "Off Peak".equals(ticket.ticketTime.type),
-                                row.routeDescription, section.index == 1, ticket.ticketType.type));
+                        fareDetails.add(new FareDetail(ticket.cost, "Off Peak".equals(ticket.ticketTime.type),
+                                row.routeDescription, section.index == 1, ticket.ticketType.type, true));
                     }
                 }
             }
@@ -58,7 +58,6 @@ public class TFLFareScraper {
 
     private class TFLResponseTicket {
         public BigDecimal cost;
-        public String mode;
         public TFLResponseTicketType ticketType;
         public TFLResponseTicketTime ticketTime;
     }

@@ -73,15 +73,15 @@ voronoiMap = function (map, url) {
             .on("change", drawWithLoading);
     };
 
-    var getSelectedModesFromCheckboxes = function () {
-        checkedInputs = document.querySelectorAll('#mode-toggles input[type=checkbox]:checked');
+    var getSelectedCheckboxesFromGroup = function (selector) {
+        checkedInputs = document.querySelectorAll(selector + ' input[type=checkbox]:checked');
         return [].slice.call(checkedInputs).map(function (c) {
             return c.value;
         });
     };
 
     var pointsFilteredToSelectedModes = function () {
-        var currentSelectedModes = d3.set(getSelectedModesFromCheckboxes());
+        var currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
         return points.filter(function (item) {
             return item.modes.some(m => currentSelectedModes.has(m));
         });
@@ -107,25 +107,30 @@ voronoiMap = function (map, url) {
             existing = d3.set(),
             drawLimit = bounds.pad(0.4);
 
-        var fareSelectorElement = document.getElementById('fare-price-selector');
+        let fareTypesSelected = getSelectedCheckboxesFromGroup('#fare-type-toggles');
+        let fareTypeSelectorFilter = f =>
+            (f.offPeakOnly === fareTypesSelected.includes('off-peak')) &&
+            ((f.isTFL && fareTypesSelected.includes('tfl')) ||
+                (!f.isTFL && fareTypesSelected.includes('national-rail')));
+
         var fareSelectorFunction;
-        switch (fareSelectorElement.options[fareSelectorElement.selectedIndex].id) {
-            case 'low':
-                fareSelectorFunction = fs => Math.min.apply(Math, fs.map(function (f) {
+        var fareSelectorElement = document.getElementById('fare-price-selector');
+        const primaryFareSelector = fareSelectorElement.options[fareSelectorElement.selectedIndex].id;
+        if (primaryFareSelector === 'low') {
+            fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
+                return f.price;
+            }));
+        } else if (primaryFareSelector === 'high') {
+            fareSelectorFunction = fs => Math.max.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
+                return f.price;
+            }));
+        } else {
+            fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter)
+                .filter(f => f.isDefaultRoute).map(function (f) {
                     return f.price;
                 }));
-                break;
-            case 'high':
-                fareSelectorFunction = fs => Math.max.apply(Math, fs.map(function (f) {
-                    return f.price;
-                }));
-                break;
-            default:
-                fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(d => d.isDefaultRoute).map(function (f) {
-                    return f.price;
-                }));
-                break;
         }
+
 
         filteredPoints = pointsFilteredToSelectedModes().filter(function (d) {
             var latlng = new L.LatLng(d.latitude, d.longitude);

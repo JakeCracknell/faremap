@@ -16,7 +16,7 @@ public class FareDAO extends AbstractDAO {
             FareSetBuilder fareSetBuilder = new FareSetBuilder(fromId);
             connectToDatabase();
             ps = cn.prepareStatement(
-                    "SELECT to_id, price, mode, off_peak_only, route_description, is_default_route, accounting " +
+                    "SELECT to_id, price, off_peak_only, route_description, is_default_route, accounting, is_tfl " +
                             "FROM fare WHERE from_id = ?");
             ps.setString(1, fromId);
             rs = ps.executeQuery();
@@ -24,11 +24,11 @@ public class FareDAO extends AbstractDAO {
                 fareSetBuilder.addFare(
                         rs.getString("to_id"),
                         rs.getBigDecimal("price"),
-                        rs.getString("mode"),
                         rs.getBoolean("off_peak_only"),
                         rs.getString("route_description"),
                         rs.getBoolean("is_default_route"),
-                        rs.getString("accounting")
+                        rs.getString("accounting"),
+                        rs.getBoolean("is_tfl")
                 );
             }
             return fareSetBuilder.create();
@@ -40,19 +40,19 @@ public class FareDAO extends AbstractDAO {
     public void bulkInsertFares(List<Fare> faresList) throws SQLException {
         try {
             connectToDatabase();
-            ps = cn.prepareStatement("INSERT INTO fare (from_id, to_id, price, mode, off_peak_only, " +
-                    "route_description, is_default_route, accounting) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            ps = cn.prepareStatement("INSERT INTO fare (from_id, to_id, price, off_peak_only, " +
+                    "route_description, is_default_route, accounting, is_tfl) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             int i = 0;
             LOG.info("About to insert " + faresList.size() +  " fares");
             for (Fare fare : faresList) {
                 ps.setString(1, fare.fromId);
                 ps.setString(2, fare.toId);
                 ps.setBigDecimal(3, fare.fareDetail.price);
-                ps.setString(4, fare.fareDetail.mode);
-                ps.setBoolean(5, fare.fareDetail.offPeakOnly);
-                ps.setString(6, fare.fareDetail.routeDescription);
-                ps.setBoolean(7, fare.fareDetail.isDefaultRoute);
-                ps.setString(8, fare.fareDetail.accounting);
+                ps.setBoolean(4, fare.fareDetail.offPeakOnly);
+                ps.setString(5, fare.fareDetail.routeDescription);
+                ps.setBoolean(6, fare.fareDetail.isDefaultRoute);
+                ps.setString(7, fare.fareDetail.accounting);
+                ps.setBoolean(8, fare.fareDetail.isTFL);
                 ps.addBatch();
                 i++;
                 if (i % 1000 == 0 || i == faresList.size()) {

@@ -19,7 +19,6 @@ public class FareFlowFileReader extends AtocFileReader {
 
     private static final BigDecimal FARE_DIVISOR = BigDecimal.valueOf(100);
     public static final String FILE_NAME = "RJFAF499.FFL";
-    public static final String MODE = "national-rail";
 
     public List<Fare> getFaresList() throws IOException {
         Map<String, AtocTicketCode> ticketCodes = new TicketTypeFileReader().getTicketCodes();
@@ -48,7 +47,7 @@ public class FareFlowFileReader extends AtocFileReader {
                                 String tOriginDestination = flowIdToOriginDestinationMap.get(tFlowId);
                                 String nlcFrom = tOriginDestination.substring(0, 4);
                                 String nlcTo = tOriginDestination.substring(4, 8);
-                                FareDetail fareDetail = new FareDetail(farePrice, MODE, ticketCode.isOffPeak(), ticketCode.description, ticketCode.isDefaultFare(), "NR");
+                                FareDetail fareDetail = new FareDetail(farePrice, ticketCode.isOffPeak(), ticketCode.description, ticketCode.isDefaultFare(), "NR", false);
                                 fares.add(new Fare(nlcFrom, nlcTo, fareDetail));
                             }
                         }

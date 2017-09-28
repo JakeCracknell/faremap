@@ -15,9 +15,9 @@ public class FareSetBuilder {
         faresByToId = new HashMap<>();
     }
 
-    public void addFare(String toId, BigDecimal price, String mode, boolean offPeakOnly, String routeDescription,
-                        boolean isDefaultRoute, String accounting) {
-        FareDetail fareDetail = new FareDetail(price, mode, offPeakOnly, routeDescription, isDefaultRoute, accounting);
+    public void addFare(String toId, BigDecimal price, boolean offPeakOnly, String routeDescription,
+                        boolean isDefaultRoute, String accounting, boolean isTFL) {
+        FareDetail fareDetail = new FareDetail(price, offPeakOnly, routeDescription, isDefaultRoute, accounting, isTFL);
         faresByToId.computeIfAbsent(toId, t -> new ArrayList<>()).add(fareDetail);
     }
 
