@@ -149,8 +149,9 @@ voronoiMap = function (map, url) {
         });
 
         var maxFarePrice = filteredPoints.reduce(function (currentMax, thisPoint) {
-            if (thisPoint.fares.length > 0) {
-                return Math.max(currentMax, fareSelectorFunction(thisPoint.fares));
+            let fare = fareSelectorFunction(thisPoint.fares);
+            if (fare !== Infinity) {
+                return Math.max(currentMax, fare);
             } else {
                 return currentMax;
             }
