@@ -35,10 +35,12 @@ voronoiMap = function (map, url) {
         lastSelectedPoint = point;
         cell.classed('selected', true);
 
-        d3.select('#selected h1')
+        d3.select('#selected')
             .html('')
             .append('p')
-            .text(point.stationId + " " + point.stationName);
+            .text("FROM: " + point.stationId + " " + point.stationName + " " + point.crs)
+            .append('p')
+            .text("TO  : ???");
 
         fareUrl = "/api/fare/from/" + point.stationId
         d3.json(fareUrl, function (json) {
@@ -56,10 +58,12 @@ voronoiMap = function (map, url) {
         var cell = d3.select(this),
             point = cell.datum();
 
-        d3.select('#selected h1')
+        d3.select('#selected')
             .html('')
             .append('p')
-            .text(point.stationId + " " + point.stationName)
+            .text("FROM: " + lastSelectedPoint.stationId + " " + lastSelectedPoint.stationName + " " + lastSelectedPoint.crs)
+            .append('p')
+            .text("TO  : " + point.stationId + " " + point.stationName + " " + point.crs)
             .append('ul').selectAll('li')
             .data(point.fares)
             .enter()

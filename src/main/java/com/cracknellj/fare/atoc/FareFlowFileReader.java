@@ -8,10 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class FareFlowFileReader extends AtocFileReader {
@@ -24,6 +21,7 @@ public class FareFlowFileReader extends AtocFileReader {
         Map<String, AtocTicketCode> ticketCodes = new TicketTypeFileReader().getTicketCodes();
         List<Fare> fares = new ArrayList<>();
         Map<String, String> flowIdToOriginDestinationMap = new HashMap<>();
+        Set<String> reversibleFlowIds = new HashSet<>();
         try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
             lineStream.forEach(line -> {
                 switch (line.charAt(1)) {
@@ -33,7 +31,7 @@ public class FareFlowFileReader extends AtocFileReader {
                         flowIdToOriginDestinationMap.put(flowId, originDestination);
                         boolean reversible = line.charAt(19) == 'R';
                         if (reversible) {
-                            flowIdToOriginDestinationMap.put(flowId, originDestination.substring(0, 4) + originDestination.substring(4, 8));
+                            reversibleFlowIds.add(flowId);
                         }
                     case 'T':
                         String restriction = line.substring(20, 22);
@@ -49,6 +47,9 @@ public class FareFlowFileReader extends AtocFileReader {
                                 String nlcTo = tOriginDestination.substring(4, 8);
                                 FareDetail fareDetail = new FareDetail(farePrice, ticketCode.isOffPeak(), ticketCode.description, ticketCode.isDefaultFare(), "NR", false);
                                 fares.add(new Fare(nlcFrom, nlcTo, fareDetail));
+                                if (reversibleFlowIds.contains(tFlowId)) {
+                                    fares.add(new Fare(nlcTo, nlcFrom, fareDetail));
+                                }
                             }
                         }
 
