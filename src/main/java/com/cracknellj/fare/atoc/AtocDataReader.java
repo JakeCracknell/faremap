@@ -27,16 +27,16 @@ public class AtocDataReader {
     private Map<String, String> nlcToCRSMap;
     private Map<String, List<String>> stationGroups;
     private List<Fare> rawFaresList;
-    private Map<String, List<Fare>> faresByStationId = new HashMap<>();
+    private Map<String, Map<String, List<FareDetail>>> faresByStationId = new HashMap<>();
 
-    public AtocDataReader() throws IOException, SQLException {
-        readData();
-    }
-
-    private void readData() throws SQLException, IOException {
-        readDataFromFiles();
-        cleanupConflictingData();
-        convertDataIntoFares();
+    public AtocDataReader() {
+        try {
+            readDataFromFiles();
+            cleanupConflictingData();
+            convertDataIntoFares();
+        } catch (SQLException | IOException e) {
+            throw new RuntimeException("Failed to read ATOC data");
+        }
     }
 
     private void readDataFromFiles() throws SQLException, IOException {
@@ -65,7 +65,9 @@ public class AtocDataReader {
         for (String fromId : fromIds) {
             for (String toId : toIds) {
                 Fare fare = new Fare(fromId, toId, fareDetail);
-                faresByStationId.computeIfAbsent(fromId, x -> new ArrayList<>()).add(fare);
+                faresByStationId.computeIfAbsent(fromId, x -> new HashMap<>())
+                        .computeIfAbsent(toId, x -> new ArrayList<>())
+                        .add(fareDetail);
             }
         }
     }
@@ -78,7 +80,7 @@ public class AtocDataReader {
         return crss.stream().filter(crsToStation::containsKey).map(crsToStation::get).map(s -> s.stationId).collect(Collectors.toList());
     }
 
-    public Map<String, List<Fare>> getFaresByStationId() {
+    public Map<String, Map<String, List<FareDetail>>> getFaresByStationId() {
         return faresByStationId;
     }
 }
