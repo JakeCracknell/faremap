@@ -51,20 +51,17 @@ public class AtocDataReader {
         LOG.info("Removing the following stations, as they are not in the database: " +
                 nlcToCRSMap.values().stream().filter(crs -> !crsToStation.containsKey(crs)).collect(Collectors.toSet()));
         nlcToCRSMap.entrySet().removeIf(e -> !crsToStation.containsKey(e.getValue()));
-
-        //rawFaresList.removeIf(f -> !(f.fromId.equals("SGN1") && f.toId.equals("STL4")));
     }
 
     private void convertDataIntoFares() {
         for (Fare fare : rawFaresList) {
-            addFareForEach(fare.fareDetail, getCRSsFromNLC(fare.fromId), getCRSsFromNLC(fare.toId));
+            addFareForEach(fare.fareDetail, getStationIDsFromNLC(fare.fromId), getStationIDsFromNLC(fare.toId));
         }
     }
 
     private void addFareForEach(FareDetail fareDetail, List<String> fromIds, List<String> toIds) {
         for (String fromId : fromIds) {
             for (String toId : toIds) {
-                Fare fare = new Fare(fromId, toId, fareDetail);
                 faresByStationId.computeIfAbsent(fromId, x -> new HashMap<>())
                         .computeIfAbsent(toId, x -> new ArrayList<>())
                         .add(fareDetail);
@@ -72,7 +69,7 @@ public class AtocDataReader {
         }
     }
 
-    private List<String> getCRSsFromNLC(String nlc) {
+    private List<String> getStationIDsFromNLC(String nlc) {
         List<String> nlcs = stationClusters.getOrDefault(nlc, Lists.newArrayList(nlc));
         Stream<String> crssFromDirectMappings = nlcs.stream().filter(nlcToCRSMap::containsKey).map(nlcToCRSMap::get);
         Stream<String> crssFromStationGroups = nlcs.stream().filter(stationGroups::containsKey).map(stationGroups::get).flatMap(List::stream);
