@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
@@ -48,11 +50,18 @@ public class LocationFileReader extends AtocFileReader {
         try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
             Map<String, List<String>> map = lineStream.filter(l -> l.charAt(1) == 'M')
                     .collect(groupingBy(this::getGroupUIC, mapping(this::getLocationCRS, toList())));
-            map.keySet().removeIf(s -> !s.matches("\\d+"));
-            //90% of these groups are things like J944 SWINDON+BUS. We want ones like 1072 LONDON TERMINALS
+            removeInvalidStationGroups(map);
             LOG.info(map.size() + " station groups found");
             return map;
         }
+    }
+
+    //Tempted to remove this, as bus routes will still slip through. e.g. HAT->LUT
+    //90% of these groups are things like J944 SWINDON+BUS. We want ones like 1072 LONDON TERMINALS
+    private void removeInvalidStationGroups(Map<String, List<String>> map) {
+        Set<String> invalidGroups = map.keySet().stream().filter(s -> !s.matches("\\d+")).collect(Collectors.toSet());
+        invalidGroups.remove("H584"); //HEATHROW RAIL
+        map.keySet().removeAll(invalidGroups);
     }
 
     private String getGroupUIC(String l) {
