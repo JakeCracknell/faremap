@@ -17,7 +17,7 @@ public class FareResource extends AbstractResource {
     private final AtocDataService atocDataService;
 
     public FareResource() {
-        this(new FareDAO(), AtocDataService.getInstance());
+        this(new FareDAO(), null);
     }
 
     public FareResource(FareDAO fareDAO, AtocDataService atocDataService) {

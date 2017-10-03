@@ -62,7 +62,7 @@ voronoiMap = function (map, url) {
     }
 
     function getFormattedStation(station) {
-        if (station === null) return "???";
+        if (station === null || station === undefined) return "???";
         return station.stationId + " " + station.stationName + " (" + station.crs + ")"
     }
 
@@ -74,20 +74,22 @@ voronoiMap = function (map, url) {
         const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
         document.getElementById("selected-main-price").textContent = mainPrice;
         document.getElementById("selected-main-price").style.backgroundColor = fareColour;
-        d3.select('#fare-table')
-            .selectAll("tr")
-            .data(point.fares)
-            .enter()
-            .append("tr")
-            .append("td").text(f => f.accounting)
-            .append("td").text(f => f.price)
-            .append("td").text(f => f.routeDescription)
-            // .text(lastSelectedPoint.stationId + " " + lastSelectedPoint.stationName + " (" + lastSelectedPoint.crs + ") → " + point.stationId + " " + point.stationName + " (" + point.crs + ")")
-            // .append('ul').selectAll('li')
-            // .data(point.fares)
-            // .enter()
-            // .append('li')
-            // .html(f => JSON.stringify(f));
+
+        const faresTable = document.getElementById("fare-table");
+        faresTable.innerHTML = "";
+        for (i = 0; i < point.fares.length; i++) {
+            var tr = document.createElement("tr");
+            var td = document.createElement("td");
+            td.appendChild(document.createTextNode(point.fares[i].accounting));
+            tr.appendChild(td);
+            var td = document.createElement("td");
+            td.appendChild(document.createTextNode(point.fares[i].price));
+            tr.appendChild(td);
+            var td = document.createElement("td");
+            td.appendChild(document.createTextNode(point.fares[i].routeDescription));
+            tr.appendChild(td);
+            faresTable.appendChild(tr);
+        }
     };
 
     var setupDisplayOptionsPanel = function () {
