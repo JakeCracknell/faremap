@@ -10,13 +10,14 @@ addShowHideEventsTo = function (selector) {
             .classed('visible', true)
             .classed('hidden', false);
     });
-}
+};
 
 voronoiMap = function (map, url) {
     var pointModes = d3.map(),
         points = [],
         pointsMap = {},
-        lastSelectedPoint;
+        lastSelectedPoint,
+        maxFarePrice;
 
     var voronoi = d3.geom.voronoi()
         .x(function (d) {
@@ -35,12 +36,7 @@ voronoiMap = function (map, url) {
         lastSelectedPoint = point;
         cell.classed('selected', true);
 
-        d3.select('#selected')
-            .html('')
-            .append('p')
-            .text("FROM: " + point.stationId + " " + point.stationName + " " + point.crs)
-            .append('p')
-            .text("TO  : ???");
+        drawSourceDestinationHeader(point);
 
         fareUrl = "/api/fare/from/" + point.stationId
         d3.json(fareUrl, function (json) {
@@ -54,27 +50,77 @@ voronoiMap = function (map, url) {
         })
     };
 
-    var showMouseOverInformationForPoint = function () {
-        var cell = d3.select(this),
-            point = cell.datum();
+    var getFillColourForAdjustedPrice = function (price) {
+        if (price === Infinity || price === -Infinity || !price) return 'transparent';
+        var hue = (price * 360).toString(10);
+        return ["hsl(", hue, ",100%,50%)"].join("");
+    };
 
-        d3.select('#selected')
-            .html('')
-            .append('p')
-            .text("FROM: " + lastSelectedPoint.stationId + " " + lastSelectedPoint.stationName + " " + lastSelectedPoint.crs)
-            .append('p')
-            .text("TO  : " + point.stationId + " " + point.stationName + " " + point.crs)
-            .append('ul').selectAll('li')
+    function drawSourceDestinationHeader(point) {
+        document.getElementById("selected-source-destination").textContent =
+            getFormattedStation(lastSelectedPoint) + " → " + getFormattedStation(point);
+    }
+
+    function getFormattedStation(station) {
+        if (station === null) return "???";
+        return station.stationId + " " + station.stationName + " (" + station.crs + ")"
+    }
+
+    var showMouseOverInformationForPoint = function () {
+        const cell = d3.select(this);
+        const point = cell.datum();
+        drawSourceDestinationHeader(point);
+        const mainPrice = getFareSelectorFunction()(point.fares);
+        const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
+        document.getElementById("selected-main-price").textContent = mainPrice;
+        document.getElementById("selected-main-price").style.backgroundColor = fareColour;
+        d3.select('#fare-table')
+            .selectAll("tr")
             .data(point.fares)
             .enter()
-            .append('li')
-            .html(f => JSON.stringify(f));
+            .append("tr")
+            .append("td").text(f => f.accounting)
+            .append("td").text(f => f.price)
+            .append("td").text(f => f.routeDescription)
+            // .text(lastSelectedPoint.stationId + " " + lastSelectedPoint.stationName + " (" + lastSelectedPoint.crs + ") → " + point.stationId + " " + point.stationName + " (" + point.crs + ")")
+            // .append('ul').selectAll('li')
+            // .data(point.fares)
+            // .enter()
+            // .append('li')
+            // .html(f => JSON.stringify(f));
     };
 
     var setupDisplayOptionsPanel = function () {
         addShowHideEventsTo('#selections');
         d3.selectAll('#mode-toggles, #fare-type-toggles')
             .on("change", drawWithLoading);
+    };
+
+    function getFareSelectorFunction() {
+        let fareTypesSelected = getSelectedCheckboxesFromGroup('#fare-type-toggles');
+        let fareTypeSelectorFilter = f =>
+            (f.offPeakOnly === fareTypesSelected.includes('off-peak')) &&
+            ((f.isTFL && fareTypesSelected.includes('tfl')) ||
+                (!f.isTFL && fareTypesSelected.includes('national-rail')));
+
+        var fareSelectorFunction;
+        var fareSelectorElement = document.getElementById('fare-price-selector');
+        const primaryFareSelector = fareSelectorElement.options[fareSelectorElement.selectedIndex].id;
+        if (primaryFareSelector === 'low') {
+            fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
+                return f.price;
+            }));
+        } else if (primaryFareSelector === 'high') {
+            fareSelectorFunction = fs => Math.max.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
+                return f.price;
+            }));
+        } else {
+            fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter)
+                .filter(f => f.isDefaultRoute).map(function (f) {
+                    return f.price;
+                }));
+        }
+        return fareSelectorFunction;
     };
 
     var getSelectedCheckboxesFromGroup = function (selector) {
@@ -110,30 +156,7 @@ voronoiMap = function (map, url) {
             bottomRight = map.latLngToLayerPoint(bounds.getSouthEast()),
             existing = d3.set(),
             drawLimit = bounds.pad(0.4);
-
-        let fareTypesSelected = getSelectedCheckboxesFromGroup('#fare-type-toggles');
-        let fareTypeSelectorFilter = f =>
-            (f.offPeakOnly === fareTypesSelected.includes('off-peak')) &&
-            ((f.isTFL && fareTypesSelected.includes('tfl')) ||
-                (!f.isTFL && fareTypesSelected.includes('national-rail')));
-
-        var fareSelectorFunction;
-        var fareSelectorElement = document.getElementById('fare-price-selector');
-        const primaryFareSelector = fareSelectorElement.options[fareSelectorElement.selectedIndex].id;
-        if (primaryFareSelector === 'low') {
-            fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
-                return f.price;
-            }));
-        } else if (primaryFareSelector === 'high') {
-            fareSelectorFunction = fs => Math.max.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
-                return f.price;
-            }));
-        } else {
-            fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter)
-                .filter(f => f.isDefaultRoute).map(function (f) {
-                    return f.price;
-                }));
-        }
+        var fareSelectorFunction = getFareSelectorFunction();
 
 
         filteredPoints = pointsFilteredToSelectedModes().filter(function (d) {
@@ -157,7 +180,7 @@ voronoiMap = function (map, url) {
             return true;
         });
 
-        var maxFarePrice = filteredPoints.reduce(function (currentMax, thisPoint) {
+        maxFarePrice = filteredPoints.reduce(function (currentMax, thisPoint) {
             let fare = fareSelectorFunction(thisPoint.fares);
             if (fare !== Infinity) {
                 return Math.max(currentMax, fare);
@@ -190,12 +213,6 @@ voronoiMap = function (map, url) {
 
         var buildPathFromPoint = function (point) {
             return "M" + point.cell.join("L") + "Z";
-        };
-
-        var getFillColourForAdjustedPrice = function (price) {
-            if (price === Infinity || price === -Infinity || !price) return 'transparent';
-            var hue = (price * 360).toString(10);
-            return ["hsl(", hue, ",100%,50%)"].join("");
         };
 
         svgPoints.append("path")

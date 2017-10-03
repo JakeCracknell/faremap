@@ -31,7 +31,7 @@ public class FareResource extends AbstractResource {
     public String getFaresFrom(@PathParam("fromId") String fromId) throws WebApplicationException {
         try {
             LOG.info("Request to GET fares received, from " + fromId);
-            FareSet fareSet = atocDataService.getFaresFrom(fromId);
+            FareSet fareSet = fareDAO.getFaresFrom(fromId);
             String json = getGson().toJson(fareSet);
             LOG.info(truncate(json));
             return json;
