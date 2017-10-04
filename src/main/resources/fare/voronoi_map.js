@@ -84,7 +84,7 @@ voronoiMap = function (map, url) {
             for (i = 0; i < point.fares.length; i++) {
                 var tr = document.createElement("tr");
                 var td = document.createElement("td");
-                td.appendChild(document.createTextNode(point.fares[i].accounting));
+                td.classList.add("fare-type", point.fares[i].isTFL ? "tfl" : "nr");
                 tr.appendChild(td);
                 var td = document.createElement("td");
                 td.appendChild(document.createTextNode(formatPrice(point.fares[i].price)));

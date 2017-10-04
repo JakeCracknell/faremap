@@ -128,6 +128,20 @@ p {
     visibility: hidden;
 }
 
+#fare-table .fare-type {
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 20px;
+}
+
+#fare-table .tfl {
+    background-image: url(img/tfl-icon.png);
+}
+
+#fare-table .nr {
+    background-image: url(img/nr-icon.png);
+}
+
 .hide,
 .show {
     padding-bottom: 10px;
