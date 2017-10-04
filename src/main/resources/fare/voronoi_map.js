@@ -12,6 +12,10 @@ addShowHideEventsTo = function (selector) {
     });
 };
 
+function formatPrice(price) {
+    return "£" + price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+}
+
 voronoiMap = function (map, url) {
     var pointModes = d3.map(),
         points = [],
@@ -36,8 +40,6 @@ voronoiMap = function (map, url) {
         lastSelectedPoint = point;
         cell.classed('selected', true);
 
-        drawSourceDestinationHeader(point);
-
         fareUrl = "/api/fare/from/" + point.stationId
         d3.json(fareUrl, function (json) {
             pointsMap.forEach(function (station, stationId, m) {
@@ -56,11 +58,6 @@ voronoiMap = function (map, url) {
         return ["hsla(", hue, ",100%,50%,0.5)"].join("");
     };
 
-    function drawSourceDestinationHeader(point) {
-        document.getElementById("selected-source-destination").textContent =
-            getFormattedStation(lastSelectedPoint) + " → " + getFormattedStation(point);
-    }
-
     function getFormattedStation(station) {
         if (station === null || station === undefined) return "???";
         let stationString = station.stationId + " " + station.stationName;
@@ -73,27 +70,35 @@ voronoiMap = function (map, url) {
     var showMouseOverInformationForPoint = function () {
         const cell = d3.select(this);
         const point = cell.datum();
-        drawSourceDestinationHeader(point);
-        const mainPrice = getFareSelectorFunction()(point.fares);
-        const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
-        document.getElementById("selected-main-price").textContent = mainPrice;
-        document.getElementById("selected-main-price").style.backgroundColor = fareColour;
-
         const faresTable = document.getElementById("fare-table");
         faresTable.innerHTML = "";
-        for (i = 0; i < point.fares.length; i++) {
-            var tr = document.createElement("tr");
-            var td = document.createElement("td");
-            td.appendChild(document.createTextNode(point.fares[i].accounting));
-            tr.appendChild(td);
-            var td = document.createElement("td");
-            td.appendChild(document.createTextNode(point.fares[i].price));
-            tr.appendChild(td);
-            var td = document.createElement("td");
-            td.appendChild(document.createTextNode(point.fares[i].routeDescription));
-            tr.appendChild(td);
-            faresTable.appendChild(tr);
+        if (point.fares.length > 0) {
+            document.getElementById("selected-source-destination").textContent =
+                getFormattedStation(lastSelectedPoint) + " → " + getFormattedStation(point);
+            const mainPrice = getFareSelectorFunction()(point.fares);
+            const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
+            document.getElementById("selected-main-price").style.visibility = "visible";
+            document.getElementById("selected-main-price").textContent = formatPrice(mainPrice);
+            document.getElementById("selected-main-price").style.backgroundColor = fareColour;
+
+            for (i = 0; i < point.fares.length; i++) {
+                var tr = document.createElement("tr");
+                var td = document.createElement("td");
+                td.appendChild(document.createTextNode(point.fares[i].accounting));
+                tr.appendChild(td);
+                var td = document.createElement("td");
+                td.appendChild(document.createTextNode(formatPrice(point.fares[i].price)));
+                tr.appendChild(td);
+                var td = document.createElement("td");
+                td.appendChild(document.createTextNode(point.fares[i].routeDescription));
+                tr.appendChild(td);
+                faresTable.appendChild(tr);
+            }
+        } else {
+            document.getElementById("selected-source-destination").textContent = getFormattedStation(point);
+            document.getElementById("selected-main-price").style.visibility = "hidden"
         }
+
     };
 
     var setupDisplayOptionsPanel = function () {

@@ -103,6 +103,7 @@ p {
 #selected {
     bottom: 10px;
     left: 10px;
+    min-height: 50px;
 }
 
 #selected-header {
@@ -124,6 +125,7 @@ p {
     padding: 10px;
     display: flex;
     width: fit-content;
+    visibility: hidden;
 }
 
 .hide,
