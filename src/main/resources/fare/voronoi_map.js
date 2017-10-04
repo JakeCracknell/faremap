@@ -53,7 +53,7 @@ voronoiMap = function (map, url) {
     var getFillColourForAdjustedPrice = function (price) {
         if (price === Infinity || price === -Infinity || !price) return 'transparent';
         var hue = (price * 360).toString(10);
-        return ["hsl(", hue, ",100%,50%)"].join("");
+        return ["hsla(", hue, ",100%,50%,0.5)"].join("");
     };
 
     function drawSourceDestinationHeader(point) {
@@ -63,7 +63,11 @@ voronoiMap = function (map, url) {
 
     function getFormattedStation(station) {
         if (station === null || station === undefined) return "???";
-        return station.stationId + " " + station.stationName + " (" + station.crs + ")"
+        let stationString = station.stationId + " " + station.stationName;
+        if (station.crs !== null && station.crs !== undefined ) {
+            stationString += " (" + station.crs + ")"
+        }
+        return stationString;
     }
 
     var showMouseOverInformationForPoint = function () {

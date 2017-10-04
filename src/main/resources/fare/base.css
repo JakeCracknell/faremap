@@ -10,7 +10,6 @@ p {
 }
 
 .point-cell {
-    fill-opacity: 0.5;
     pointer-events: all;
 }
 
@@ -106,7 +105,7 @@ p {
     left: 10px;
 }
 
-#selected h1 {
+#selected-header {
     font-size: 20px;
     margin: 0;
     line-height: 20px;
@@ -114,6 +113,17 @@ p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+#selected-source-destination {
+    padding: 10px;
+    float: left;
+}
+
+#selected-main-price {
+    padding: 10px;
+    display: flex;
+    width: fit-content;
 }
 
 .hide,
