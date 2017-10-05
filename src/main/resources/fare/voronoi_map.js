@@ -61,7 +61,7 @@ voronoiMap = function (map, url) {
     function getFormattedStation(station) {
         if (station === null || station === undefined) return "???";
         let stationString = station.stationId + " " + station.stationName;
-        if (station.crs !== null && station.crs !== undefined ) {
+        if (station.crs !== null && station.crs !== undefined) {
             stationString += " (" + station.crs + ")"
         }
         return stationString;
@@ -77,20 +77,21 @@ voronoiMap = function (map, url) {
                 getFormattedStation(lastSelectedPoint) + " → " + getFormattedStation(point);
             const mainPrice = getFareSelectorFunction()(point.fares);
             const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
+            const faresToDisplay = point.fares.filter(getFareTypeSelectorFilterFunction());
             document.getElementById("selected-main-price").style.visibility = "visible";
             document.getElementById("selected-main-price").textContent = formatPrice(mainPrice);
             document.getElementById("selected-main-price").style.backgroundColor = fareColour;
 
-            for (i = 0; i < point.fares.length; i++) {
+            for (i = 0; i < faresToDisplay.length; i++) {
                 var tr = document.createElement("tr");
                 var td = document.createElement("td");
-                td.classList.add("fare-type", point.fares[i].isTFL ? "tfl" : "nr");
+                td.classList.add("fare-type", faresToDisplay[i].isTFL ? "tfl" : "nr");
                 tr.appendChild(td);
                 var td = document.createElement("td");
-                td.appendChild(document.createTextNode(formatPrice(point.fares[i].price)));
+                td.appendChild(document.createTextNode(formatPrice(faresToDisplay[i].price)));
                 tr.appendChild(td);
                 var td = document.createElement("td");
-                td.appendChild(document.createTextNode(point.fares[i].routeDescription));
+                td.appendChild(document.createTextNode(faresToDisplay[i].routeDescription));
                 tr.appendChild(td);
                 faresTable.appendChild(tr);
             }
@@ -107,31 +108,29 @@ voronoiMap = function (map, url) {
             .on("change", drawWithLoading);
     };
 
-    function getFareSelectorFunction() {
-        let fareTypesSelected = getSelectedCheckboxesFromGroup('#fare-type-toggles');
-        let fareTypeSelectorFilter = f =>
-            (f.offPeakOnly === fareTypesSelected.includes('off-peak')) &&
-            ((f.isTFL && fareTypesSelected.includes('tfl')) ||
-                (!f.isTFL && fareTypesSelected.includes('national-rail')));
+    function getFareTypeSelectorFilterFunction() {
+        const fareTypesSelected = getSelectedCheckboxesFromGroup('#fare-type-toggles');
+        return f => (f.offPeakOnly === fareTypesSelected.includes('off-peak')) &&
+            ((f.isTFL && fareTypesSelected.includes('tfl')) || (!f.isTFL && fareTypesSelected.includes('national-rail')));
+    }
 
-        var fareSelectorFunction;
-        var fareSelectorElement = document.getElementById('fare-price-selector');
+    function getFareSelectorFunction() {
+        const fareTypeSelectorFilter = getFareTypeSelectorFilterFunction();
+        const fareSelectorElement = document.getElementById('fare-price-selector');
         const primaryFareSelector = fareSelectorElement.options[fareSelectorElement.selectedIndex].id;
         if (primaryFareSelector === 'low') {
-            fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
+            return fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
                 return f.price;
             }));
         } else if (primaryFareSelector === 'high') {
-            fareSelectorFunction = fs => Math.max.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
+            return fs => Math.max.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
                 return f.price;
             }));
         } else {
-            fareSelectorFunction = fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter)
-                .filter(f => f.isDefaultRoute).map(function (f) {
-                    return f.price;
-                }));
+            return fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter).filter(f => f.isDefaultRoute).map(function (f) {
+                return f.price;
+            }));
         }
-        return fareSelectorFunction;
     };
 
     var getSelectedCheckboxesFromGroup = function (selector) {

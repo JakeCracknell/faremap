@@ -134,6 +134,10 @@ p {
     min-width: 20px;
 }
 
+#fare-table .td {
+    padding: 5px;
+}
+
 #fare-table .tfl {
     background-image: url(img/tfl-icon.png);
 }
