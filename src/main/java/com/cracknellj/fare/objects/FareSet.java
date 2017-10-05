@@ -26,7 +26,13 @@ public class FareSet {
 
     public static FareSet combine(FareSet fareSet1, FareSet fareSet2) {
         Map<String, List<FareDetail>> faresMap = new HashMap<>(fareSet1.fares);
-        fareSet2.fares.forEach((toId, fares) -> faresMap.getOrDefault(toId, new ArrayList<>()).addAll(fares));
+        fareSet2.fares.forEach((toId, fares) -> {
+            if (faresMap.containsKey(toId)) {
+                faresMap.get(toId).addAll(fares);
+            } else {
+                faresMap.put(toId, fares);
+            }
+        });
         return new FareSet(fareSet1.fromId, faresMap);
     }
 
