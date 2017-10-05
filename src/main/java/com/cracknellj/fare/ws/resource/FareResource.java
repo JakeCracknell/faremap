@@ -1,8 +1,10 @@
 package com.cracknellj.fare.ws.resource;
 
-import com.cracknellj.fare.atoc.AtocDataService;
+import com.cracknellj.fare.provider.AtocDataProvider;
 import com.cracknellj.fare.dao.FareDAO;
 import com.cracknellj.fare.objects.FareSet;
+import com.cracknellj.fare.provider.CompositeSingletonFareDataProvider;
+import com.cracknellj.fare.provider.FareDataProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,16 +15,14 @@ import javax.ws.rs.core.Response;
 @Path("fare")
 public class FareResource extends AbstractResource {
     private static final Logger LOG = LogManager.getLogger(FareResource.class);
-    private final FareDAO fareDAO;
-    private final AtocDataService atocDataService;
+    private final FareDataProvider fareDataProvider;
 
     public FareResource() {
-        this(new FareDAO(), null);
+        this(CompositeSingletonFareDataProvider.getInstance());
     }
 
-    public FareResource(FareDAO fareDAO, AtocDataService atocDataService) {
-        this.fareDAO = fareDAO;
-        this.atocDataService = atocDataService;
+    public FareResource(FareDataProvider fareDataProvider) {
+        this.fareDataProvider = fareDataProvider;
     }
 
     @GET
@@ -31,7 +31,7 @@ public class FareResource extends AbstractResource {
     public String getFaresFrom(@PathParam("fromId") String fromId) throws WebApplicationException {
         try {
             LOG.info("Request to GET fares received, from " + fromId);
-            FareSet fareSet = fareDAO.getFaresFrom(fromId);
+            FareSet fareSet = fareDataProvider.getFaresFrom(fromId);
             String json = getGson().toJson(fareSet);
             LOG.info(truncate(json));
             return json;

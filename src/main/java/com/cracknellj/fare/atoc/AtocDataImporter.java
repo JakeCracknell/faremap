@@ -13,7 +13,7 @@ public class AtocDataImporter {
 
     public static void main(String[] args) throws Exception {
 //        AtocDataReader atocDataReader = new AtocDataReader();
-//        Map<String, List<Fare>> faresByStationId = atocDataReader.getFaresByStationId();
+//        Map<String, List<Fare>> faresByStationId = atocDataReader.getFareSetsByStationId();
 //        faresByStationId.keySet().removeIf(s -> !s.equals("910GHATFILD"));
 //        FareDAO fareDAO = new FareDAO();
 //        for (String stationId : faresByStationId.keySet()) {

@@ -3,6 +3,7 @@ package com.cracknellj.fare.atoc;
 import com.cracknellj.fare.dao.StationDAO;
 import com.cracknellj.fare.objects.Fare;
 import com.cracknellj.fare.objects.FareDetail;
+import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import jersey.repackaged.com.google.common.collect.Lists;
 import org.apache.logging.log4j.LogManager;
@@ -10,7 +11,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +27,7 @@ public class AtocDataReader {
     private Map<String, String> nlcToCRSMap;
     private Map<String, List<String>> stationGroups;
     private List<Fare> rawFaresList;
-    private Map<String, Map<String, List<FareDetail>>> faresByStationId = new HashMap<>();
+    private Map<String, FareSet> faresByStationId = new HashMap<>();
 
     public AtocDataReader() {
         try {
@@ -62,9 +62,8 @@ public class AtocDataReader {
     private void addFareForEach(FareDetail fareDetail, List<String> fromIds, List<String> toIds) {
         for (String fromId : fromIds) {
             for (String toId : toIds) {
-                faresByStationId.computeIfAbsent(fromId, x -> new HashMap<>())
-                        .computeIfAbsent(toId, x -> new ArrayList<>())
-                        .add(fareDetail);
+                faresByStationId.computeIfAbsent(fromId, x -> new FareSet(fromId))
+                        .add(toId, fareDetail);
             }
         }
     }
@@ -77,7 +76,7 @@ public class AtocDataReader {
         return crss.stream().filter(crsToStation::containsKey).map(crsToStation::get).map(s -> s.stationId).collect(Collectors.toList());
     }
 
-    public Map<String, Map<String, List<FareDetail>>> getFaresByStationId() {
+    public Map<String, FareSet> getFareSetsByStationId() {
         return faresByStationId;
     }
 }
