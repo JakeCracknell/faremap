@@ -62,8 +62,10 @@ public class AtocDataReader {
     private void addFareForEach(FareDetail fareDetail, List<String> fromIds, List<String> toIds) {
         for (String fromId : fromIds) {
             for (String toId : toIds) {
-                faresByStationId.computeIfAbsent(fromId, x -> new FareSet(fromId))
-                        .add(toId, fareDetail);
+                if (!fromId.equals(toId)) {
+                    faresByStationId.computeIfAbsent(fromId, x -> new FareSet(fromId))
+                            .add(toId, fareDetail);
+                }
             }
         }
     }
