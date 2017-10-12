@@ -28,7 +28,7 @@ public class TicketTypeFileReader extends AtocFileReader {
                 char ticketClass = line.charAt(45); // We want standard
                 if (ticketJourneyType == 'S' && ticketClass == 'S') {
                     String ticketCode = line.substring(1, 4);
-                    String description = line.substring(28, 28 + 15);
+                    String description = line.substring(28, 28 + 15).trim();
                     if (description.startsWith("ANYTIME")) {
                         ticketCodes.add(new AtocTicketCode(ticketCode, description));
                     }

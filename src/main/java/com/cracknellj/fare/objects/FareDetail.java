@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class FareDetail {
     public final BigDecimal price;
     public final boolean offPeakOnly;
-    public final String routeDescription;
+    public String routeDescription;
     public final boolean isDefaultRoute;
     public final String accounting;
     public final boolean isTFL;
@@ -17,6 +17,10 @@ public class FareDetail {
         this.isDefaultRoute = isDefaultRoute;
         this.accounting = accounting;
         this.isTFL = isTFL;
+    }
+
+    public void appendToRouteDescription(String extraDescription) {
+        routeDescription = routeDescription + ", " + extraDescription;
     }
 
     @Override

@@ -12,8 +12,8 @@ import static org.junit.Assert.*;
 public class FareFlowFileReaderTest {
     @Test
     public void getFareDetailList() throws Exception {
-        List<Fare> fareDetails = new FareFlowFileReader().getFaresList();
-        List<Fare> hatWmgFares = fareDetails.stream().filter(f -> f.fromId.equals("6070") && f.toId.equals("6073")).collect(Collectors.toList());
+        List<AtocFare> fareDetails = new FareFlowFileReader().getFaresList();
+        List<AtocFare> hatWmgFares = fareDetails.stream().filter(f -> f.fromNlc.equals("6070") && f.toNlc.equals("6073")).collect(Collectors.toList());
         assertFalse(hatWmgFares.isEmpty());
         assertEquals(BigDecimal.valueOf(280, 2), hatWmgFares.get(0).fareDetail.price);
         System.out.println(hatWmgFares);

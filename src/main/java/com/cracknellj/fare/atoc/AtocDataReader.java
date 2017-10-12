@@ -26,7 +26,8 @@ public class AtocDataReader {
     private Map<String, List<String>> stationClusters;
     private Map<String, String> nlcToCRSMap;
     private Map<String, List<String>> stationGroups;
-    private List<Fare> rawFaresList;
+    private Map<String, AtocRouteDetails> atocRoutes;
+    private List<AtocFare> rawFaresList;
     private Map<String, FareSet> faresByStationId = new HashMap<>();
 
     public AtocDataReader() {
@@ -44,6 +45,7 @@ public class AtocDataReader {
         stationClusters = new StationClusterFileReader().getStationClusters();
         nlcToCRSMap = new LocationFileReader().getNLCToCRSMap();
         stationGroups = new LocationFileReader().getStationGroups();
+        atocRoutes = new RouteFileReader().getAtocRoutes();
         rawFaresList = new FareFlowFileReader().getFaresList();
     }
 
@@ -54,8 +56,14 @@ public class AtocDataReader {
     }
 
     private void convertDataIntoFares() {
-        for (Fare fare : rawFaresList) {
-            addFareForEach(fare.fareDetail, getStationIDsFromNLC(fare.fromId), getStationIDsFromNLC(fare.toId));
+        for (AtocFare fare : rawFaresList) {
+            fare.fareDetail.appendToRouteDescription(atocRoutes.get(fare.routeCode).description);
+            List<String> fromIds = getStationIDsFromNLC(fare.fromNlc);
+            List<String> toIds = getStationIDsFromNLC(fare.toNlc);
+            addFareForEach(fare.fareDetail, fromIds, toIds);
+            if (fare.reversible) {
+                addFareForEach(fare.fareDetail, toIds, fromIds);
+            }
         }
     }
 
