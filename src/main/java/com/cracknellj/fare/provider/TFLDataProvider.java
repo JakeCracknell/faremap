@@ -2,14 +2,12 @@ package com.cracknellj.fare.provider;
 
 import com.cracknellj.fare.atoc.AtocDataReader;
 import com.cracknellj.fare.dao.FareDAO;
-import com.cracknellj.fare.objects.FareDetail;
 import com.cracknellj.fare.objects.FareSet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class TFLDataProvider implements FareDataProvider {

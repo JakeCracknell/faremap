@@ -22,7 +22,7 @@ public class FareDAO extends AbstractDAO {
             connectToDatabase();
             ps = cn.prepareStatement(
                     "SELECT from_id, to_id, price, off_peak_only, route_description, is_default_route, accounting, " +
-                            "is_tfl FROM fare");
+                            "is_tfl FROM fare WHERE accounting != 'CashSingle'");
             rs = ps.executeQuery();
             rs.setFetchSize(100000);
             while (rs.next()) {
