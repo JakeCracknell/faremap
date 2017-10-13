@@ -6,6 +6,7 @@ import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -21,9 +22,9 @@ public class CompositeSingletonFareDataProvider implements FareDataProvider {
         fareSets = Stream.of(new AtocDataProvider(), new TFLDataProvider())
                 .map(FareDataProvider::getAllFareSets).reduce(FareSet::combine).get();
 
-        //combineFaresForStationsWithMatchingLocations();
+       // combineFaresForStationsWithMatchingLocations();
     }
-//
+
 //    private void combineFaresForStationsWithMatchingLocations() {
 //        try {
 //            new StationDAO().getStations().stream().collect(Collectors.groupingBy(s -> s.latitude * s.longitude, Collectors.toSet()))
@@ -32,16 +33,19 @@ public class CompositeSingletonFareDataProvider implements FareDataProvider {
 //            e.printStackTrace();
 //        }
 //    }
-//
+
 //    private void combineFaresForSingleSetOfStations(Set<Station> stations) {
 //        for (Station stationTakingFrom : stations) {
+//            FareSet fareSetTakingFrom = fareSets.get(stationTakingFrom.stationId);
+//            fareSetTakingFrom.fares.values().stream().flatMap(Collection::stream)
+//                    .forEach(f -> f.appendToRouteDescription(stationTakingFrom.modes.toString()));
 //            for (Station stationAddingTo : stations) {
-//                FareSet fareSetTakingFrom = fareSets.get(stationTakingFrom.stationId);
 //                FareSet fareSetAddingTo = fareSets.get(stationAddingTo.stationId);
 //                fareSetTakingFrom.fares.forEach((toId, faresTakingFrom) -> {
 //                    List<FareDetail> faresAddingTo = fareSetAddingTo.fares.get(toId);
 //                    if (faresAddingTo != null) {
-//                        fareSetTakingFrom.fares.forEach();
+//                        faresTakingFrom.forEach(f -> f.appendToRouteDescription(stationTakingFrom.modes.toString()));
+//                        faresAddingTo.forEach(f -> f.appendToRouteDescription(stationAddingTo.modes.toString()));
 //                    }
 //                });
 //                if (stationTakingFrom != stationAddingTo) {
