@@ -1,6 +1,8 @@
 Deduplicate NR fares A->B. e.g. HAT -> EPH. Take min?
 Add off peak NR fares
 
+Split ticketing using A*
+
 Notes:
 Deduplicated where there existed stations with oyster not accepted.
 Should result in no gaps for inner London queries.
@@ -10,3 +12,7 @@ select * from fare where to_id='940GZZLUHWC' and from_id in ("910GVAUXHLM","940G
 
 Mysteries:
 Tring->Harrow on the Hill. BRFares/shops return many incl 1393 -> 0786 ZONE U1256 LONDN. HOH not in 0786, in ATOC.
+
+
+
+

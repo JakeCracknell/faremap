@@ -1,7 +1,6 @@
 package com.cracknellj.fare.atoc;
 
 import com.cracknellj.fare.dao.StationDAO;
-import com.cracknellj.fare.objects.Fare;
 import com.cracknellj.fare.objects.FareDetail;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
@@ -11,9 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -25,7 +22,7 @@ public class AtocDataReader {
     private Map<String, Station> crsToStation;
     private Map<String, List<String>> stationClusters;
     private Map<String, String> nlcToCRSMap;
-    private Map<String, List<String>> stationGroups;
+    private Map<String, Set<String>> stationGroups;
     private Map<String, AtocRouteDetails> atocRoutes;
     private List<AtocFare> rawFaresList;
     private Map<String, FareSet> faresByStationId = new HashMap<>();
@@ -81,7 +78,7 @@ public class AtocDataReader {
     private List<String> getStationIDsFromNLC(String nlc) {
         List<String> nlcs = stationClusters.getOrDefault(nlc, Lists.newArrayList(nlc));
         Stream<String> crssFromDirectMappings = nlcs.stream().filter(nlcToCRSMap::containsKey).map(nlcToCRSMap::get);
-        Stream<String> crssFromStationGroups = nlcs.stream().filter(stationGroups::containsKey).map(stationGroups::get).flatMap(List::stream);
+        Stream<String> crssFromStationGroups = nlcs.stream().filter(stationGroups::containsKey).map(stationGroups::get).flatMap(Collection::stream);
         List<String> crss = Stream.concat(crssFromDirectMappings, crssFromStationGroups).collect(Collectors.toList());
         return crss.stream().filter(crsToStation::containsKey).map(crsToStation::get).map(s -> s.stationId).collect(Collectors.toList());
     }
