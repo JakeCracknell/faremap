@@ -16,6 +16,7 @@ public class FareFlowFileReader extends AtocFileReader {
     private static final BigDecimal FARE_DIVISOR = BigDecimal.valueOf(100);
     public static final String FILE_NAME = "RJFAF499.FFL";
 
+    //RF6133Q63000028000GS3112299921052017FCC00Y0277177
     public List<AtocFare> getFaresList() throws IOException {
         Map<String, AtocTicketCode> ticketCodes = new TicketTypeFileReader().getTicketCodes();
         List<AtocFare> fares = new ArrayList<>();
@@ -24,12 +25,15 @@ public class FareFlowFileReader extends AtocFileReader {
             lineStream.forEach(line -> {
                 switch (line.charAt(1)) {
                     case 'F':
-                        String flowId = line.substring(42, 49);
-                        String fromNlc = line.substring(2, 6);
-                        String toNlc = line.substring(6, 10);
-                        String routeCode = line.substring(10, 15);
-                        boolean reversible = line.charAt(19) == 'R';
-                        flowMap.put(flowId, new AtocFlowRecord(fromNlc, toNlc, routeCode, reversible));
+                        boolean publishable = line.charAt(41) == 'Y';
+                        if (publishable) {
+                            String flowId = line.substring(42, 49);
+                            String fromNlc = line.substring(2, 6);
+                            String toNlc = line.substring(6, 10);
+                            String routeCode = line.substring(10, 15);
+                            boolean reversible = line.charAt(19) == 'R';
+                            flowMap.put(flowId, new AtocFlowRecord(fromNlc, toNlc, routeCode, reversible));
+                        }
                     case 'T':
                         String restriction = line.substring(20, 22);
                         if (restriction.charAt(0) == ' ') {
@@ -40,8 +44,10 @@ public class FareFlowFileReader extends AtocFileReader {
                                 String farePence = line.substring(12, 20);
                                 BigDecimal farePrice = BigDecimal.valueOf(Integer.parseInt(farePence)).divide(FARE_DIVISOR, 2, BigDecimal.ROUND_UNNECESSARY);
                                 AtocFlowRecord atocFlowRecord = flowMap.get(tFlowId);
-                                FareDetail fareDetail = new FareDetail(farePrice, ticketCode.isOffPeak(), ticketCode.description, ticketCode.isDefaultFare(), "NR", false);
-                                fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc, atocFlowRecord.reversible, atocFlowRecord.routeCode, fareDetail));
+                                if (atocFlowRecord != null) {
+                                    FareDetail fareDetail = new FareDetail(farePrice, ticketCode.isOffPeak(), ticketCode.description, ticketCode.isDefaultFare(), "NR", false);
+                                    fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc, atocFlowRecord.reversible, atocFlowRecord.routeCode, fareDetail));
+                                }
                             }
                         }
 
