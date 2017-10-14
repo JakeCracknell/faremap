@@ -1,7 +1,13 @@
 Deduplicate NR fares A->B. e.g. HAT -> EPH. Take min?
 Add off peak NR fares
 
-Split ticketing using A*
+Split ticketing using A*:
+    Change API to return FareDetails, not stations. Retrun Djikstra response not 1 to 1.
+    Show route as lines on map.
+    Color lines based on cumulative cost?
+    Show breakdown of route in table
+    Checkbox to show/hide split ticket lines and route in table
+
 
 Notes:
 Deduplicated where there existed stations with oyster not accepted.

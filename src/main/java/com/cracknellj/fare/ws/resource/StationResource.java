@@ -33,7 +33,7 @@ public class StationResource extends AbstractResource {
             LOG.info(truncate(json));
             return json;
         } catch (Exception e) {
-            LOG.error(e);
+            LOG.error("Failed to get stations", e);
             throw new WebApplicationException(e, Response.Status.INTERNAL_SERVER_ERROR);
         }
     }

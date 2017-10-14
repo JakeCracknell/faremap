@@ -36,7 +36,7 @@ public class FareResource extends AbstractResource {
             LOG.info(truncate(json));
             return json;
         } catch (Exception e) {
-            LOG.error(e);
+            LOG.error("Failed to get fares", e);
             throw new WebApplicationException(e, Response.Status.INTERNAL_SERVER_ERROR);
         }
     }

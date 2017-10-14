@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TFLDataProvider implements FareDataProvider {
-    private static final Logger LOG = LogManager.getLogger(AtocDataReader.class);
+    private static final Logger LOG = LogManager.getLogger(TFLDataProvider.class);
 
     private Map<String, FareSet> fareSets = new HashMap<>();
 
