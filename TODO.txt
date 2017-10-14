@@ -8,6 +8,7 @@ Split ticketing using A*:
     Show breakdown of route in table
     Checkbox to show/hide split ticket lines and route in table
 
+Djikstra speedups: deduplicate faredetails, cache cheapest fare prices.
 
 Notes:
 Deduplicated where there existed stations with oyster not accepted.

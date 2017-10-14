@@ -1,7 +1,5 @@
 package com.cracknellj.fare.objects;
 
-import com.cracknellj.fare.objects.FareDetail;
-
 public class Fare {
     public final String fromId;
     public final String toId;
@@ -15,7 +13,7 @@ public class Fare {
 
     @Override
     public String toString() {
-        return "AtocFare{" +
+        return "Fare{" +
                 "fromId='" + fromId + '\'' +
                 ", toId='" + toId + '\'' +
                 ", fareDetail=" + fareDetail +
