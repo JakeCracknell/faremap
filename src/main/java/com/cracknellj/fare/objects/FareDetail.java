@@ -1,6 +1,7 @@
 package com.cracknellj.fare.objects;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class FareDetail {
     public final BigDecimal price;
@@ -21,6 +22,14 @@ public class FareDetail {
 
     public void appendToRouteDescription(String extraDescription) {
         routeDescription = routeDescription + ", " + extraDescription;
+    }
+
+    public boolean equalsExceptForPrice(FareDetail other) {
+        return offPeakOnly == other.offPeakOnly &&
+                isDefaultRoute == other.isDefaultRoute &&
+                isTFL == other.isTFL &&
+                Objects.equals(routeDescription, other.routeDescription) &&
+                Objects.equals(accounting, other.accounting);
     }
 
     @Override

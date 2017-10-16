@@ -25,6 +25,7 @@ public class AtocDataReader {
     private Map<String, Set<String>> stationGroups;
     private Map<String, AtocRouteDetails> atocRoutes;
     private List<AtocFare> rawFaresList;
+    private Map<String, List<String>> nlcToStationIDsMap = new HashMap<>();
     private Map<String, FareSet> faresByStationId = new HashMap<>();
 
     public AtocDataReader() {
@@ -76,11 +77,13 @@ public class AtocDataReader {
     }
 
     private List<String> getStationIDsFromNLC(String nlc) {
-        List<String> nlcs = stationClusters.getOrDefault(nlc, Lists.newArrayList(nlc));
-        Stream<String> crssFromDirectMappings = nlcs.stream().filter(nlcToCRSMap::containsKey).map(nlcToCRSMap::get);
-        Stream<String> crssFromStationGroups = nlcs.stream().filter(stationGroups::containsKey).map(stationGroups::get).flatMap(Collection::stream);
-        List<String> crss = Stream.concat(crssFromDirectMappings, crssFromStationGroups).collect(Collectors.toList());
-        return crss.stream().filter(crsToStation::containsKey).map(crsToStation::get).map(s -> s.stationId).collect(Collectors.toList());
+        return nlcToStationIDsMap.computeIfAbsent(nlc, x -> {
+            List<String> nlcs = stationClusters.getOrDefault(nlc, Lists.newArrayList(nlc));
+            Stream<String> crssFromDirectMappings = nlcs.stream().filter(nlcToCRSMap::containsKey).map(nlcToCRSMap::get);
+            Stream<String> crssFromStationGroups = nlcs.stream().filter(stationGroups::containsKey).map(stationGroups::get).flatMap(Collection::stream);
+            List<String> crss = Stream.concat(crssFromDirectMappings, crssFromStationGroups).collect(Collectors.toList());
+            return crss.stream().filter(crsToStation::containsKey).map(crsToStation::get).map(s -> s.stationId).collect(Collectors.toList());
+        });
     }
 
     public Map<String, FareSet> getFareSetsByStationId() {

@@ -1,4 +1,4 @@
-Deduplicate NR fares A->B. e.g. HAT -> EPH. Take min?
+Convex hull on voronoi
 Add off peak NR fares
 
 Split ticketing using A*:

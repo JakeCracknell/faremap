@@ -20,8 +20,18 @@ public class FareSet {
         this(fromId, new HashMap<>());
     }
 
-    public void add(String toId, FareDetail fareDetail) {
-        fares.computeIfAbsent(toId, x -> new ArrayList<>()).add(fareDetail);
+    public void add(String toId, FareDetail fareDetailToAdd) {
+        List<FareDetail> fareDetails = fares.computeIfAbsent(toId, x -> new ArrayList<>());
+        for (int i = 0; i < fareDetails.size(); i++) {
+            FareDetail fareDetailToReplace = fareDetails.get(i);
+            if (fareDetailToAdd.equalsExceptForPrice(fareDetailToReplace)) {
+                if (fareDetailToAdd.price.compareTo(fareDetailToReplace.price) < 0) {
+                    fareDetails.set(i, fareDetailToAdd);
+                }
+                return;
+            }
+        }
+        fareDetails.add(fareDetailToAdd);
     }
 
     public static FareSet combine(FareSet fareSet1, FareSet fareSet2) {
