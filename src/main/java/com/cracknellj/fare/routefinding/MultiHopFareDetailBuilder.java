@@ -40,7 +40,7 @@ public class MultiHopFareDetailBuilder {
             nodes.addFirst(node);
             node = predecessors.get(node);
         }
-        String routeDescription = "Split ticket via " + nodes.stream().skip(1)
+        String routeDescription = "Split ticket via " + nodes.stream().limit(nodes.size() - 1)
                 .map(n -> stations.get(n.waypoint).stationName).collect(Collectors.joining(", "));
         FareDetail fareDetail = new MultiHopFareDetail(accuratePrice, OFF_PEAK, routeDescription, false, "ST", false, nodes);
         return Collections.singletonList(fareDetail);

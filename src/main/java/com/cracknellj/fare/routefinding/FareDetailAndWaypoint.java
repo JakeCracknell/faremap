@@ -2,9 +2,6 @@ package com.cracknellj.fare.routefinding;
 
 import com.cracknellj.fare.objects.FareDetail;
 
-import java.math.BigDecimal;
-import java.util.Objects;
-
 public class FareDetailAndWaypoint {
     public String waypoint;
     public FareDetail fareDetail;

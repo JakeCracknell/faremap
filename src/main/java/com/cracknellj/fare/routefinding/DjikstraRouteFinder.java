@@ -25,35 +25,38 @@ public class DjikstraRouteFinder {
     }
 
     public FareSet findCheapestRoutes(String fromId) {
-        FareDetailAndWaypoint startNode = FareDetailAndWaypoint.startNode(fromId);
-        Set<FareDetailAndWaypoint> unsettled = Sets.newHashSet(startNode);
+        Set<String> unsettled = Sets.newHashSet(fromId);
         Set<String> settled = Sets.newHashSet();
-
         Map<String, Double> minFaresForStations = new HashMap<>(stations.size());
         stations.keySet().forEach(s -> minFaresForStations.put(s, MAX_PRICE));
         minFaresForStations.put(fromId, 0.0);
-
-        Map<FareDetailAndWaypoint, FareDetailAndWaypoint> predecessors = new HashMap<>(stations.size());
+        Map<String, String> predecessors = new HashMap<>(stations.size());
+        Map<String, FareDetailAndWaypoint> stationIdToNode = new HashMap<>(stations.size());
+        stationIdToNode.put(fromId, FareDetailAndWaypoint.startNode(fromId));
 
         while (!unsettled.isEmpty()) {
-            FareDetailAndWaypoint node = unsettled.stream().sorted(Comparator.comparingDouble(n -> n.cumulativeCost)).findFirst().get();
+            String node = unsettled.stream().sorted(Comparator.comparingDouble(minFaresForStations::get)).findFirst().get();
             unsettled.remove(node);
-            settled.add(node.waypoint);
+            settled.add(node);
+            Double fareToNode = minFaresForStations.get(node);
             for (String nextStationId : stations.keySet()) {
                 if (!settled.contains(nextStationId)) {
-                    getFareDetailIfExists(node.waypoint, nextStationId).ifPresent(fareDetail -> {
-                        double proposedFare = node.cumulativeCost + fareDetail.price.doubleValue();
+                    getFareDetailIfExists(node, nextStationId).ifPresent(fareDetail -> {
+                        double proposedFare = fareToNode + fareDetail.price.doubleValue();
                         if (minFaresForStations.get(nextStationId) > proposedFare) {
                             minFaresForStations.put(nextStationId, proposedFare);
                             FareDetailAndWaypoint nextNode = new FareDetailAndWaypoint(nextStationId, fareDetail, proposedFare);
-                            predecessors.put(nextNode, node);
-                            unsettled.add(nextNode);
+                            predecessors.put(nextStationId, node);
+                            unsettled.add(nextStationId);
+                            stationIdToNode.put(nextStationId, nextNode);
                         }
                     });
                 }
             }
         }
-        MultiHopFareDetailBuilder multiHopFareDetailBuilder = new MultiHopFareDetailBuilder(stations, predecessors);
+        Map<FareDetailAndWaypoint, FareDetailAndWaypoint> nodePredecessors = predecessors.entrySet().stream()
+                .collect(Collectors.toMap(e -> stationIdToNode.get(e.getKey()), e -> stationIdToNode.get(e.getValue())));
+        MultiHopFareDetailBuilder multiHopFareDetailBuilder = new MultiHopFareDetailBuilder(stations, nodePredecessors);
         return new FareSet(fromId, multiHopFareDetailBuilder.createMap());
     }
 
