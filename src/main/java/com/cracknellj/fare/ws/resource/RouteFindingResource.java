@@ -5,7 +5,7 @@ import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import com.cracknellj.fare.provider.CompositeSingletonFareDataProvider;
 import com.cracknellj.fare.provider.FareDataProvider;
-import com.cracknellj.fare.routefinding.DjikstraRouteFinder;
+import com.cracknellj.fare.routefinding.DijkstraRouteFinder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,11 +33,11 @@ public class RouteFindingResource extends AbstractResource {
     @GET
     @Path("/from/{fromId}/to/{toId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public String findCheapestRoute(@PathParam("fromId") String fromId, @PathParam("toId") String toId) throws WebApplicationException {
+    public String findCheapestRoute(@PathParam("fromId") String fromId) throws WebApplicationException {
         try {
-            LOG.info("Request to GET cheapest routes received, from " + fromId + ", to " + toId);
-            DjikstraRouteFinder djikstraRouteFinder = new DjikstraRouteFinder(stations, fareDataProvider);
-            FareSet fareSet = djikstraRouteFinder.findCheapestRoutes(fromId);
+            LOG.info("Request to GET cheapest routes received, from " + fromId);
+            DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, fareDataProvider);
+            FareSet fareSet = dijkstraRouteFinder.findCheapestRoutes(fromId);
             String json = getGson().toJson(fareSet);
             LOG.info(truncate(json));
             return json;

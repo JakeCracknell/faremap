@@ -10,13 +10,13 @@ import jersey.repackaged.com.google.common.collect.Sets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class DjikstraRouteFinder {
+public class DijkstraRouteFinder {
     public static final double MAX_PRICE = Double.MAX_VALUE;
 
     private final Map<String, Station> stations;
     private final FareDataProvider fareDataProvider;
 
-    public DjikstraRouteFinder(Collection<Station> stations, FareDataProvider fareDataProvider) {
+    public DijkstraRouteFinder(Collection<Station> stations, FareDataProvider fareDataProvider) {
         this.stations = Maps.uniqueIndex(stations, s -> s.stationId);
         this.fareDataProvider = fareDataProvider;
     }

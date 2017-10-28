@@ -2,13 +2,13 @@ Convex hull on voronoi - spent ages on this. Best I could do was clippath on the
 Add off peak NR fares
 
 Split ticketing using A*:
-    Change API to return FareDetails, not stations. Retrun Djikstra response not 1 to 1.
+    Change API to return FareDetails, not stations. Retrun Dijkstra response not 1 to 1.
     Show route as lines on map.
     Color lines based on cumulative cost?
     Show breakdown of route in table
     Checkbox to show/hide split ticket lines and route in table
 
-Djikstra speedups: deduplicate faredetails, cache cheapest fare prices.
+Dijkstra speedups: deduplicate faredetails, cache cheapest fare prices.
 
 Notes:
 Deduplicated where there existed stations with oyster not accepted.

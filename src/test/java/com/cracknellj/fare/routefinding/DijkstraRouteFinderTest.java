@@ -11,9 +11,8 @@ import org.junit.Test;
 
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
-public class DjikstraRouteFinderTest {
+public class DijkstraRouteFinderTest {
 
     private static FareDataProvider fareDataProvider;
     private static Collection<Station> stations;
@@ -21,15 +20,15 @@ public class DjikstraRouteFinderTest {
     @BeforeClass
     public static void setUp() throws Exception {
         fareDataProvider = CompositeSingletonFareDataProvider.getInstance();
-        stations = new StationDAO().getStations();//.stream().filter(s -> s.stationName.startsWith("H")).collect(Collectors.toList());
+        stations = new StationDAO().getStations();
     }
 
     @Test
     public void performanceTestHAT() throws Exception {
         for (int i = 0; i < 5; i++) {
             Stopwatch stopwatch = Stopwatch.createStarted();
-            DjikstraRouteFinder djikstraRouteFinder = new DjikstraRouteFinder(stations, fareDataProvider);
-            FareSet cheapestRoutes = djikstraRouteFinder.findCheapestRoutes("910GHATFILD");
+            DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, fareDataProvider);
+            FareSet cheapestRoutes = dijkstraRouteFinder.findCheapestRoutes("910GHATFILD");
             System.out.println(stopwatch.elapsed(TimeUnit.MILLISECONDS));
         }
     }
