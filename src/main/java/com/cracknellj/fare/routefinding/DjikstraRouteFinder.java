@@ -35,8 +35,8 @@ public class DjikstraRouteFinder {
             unsettled.remove(node);
             settled.add(node);
             Double fareToNode = minFaresForStations.get(node);
-            for (Station nextStation : stations.values()) {
-                String nextStationId = nextStation.stationId;
+            for (String nextStationId : stations.keySet()) {
+                if (settled.contains(nextStationId)) continue;
                 double proposedFare = fareToNode + getFare(node, nextStationId);
                 if (minFaresForStations.get(nextStationId) > proposedFare) {
                     minFaresForStations.put(nextStationId, proposedFare);
