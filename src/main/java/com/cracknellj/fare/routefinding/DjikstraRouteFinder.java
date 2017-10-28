@@ -1,6 +1,7 @@
 package com.cracknellj.fare.routefinding;
 
 import com.cracknellj.fare.objects.FareDetail;
+import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import com.cracknellj.fare.provider.FareDataProvider;
 import jersey.repackaged.com.google.common.collect.Maps;
@@ -10,10 +11,11 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.util.stream.Collectors.toMap;
-
 public class DjikstraRouteFinder {
     public static final double MAX_PRICE = Double.MAX_VALUE;
+    private static final boolean OFF_PEAK = true;
+    //public static final FareDetail NO_FARE = new FareDetail(BigDecimal.valueOf(MAX_PRICE), false, "NO", false, "", false);
+
     private final Map<String, Station> stations;
     private final FareDataProvider fareDataProvider;
 
@@ -22,56 +24,43 @@ public class DjikstraRouteFinder {
         this.fareDataProvider = fareDataProvider;
     }
 
-    public MultiTicketRoute findBestRoute(String fromId, String toId) {
-        Set<String> unsettled = Sets.newHashSet(fromId);
+    public FareSet findCheapestRoutes(String fromId) {
+        FareDetailAndWaypoint startNode = FareDetailAndWaypoint.startNode(fromId);
+        Set<FareDetailAndWaypoint> unsettled = Sets.newHashSet(startNode);
         Set<String> settled = Sets.newHashSet();
+
         Map<String, Double> minFaresForStations = new HashMap<>(stations.size());
         stations.keySet().forEach(s -> minFaresForStations.put(s, MAX_PRICE));
         minFaresForStations.put(fromId, 0.0);
-        Map<String, String> predecessors = new HashMap<>(stations.size());
+
+        Map<FareDetailAndWaypoint, FareDetailAndWaypoint> predecessors = new HashMap<>(stations.size());
 
         while (!unsettled.isEmpty()) {
-            String node = unsettled.stream().sorted(Comparator.comparingDouble(minFaresForStations::get)).findFirst().get();
+            FareDetailAndWaypoint node = unsettled.stream().sorted(Comparator.comparingDouble(n -> n.cumulativeCost)).findFirst().get();
             unsettled.remove(node);
-            settled.add(node);
-            Double fareToNode = minFaresForStations.get(node);
+            settled.add(node.waypoint);
             for (String nextStationId : stations.keySet()) {
-                if (settled.contains(nextStationId)) continue;
-                double proposedFare = fareToNode + getFare(node, nextStationId);
-                if (minFaresForStations.get(nextStationId) > proposedFare) {
-                    minFaresForStations.put(nextStationId, proposedFare);
-                    predecessors.put(nextStationId, node);
-                    unsettled.add(nextStationId);
+                if (!settled.contains(nextStationId)) {
+                    getFareDetailIfExists(node.waypoint, nextStationId).ifPresent(fareDetail -> {
+                        double proposedFare = node.cumulativeCost + fareDetail.price.doubleValue();
+                        if (minFaresForStations.get(nextStationId) > proposedFare) {
+                            minFaresForStations.put(nextStationId, proposedFare);
+                            FareDetailAndWaypoint nextNode = new FareDetailAndWaypoint(nextStationId, fareDetail, proposedFare);
+                            predecessors.put(nextNode, node);
+                            unsettled.add(nextNode);
+                        }
+                    });
                 }
             }
         }
-
-        LinkedList<String> path = new LinkedList<String>();
-        LinkedList<Double> cumulativeCost = new LinkedList<Double>();
-
-        String step = toId;
-        // check if a path exists
-        if (predecessors.get(step) == null) {
-            return null;
-        }
-        path.add(step);
-        while (predecessors.get(step) != null) {
-            cumulativeCost.add(minFaresForStations.get(step));
-            step = predecessors.get(step);
-            path.add(step);
-        }
-        cumulativeCost.add(0.0);
-        // Put it into the correct order
-        Collections.reverse(path);
-        Collections.reverse(cumulativeCost);
-        List<Station> stationList = path.stream().map(stations::get).collect(Collectors.toList());
-        return new MultiTicketRoute(stationList, cumulativeCost);
+        MultiHopFareDetailBuilder multiHopFareDetailBuilder = new MultiHopFareDetailBuilder(stations, predecessors);
+        return new FareSet(fromId, multiHopFareDetailBuilder.createMap());
     }
 
-    private Double getFare(String fromId, String toId) {
+
+    private Optional<FareDetail> getFareDetailIfExists(String fromId, String toId) {
         return fareDataProvider.getFares(fromId, toId).stream()
-                .sorted(Comparator.comparing(f -> f.price)).findFirst()
-                .map(fareDetail -> fareDetail.price.doubleValue()).orElse(MAX_PRICE);
+                .sorted(Comparator.comparing(f -> f.price)).findFirst();
     }
 
 
