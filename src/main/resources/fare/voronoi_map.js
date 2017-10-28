@@ -40,7 +40,7 @@ voronoiMap = function (map, url) {
         lastSelectedPoint = point;
         cell.classed('selected', true);
 
-        fareUrl = "/api/fare/from/" + point.stationId
+        fareUrl = "/api/routefinding/from/" + point.stationId
         d3.json(fareUrl, function (json) {
             pointsMap.forEach(function (station, stationId, m) {
                 station.fares = []
@@ -83,17 +83,16 @@ voronoiMap = function (map, url) {
             document.getElementById("selected-main-price").style.backgroundColor = fareColour;
 
             for (i = 0; i < faresToDisplay.length; i++) {
-                var tr = document.createElement("tr");
-                var td = document.createElement("td");
-                td.classList.add("fare-type", faresToDisplay[i].isTFL ? "tfl" : "nr");
-                tr.appendChild(td);
-                var td = document.createElement("td");
-                td.appendChild(document.createTextNode(formatPrice(faresToDisplay[i].price)));
-                tr.appendChild(td);
-                var td = document.createElement("td");
-                td.appendChild(document.createTextNode(faresToDisplay[i].routeDescription));
-                tr.appendChild(td);
-                faresTable.appendChild(tr);
+                const fare = faresToDisplay[i];
+                faresTable.appendChild(getTRForFareDetail(fare));
+                if (fare.hops !== undefined) {
+                    const subFaresTable = document.createElement("tbody");
+                    subFaresTable.className = "sub-fare-table";
+                    for (j = 0; j < fare.hops.length; j++) {
+                        subFaresTable.appendChild(getTRForFareWithWaypoint(fare.hops[j]));
+                    }
+                    faresTable.appendChild(subFaresTable);
+                }
             }
         } else {
             document.getElementById("selected-source-destination").textContent = getFormattedStation(point);
@@ -101,6 +100,37 @@ voronoiMap = function (map, url) {
         }
 
     };
+
+    function getTRForFareDetail(fare) {
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+        td.classList.add("fare-type", fare.isTFL ? "tfl" : "nr");
+        tr.appendChild(td);
+        var td = document.createElement("td");
+        td.appendChild(document.createTextNode(formatPrice(fare.price)));
+        tr.appendChild(td);
+        var td = document.createElement("td");
+        td.appendChild(document.createTextNode(fare.routeDescription));
+        tr.appendChild(td);
+        return tr;
+    }
+
+    function getTRForFareWithWaypoint(fare) {
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+        td.classList.add("fare-type", fare.fareDetail.isTFL ? "tfl" : "nr");
+        tr.appendChild(td);
+        td = document.createElement("td");
+        td.appendChild(document.createTextNode("→ " + fare.waypoint));
+        tr.appendChild(td);
+        td = document.createElement("td");
+        td.appendChild(document.createTextNode(formatPrice(fare.fareDetail.price)));
+        tr.appendChild(td);
+        td = document.createElement("td");
+        td.appendChild(document.createTextNode(fare.fareDetail.routeDescription));
+        tr.appendChild(td);
+        return tr;
+    }
 
     var setupDisplayOptionsPanel = function () {
         addShowHideEventsTo('#selections');
