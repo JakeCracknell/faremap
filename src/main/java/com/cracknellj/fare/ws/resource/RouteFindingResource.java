@@ -31,7 +31,7 @@ public class RouteFindingResource extends AbstractResource {
     }
 
     @GET
-    @Path("/from/{fromId}/to/{toId}")
+    @Path("/from/{fromId}")
     @Produces(MediaType.APPLICATION_JSON)
     public String findCheapestRoute(@PathParam("fromId") String fromId) throws WebApplicationException {
         try {
