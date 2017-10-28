@@ -7,14 +7,11 @@ import com.cracknellj.fare.provider.FareDataProvider;
 import jersey.repackaged.com.google.common.collect.Maps;
 import jersey.repackaged.com.google.common.collect.Sets;
 
-import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class DjikstraRouteFinder {
     public static final double MAX_PRICE = Double.MAX_VALUE;
-    private static final boolean OFF_PEAK = true;
-    //public static final FareDetail NO_FARE = new FareDetail(BigDecimal.valueOf(MAX_PRICE), false, "NO", false, "", false);
 
     private final Map<String, Station> stations;
     private final FareDataProvider fareDataProvider;
