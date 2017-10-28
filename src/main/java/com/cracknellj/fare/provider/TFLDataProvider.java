@@ -1,6 +1,5 @@
 package com.cracknellj.fare.provider;
 
-import com.cracknellj.fare.atoc.AtocDataReader;
 import com.cracknellj.fare.dao.FareDAO;
 import com.cracknellj.fare.objects.FareSet;
 import org.apache.logging.log4j.LogManager;

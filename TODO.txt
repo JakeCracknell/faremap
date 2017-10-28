@@ -1,4 +1,4 @@
-Convex hull on voronoi
+Convex hull on voronoi - spent ages on this. Best I could do was clippath on the svg, which does not look nice
 Add off peak NR fares
 
 Split ticketing using A*:
