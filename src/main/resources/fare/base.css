@@ -146,6 +146,10 @@ p {
     background-image: url(img/nr-icon.png);
 }
 
+#split-ticket-route-line {
+
+}
+
 .hide,
 .show {
     padding-bottom: 10px;

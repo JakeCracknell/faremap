@@ -86,6 +86,7 @@ voronoiMap = function (map, url) {
                 const fare = faresToDisplay[i];
                 faresTable.appendChild(getTRForFareDetail(fare));
                 if (fare.hops !== undefined) {
+                    drawLineBetweenStationsInFare(lastSelectedPoint, fare);
                     const subFaresTable = document.createElement("tbody");
                     subFaresTable.className = "sub-fare-table";
                     for (j = 0; j < fare.hops.length; j++) {
@@ -100,6 +101,25 @@ voronoiMap = function (map, url) {
         }
 
     };
+
+    function drawLineBetweenStationsInFare(startPoint, fare) {
+        const stationIds = fare.hops.map(h => h.waypoint);
+        const pointsToDraw = stationIds.map(id => pointsMap.get(id)).concat(startPoint);
+        var lineFunction = d3.svg.line()
+            .x(function (d) {
+                return d.x;
+            })
+            .y(function (d) {
+                return d.y;
+            });
+        d3.select("#overlay").select("g")
+            .append("path")
+            .attr("d", lineFunction(pointsToDraw))
+            .attr("class", "split-ticket-route-line")
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("fill", "none");
+    }
 
     function getTRForFareDetail(fare) {
         var tr = document.createElement("tr");
@@ -121,7 +141,7 @@ voronoiMap = function (map, url) {
         td.classList.add("fare-type", fare.fareDetail.isTFL ? "tfl" : "nr");
         tr.appendChild(td);
         td = document.createElement("td");
-        td.appendChild(document.createTextNode("→ " + fare.waypoint));
+        td.appendChild(document.createTextNode("→ " + getFormattedStation(pointsMap.get(fare.waypoint))));
         tr.appendChild(td);
         td = document.createElement("td");
         td.appendChild(document.createTextNode(formatPrice(fare.fareDetail.price)));
