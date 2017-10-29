@@ -147,7 +147,9 @@ p {
 }
 
 #split-ticket-route-line {
-
+    stroke:black;
+    stroke-width: 2px;
+    fill: none;
 }
 
 .hide,

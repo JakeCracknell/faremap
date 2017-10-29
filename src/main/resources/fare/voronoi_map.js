@@ -104,7 +104,7 @@ voronoiMap = function (map, url) {
 
     function drawLineBetweenStationsInFare(startPoint, fare) {
         const stationIds = fare.hops.map(h => h.waypoint);
-        const pointsToDraw = stationIds.map(id => pointsMap.get(id)).concat(startPoint);
+        const pointsToDraw = [startPoint].concat(stationIds.map(id => pointsMap.get(id)));
         var lineFunction = d3.svg.line()
             .x(function (d) {
                 return d.x;
@@ -112,13 +112,11 @@ voronoiMap = function (map, url) {
             .y(function (d) {
                 return d.y;
             });
+        d3.select("#split-ticket-route-line").remove();
         d3.select("#overlay").select("g")
             .append("path")
             .attr("d", lineFunction(pointsToDraw))
-            .attr("class", "split-ticket-route-line")
-            .attr("stroke", "black")
-            .attr("stroke-width", 2)
-            .attr("fill", "none");
+            .attr("id", "split-ticket-route-line");
     }
 
     function getTRForFareDetail(fare) {
