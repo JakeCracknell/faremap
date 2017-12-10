@@ -31,14 +31,14 @@ public class TFLDataProvider implements FareDataProvider {
 
     private Map<String, FareSet> deserialiseFromFile() throws IOException {
         final File dataFile = new File("tfl.json.gz");
-        final BufferedInputStream inputStream = new BufferedInputStream(
+        try (BufferedInputStream inputStream = new BufferedInputStream(
                 new GZIPInputStream(
                         new FileInputStream(dataFile)
                 ));
-        final InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-
-        final Gson gson = new Gson();
-        return gson.fromJson(new JsonReader(inputStreamReader), new TypeToken<Map<String, FareSet>>(){}.getType());
+        final InputStreamReader inputStreamReader = new InputStreamReader(inputStream)) {
+            final Gson gson = new Gson();
+            return gson.fromJson(new JsonReader(inputStreamReader), new TypeToken<Map<String, FareSet>>(){}.getType());
+        }
     }
 
     private Map<String, FareSet> loadFromDatabase() throws SQLException {

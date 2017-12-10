@@ -5,6 +5,7 @@ import com.cracknellj.fare.dao.FareDAO;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.provider.CompositeSingletonFareDataProvider;
 import com.cracknellj.fare.provider.FareDataProvider;
+import com.cracknellj.fare.provider.SplitTicketDataProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,7 +19,8 @@ public class FareResource extends AbstractResource {
     private final FareDataProvider fareDataProvider;
 
     public FareResource() {
-        this(CompositeSingletonFareDataProvider.getInstance());
+        this(new SplitTicketDataProvider());
+//        this(CompositeSingletonFareDataProvider.getInstance());
     }
 
     public FareResource(FareDataProvider fareDataProvider) {
