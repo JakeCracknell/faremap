@@ -23,7 +23,7 @@ public class DijkstraRouteFinderTest {
         stations = new StationDAO().getStations();
     }
 
-    @Test
+    @Test //3700 ms
     public void performanceTestHAT() throws Exception {
         for (int i = 0; i < 5; i++) {
             Stopwatch stopwatch = Stopwatch.createStarted();
