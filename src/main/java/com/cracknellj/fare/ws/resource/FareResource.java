@@ -19,8 +19,7 @@ public class FareResource extends AbstractResource {
     private final FareDataProvider fareDataProvider;
 
     public FareResource() {
-        this(new SplitTicketDataProvider());
-//        this(CompositeSingletonFareDataProvider.getInstance());
+        this(CompositeSingletonFareDataProvider.getInstance());
     }
 
     public FareResource(FareDataProvider fareDataProvider) {

@@ -123,7 +123,7 @@ p {
 
 #selected-main-price {
     padding: 10px;
-    display: flex;
+    display: inline-block;
     width: fit-content;
     visibility: hidden;
 }
