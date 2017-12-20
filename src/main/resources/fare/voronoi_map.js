@@ -40,7 +40,7 @@ voronoiMap = function (map, url) {
         lastSelectedPoint = point;
         cell.classed('selected', true);
 
-        fareUrl = "/api/routefinding/from/" + point.stationId;
+        fareUrl = "/api/fare/from/" + point.stationId;
         d3.json(fareUrl, function (json) {
             pointsMap.forEach(function (station, stationId, m) {
                 station.fares = []

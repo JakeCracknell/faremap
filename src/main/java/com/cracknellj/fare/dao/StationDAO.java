@@ -35,4 +35,13 @@ public class StationDAO extends AbstractDAO {
             closeConnection();
         }
     }
+
+    public List<Station> getStationsOrRuntimeException() {
+        try {
+            return getStations();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
 }

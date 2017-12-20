@@ -1,23 +1,36 @@
 package com.cracknellj.fare.provider;
 
+import com.cracknellj.fare.dao.StationDAO;
 import com.cracknellj.fare.objects.FareSet;
+import com.cracknellj.fare.objects.Station;
+import com.cracknellj.fare.routefinding.DijkstraRouteFinder;
 
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
 public class CompositeSingletonFareDataProvider implements FareDataProvider {
     private final Map<String, FareSet> fareSets;
+    private final List<Station> stations;
 
     private static FareDataProvider ourInstance = new CompositeSingletonFareDataProvider();
 
     private CompositeSingletonFareDataProvider() {
+        stations = new StationDAO().getStationsOrRuntimeException();
         fareSets = Stream.of(new AtocDataProvider(), new TFLDataProvider())
                 .map(FareDataProvider::getAllFareSets).reduce(FareSet::combine).get();
 
        // combineFaresForStationsWithMatchingLocations();
     }
 
-//    private void combineFaresForStationsWithMatchingLocations() {
+    @Override
+    public FareSet getFaresFrom(String fromId) {
+        DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, this); //hmmmm
+        FareSet fareSet = dijkstraRouteFinder.findCheapestRoutes(fromId);
+        return FareSet.combine(fareSets.get(fromId), fareSet);
+    }
+
+    //    private void combineFaresForStationsWithMatchingLocations() {
 //        try {
 //            new StationDAO().getStations().stream().collect(Collectors.groupingBy(s -> s.latitude * s.longitude, Collectors.toSet()))
 //                    .values().stream().filter(col -> col.size() > 1).forEach(this::combineFaresForSingleSetOfStations);
