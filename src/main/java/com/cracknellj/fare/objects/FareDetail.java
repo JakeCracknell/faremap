@@ -1,9 +1,15 @@
 package com.cracknellj.fare.objects;
 
+import com.cracknellj.fare.routefinding.FareDetailAndWaypoint;
+
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
 
+//For single-hop journeys, hops = null.
 public class FareDetail {
+    public final List<FareDetailAndWaypoint> hops;
+
     public final BigDecimal price;
     public final boolean offPeakOnly;
     public String routeDescription;
@@ -18,10 +24,17 @@ public class FareDetail {
         this.isDefaultRoute = isDefaultRoute;
         this.accounting = accounting;
         this.isTFL = isTFL;
+        this.hops = null;
     }
 
-    public void appendToRouteDescription(String extraDescription) {
-        routeDescription = routeDescription + ", " + extraDescription;
+    public FareDetail(String routeDescription, List<FareDetailAndWaypoint> hops) {
+        this.routeDescription = routeDescription;
+        this.hops = hops;
+        this.isDefaultRoute = false;
+        this.accounting = "ST";
+        this.offPeakOnly = hops.stream().anyMatch(h -> h.fareDetail.offPeakOnly) && false; //TODO make UI nicer
+        this.isTFL = hops.stream().allMatch(h -> h.fareDetail.isTFL);
+        this.price = hops.stream().map(h -> h.fareDetail.price).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     public boolean equalsExceptForPrice(FareDetail other) {
@@ -30,6 +43,10 @@ public class FareDetail {
                 isTFL == other.isTFL &&
                 Objects.equals(routeDescription, other.routeDescription) &&
                 Objects.equals(accounting, other.accounting);
+    }
+
+    public void appendToRouteDescription(String extraDescription) {
+        routeDescription = routeDescription + ", " + extraDescription;
     }
 
     @Override

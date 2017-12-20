@@ -1,7 +1,7 @@
 package com.cracknellj.fare.provider;
 
-import com.cracknellj.fare.objects.FareDetail;
 import com.cracknellj.fare.objects.FareSet;
+import com.cracknellj.fare.objects.FareDetail;
 
 import java.util.Collections;
 import java.util.List;

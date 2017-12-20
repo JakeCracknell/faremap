@@ -5,16 +5,14 @@ import com.cracknellj.fare.objects.FareDetail;
 public class FareDetailAndWaypoint {
     public String waypoint;
     public FareDetail fareDetail;
-    public double cumulativeCost;
 
-    public FareDetailAndWaypoint(String waypoint, FareDetail fareDetail, double cumulativeCost) {
+    public FareDetailAndWaypoint(String waypoint, FareDetail fareDetail) {
         this.waypoint = waypoint;
         this.fareDetail = fareDetail;
-        this.cumulativeCost = cumulativeCost;
     }
 
     public static FareDetailAndWaypoint startNode(String waypoint) {
-        return new FareDetailAndWaypoint(waypoint, null, 0.0);
+        return new FareDetailAndWaypoint(waypoint, null);
     }
 
     @Override

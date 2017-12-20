@@ -8,7 +8,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class MultiHopFareDetailBuilder {
-    private static final boolean OFF_PEAK = true;
     private final Map<String, Station> stations;
     private Map<FareDetailAndWaypoint, FareDetailAndWaypoint> predecessors;
 
@@ -42,7 +41,7 @@ public class MultiHopFareDetailBuilder {
         }
         String routeDescription = "Split ticket via " + nodes.stream().limit(nodes.size() - 1)
                 .map(n -> stations.get(n.waypoint).stationName).collect(Collectors.joining(", "));
-        FareDetail fareDetail = new MultiHopFareDetail(accuratePrice, OFF_PEAK, routeDescription, false, "ST", false, nodes);
+        FareDetail fareDetail = new FareDetail(routeDescription, nodes);
         return Collections.singletonList(fareDetail);
     }
 }

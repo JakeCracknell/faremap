@@ -1,9 +1,9 @@
 package com.cracknellj.fare.dao;
 
 import com.cracknellj.fare.objects.Fare;
-import com.cracknellj.fare.objects.FareDetail;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.FareSetBuilder;
+import com.cracknellj.fare.objects.FareDetail;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

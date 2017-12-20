@@ -42,7 +42,7 @@ public class DijkstraRouteFinder {
                         double proposedFare = fareToNode + fareDetail.price.doubleValue();
                         if (minFaresForStations.get(nextStationId) > proposedFare) {
                             minFaresForStations.put(nextStationId, proposedFare);
-                            FareDetailAndWaypoint nextNode = new FareDetailAndWaypoint(nextStationId, fareDetail, proposedFare);
+                            FareDetailAndWaypoint nextNode = new FareDetailAndWaypoint(nextStationId, fareDetail);
                             predecessors.put(nextStationId, node);
                             unsettled.add(nextStationId);
                             stationIdToNode.put(nextStationId, nextNode);
