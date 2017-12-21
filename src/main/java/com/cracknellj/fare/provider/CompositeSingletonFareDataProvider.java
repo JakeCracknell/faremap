@@ -1,6 +1,6 @@
 package com.cracknellj.fare.provider;
 
-import com.cracknellj.fare.dao.StationDAO;
+import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import com.cracknellj.fare.routefinding.DijkstraRouteFinder;
@@ -16,7 +16,7 @@ public class CompositeSingletonFareDataProvider implements FareDataProvider {
     private static FareDataProvider ourInstance = new CompositeSingletonFareDataProvider();
 
     private CompositeSingletonFareDataProvider() {
-        stations = new StationDAO().getStationsOrRuntimeException();
+        stations = StationFileReader.getStations();
         fareSets = Stream.of(new AtocDataProvider(), new TFLDataProvider())
                 .map(FareDataProvider::getAllFareSets).reduce(FareSet::combine).get();
 
