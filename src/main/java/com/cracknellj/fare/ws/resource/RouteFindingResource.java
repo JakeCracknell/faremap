@@ -1,6 +1,7 @@
 package com.cracknellj.fare.ws.resource;
 
 import com.cracknellj.fare.dao.StationDAO;
+import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import com.cracknellj.fare.provider.CompositeSingletonFareDataProvider;
@@ -22,7 +23,7 @@ public class RouteFindingResource extends AbstractResource {
     private final List<Station> stations;
 
     public RouteFindingResource() throws SQLException {
-        this(CompositeSingletonFareDataProvider.getInstance(), new StationDAO().getStations());
+        this(CompositeSingletonFareDataProvider.getInstance(), StationFileReader.getStations());
     }
 
     public RouteFindingResource(FareDataProvider fareDataProvider, List<Station> stations) {

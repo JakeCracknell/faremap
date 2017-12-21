@@ -1,6 +1,6 @@
 package com.cracknellj.fare.atoc;
 
-import com.cracknellj.fare.dao.StationDAO;
+import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import com.cracknellj.fare.objects.FareDetail;
@@ -34,12 +34,12 @@ public class AtocDataReader {
             cleanupConflictingData();
             convertDataIntoFares();
         } catch (SQLException | IOException e) {
-            throw new RuntimeException("Failed to read ATOC data");
+            throw new RuntimeException("Failed to read ATOC data", e);
         }
     }
 
     private void readDataFromFiles() throws SQLException, IOException {
-        crsToStation = new StationDAO().getStations().stream().filter(s -> s.crs != null).collect(toMap(s -> s.crs, s -> s));
+        crsToStation = StationFileReader.getStations().stream().filter(s -> s.crs != null).collect(toMap(s -> s.crs, s -> s));
         stationClusters = new StationClusterFileReader().getStationClusters();
         nlcToCRSMap = new LocationFileReader().getNLCToCRSMap();
         stationGroups = new LocationFileReader().getStationGroups();

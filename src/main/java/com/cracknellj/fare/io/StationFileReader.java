@@ -1,6 +1,5 @@
 package com.cracknellj.fare.io;
 
-import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -15,17 +14,21 @@ import java.util.List;
 
 public class StationFileReader {
 
+    private static List<Station> stationList = Collections.emptyList();
+
     public static List<Station> getStations() {
-        final File dataFile = new File("stations.json");
-        try (final InputStreamReader inputStreamReader = new InputStreamReader(
-                new BufferedInputStream(new FileInputStream(dataFile)))) {
-            final Gson gson = new Gson();
-            Station[] stations = gson.fromJson(new JsonReader(inputStreamReader), Station[].class);
-            return Arrays.asList(stations);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Collections.emptyList();
+        if (stationList.isEmpty()) {
+            final File dataFile = new File("stations.json");
+            try (final InputStreamReader inputStreamReader = new InputStreamReader(
+                    new BufferedInputStream(new FileInputStream(dataFile)))) {
+                final Gson gson = new Gson();
+                Station[] stations = gson.fromJson(new JsonReader(inputStreamReader), Station[].class);
+                stationList = Arrays.asList(stations);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+        return stationList;
     }
 
 }
