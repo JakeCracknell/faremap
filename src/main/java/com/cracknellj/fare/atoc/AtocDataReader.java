@@ -48,8 +48,8 @@ public class AtocDataReader {
     }
 
     private void cleanupConflictingData() {
-        LOG.info("Removing the following stations, as they are not in the database: " +
-                nlcToCRSMap.values().stream().filter(crs -> !crsToStation.containsKey(crs)).collect(Collectors.toSet()));
+        Set<String> unknownStations = nlcToCRSMap.values().stream().filter(crs -> !crsToStation.containsKey(crs)).collect(Collectors.toSet());
+        LOG.info("Removing unknown stations, of which there are " + unknownStations.size());
         nlcToCRSMap.entrySet().removeIf(e -> !crsToStation.containsKey(e.getValue()));
     }
 

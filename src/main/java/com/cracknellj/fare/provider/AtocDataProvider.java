@@ -6,15 +6,10 @@ import com.cracknellj.fare.objects.FareSet;
 import java.util.Map;
 
 public class AtocDataProvider implements FareDataProvider {
-    private final AtocDataReader atocDataReader;
-
-    public AtocDataProvider() {
-        atocDataReader = new AtocDataReader();
-    }
 
     @Override
     public Map<String, FareSet> getAllFareSets() {
-        return atocDataReader.getFareSetsByStationId();
+        return new AtocDataReader().getFareSetsByStationId();
     }
 
 }

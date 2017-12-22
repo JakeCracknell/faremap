@@ -17,16 +17,17 @@ import java.util.zip.GZIPInputStream;
 public class TFLDataProvider implements FareDataProvider {
     private static final Logger LOG = LogManager.getLogger(TFLDataProvider.class);
 
-    private Map<String, FareSet> fareSets = new HashMap<>();
-
-    public TFLDataProvider() {
+    @Override
+    public Map<String, FareSet> getAllFareSets() {
+        Map<String, FareSet> fareSets = new HashMap<>();
         try {
-            LOG.info("Loading fares from DAO");
+            LOG.info("Loading TFL data from file");
             fareSets = deserialiseFromFile();
-            LOG.info("Successfully loaded all fares from DAO");
+            LOG.info("Loading TFL data from file. Complete");
         } catch (Exception e) {
             LOG.error("Failed to read TFL Fares", e);
         }
+        return fareSets;
     }
 
     private Map<String, FareSet> deserialiseFromFile() throws IOException {
@@ -43,10 +44,5 @@ public class TFLDataProvider implements FareDataProvider {
 
     private Map<String, FareSet> loadFromDatabase() throws SQLException {
         return new FareDAO().getAllFares();
-    }
-
-    @Override
-    public Map<String, FareSet> getAllFareSets() {
-        return fareSets;
     }
 }
