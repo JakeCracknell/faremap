@@ -22,9 +22,4 @@ public class AtocDataProviderTest {
 
     }
 
-    @Test
-    public void name() throws Exception {
-        String string = "string";
-        string.toString();
-    }
 }
