@@ -12,16 +12,20 @@ import java.util.stream.Stream;
 public class RouteFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(RouteFileReader.class);
 
-    public static final String FILE_NAME = "RJFAF719.RTE";
+    private static final String FILE_EXTENSION = "RTE";
+    private static final Pattern MULTI_WHITE_SPACE_REGEX_PATTERN = Pattern.compile("\\s+");
 
-    public static final Pattern MULTI_WHITE_SPACE_REGEX_PATTERN = Pattern.compile("\\s+");
+    public RouteFileReader() throws IOException {
+        super(FILE_EXTENSION);
+    }
 
     public Map<String, AtocRouteDetails> getAtocRoutes() throws IOException {
         Map<String, AtocRouteDetails> map = new HashMap<>();
-        try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
+        try (Stream<String> lineStream = getStreamOfLines()) {
             lineStream.forEach(line -> {
                 switch (line.charAt(1)) {
                     case 'L':
+                        //TODO: do we need to read these route/include/exclude locations records?
 //                        char isExclOrIncl = line.charAt(25);
 //                        if (isExclOrIncl == 'E') {
 //                            String routeCode = line.substring(2, 7);

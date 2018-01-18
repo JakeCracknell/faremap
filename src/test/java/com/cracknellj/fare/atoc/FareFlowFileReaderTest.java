@@ -15,7 +15,7 @@ public class FareFlowFileReaderTest {
         List<AtocFare> fareDetails = new FareFlowFileReader().getFaresList();
         List<AtocFare> hatWmgFares = fareDetails.stream().filter(f -> f.fromNlc.equals("6070") && f.toNlc.equals("6073")).collect(Collectors.toList());
         assertFalse(hatWmgFares.isEmpty());
-        assertEquals(BigDecimal.valueOf(280, 2), hatWmgFares.get(0).fareDetail.price);
+        assertEquals(BigDecimal.valueOf(290, 2), hatWmgFares.get(0).fareDetail.price);
         System.out.println(hatWmgFares);
     }
 

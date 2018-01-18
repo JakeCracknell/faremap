@@ -14,14 +14,18 @@ public class FareFlowFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(FareFlowFileReader.class);
 
     private static final BigDecimal FARE_DIVISOR = BigDecimal.valueOf(100);
-    public static final String FILE_NAME = "RJFAF719.FFL";
+    private static final String FILE_EXTENSION = "FFL";
+
+    public FareFlowFileReader() throws IOException {
+        super(FILE_EXTENSION);
+    }
 
     //RF6133Q63000028000GS3112299921052017FCC00Y0277177
     public List<AtocFare> getFaresList() throws IOException {
         Map<String, AtocTicketCode> ticketCodes = new TicketTypeFileReader().getTicketCodes();
         List<AtocFare> fares = new ArrayList<>();
         Map<String, AtocFlowRecord> flowMap = new HashMap<>();
-        try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
+        try (Stream<String> lineStream = getStreamOfLines()) {
             lineStream.forEach(line -> {
                 switch (line.charAt(1)) {
                     case 'F':

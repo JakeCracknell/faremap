@@ -13,10 +13,14 @@ import static java.util.stream.Collectors.*;
 public class StationClusterFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(StationClusterFileReader.class);
 
-    public static final String FILE_NAME = "RJFAF719.FSC";
+    private static final String FILE_EXTENSION = "FSC";
+
+    public StationClusterFileReader() throws IOException {
+        super(FILE_EXTENSION);
+    }
 
     public Map<String, List<String>> getStationClusters() throws IOException {
-        try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
+        try (Stream<String> lineStream = getStreamOfLines()) {
             Map<String, List<String>> map = lineStream.filter(l -> !l.startsWith("/"))
                     .collect(groupingBy(this::getClusterID, mapping(this::getLocationNlc, toList())));
             LOG.info(map.size() + " clusters found");

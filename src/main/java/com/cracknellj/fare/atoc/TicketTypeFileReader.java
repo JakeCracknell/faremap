@@ -14,11 +14,15 @@ import java.util.stream.Stream;
 public class TicketTypeFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(TicketTypeFileReader.class);
 
-    public static final String FILE_NAME = "RJFAF719.TTY";
+    private static final String FILE_EXTENSION = "TTY";
+
+    public TicketTypeFileReader() throws IOException {
+        super(FILE_EXTENSION);
+    }
 
     public Map<String, AtocTicketCode> getTicketCodes() throws IOException {
         List<AtocTicketCode> ticketCodes = new ArrayList<>();
-        try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
+        try (Stream<String> lineStream = getStreamOfLines()) {
             lineStream.filter(l -> !l.startsWith("/")).forEach(line -> {
                 char ticketJourneyType = line.charAt(44); // We want single
                 char ticketClass = line.charAt(45); // We want standard

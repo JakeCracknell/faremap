@@ -14,14 +14,18 @@ import static java.util.stream.Collectors.groupingBy;
 public class LocationFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(LocationFileReader.class);
 
-    public static final String FILE_NAME = "RJFAF719.LOC";
+    private static final String FILE_EXTENSION = "LOC";
+
+    public LocationFileReader() throws IOException {
+        super(FILE_EXTENSION);
+    }
 
     //RL706070031122999020120151203201370 6070HATFIELD (HERTS)HAT00000     6070  04SE      13HATFIELD (HERTS)
     //              HATFIELD (HERTS)HATFIELD (HERTS)                                            HATFIELD (HERTS)
     //                                0 NNNNNN0009002S5010092000000
     public Map<String, String> getNLCToCRSMap() throws IOException {
         Map<String, String> map = new HashMap<>();
-        try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
+        try (Stream<String> lineStream = getStreamOfLines()) {
             lineStream.forEach(line -> {
                 switch (line.charAt(1)) {
                     case 'L':
@@ -42,7 +46,7 @@ public class LocationFileReader extends AtocFileReader {
 
     //RG7010720311229990104200001042000LONDON TERMINALS
     public Map<String, Set<String>> getStationGroups() throws IOException {
-        try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {
+        try (Stream<String> lineStream = getStreamOfLines()) {
             Map<String, Set<String>> map = new HashMap<>();
             lineStream.forEach(line -> {
                 switch (line.charAt(1)) {
