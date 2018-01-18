@@ -1,6 +1,5 @@
 package com.cracknellj.fare.ws.resource;
 
-import com.cracknellj.fare.dao.StationDAO;
 import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;

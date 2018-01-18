@@ -1,5 +1,6 @@
 package com.cracknellj.fare.objects;
 
+import jersey.repackaged.com.google.common.base.Preconditions;
 import jersey.repackaged.com.google.common.collect.Sets;
 
 import java.util.ArrayList;
@@ -18,6 +19,11 @@ public class FareSet {
 
     public FareSet(String fromId) {
         this(fromId, new HashMap<>());
+    }
+
+    public void add(Fare fare) {
+        Preconditions.checkArgument(fare.fromId.equals(fromId));
+        add(fare.toId, fare.fareDetail);
     }
 
     public void add(String toId, FareDetail fareDetailToAdd) {

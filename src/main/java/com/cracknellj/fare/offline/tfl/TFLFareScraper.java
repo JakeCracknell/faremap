@@ -1,4 +1,4 @@
-package com.cracknellj.fare.tfl;
+package com.cracknellj.fare.offline.tfl;
 
 import com.cracknellj.fare.objects.Fare;
 import com.cracknellj.fare.objects.FareDetail;
@@ -17,10 +17,6 @@ import java.util.stream.Collectors;
 public class TFLFareScraper {
     private static final Logger LOG = LogManager.getLogger(TFLFareScraper.class);
     private final Gson gson = new Gson();
-
-    public List<Fare> lookupFare(Fare fare) {
-        return lookupFare(fare.fromId, fare.toId);
-    }
 
     public List<Fare> lookupFare(String fromId, String toId) {
         List<FareDetail> fareDetails = new ArrayList<>();
@@ -42,8 +38,13 @@ public class TFLFareScraper {
         } catch (Exception e) {
             LOG.error("Failed to get " + urlString, e);
         }
+        removeUnwantedFares(fareDetails);
         LOG.info(String.format("Retrieved %d fares from %s", fareDetails.size(), urlString));
         return fareDetails.stream().map(fd -> new Fare(fromId, toId, fd)).collect(Collectors.toList());
+    }
+
+    private void removeUnwantedFares(List<FareDetail> fareDetails) {
+        fareDetails.removeIf(f -> f.accounting.equals("CashSingle"));
     }
 
     private class TFLResponseFareSection {

@@ -1,6 +1,6 @@
 package com.cracknellj.fare.routefinding;
 
-import com.cracknellj.fare.dao.StationDAO;
+import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import com.cracknellj.fare.provider.CompositeSingletonFareDataProvider;
@@ -20,7 +20,7 @@ public class DijkstraRouteFinderTest {
     @BeforeClass
     public static void setUp() throws Exception {
         fareDataProvider = CompositeSingletonFareDataProvider.getInstance();
-        stations = new StationDAO().getStations();
+        stations = StationFileReader.getStations();
     }
 
     @Test //3700 ms

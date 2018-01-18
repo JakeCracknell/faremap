@@ -1,6 +1,6 @@
 package com.cracknellj.fare.routefinding;
 
-import com.cracknellj.fare.dao.StationDAO;
+import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import com.cracknellj.fare.provider.CompositeSingletonFareDataProvider;
@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.toMap;
 
 public class SplitTicketDataWriter {
     public static void main(String[] args) throws Exception {
-        List<Station> stations = new StationDAO().getStations();
+        List<Station> stations = StationFileReader.getStations();
         FareDataProvider fareDataProvider = CompositeSingletonFareDataProvider.getInstance();
         DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, fareDataProvider);
         stations.parallelStream()

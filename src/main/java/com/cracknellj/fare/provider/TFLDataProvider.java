@@ -1,6 +1,5 @@
 package com.cracknellj.fare.provider;
 
-import com.cracknellj.fare.dao.FareDAO;
 import com.cracknellj.fare.objects.FareSet;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -42,7 +41,4 @@ public class TFLDataProvider implements FareDataProvider {
         }
     }
 
-    private Map<String, FareSet> loadFromDatabase() throws SQLException {
-        return new FareDAO().getAllFares();
-    }
 }
