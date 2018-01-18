@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class RouteFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(RouteFileReader.class);
 
-    public static final String FILE_NAME = "RJFAF499.RTE";
+    public static final String FILE_NAME = "RJFAF719.RTE";
 
     public static final Pattern MULTI_WHITE_SPACE_REGEX_PATTERN = Pattern.compile("\\s+");
 

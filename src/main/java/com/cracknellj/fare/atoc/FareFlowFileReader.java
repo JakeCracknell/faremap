@@ -14,7 +14,7 @@ public class FareFlowFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(FareFlowFileReader.class);
 
     private static final BigDecimal FARE_DIVISOR = BigDecimal.valueOf(100);
-    public static final String FILE_NAME = "RJFAF499.FFL";
+    public static final String FILE_NAME = "RJFAF719.FFL";
 
     //RF6133Q63000028000GS3112299921052017FCC00Y0277177
     public List<AtocFare> getFaresList() throws IOException {

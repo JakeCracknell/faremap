@@ -13,7 +13,7 @@ import static java.util.stream.Collectors.*;
 public class StationClusterFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(StationClusterFileReader.class);
 
-    public static final String FILE_NAME = "RJFAF499.FSC";
+    public static final String FILE_NAME = "RJFAF719.FSC";
 
     public Map<String, List<String>> getStationClusters() throws IOException {
         try (Stream<String> lineStream = getStreamOfLines(FILE_NAME)) {

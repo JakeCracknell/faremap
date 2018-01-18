@@ -14,7 +14,7 @@ import static java.util.stream.Collectors.groupingBy;
 public class LocationFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(LocationFileReader.class);
 
-    public static final String FILE_NAME = "RJFAF499.LOC";
+    public static final String FILE_NAME = "RJFAF719.LOC";
 
     //RL706070031122999020120151203201370 6070HATFIELD (HERTS)HAT00000     6070  04SE      13HATFIELD (HERTS)
     //              HATFIELD (HERTS)HATFIELD (HERTS)                                            HATFIELD (HERTS)

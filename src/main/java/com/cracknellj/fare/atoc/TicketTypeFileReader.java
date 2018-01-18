@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 public class TicketTypeFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(TicketTypeFileReader.class);
 
-    public static final String FILE_NAME = "RJFAF499.TTY";
+    public static final String FILE_NAME = "RJFAF719.TTY";
 
     public Map<String, AtocTicketCode> getTicketCodes() throws IOException {
         List<AtocTicketCode> ticketCodes = new ArrayList<>();
@@ -22,11 +22,13 @@ public class TicketTypeFileReader extends AtocFileReader {
             lineStream.filter(l -> !l.startsWith("/")).forEach(line -> {
                 char ticketJourneyType = line.charAt(44); // We want single
                 char ticketClass = line.charAt(45); // We want standard
-                if (ticketJourneyType == 'S' && ticketClass == 'S') {
-                    String ticketCode = line.substring(1, 4);
-                    String description = line.substring(28, 28 + 15).trim();
-                    if (description.startsWith("ANYTIME")) {
-                        ticketCodes.add(new AtocTicketCode(ticketCode, description));
+                if (isCurrentTimeBetweenDateString(line.substring(20, 28), line.substring(4, 12))) {
+                    if (ticketJourneyType == 'S' && ticketClass == 'S') {
+                        String ticketCode = line.substring(1, 4);
+                        String description = line.substring(28, 28 + 15).trim();
+                        if (description.startsWith("ANYTIME")) {
+                            ticketCodes.add(new AtocTicketCode(ticketCode, description));
+                        }
                     }
                 }
             });
