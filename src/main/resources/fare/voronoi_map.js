@@ -202,17 +202,17 @@ voronoiMap = function (map, url) {
     var draw = function () {
         d3.select('#overlay').remove();
 
-        var bounds = map.getBounds(),
-            topLeft = map.latLngToLayerPoint(bounds.getNorthWest()),
-            bottomRight = map.latLngToLayerPoint(bounds.getSouthEast()),
-            existing = d3.set(),
-            drawLimit = bounds.pad(0.4);
-        var fareSelectorFunction = getFareSelectorFunction();
-        var currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
+        let bounds = map.getBounds();
+        let topLeft = map.latLngToLayerPoint(bounds.getNorthWest());
+        let bottomRight = map.latLngToLayerPoint(bounds.getSouthEast());
+        let setOfXYPointsToDraw = d3.set();
+        let drawLimit = bounds.pad(0.4);
+        let fareSelectorFunction = getFareSelectorFunction();
+        let currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
 
         filteredPoints = points.filter(function (d) {
-            var latlng = new L.LatLng(d.latitude, d.longitude);
-            var point = map.latLngToLayerPoint(latlng);
+            let latlng = new L.LatLng(d.latitude, d.longitude);
+            let point = map.latLngToLayerPoint(latlng);
             d.x = point.x;
             d.y = point.y;
 
@@ -220,12 +220,12 @@ voronoiMap = function (map, url) {
                 return false;
             }
 
+            // filters points that are right on top of each other. does not work without this
             key = point.toString();
-            if (existing.has(key)) {
+            if (setOfXYPointsToDraw.has(key)) {
                 return false;
             }
-
-            existing.add(key);
+            setOfXYPointsToDraw.add(key);
 
             return true;
         });
