@@ -13,7 +13,7 @@ addShowHideEventsTo = function (selector) {
 };
 
 function formatPrice(price) {
-    return "£" + price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+    return "£" + (price / 100).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 }
 
 voronoiMap = function (map, url) {
