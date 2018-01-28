@@ -24,7 +24,6 @@ public class TFLFareScraper {
     public List<Fare> lookupFare(String fromId, String toId) {
         String urlString = String.format("https://api.tfl.gov.uk/Stoppoint/%s/FareTo/%s", fromId, toId);
         List<FareDetail> fareDetails = lookupFareInternalMultiTry(urlString);
-        removeUnwantedFares(fareDetails);
         LOG.info(String.format("Retrieved %d fares from %s", fareDetails.size(), urlString));
         return fareDetails.stream().map(fd -> new Fare(fromId, toId, fd)).collect(Collectors.toList());
     }
@@ -53,16 +52,14 @@ public class TFLFareScraper {
         for (TFLResponseFareSection section : tflResponseFareSections) {
             for (TFLResponseRow row : section.rows) {
                 for (TFLResponseTicket ticket : row.ticketsAvailable) {
-                    fareDetails.add(new FareDetail(ticket.cost, "Off Peak".equals(ticket.ticketTime.type),
-                            row.routeDescription, section.index == 1, ticket.ticketType.type, true));
+                    if (!ticket.ticketType.type.equals("CashSingle")) {
+                        fareDetails.add(new FareDetail(ticket.cost, "Off Peak".equals(ticket.ticketTime.type),
+                                row.routeDescription, section.index == 1, true));
+                    }
                 }
             }
         }
         return fareDetails;
-    }
-
-    private void removeUnwantedFares(List<FareDetail> fareDetails) {
-        fareDetails.removeIf(f -> f.accounting.equals("CashSingle"));
     }
 
     private class TFLResponseFareSection {

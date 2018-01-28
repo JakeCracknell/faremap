@@ -14,15 +14,13 @@ public class FareDetail {
     public final boolean offPeakOnly;
     public String routeDescription;
     public final boolean isDefaultRoute;
-    public final String accounting;
     public final boolean isTFL;
 
-    public FareDetail(BigDecimal price, boolean offPeakOnly, String routeDescription, boolean isDefaultRoute, String accounting, boolean isTFL) {
+    public FareDetail(BigDecimal price, boolean offPeakOnly, String routeDescription, boolean isDefaultRoute, boolean isTFL) {
         this.price = price;
         this.offPeakOnly = offPeakOnly;
         this.routeDescription = routeDescription;
         this.isDefaultRoute = isDefaultRoute;
-        this.accounting = accounting;
         this.isTFL = isTFL;
         this.hops = null;
     }
@@ -31,7 +29,6 @@ public class FareDetail {
         this.routeDescription = routeDescription;
         this.hops = hops;
         this.isDefaultRoute = false;
-        this.accounting = "ST";
         this.offPeakOnly = hops.stream().anyMatch(h -> h.fareDetail.offPeakOnly) && false; //TODO make UI nicer
         this.isTFL = hops.stream().allMatch(h -> h.fareDetail.isTFL);
         this.price = hops.stream().map(h -> h.fareDetail.price).reduce(BigDecimal.ZERO, BigDecimal::add);
@@ -41,8 +38,7 @@ public class FareDetail {
         return offPeakOnly == other.offPeakOnly &&
                 isDefaultRoute == other.isDefaultRoute &&
                 isTFL == other.isTFL &&
-                Objects.equals(routeDescription, other.routeDescription) &&
-                Objects.equals(accounting, other.accounting);
+                Objects.equals(routeDescription, other.routeDescription);
     }
 
     public void appendToRouteDescription(String extraDescription) {
@@ -56,7 +52,6 @@ public class FareDetail {
                 ", offPeakOnly=" + offPeakOnly +
                 ", routeDescription='" + routeDescription + '\'' +
                 ", isDefaultRoute=" + isDefaultRoute +
-                ", accounting='" + accounting + '\'' +
                 ", isTFL=" + isTFL +
                 '}';
     }

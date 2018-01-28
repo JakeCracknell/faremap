@@ -49,7 +49,7 @@ public class FareFlowFileReader extends AtocFileReader {
                                 BigDecimal farePrice = BigDecimal.valueOf(Integer.parseInt(farePence)).divide(FARE_DIVISOR, 2, BigDecimal.ROUND_UNNECESSARY);
                                 AtocFlowRecord atocFlowRecord = flowMap.get(tFlowId);
                                 if (atocFlowRecord != null) {
-                                    FareDetail fareDetail = new FareDetail(farePrice, ticketCode.isOffPeak(), ticketCode.description, ticketCode.isDefaultFare(), "NR", false);
+                                    FareDetail fareDetail = new FareDetail(farePrice, ticketCode.isOffPeak(), ticketCode.description, ticketCode.isDefaultFare(), false);
                                     fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc, atocFlowRecord.reversible, atocFlowRecord.routeCode, fareDetail));
                                 }
                             }
