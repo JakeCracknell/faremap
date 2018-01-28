@@ -68,6 +68,7 @@ voronoiMap = function (map, url) {
     }
 
     var showMouseOverInformationForPoint = function () {
+        d3.select("#split-ticket-route-line").remove();
         const cell = d3.select(this);
         const point = cell.datum();
         const faresTable = document.getElementById("fare-table");
@@ -112,7 +113,6 @@ voronoiMap = function (map, url) {
             .y(function (d) {
                 return d.y;
             });
-        d3.select("#split-ticket-route-line").remove();
         d3.select("#overlay").select("g")
             .append("path")
             .attr("d", lineFunction(pointsToDraw))
@@ -188,13 +188,6 @@ voronoiMap = function (map, url) {
         });
     };
 
-    var pointsFilteredToSelectedModes = function () {
-        var currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
-        return points.filter(function (item) {
-            return item.modes.some(m => currentSelectedModes.has(m));
-        });
-    };
-
     var drawWithLoading = function (e) {
         d3.select('#loading').classed('visible', true);
         if (e && e.type == 'viewreset') {
@@ -215,26 +208,25 @@ voronoiMap = function (map, url) {
             existing = d3.set(),
             drawLimit = bounds.pad(0.4);
         var fareSelectorFunction = getFareSelectorFunction();
+        var currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
 
-
-        filteredPoints = pointsFilteredToSelectedModes().filter(function (d) {
+        filteredPoints = points.filter(function (d) {
             var latlng = new L.LatLng(d.latitude, d.longitude);
-
-            if (!drawLimit.contains(latlng)) {
-                return false
-            }
-
             var point = map.latLngToLayerPoint(latlng);
+            d.x = point.x;
+            d.y = point.y;
+
+            if (!(d.modes.some(m => currentSelectedModes.has(m)) && drawLimit.contains(latlng))) {
+                return false;
+            }
 
             key = point.toString();
             if (existing.has(key)) {
-                return false
+                return false;
             }
 
             existing.add(key);
 
-            d.x = point.x;
-            d.y = point.y;
             return true;
         });
 
