@@ -18,7 +18,8 @@ import java.util.stream.Collectors;
 
 public class TFLFareScraper {
     private static final Logger LOG = LogManager.getLogger(TFLFareScraper.class);
-    public static final int MAX_TRIES = 10;
+    private static final int MAX_TRIES = 10;
+    private static final BigDecimal PRICE_MULTIPLICAND = BigDecimal.valueOf(100);
     private final Gson gson = new Gson();
 
     public List<Fare> lookupFare(String fromId, String toId) {
@@ -53,7 +54,8 @@ public class TFLFareScraper {
             for (TFLResponseRow row : section.rows) {
                 for (TFLResponseTicket ticket : row.ticketsAvailable) {
                     if (!ticket.ticketType.type.equals("CashSingle")) {
-                        fareDetails.add(new FareDetail(ticket.cost, "Off Peak".equals(ticket.ticketTime.type),
+                        fareDetails.add(new FareDetail(ticket.cost.multiply(PRICE_MULTIPLICAND).intValue(),
+                                "Off Peak".equals(ticket.ticketTime.type),
                                 row.routeDescription, section.index == 1, true));
                     }
                 }

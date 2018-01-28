@@ -38,9 +38,9 @@ public class AtocDataProviderTest {
                         stationFrom.latitude, stationTo.longitude);
                 Optional<FareDetail> fareDetail = fareDataProvider
                         .getFares(stationFrom.stationId, stationTo.stationId).stream()
-                        .sorted(Comparator.comparing(f -> f.price)).findFirst();
+                        .sorted(Comparator.comparingInt(f -> f.price)).findFirst();
                 if (fareDetail.isPresent()) {
-                    double pricePerKm = fareDetail.get().price.doubleValue() / distanceKm;
+                    double pricePerKm = (fareDetail.get().price / 100) / distanceKm;
                     if (pricePerKm < cheapestPricePerKm && pricePerKm != 0 && !fareDetail.get().isTFL) {
                         cheapestPricePerKm = pricePerKm;
                         System.out.printf("£%.4f/km,%s,%s,%s%n", cheapestPricePerKm, stationFrom, stationTo, fareDetail.get());

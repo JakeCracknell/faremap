@@ -2,7 +2,6 @@ package com.cracknellj.fare.objects;
 
 import com.cracknellj.fare.routefinding.FareDetailAndWaypoint;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 
@@ -10,13 +9,13 @@ import java.util.Objects;
 public class FareDetail {
     public final List<FareDetailAndWaypoint> hops;
 
-    public final BigDecimal price;
+    public final int price; //in GBP pence
     public final boolean offPeakOnly;
     public String routeDescription;
     public final boolean isDefaultRoute;
     public final boolean isTFL;
 
-    public FareDetail(BigDecimal price, boolean offPeakOnly, String routeDescription, boolean isDefaultRoute, boolean isTFL) {
+    public FareDetail(int price, boolean offPeakOnly, String routeDescription, boolean isDefaultRoute, boolean isTFL) {
         this.price = price;
         this.offPeakOnly = offPeakOnly;
         this.routeDescription = routeDescription;
@@ -31,7 +30,7 @@ public class FareDetail {
         this.isDefaultRoute = false;
         this.offPeakOnly = hops.stream().anyMatch(h -> h.fareDetail.offPeakOnly) && false; //TODO make UI nicer
         this.isTFL = hops.stream().allMatch(h -> h.fareDetail.isTFL);
-        this.price = hops.stream().map(h -> h.fareDetail.price).reduce(BigDecimal.ZERO, BigDecimal::add);
+        this.price = hops.stream().mapToInt(h -> h.fareDetail.price).sum();
     }
 
     public boolean equalsExceptForPrice(FareDetail other) {
@@ -48,7 +47,7 @@ public class FareDetail {
     @Override
     public String toString() {
         return "FareDetail{" +
-                "price=" + price +
+                "price=£" + price / 100 +
                 ", offPeakOnly=" + offPeakOnly +
                 ", routeDescription='" + routeDescription + '\'' +
                 ", isDefaultRoute=" + isDefaultRoute +

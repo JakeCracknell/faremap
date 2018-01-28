@@ -33,9 +33,7 @@ public class MultiHopFareDetailBuilder {
 
     private List<FareDetail> getFareDetailsForDestinationNode(FareDetailAndWaypoint node) {
         LinkedList<FareDetailAndWaypoint> nodes = new LinkedList<>();
-        BigDecimal accuratePrice = BigDecimal.ZERO;
         while (node != null) {
-            accuratePrice = accuratePrice.add(node.fareDetail.price);
             nodes.addFirst(node);
             node = predecessors.get(node);
         }

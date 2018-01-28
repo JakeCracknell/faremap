@@ -12,8 +12,6 @@ import java.util.stream.Stream;
 
 public class FareFlowFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(FareFlowFileReader.class);
-
-    private static final BigDecimal FARE_DIVISOR = BigDecimal.valueOf(100);
     private static final String FILE_EXTENSION = "FFL";
 
     public FareFlowFileReader() throws IOException {
@@ -46,11 +44,12 @@ public class FareFlowFileReader extends AtocFileReader {
                                 AtocTicketCode ticketCode = ticketCodes.get(ticketCodeString);
                                 String tFlowId = line.substring(2, 9);
                                 String farePence = line.substring(12, 20);
-                                BigDecimal farePrice = BigDecimal.valueOf(Integer.parseInt(farePence)).divide(FARE_DIVISOR, 2, BigDecimal.ROUND_UNNECESSARY);
                                 AtocFlowRecord atocFlowRecord = flowMap.get(tFlowId);
                                 if (atocFlowRecord != null) {
-                                    FareDetail fareDetail = new FareDetail(farePrice, ticketCode.isOffPeak(), ticketCode.description, ticketCode.isDefaultFare(), false);
-                                    fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc, atocFlowRecord.reversible, atocFlowRecord.routeCode, fareDetail));
+                                    FareDetail fare = new FareDetail(Integer.parseInt(farePence), ticketCode.isOffPeak(),
+                                            ticketCode.description, ticketCode.isDefaultFare(), false);
+                                    fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc,
+                                            atocFlowRecord.reversible, atocFlowRecord.routeCode, fare));
                                 }
                             }
                         }

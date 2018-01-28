@@ -29,7 +29,7 @@ public class RebuildTFLData {
                 .sorted().collect(Collectors.toList());
 
         Map<String, FareSet> fareSetMap = new TFLDataProvider().getAllFareSets();
-        List<Fare> faresToQuery = getMissingFaresToQuery(fareSetMap);
+        List<Fare> faresToQuery = Collections.emptyList();// getMissingFaresToQuery(fareSetMap);
         List<Fare> faresToInsert = lookupFares(faresToQuery);
         faresToInsert.forEach(f -> fareSetMap.computeIfAbsent(f.fromId, (x) -> new FareSet(f.fromId)).add(f));
 

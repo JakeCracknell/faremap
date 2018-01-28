@@ -31,7 +31,7 @@ public class FareSet {
         for (int i = 0; i < fareDetails.size(); i++) {
             FareDetail fareDetailToReplace = fareDetails.get(i);
             if (fareDetailToAdd.equalsExceptForPrice(fareDetailToReplace)) {
-                if (fareDetailToAdd.price.compareTo(fareDetailToReplace.price) < 0) {
+                if (fareDetailToAdd.price < fareDetailToReplace.price) {
                     fareDetails.set(i, fareDetailToAdd);
                 }
                 return;

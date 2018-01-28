@@ -11,7 +11,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class DijkstraRouteFinder {
-    public static final double MAX_PRICE = Double.MAX_VALUE;
+    public static final int MAX_PRICE = Integer.MAX_VALUE;
 
     private final Map<String, Station> stations;
     private final FareDataProvider fareDataProvider;
@@ -24,9 +24,9 @@ public class DijkstraRouteFinder {
     public FareSet findCheapestRoutes(String fromId) {
         Set<String> unsettled = Sets.newHashSet(fromId);
         Set<String> settled = Sets.newHashSet();
-        Map<String, Double> minFaresForStations = new HashMap<>(stations.size());
+        Map<String, Integer> minFaresForStations = new HashMap<>(stations.size());
         stations.keySet().forEach(s -> minFaresForStations.put(s, MAX_PRICE));
-        minFaresForStations.put(fromId, 0.0);
+        minFaresForStations.put(fromId, 0);
         Map<String, String> predecessors = new HashMap<>(stations.size());
         Map<String, FareDetailAndWaypoint> stationIdToNode = new HashMap<>(stations.size());
         stationIdToNode.put(fromId, FareDetailAndWaypoint.startNode(fromId));
@@ -35,11 +35,11 @@ public class DijkstraRouteFinder {
             String node = unsettled.stream().sorted(Comparator.comparingDouble(minFaresForStations::get)).findFirst().get();
             unsettled.remove(node);
             settled.add(node);
-            Double fareToNode = minFaresForStations.get(node);
+            Integer fareToNode = minFaresForStations.get(node);
             for (String nextStationId : stations.keySet()) {
                 if (!settled.contains(nextStationId)) {
                     getFareDetailIfExists(node, nextStationId).ifPresent(fareDetail -> {
-                        double proposedFare = fareToNode + fareDetail.price.doubleValue();
+                        int proposedFare = fareToNode + fareDetail.price;
                         if (minFaresForStations.get(nextStationId) > proposedFare) {
                             minFaresForStations.put(nextStationId, proposedFare);
                             FareDetailAndWaypoint nextNode = new FareDetailAndWaypoint(nextStationId, fareDetail);
