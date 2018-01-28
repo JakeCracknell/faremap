@@ -26,7 +26,6 @@ p {
 /*remove later - only for debugging*/
 .point-cell.nodata {
     fill: transparent;
-    stroke: black;
 }
 
 .point circle {

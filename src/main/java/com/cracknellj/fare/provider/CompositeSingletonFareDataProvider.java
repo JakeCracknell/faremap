@@ -27,7 +27,7 @@ public class CompositeSingletonFareDataProvider implements FareDataProvider {
     public FareSet getFaresFrom(String fromId) {
         DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, this); //hmmmm
         FareSet fareSet = dijkstraRouteFinder.findCheapestRoutes(fromId);
-        return FareSet.combine(fareSets.get(fromId), fareSet);
+        return FareSet.combine(fareSets.getOrDefault(fromId, new FareSet(fromId)), fareSet);
     }
 
     //    private void combineFaresForStationsWithMatchingLocations() {
