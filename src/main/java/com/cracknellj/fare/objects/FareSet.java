@@ -40,6 +40,12 @@ public class FareSet {
         fareDetails.add(fareDetailToAdd);
     }
 
+    public List<Fare> toFareList() {
+        List<Fare> faresList = new ArrayList<>();
+        fares.forEach((toId, fareDetails) -> fareDetails.forEach(fd -> faresList.add(new Fare(fromId, toId, fd))));
+        return faresList;
+    }
+
     public static FareSet combine(FareSet fareSet1, FareSet fareSet2) {
         Map<String, List<FareDetail>> faresMap = new HashMap<>(fareSet1.fares);
         fareSet2.fares.forEach((toId, fares) -> {

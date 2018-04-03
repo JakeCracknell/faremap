@@ -1,10 +1,8 @@
 package com.cracknellj.fare.ws.resource;
 
-import com.cracknellj.fare.provider.AtocDataProvider;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.provider.CompositeSingletonFareDataProvider;
 import com.cracknellj.fare.provider.FareDataProvider;
-import com.cracknellj.fare.provider.SplitTicketDataProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

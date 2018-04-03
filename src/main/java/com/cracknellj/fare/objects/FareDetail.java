@@ -2,7 +2,9 @@ package com.cracknellj.fare.objects;
 
 import com.cracknellj.fare.routefinding.FareDetailAndWaypoint;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 //For single-hop journeys, hops = null.
@@ -47,7 +49,7 @@ public class FareDetail {
     @Override
     public String toString() {
         return "FareDetail{" +
-                "price=£" + price / 100 +
+                "price=" + NumberFormat.getCurrencyInstance(Locale.UK).format(price / 100.0) +
                 ", offPeakOnly=" + offPeakOnly +
                 ", routeDescription='" + routeDescription + '\'' +
                 ", isDefaultRoute=" + isDefaultRoute +
