@@ -68,7 +68,6 @@ voronoiMap = function (map, url) {
     }
 
     var showMouseOverInformationForPoint = function () {
-        d3.select("#split-ticket-route-line").remove();
         const cell = d3.select(this);
         const point = cell.datum();
         const faresTable = document.getElementById("fare-table");
@@ -87,7 +86,6 @@ voronoiMap = function (map, url) {
                 const fare = faresToDisplay[i];
                 faresTable.appendChild(getTRForFareDetail(fare));
                 if (fare.hops !== undefined) {
-                    drawLineBetweenStationsInFare(lastSelectedPoint, fare);
                     const subFaresTable = document.createElement("tbody");
                     subFaresTable.className = "sub-fare-table";
                     for (j = 0; j < fare.hops.length; j++) {
@@ -104,7 +102,7 @@ voronoiMap = function (map, url) {
     };
 
     function drawLineBetweenStationsInFare(startPoint, fare) {
-        const stationIds = fare.hops.map(h => h.waypoint);
+        const stationIds = (fare.hops || []).map(h => h.waypoint);
         const pointsToDraw = [startPoint].concat(stationIds.map(id => pointsMap.get(id)));
         var lineFunction = d3.svg.line()
             .x(function (d) {
@@ -116,7 +114,7 @@ voronoiMap = function (map, url) {
         d3.select("#overlay").select("g")
             .append("path")
             .attr("d", lineFunction(pointsToDraw))
-            .attr("id", "split-ticket-route-line");
+            .attr("class", "route-line");
     }
 
     function getTRForFareDetail(fare) {
@@ -288,6 +286,9 @@ voronoiMap = function (map, url) {
                 return '#' + d.color
             })
             .attr("r", 2);
+
+        d3.selectAll(".route-line").remove();
+        filteredPoints.forEach(s => s.fares.forEach(f => drawLineBetweenStationsInFare(lastSelectedPoint, f)))
     };
 
     var mapLayer = {

@@ -32,6 +32,13 @@ p {
     pointer-events: none;
 }
 
+.route-line {
+    stroke: rgba(0, 0, 0, 0.01);
+    stroke-width: 5px;
+    fill: none;
+    pointer-events: none;
+}
+
 #map {
     position: absolute;
     top: 0;
@@ -143,12 +150,6 @@ p {
 
 #fare-table .nr {
     background-image: url(img/nr-icon.png);
-}
-
-#split-ticket-route-line {
-    stroke: rgba(0, 0, 0, 0.3);
-    stroke-width: 5px;
-    fill: none;
 }
 
 .hide,
