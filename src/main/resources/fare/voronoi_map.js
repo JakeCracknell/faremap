@@ -72,9 +72,9 @@ voronoiMap = function (map, url) {
         const point = cell.datum();
         const faresTable = document.getElementById("fare-table");
         faresTable.innerHTML = "";
+        document.getElementById("selected-source").value = getFormattedStation(lastSelectedPoint || point);
         if (point.fares.length > 0) {
-            document.getElementById("selected-source-destination").textContent =
-                getFormattedStation(lastSelectedPoint) + " → " + getFormattedStation(point);
+            document.getElementById("selected-destination").value = getFormattedStation(point);
             const mainPrice = getFareSelectorFunction()(point.fares);
             const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
             const faresToDisplay = point.fares.filter(getFareTypeSelectorFilterFunction());
@@ -95,7 +95,6 @@ voronoiMap = function (map, url) {
                 }
             }
         } else {
-            document.getElementById("selected-source-destination").textContent = getFormattedStation(point);
             document.getElementById("selected-main-price").style.visibility = "hidden"
         }
 
