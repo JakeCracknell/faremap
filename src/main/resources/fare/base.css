@@ -39,23 +39,28 @@ p {
     pointer-events: none;
 }
 
+#sidebar {
+    width: 400px;
+}
+
 #map {
     position: absolute;
     top: 0;
     bottom: 0;
+    left: 400px;
     width: 100%;
 }
 
-#selected,
-#selections,
-#loading:after,
-#about {
-    position: absolute;
-    background-color: #FFF;
-    opacity: 0.8;
-    border-radius: 2px;
-    padding: 10px 10px 0 10px;
-}
+/*#selected,*/
+/*#selections,*/
+/*#loading:after,*/
+/*#about {*/
+    /*position: absolute;*/
+    /*background-color: #FFF;*/
+    /*opacity: 0.8;*/
+    /*border-radius: 2px;*/
+    /*padding: 10px 10px 0 10px;*/
+/*}*/
 
 #about {
     bottom: 10px;
@@ -82,12 +87,6 @@ p {
     font-size: 18px;
 }
 
-#selections {
-    right: 10px;
-    top: 10px;
-    width: 190px;
-}
-
 #selections label {
     display: block;
     padding-bottom: 8px;
@@ -106,18 +105,18 @@ p {
     margin: 0 5px;
 }
 
-#selected {
-    bottom: 10px;
-    left: 10px;
-    min-height: 50px;
-}
+/*#selected {*/
+    /*bottom: 10px;*/
+    /*left: 10px;*/
+    /*min-height: 50px;*/
+/*}*/
 
 #selected-header {
     font-size: 20px;
     margin: 0;
     line-height: 20px;
     font-weight: bold;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     overflow: hidden;
     text-overflow: ellipsis;
 }
