@@ -14,6 +14,7 @@ public class FareDetail {
     public final int price; //in GBP pence
     public final boolean offPeakOnly;
     public String routeDescription;
+    public String restrictions;
     public final boolean isDefaultRoute;
     public final boolean isTFL;
 

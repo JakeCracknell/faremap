@@ -52,6 +52,23 @@ p {
     width: 100%;
 }
 
+.fare-card-text {
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 200px;
+    text-overflow: ellipsis; /*does not work properly. clips, instead of ...*/
+}
+
+.fare-card-text:hover {
+    white-space: normal;
+}
+
+.fare-card-price {
+    float: right;
+    font-size: 32px;
+}
+
 /*#selected,*/
 /*#selections,*/
 /*#loading:after,*/

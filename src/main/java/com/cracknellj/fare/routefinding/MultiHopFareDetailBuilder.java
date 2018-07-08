@@ -37,9 +37,10 @@ public class MultiHopFareDetailBuilder {
             nodes.addFirst(node);
             node = predecessors.get(node);
         }
-        String routeDescription = "Split ticket via " + nodes.stream().limit(nodes.size() - 1)
-                .map(n -> stations.get(n.waypoint).stationName).collect(Collectors.joining(", "));
+        String routeDescription = String.format("Split Ticket (%d hops)", nodes.size());
         FareDetail fareDetail = new FareDetail(routeDescription, nodes);
+        fareDetail.restrictions = "Via " + nodes.stream().limit(nodes.size() - 1)
+                .map(n -> stations.get(n.waypoint).stationName).collect(Collectors.joining(", "));
         return Collections.singletonList(fareDetail);
     }
 }

@@ -12,10 +12,6 @@ addShowHideEventsTo = function (selector) {
     });
 };
 
-function formatPrice(price) {
-    return "£" + (price / 100).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-}
-
 voronoiMap = function (map, url) {
     var pointModes = d3.map(),
         points = [],
@@ -58,23 +54,14 @@ voronoiMap = function (map, url) {
         return ["hsla(", hue, ",100%,50%,0.5)"].join("");
     };
 
-    function getFormattedStation(station) {
-        if (station === null || station === undefined) return "???";
-        let stationString = station.stationId + " " + station.stationName;
-        if (station.crs !== null && station.crs !== undefined) {
-            stationString += " (" + station.crs + ")"
-        }
-        return stationString;
-    }
-
     var showMouseOverInformationForPoint = function () {
         const cell = d3.select(this);
         const point = cell.datum();
         const faresTable = document.getElementById("fare-table");
         faresTable.innerHTML = "";
-        document.getElementById("selected-source").value = getFormattedStation(lastSelectedPoint || point);
+        document.getElementById("selected-source").value = formatStationName(lastSelectedPoint || point);
         if (point.fares.length > 0) {
-            document.getElementById("selected-destination").value = getFormattedStation(point);
+            document.getElementById("selected-destination").value = formatStationName(point);
             const mainPrice = getFareSelectorFunction()(point.fares);
             const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
             const faresToDisplay = point.fares.filter(getFareTypeSelectorFilterFunction());
@@ -97,6 +84,8 @@ voronoiMap = function (map, url) {
         } else {
             document.getElementById("selected-main-price").style.visibility = "hidden"
         }
+
+        displayFares(point.fares);
 
     };
 
@@ -136,7 +125,7 @@ voronoiMap = function (map, url) {
         td.classList.add("fare-type", fare.fareDetail.isTFL ? "tfl" : "nr");
         tr.appendChild(td);
         td = document.createElement("td");
-        td.appendChild(document.createTextNode("→ " + getFormattedStation(pointsMap.get(fare.waypoint))));
+        td.appendChild(document.createTextNode("→ " + formatStationName(pointsMap.get(fare.waypoint))));
         tr.appendChild(td);
         td = document.createElement("td");
         td.appendChild(document.createTextNode(formatPrice(fare.fareDetail.price)));

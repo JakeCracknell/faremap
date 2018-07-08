@@ -55,7 +55,7 @@ public class AtocDataReader {
 
     private void convertDataIntoFares() {
         for (AtocFare fare : rawFaresList) {
-            fare.fareDetail.appendToRouteDescription(atocRoutes.get(fare.routeCode).description);
+            fare.fareDetail.restrictions = atocRoutes.get(fare.routeCode).description;
             List<String> fromIds = getStationIDsFromNLC(fare.fromNlc);
             List<String> toIds = getStationIDsFromNLC(fare.toNlc);
             addFareForEach(fare.fareDetail, fromIds, toIds);
