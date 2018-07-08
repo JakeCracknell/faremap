@@ -54,9 +54,11 @@ public class TFLFareScraper {
             for (TFLResponseRow row : section.rows) {
                 for (TFLResponseTicket ticket : row.ticketsAvailable) {
                     if (!ticket.ticketType.type.equals("CashSingle")) {
-                        fareDetails.add(new FareDetail(ticket.cost.multiply(PRICE_MULTIPLICAND).intValue(),
+                        FareDetail fareDetail = new FareDetail(ticket.cost.multiply(PRICE_MULTIPLICAND).intValue(),
                                 "Off Peak".equals(ticket.ticketTime.type),
-                                row.routeDescription, section.index == 1, true));
+                                "TFL", section.index == 1, true);
+                        fareDetail.routeDescription = row.routeDescription;
+                        fareDetails.add(fareDetail);
                     }
                 }
             }

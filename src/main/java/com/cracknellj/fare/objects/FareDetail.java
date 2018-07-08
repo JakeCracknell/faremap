@@ -13,22 +13,22 @@ public class FareDetail {
 
     public final int price; //in GBP pence
     public final boolean offPeakOnly;
-    public String routeDescription;
-    public String restrictions;
+    public final String ticketName;
     public final boolean isDefaultRoute;
     public final boolean isTFL;
+    public String routeDescription;
 
-    public FareDetail(int price, boolean offPeakOnly, String routeDescription, boolean isDefaultRoute, boolean isTFL) {
+    public FareDetail(int price, boolean offPeakOnly, String ticketName, boolean isDefaultRoute, boolean isTFL) {
         this.price = price;
         this.offPeakOnly = offPeakOnly;
-        this.routeDescription = routeDescription;
+        this.ticketName = ticketName;
         this.isDefaultRoute = isDefaultRoute;
         this.isTFL = isTFL;
         this.hops = null;
     }
 
-    public FareDetail(String routeDescription, List<FareDetailAndWaypoint> hops) {
-        this.routeDescription = routeDescription;
+    public FareDetail(List<FareDetailAndWaypoint> hops) {
+        this.ticketName = "Split Ticket";
         this.hops = hops;
         this.isDefaultRoute = false;
         this.offPeakOnly = hops.stream().anyMatch(h -> h.fareDetail.offPeakOnly) && false; //TODO make UI nicer
@@ -40,11 +40,8 @@ public class FareDetail {
         return offPeakOnly == other.offPeakOnly &&
                 isDefaultRoute == other.isDefaultRoute &&
                 isTFL == other.isTFL &&
+                Objects.equals(ticketName, other.ticketName) &&
                 Objects.equals(routeDescription, other.routeDescription);
-    }
-
-    public void appendToRouteDescription(String extraDescription) {
-        routeDescription = routeDescription + ", " + extraDescription;
     }
 
     @Override
