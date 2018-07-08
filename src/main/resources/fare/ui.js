@@ -18,11 +18,11 @@ function displayFares(fares) {
         const card = "\n" +
             "<div class=\"card fare-card shadow-sm my-2\">\n" +
             "  <div class=\"card-body fare-card-body\">\n" +
-            "    <div class=\"fare-card-text\">\n" +
-            "      <h5 class=\"card-title fare-card-title\">" + fare.routeDescription + "</h5>\n" +
-            "      <h6 class=\"card-subtitle fare-card-description mb-2 text-muted\">" + fare.restrictions + "</h6>\n" +
+            "    <div class=\"fare-card-header\">\n" +
+            "      <h5 class=\"card-title float-left fare-card-title\">" + fare.routeDescription + "</h5>\n" +
+            "      <h5 class=\"card-title float-right fare-card-price\">" + formatPrice(fare.price) + "</h5>\n" +
             "    </div>\n" +
-            "    <div class=\"fare-card-price\">" + formatPrice(fare.price) + "</div>\n" +
+            "    <h6 class=\"card-subtitle float-left text-muted fare-card-description\">" + fare.restrictions + "</h6>\n" +
             "  </div>\n" +
             "</div>\n";
         faresContainer.innerHTML += card;

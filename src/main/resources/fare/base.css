@@ -52,33 +52,9 @@ p {
     width: 100%;
 }
 
-.fare-card-text {
-    float: left;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 200px;
-    text-overflow: ellipsis; /*does not work properly. clips, instead of ...*/
+.fare-card-header {
+    overflow: hidden
 }
-
-.fare-card-text:hover {
-    white-space: normal;
-}
-
-.fare-card-price {
-    float: right;
-    font-size: 32px;
-}
-
-/*#selected,*/
-/*#selections,*/
-/*#loading:after,*/
-/*#about {*/
-    /*position: absolute;*/
-    /*background-color: #FFF;*/
-    /*opacity: 0.8;*/
-    /*border-radius: 2px;*/
-    /*padding: 10px 10px 0 10px;*/
-/*}*/
 
 #about {
     bottom: 10px;
