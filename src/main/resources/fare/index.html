@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="base.css" rel="stylesheet"/>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet'/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="base.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -19,8 +19,24 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="travelTimeNavDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Travel Time
+                </a>
+                <div class="dropdown-menu radio-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="form-check dropdown-item">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="peakTimeRadio" checked>
+                        <label class="form-check-label" for="peakTimeRadio">
+                            Peak Time Tickets
+                        </label>
+                    </div>
+                    <div class="form-check dropdown-item">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="offPeakRadio">
+                        <label class="form-check-label" for="offPeakRadio">
+                            Off-Peak Tickets
+                        </label>
+                    </div>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Features</a>
@@ -58,7 +74,6 @@
                 </div>
                 <div id="fare-type-toggles" style="display: none">
                     <h3>Fare Types</h3>
-                    <label><input type="checkbox" value="off-peak">Off Peak</label>
                     <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
                     <label><input type="checkbox" value="tfl" checked="checked">TFL / Oyster</label>
                     <label for="fare-price-selector">Fare price to use as colour:</label>

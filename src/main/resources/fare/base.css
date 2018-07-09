@@ -53,6 +53,10 @@ body {
     overflow: hidden
 }
 
+.radio-dropdown-menu {
+    padding: 0.5rem;
+}
+
 #about {
     bottom: 10px;
     right: 10px;

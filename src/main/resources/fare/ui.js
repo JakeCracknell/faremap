@@ -1,7 +1,3 @@
-function resetUI() {
-    document.getElementById("ui-")
-}
-
 function formatPrice(price) {
     return "£" + (price / 100).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 }
