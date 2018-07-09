@@ -62,7 +62,7 @@ voronoiMap = function (map, url) {
         document.getElementById("selected-source").value = formatStationName(lastSelectedPoint || point);
         if (point.fares.length > 0) {
             document.getElementById("selected-destination").value = formatStationName(point);
-            const mainPrice = fareSelectorFunction(point.fares);
+            const mainPrice = preferredFareSelectorFunction(point.fares);
             const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
             const faresToDisplay = point.fares.filter(getFareTypeSelectorFilterFunction());
             document.getElementById("selected-main-price").style.visibility = "visible";
@@ -197,7 +197,7 @@ voronoiMap = function (map, url) {
         });
 
         maxFarePrice = filteredPoints.reduce(function (currentMax, thisPoint) {
-            let fare = fareSelectorFunction(thisPoint.fares);
+            let fare = preferredFareSelectorFunction(thisPoint.fares);
             if (fare !== Infinity) {
                 return Math.max(currentMax, fare);
             } else {
@@ -235,7 +235,7 @@ voronoiMap = function (map, url) {
             .attr("class", "point-cell")
             .attr("d", buildPathFromPoint)
             .style('fill', function (d) {
-                return getFillColourForAdjustedPrice(fareSelectorFunction(d.fares) / maxFarePrice)
+                return getFillColourForAdjustedPrice(preferredFareSelectorFunction(d.fares) / maxFarePrice)
             })
             .on('click', selectPointForFareQuery)
             .on('mouseover', showMouseOverInformationForPoint)

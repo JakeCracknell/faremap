@@ -1,16 +1,16 @@
-let fareSelectorFunction = getFareSelectorFunction("default");
+let preferredFareSelectorFunction = getPreferredFareSelectorFunction("default");
 
 $('input[name="routePreferenceRadios"]:radio').change(e => {
-    fareSelectorFunction = getFareSelectorFunction(e.target.value);
+    preferredFareSelectorFunction = getPreferredFareSelectorFunction(e.target.value);
 }); //TODO and redraw
 
 
-function getFareSelectorFunction(fareSelectorName) {
+function getPreferredFareSelectorFunction(fareSelectorName) {
     if (fareSelectorName === 'cheapest') {
         return fs => Math.min.apply(Math, filterFares(fs).map(function (f) {
             return f.price;
         }));
-    } else {
+    } else { //default
         return fs => Math.min.apply(Math, filterFares(fs).filter(f => f.isDefaultRoute).map(function (f) {
             return f.price;
         }));
