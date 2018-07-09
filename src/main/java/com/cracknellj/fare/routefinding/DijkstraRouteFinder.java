@@ -60,6 +60,7 @@ public class DijkstraRouteFinder {
 
     private Optional<FareDetail> getFareDetailIfExists(String fromId, String toId) {
         return fareDataProvider.getFares(fromId, toId).stream()
+                .filter(f -> !f.offPeakOnly)
                 .sorted(Comparator.comparing(f -> f.price)).findFirst();
     }
 

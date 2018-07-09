@@ -25,13 +25,13 @@
                 </a>
                 <div class="dropdown-menu radio-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="peakTimeRadio" checked>
+                        <input class="form-check-input" type="radio" name="travelTimeRadios" id="peakTimeRadio" value="peak" checked>
                         <label class="form-check-label" for="peakTimeRadio">
                             Peak Time Tickets
                         </label>
                     </div>
                     <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="offPeakRadio">
+                        <input class="form-check-input" type="radio" name="travelTimeRadios" id="offPeakRadio" value="off-peak">
                         <label class="form-check-label" for="offPeakRadio">
                             Off-Peak Tickets
                         </label>
@@ -131,6 +131,7 @@
 <script src="https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
 <script src="voronoi_map.js"></script>
 <script src="ui.js"></script>
+<script src="fare.js"></script>
 <script src="init_map.js"></script>
 
 </body>

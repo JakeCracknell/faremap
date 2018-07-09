@@ -85,7 +85,7 @@ voronoiMap = function (map, url) {
             document.getElementById("selected-main-price").style.visibility = "hidden"
         }
 
-        displayFares(point.fares);
+        displayFares(filterFares(point.fares));
 
     };
 
