@@ -62,7 +62,7 @@ voronoiMap = function (map, url) {
         document.getElementById("selected-source").value = formatStationName(lastSelectedPoint || point);
         if (point.fares.length > 0) {
             document.getElementById("selected-destination").value = formatStationName(point);
-            const mainPrice = getFareSelectorFunction()(point.fares);
+            const mainPrice = fareSelectorFunction(point.fares);
             const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
             const faresToDisplay = point.fares.filter(getFareTypeSelectorFilterFunction());
             document.getElementById("selected-main-price").style.visibility = "visible";
@@ -148,25 +148,6 @@ voronoiMap = function (map, url) {
             ((f.isTFL && fareTypesSelected.includes('tfl')) || (!f.isTFL && fareTypesSelected.includes('national-rail')));
     }
 
-    function getFareSelectorFunction() {
-        const fareTypeSelectorFilter = getFareTypeSelectorFilterFunction();
-        const fareSelectorElement = document.getElementById('fare-price-selector');
-        const primaryFareSelector = fareSelectorElement.options[fareSelectorElement.selectedIndex].id;
-        if (primaryFareSelector === 'low') {
-            return fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
-                return f.price;
-            }));
-        } else if (primaryFareSelector === 'high') {
-            return fs => Math.max.apply(Math, fs.filter(fareTypeSelectorFilter).map(function (f) {
-                return f.price;
-            }));
-        } else {
-            return fs => Math.min.apply(Math, fs.filter(fareTypeSelectorFilter).filter(f => f.isDefaultRoute).map(function (f) {
-                return f.price;
-            }));
-        }
-    };
-
     var getSelectedCheckboxesFromGroup = function (selector) {
         checkedInputs = document.querySelectorAll(selector + ' input[type=checkbox]:checked');
         return [].slice.call(checkedInputs).map(function (c) {
@@ -193,7 +174,6 @@ voronoiMap = function (map, url) {
         let bottomRight = map.latLngToLayerPoint(bounds.getSouthEast());
         let setOfXYPointsToDraw = d3.set();
         let drawLimit = bounds.pad(0.4);
-        let fareSelectorFunction = getFareSelectorFunction();
         let currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
 
         filteredPoints = points.filter(function (d) {

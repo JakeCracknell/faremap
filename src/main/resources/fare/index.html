@@ -38,20 +38,23 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
+                <a class="nav-link dropdown-toggle" href="#" id="routePreferenceNavDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Route Preference
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-menu radio-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="form-check dropdown-item">
+                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferDefaultRouteRadio" value="default" checked>
+                        <label class="form-check-label" for="preferDefaultRouteRadio">
+                            Prefer Default Route
+                        </label>
+                    </div>
+                    <div class="form-check dropdown-item">
+                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferCheapestRouteRadio" value="cheapest">
+                        <label class="form-check-label" for="preferCheapestRouteRadio">
+                            Prefer Cheapest Route
+                        </label>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -76,12 +79,6 @@
                     <h3>Fare Types</h3>
                     <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
                     <label><input type="checkbox" value="tfl" checked="checked">TFL / Oyster</label>
-                    <label for="fare-price-selector">Fare price to use as colour:</label>
-                    <select class="form-control" id="fare-price-selector">
-                        <option id="default">Default Fare Price</option>
-                        <option id="low">Lowest Price</option>
-                        <option id="high">Highest Price</option>
-                    </select>
                 </div>
             </div>
         </div>
@@ -129,9 +126,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
 <script src="https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
-<script src="voronoi_map.js"></script>
 <script src="ui.js"></script>
 <script src="fare.js"></script>
+<script src="voronoi_map.js"></script>
 <script src="init_map.js"></script>
 
 </body>
