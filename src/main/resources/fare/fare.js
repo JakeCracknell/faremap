@@ -1,4 +1,5 @@
 let preferredFareSelectorFunction = getPreferredFareSelectorFunction("default");
+let maxPriceCurrentlyDisplayed = 0;
 
 $('input[name="routePreferenceRadios"]:radio').change(e => {
     preferredFareSelectorFunction = getPreferredFareSelectorFunction(e.target.value);
@@ -26,4 +27,14 @@ function filterFares(fares) {
             oFare.ticketType === fare.ticketType && oFare.routeDescription === fare.routeDescription));
         return offPeakFares.concat(universalFares);
     }
+}
+
+function getFillColourForPrice(price) {
+    return getFillColourForPercentage(price / maxPriceCurrentlyDisplayed);
+}
+
+function getFillColourForPercentage(percentage) {
+    if (percentage === Infinity || percentage === -Infinity || !percentage) return 'transparent';
+    var hue = (percentage * 360).toString(10);
+    return ["hsla(", hue, ",100%,50%,0.5)"].join("");
 }

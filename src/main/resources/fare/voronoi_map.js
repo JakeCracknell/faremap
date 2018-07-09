@@ -16,8 +16,7 @@ voronoiMap = function (map, url) {
     var pointModes = d3.map(),
         points = [],
         pointsMap = {},
-        lastSelectedPoint,
-        maxFarePrice;
+        lastSelectedPoint;
 
     var voronoi = d3.geom.voronoi()
         .x(function (d) {
@@ -48,12 +47,6 @@ voronoiMap = function (map, url) {
         })
     };
 
-    var getFillColourForAdjustedPrice = function (price) {
-        if (price === Infinity || price === -Infinity || !price) return 'transparent';
-        var hue = (price * 360).toString(10);
-        return ["hsla(", hue, ",100%,50%,0.5)"].join("");
-    };
-
     var showMouseOverInformationForPoint = function () {
         const cell = d3.select(this);
         const point = cell.datum();
@@ -63,7 +56,7 @@ voronoiMap = function (map, url) {
         if (point.fares.length > 0) {
             document.getElementById("selected-destination").value = formatStationName(point);
             const mainPrice = preferredFareSelectorFunction(point.fares);
-            const fareColour = getFillColourForAdjustedPrice(mainPrice / maxFarePrice);
+            const fareColour = getFillColourForPrice(mainPrice);
             const faresToDisplay = point.fares.filter(getFareTypeSelectorFilterFunction());
             document.getElementById("selected-main-price").style.visibility = "visible";
             document.getElementById("selected-main-price").textContent = formatPrice(mainPrice);
@@ -196,7 +189,7 @@ voronoiMap = function (map, url) {
             return true;
         });
 
-        maxFarePrice = filteredPoints.reduce(function (currentMax, thisPoint) {
+        maxPriceCurrentlyDisplayed = filteredPoints.reduce(function (currentMax, thisPoint) {
             let fare = preferredFareSelectorFunction(thisPoint.fares);
             if (fare !== Infinity) {
                 return Math.max(currentMax, fare);
@@ -235,7 +228,7 @@ voronoiMap = function (map, url) {
             .attr("class", "point-cell")
             .attr("d", buildPathFromPoint)
             .style('fill', function (d) {
-                return getFillColourForAdjustedPrice(preferredFareSelectorFunction(d.fares) / maxFarePrice)
+                return getFillColourForPrice(preferredFareSelectorFunction(d.fares))
             })
             .on('click', selectPointForFareQuery)
             .on('mouseover', showMouseOverInformationForPoint)

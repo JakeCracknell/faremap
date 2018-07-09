@@ -11,8 +11,9 @@ function displayFares(fares) {
     faresContainer.innerHTML = '';
 
     fares.forEach(fare => {
+        const color = getFillColourForPrice(fare.price);
         faresContainer.innerHTML +=
-            "<div class=\"card fare-card shadow-sm my-2\">\n" +
+            "<div class=\"card fare-card shadow-sm my-2\" style='background: linear-gradient(to right, white, " + color + ");'>\n" +
             "  <div class=\"card-body fare-card-body\">\n" +
             "    <div class=\"fare-card-header\">\n" +
             "      <h5 class=\"card-title float-left fare-card-title\">" + getFareTitle(fare) + "</h5>\n" +
