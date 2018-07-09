@@ -42,6 +42,7 @@ body {
 #sidebar {
     width: 400px;
     padding: 20px;
+    overflow: auto; /* scroll bar shows if too much content */
 }
 
 #map {
@@ -141,11 +142,12 @@ body {
     background-image: url(img/nr-icon.png);
 }
 
-.hide,
-.show {
-    padding-bottom: 10px;
-    display: block;
-}
+/*zetter's code. does not work well with navbar*/
+/*.hide,*/
+/*.show {*/
+    /*padding-bottom: 10px;*/
+    /*display: block;*/
+/*}*/
 
 .content {
     display: none;
