@@ -55,7 +55,7 @@ voronoiMap = function (map, url) {
         document.getElementById("selected-source").value = formatStationName(lastSelectedPoint || point);
         if (point.fares.length > 0) {
             document.getElementById("selected-destination").value = formatStationName(point);
-            const mainPrice = preferredFareSelectorFunction(point.fares);
+            const mainPrice = preferredFareSelectorFunction(point.fares).price; //TODO Will fail sometimes
             const fareColour = getFillColourForPrice(mainPrice);
             const faresToDisplay = point.fares.filter(getFareTypeSelectorFilterFunction());
             document.getElementById("selected-main-price").style.visibility = "visible";
@@ -191,8 +191,8 @@ voronoiMap = function (map, url) {
 
         maxPriceCurrentlyDisplayed = filteredPoints.reduce(function (currentMax, thisPoint) {
             let fare = preferredFareSelectorFunction(thisPoint.fares);
-            if (fare !== Infinity) {
-                return Math.max(currentMax, fare);
+            if (fare !== undefined) {
+                return Math.max(currentMax, fare.price);
             } else {
                 return currentMax;
             }
@@ -228,7 +228,8 @@ voronoiMap = function (map, url) {
             .attr("class", "point-cell")
             .attr("d", buildPathFromPoint)
             .style('fill', function (d) {
-                return getFillColourForPrice(preferredFareSelectorFunction(d.fares))
+                const fare = preferredFareSelectorFunction(d.fares);
+                return fare && getFillColourForPrice(fare.price) || 'transparent';
             })
             .on('click', selectPointForFareQuery)
             .on('mouseover', showMouseOverInformationForPoint)

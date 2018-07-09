@@ -5,17 +5,9 @@ $('input[name="routePreferenceRadios"]:radio').change(e => {
     preferredFareSelectorFunction = getPreferredFareSelectorFunction(e.target.value);
 }); //TODO and redraw
 
-
 function getPreferredFareSelectorFunction(fareSelectorName) {
-    if (fareSelectorName === 'cheapest') {
-        return fs => Math.min.apply(Math, filterFares(fs).map(function (f) {
-            return f.price;
-        }));
-    } else { //default
-        return fs => Math.min.apply(Math, filterFares(fs).filter(f => f.isDefaultRoute).map(function (f) {
-            return f.price;
-        }));
-    }
+    return fares => fares.filter(f => fareSelectorName !== 'default' || f.isDefaultRoute)
+        .sort((f1, f2) => f1.price - f2.price)[0];
 }
 
 function filterFares(fares) {
