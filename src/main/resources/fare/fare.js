@@ -10,7 +10,7 @@ function getPreferredFareSelectorFunction(fareSelectorName) {
         .sort((f1, f2) => f1.price - f2.price)[0];
 }
 
-function filterFares(fares) {
+function filterFaresByTravelTime(fares) {
     if (document.querySelector('input[name="travelTimeRadios"]:checked').value === 'peak') {
         return fares.filter(fare => !fare.offPeakOnly)
     } else {
