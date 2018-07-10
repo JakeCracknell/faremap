@@ -14,44 +14,15 @@ function drawWithLoading(e) {
 
 function draw() {
     d3.select('#overlay').remove();
-
-    let bounds = map.getBounds();
-    let topLeft = map.latLngToLayerPoint(bounds.getNorthWest());
-    let currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
-
     pointsMap.forEach(translateAndSetCoordinates);
-
-    let drawLimit = bounds.pad(0.4);
-    let setOfXYPointsToDraw = d3.set();
-    drawableStations = [...pointsMap.values()].filter(function (d) {
-        if (!(d.modes.some(m => currentSelectedModes.has(m)) && drawLimit.contains(d.latlng))) {
-            return false;
-        }
-
-        // filters points that are right on top of each other, of which there are 135 (e.g. Hammersmith, Amersham Rail/Tube)
-        // display messed up if this happens. Long term solution is to change backend to group such stations
-        if (setOfXYPointsToDraw.has(d.xyPoint.toString())) {
-            return false;
-        }
-        setOfXYPointsToDraw.add(d.xyPoint.toString());
-
-        return true;
-    });
-
-    maxPriceCurrentlyDisplayed = drawableStations.reduce(function (currentMax, thisPoint) {
-        const fare = preferredFareSelectorListFunction(thisPoint.fares)[0]; //Poss to use original func?
-        if (fare !== undefined) {
-            return Math.max(currentMax, fare.price);
-        } else {
-            return currentMax;
-        }
-    }, 0);
+    const drawableStations = getDrawableStationsAsList();
+    setMaxPriceCurrentlyDisplayedFromList(drawableStations);
 
     voronoi(drawableStations).forEach(function (d) {
         d.point.cell = d;
     });
 
-
+    let topLeft = map.latLngToLayerPoint(map.getBounds().getNorthWest());
     var svg = d3.select(map.getPanes().overlayPane).append("svg")
         .attr('id', 'overlay')
         .attr("class", "leaflet-zoom-hide")
@@ -100,6 +71,26 @@ function draw() {
 
     d3.selectAll(".route-line").remove();
     drawableStations.forEach(s => s.fares.forEach(f => drawLineBetweenStationsInFare(lastSelectedPoint, f)))
+}
+
+function getDrawableStationsAsList() {
+    let currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
+    let drawLimit = map.getBounds().pad(0.4);
+    let setOfXYPointsToDraw = d3.set();
+    return [...pointsMap.values()].filter(function (d) {
+        if (!(d.modes.some(m => currentSelectedModes.has(m)) && drawLimit.contains(d.latlng))) {
+            return false;
+        }
+
+        // filters points that are right on top of each other, of which there are 135 (e.g. Hammersmith, Amersham Rail/Tube)
+        // display messed up if this happens. Long term solution is to change backend to group such stations
+        if (setOfXYPointsToDraw.has(d.xyPoint.toString())) {
+            return false;
+        }
+        setOfXYPointsToDraw.add(d.xyPoint.toString());
+
+        return true;
+    });
 }
 
 var voronoi = d3.geom.voronoi()

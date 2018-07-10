@@ -7,6 +7,17 @@ $('input[name="routePreferenceRadios"]:radio').change(e => {
     preferredFareSelectorListFunction = getPreferredFareSelectorListFunction(e.target.value);
 });
 
+function setMaxPriceCurrentlyDisplayedFromList(stations) {
+    maxPriceCurrentlyDisplayed = stations.reduce(function (currentMax, thisPoint) {
+        const fare = preferredFareSelectorListFunction(thisPoint.fares)[0]; //Poss to use original func?
+        if (fare !== undefined) {
+            return Math.max(currentMax, fare.price);
+        } else {
+            return currentMax;
+        }
+    }, 0);
+}
+
 //TODO choose one of the below and refactor the other
 function getPreferredFareSelectorFunction(fareSelectorName) {
     return fares => (fares || []).filter(f => fareSelectorName !== 'default' || f.isDefaultRoute)
