@@ -17,20 +17,19 @@ function draw() {
 
     let bounds = map.getBounds();
     let topLeft = map.latLngToLayerPoint(bounds.getNorthWest());
-    let bottomRight = map.latLngToLayerPoint(bounds.getSouthEast());
-    let setOfXYPointsToDraw = d3.set();
-    let drawLimit = bounds.pad(0.4);
     let currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
 
     pointsMap.forEach(translateAndSetCoordinates);
 
-    filteredPoints = [...pointsMap.values()].filter(function (d) {
-
+    let drawLimit = bounds.pad(0.4);
+    let setOfXYPointsToDraw = d3.set();
+    drawableStations = [...pointsMap.values()].filter(function (d) {
         if (!(d.modes.some(m => currentSelectedModes.has(m)) && drawLimit.contains(d.latlng))) {
             return false;
         }
 
-        // filters points that are right on top of each other. does not work without this
+        // filters points that are right on top of each other, of which there are 135 (e.g. Hammersmith, Amersham Rail/Tube)
+        // display messed up if this happens. Long term solution is to change backend to group such stations
         if (setOfXYPointsToDraw.has(d.xyPoint.toString())) {
             return false;
         }
@@ -39,7 +38,7 @@ function draw() {
         return true;
     });
 
-    maxPriceCurrentlyDisplayed = filteredPoints.reduce(function (currentMax, thisPoint) {
+    maxPriceCurrentlyDisplayed = drawableStations.reduce(function (currentMax, thisPoint) {
         const fare = preferredFareSelectorListFunction(thisPoint.fares)[0]; //Poss to use original func?
         if (fare !== undefined) {
             return Math.max(currentMax, fare.price);
@@ -48,7 +47,7 @@ function draw() {
         }
     }, 0);
 
-    voronoi(filteredPoints).forEach(function (d) {
+    voronoi(drawableStations).forEach(function (d) {
         d.point.cell = d;
     });
 
@@ -66,7 +65,7 @@ function draw() {
 
     var svgPoints = g.attr("class", "points")
         .selectAll("g")
-        .data(filteredPoints)
+        .data(drawableStations)
         .enter().append("g")
         .attr("class", "point");
 
@@ -100,7 +99,7 @@ function draw() {
         .attr("r", 2);
 
     d3.selectAll(".route-line").remove();
-    filteredPoints.forEach(s => s.fares.forEach(f => drawLineBetweenStationsInFare(lastSelectedPoint, f)))
+    drawableStations.forEach(s => s.fares.forEach(f => drawLineBetweenStationsInFare(lastSelectedPoint, f)))
 }
 
 var voronoi = d3.geom.voronoi()
