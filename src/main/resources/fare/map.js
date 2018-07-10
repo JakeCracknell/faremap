@@ -19,35 +19,28 @@ function draw() {
     setMaxPriceCurrentlyDisplayedFromList(drawableStations);
     createVoronoiPolygons(drawableStations);
 
-    var svg = d3.select(map.getPanes().overlayPane).append("svg")
+    const svg = d3.select(map.getPanes().overlayPane).append("svg")
         .attr('id', 'map-svg-overlay')
         .attr("class", "leaflet-zoom-hide")
         .style("width", map.getSize().x + 'px')
         .style("height", map.getSize().y + 'px');
 
-    var svgPoints = svg.append("g").attr("class", "points")
+    const svgPoints = svg.append("g").attr("class", "points")
         .selectAll("g")
         .data(drawableStations)
         .enter().append("g")
         .attr("class", "point");
 
-    var buildPathFromPoint = function (point) {
-        return "M" + point.polygon.join("L") + "Z";
-    };
-
     svgPoints.append("path")
         .attr("class", "station-polygon")
-        .attr("d", buildPathFromPoint)
-        .style('fill', function (d) {
-            const fare = preferredFareSelectorFunction(d.fares);
-            return fare && getFillColourForPrice(fare.price) || 'transparent';
-        })
+        .attr("d", station => "M" + station.polygon.join("L") + "Z")
+        .style('fill', getFillColourForStation)
         .on('click', selectPointForFareQuery)
         .on('mouseover', showMouseOverInformationForPoint)
         .classed("selected", function (d) {
             return lastSelectedPoint === d;
         })
-        .classed("nodata", function (d) {
+        .classed("no-fares", function (d) {
             return d.fares === undefined || d.fares.length === 0;
         });
 
@@ -85,14 +78,14 @@ function getDrawableStationsAsList() {
 }
 
 function createVoronoiPolygons(drawableStations) {
-    const voronoi = d3.geom.voronoi()
+    const voronoiFunction = d3.geom.voronoi()
         .x(function (d) {
             return d.x;
         })
         .y(function (d) {
             return d.y;
         });
-    voronoi(drawableStations).forEach(function (d) {
+    voronoiFunction(drawableStations).forEach(function (d) {
         d.point.polygon = d; // d.point is the station object.
     });
 }

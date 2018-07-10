@@ -40,6 +40,12 @@ function filterFaresByTravelTime(fares) {
     }
 }
 
+//TODO inline if only one call site
+function getFillColourForStation(station) {
+    const fare = preferredFareSelectorFunction(station.fares);
+    return fare && getFillColourForPrice(fare.price) || 'transparent';
+}
+
 function getFillColourForPrice(price) {
     return getFillColourForPercentage(price / maxPriceCurrentlyDisplayed);
 }

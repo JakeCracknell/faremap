@@ -24,7 +24,7 @@ body {
 }
 
 /*remove later - only for debugging*/
-.station-polygon.nodata {
+.station-polygon.no-fares {
     fill: transparent;
 }
 
