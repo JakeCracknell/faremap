@@ -35,3 +35,13 @@ function getFareTitle(fare) {
         return fare.ticketName;
     }
 }
+
+
+
+//TODO migrate properly
+var getSelectedCheckboxesFromGroup = function (selector) {
+    checkedInputs = document.querySelectorAll(selector + ' input[type=checkbox]:checked');
+    return [].slice.call(checkedInputs).map(function (c) {
+        return c.value;
+    });
+};
