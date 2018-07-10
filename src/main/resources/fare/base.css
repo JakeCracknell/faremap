@@ -13,17 +13,16 @@ body {
     pointer-events: all;
 }
 
-.station-polygon:hover, .station-polygon.selected {
-    fill: none;
-    stroke: #000;
+.station-polygon:hover, .station-polygon.selected-source-station-polygon {
+    stroke: black;
     stroke-width: 2px;
 }
 
-.station-polygon.selected {
+.station-polygon.selected-source-station-polygon {
     stroke-width: 3px;
 }
 
-.point circle {
+.point circle { /*TODO rename*/
     pointer-events: none;
 }
 
@@ -52,20 +51,7 @@ body {
     padding: 0.5rem;
 }
 
-#about {
-    bottom: 10px;
-    right: 10px;
-}
-
-#about.visible {
-    width: 200px;
-}
-
-#about .hide {
-    padding-bottom: 0;
-    text-align: right;
-}
-
+/*TODO: remove all loadings*/
 #loading.visible:after {
     top: 50%;
     left: 50%;
@@ -75,117 +61,4 @@ body {
     margin-top: -30px;
     content: 'drawing...';
     font-size: 18px;
-}
-
-#selections label {
-    display: block;
-    padding-bottom: 8px;
-}
-
-#selections input[type=checkbox] {
-    position: relative;
-    top: -1px;
-}
-
-#selections .key {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
-    margin: 0 5px;
-}
-
-/*#selected {*/
-    /*bottom: 10px;*/
-    /*left: 10px;*/
-    /*min-height: 50px;*/
-/*}*/
-
-#selected-header {
-    font-size: 20px;
-    margin: 0;
-    line-height: 20px;
-    font-weight: bold;
-    /*white-space: nowrap;*/
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-#selected-source-destination {
-    padding: 10px;
-    float: left;
-}
-
-#selected-main-price {
-    padding: 10px;
-    display: inline-block;
-    width: fit-content;
-    visibility: hidden;
-}
-
-#fare-table .fare-type {
-    background-size: contain;
-    background-repeat: no-repeat;
-    min-width: 20px;
-}
-
-#fare-table .td {
-    padding: 5px;
-}
-
-#fare-table .tfl {
-    background-image: url(img/tfl-icon.png);
-}
-
-#fare-table .nr {
-    background-image: url(img/nr-icon.png);
-}
-
-/*zetter's code. does not work well with navbar*/
-/*.hide,*/
-/*.show {*/
-    /*padding-bottom: 10px;*/
-    /*display: block;*/
-/*}*/
-
-.content {
-    display: none;
-}
-
-@media (min-width: 480px) {
-    .selections .content {
-        display: block;
-    }
-
-    .selections .show {
-        display: none;
-    }
-}
-
-.hidden .content,
-.visible .show {
-    display: none;
-}
-
-.hidden .show,
-.visible .content {
-    display: block;
-}
-
-@media (max-width: 480px) {
-    #selected {
-        box-sizing: border-box;
-        width: 80%;
-        height: 32px;
-    }
-
-    #selected h1 {
-        font-size: 15px;
-        line-height: 15px;
-        font-weight: bold;
-    }
-}
-
-.mapbox-control-info {
-    display: none !important;
 }

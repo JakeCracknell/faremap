@@ -1,5 +1,5 @@
 let pointsMap = {};
-let lastSelectedPoint;
+let selectedSourceStation;
 
 function drawWithLoading(e) {
     d3.select('#loading').classed('visible', true);
@@ -37,7 +37,7 @@ function draw() {
         .style('fill', getFillColourForStation)
         .on('click', selectPointForFareQuery)
         .on('mouseover', showMouseOverInformationForPoint)
-        .classed("selected", d => lastSelectedPoint === d);
+        .classed("selected-source-station-polygon", d => selectedSourceStation === d);
 
     svgPoints.append("circle")
         .attr("transform", function (d) {
@@ -49,7 +49,7 @@ function draw() {
         .attr("r", 2);
 
     d3.selectAll(".route-line").remove();
-    drawableStations.forEach(s => s.fares.forEach(f => drawLineBetweenStationsInFare(lastSelectedPoint, f)))
+    drawableStations.forEach(s => s.fares.forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)))
 }
 
 function getDrawableStationsAsList() {
@@ -92,7 +92,7 @@ var selectPointForFareQuery = function () {
     var polygon = d3.select(this),
         point = polygon.datum();
 
-    lastSelectedPoint = point;
+    selectedSourceStation = point;
     polygon.classed('selected', true);
 
     fareUrl = "/api/fare/from/" + point.stationId;
@@ -109,8 +109,8 @@ var selectPointForFareQuery = function () {
 
 var showMouseOverInformationForPoint = function () {
     const point = d3.select(this).datum();
-    document.getElementById("selected-source").value = formatStationName(lastSelectedPoint || point);
-    document.getElementById("selected-destination").value = formatStationName(point);
+    document.getElementById("selected-source-station-input").value = formatStationName(selectedSourceStation || point);
+    document.getElementById("selected-destination-station-input").value = formatStationName(point);
     displayFares(filterFaresByTravelTime(point.fares));
 };
 
