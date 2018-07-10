@@ -23,11 +23,6 @@ body {
     stroke-width: 3px;
 }
 
-/*remove later - only for debugging*/
-.station-polygon.no-fares {
-    fill: transparent;
-}
-
 .point circle {
     pointer-events: none;
 }

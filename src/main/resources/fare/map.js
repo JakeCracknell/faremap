@@ -37,12 +37,7 @@ function draw() {
         .style('fill', getFillColourForStation)
         .on('click', selectPointForFareQuery)
         .on('mouseover', showMouseOverInformationForPoint)
-        .classed("selected", function (d) {
-            return lastSelectedPoint === d;
-        })
-        .classed("no-fares", function (d) {
-            return d.fares === undefined || d.fares.length === 0;
-        });
+        .classed("selected", d => lastSelectedPoint === d);
 
     svgPoints.append("circle")
         .attr("transform", function (d) {

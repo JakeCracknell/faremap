@@ -3,6 +3,8 @@ Add off peak NR fares
 
 Default fare view only shows oyster for selecting a tube station. Try to add fares like 'London Z1-6 to Hatfield'.
 
+Check for bug: select one from station, then another whilst it is loading. May show incorrect fares in map.
+
 Dijkstra speedups: deduplicate faredetails, cache cheapest fare prices.
 
 Notes:
