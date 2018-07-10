@@ -4,7 +4,7 @@ let lastSelectedPoint;
 function drawWithLoading(e) {
     d3.select('#loading').classed('visible', true);
     if (e && e.type === 'viewreset') {
-        d3.select('#overlay').remove();
+        d3.select('#map-svg-overlay').remove();
     }
     setTimeout(function () {
         draw();
@@ -13,25 +13,19 @@ function drawWithLoading(e) {
 }
 
 function draw() {
-    d3.select('#overlay').remove();
+    d3.select('#map-svg-overlay').remove();
     pointsMap.forEach(translateAndSetCoordinates);
     const drawableStations = getDrawableStationsAsList();
     setMaxPriceCurrentlyDisplayedFromList(drawableStations);
     createVoronoiPolygons(drawableStations);
 
-    let topLeft = map.latLngToLayerPoint(map.getBounds().getNorthWest());
     var svg = d3.select(map.getPanes().overlayPane).append("svg")
-        .attr('id', 'overlay')
+        .attr('id', 'map-svg-overlay')
         .attr("class", "leaflet-zoom-hide")
         .style("width", map.getSize().x + 'px')
-        .style("height", map.getSize().y + 'px')
-        .style("margin-left", topLeft.x + "px")
-        .style("margin-top", topLeft.y + "px");
+        .style("height", map.getSize().y + 'px');
 
-    var g = svg.append("g")
-        .attr("transform", "translate(" + (-topLeft.x) + "," + (-topLeft.y) + ")");
-
-    var svgPoints = g.attr("class", "points")
+    var svgPoints = svg.append("g").attr("class", "points")
         .selectAll("g")
         .data(drawableStations)
         .enter().append("g")
@@ -142,7 +136,7 @@ function drawLineBetweenStationsInFare(startPoint, fare) {
         .y(function (d) {
             return d.y;
         });
-    d3.select("#overlay").select("g")
+    d3.select("#map-svg-overlay").select("g")
         .append("path")
         .attr("d", lineFunction(pointsToDraw))
         .attr("class", "route-line");
