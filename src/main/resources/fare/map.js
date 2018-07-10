@@ -1,4 +1,3 @@
-let points = [];
 let pointsMap = {};
 let lastSelectedPoint;
 
@@ -23,28 +22,25 @@ function draw() {
     let drawLimit = bounds.pad(0.4);
     let currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
 
-    filteredPoints = points.filter(function (d) {
-        let latlng = new L.LatLng(d.latitude, d.longitude);
-        let point = map.latLngToLayerPoint(latlng);
-        d.x = point.x;
-        d.y = point.y;
+    pointsMap.forEach(translateAndSetCoordinates);
 
-        if (!(d.modes.some(m => currentSelectedModes.has(m)) && drawLimit.contains(latlng))) {
+    filteredPoints = [...pointsMap.values()].filter(function (d) {
+
+        if (!(d.modes.some(m => currentSelectedModes.has(m)) && drawLimit.contains(d.latlng))) {
             return false;
         }
 
         // filters points that are right on top of each other. does not work without this
-        key = point.toString();
-        if (setOfXYPointsToDraw.has(key)) {
+        if (setOfXYPointsToDraw.has(d.xyPoint.toString())) {
             return false;
         }
-        setOfXYPointsToDraw.add(key);
+        setOfXYPointsToDraw.add(d.xyPoint.toString());
 
         return true;
     });
 
     maxPriceCurrentlyDisplayed = filteredPoints.reduce(function (currentMax, thisPoint) {
-        let fare = preferredFareSelectorFunction(thisPoint.fares);
+        const fare = preferredFareSelectorListFunction(thisPoint.fares)[0]; //Poss to use original func?
         if (fare !== undefined) {
             return Math.max(currentMax, fare.price);
         } else {
@@ -88,10 +84,10 @@ function draw() {
         .on('click', selectPointForFareQuery)
         .on('mouseover', showMouseOverInformationForPoint)
         .classed("selected", function (d) {
-            return lastSelectedPoint == d;
+            return lastSelectedPoint === d;
         })
         .classed("nodata", function (d) {
-            return d.fares.length === 0;
+            return d.fares === undefined || d.fares.length === 0;
         });
 
     svgPoints.append("circle")
@@ -176,4 +172,11 @@ function getTRForFareWithWaypoint(fare) {
     td.appendChild(document.createTextNode(fare.fareDetail.routeDescription));
     tr.appendChild(td);
     return tr;
+}
+
+function translateAndSetCoordinates(station) {
+    station.latlng = new L.LatLng(station.latitude, station.longitude);
+    station.xyPoint = map.latLngToLayerPoint(station.latlng);
+    station.x = station.xyPoint.x; //TODO remove if poss
+    station.y = station.xyPoint.y;
 }

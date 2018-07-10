@@ -1,13 +1,21 @@
 let preferredFareSelectorFunction = getPreferredFareSelectorFunction("default");
+let preferredFareSelectorListFunction = getPreferredFareSelectorListFunction("default");
 let maxPriceCurrentlyDisplayed = 0;
 
 $('input[name="routePreferenceRadios"]:radio').change(e => {
     preferredFareSelectorFunction = getPreferredFareSelectorFunction(e.target.value);
-}); //TODO and redraw
+    preferredFareSelectorListFunction = getPreferredFareSelectorListFunction(e.target.value);
+});
 
+//TODO choose one of the below and refactor the other
 function getPreferredFareSelectorFunction(fareSelectorName) {
-    return fares => fares.filter(f => fareSelectorName !== 'default' || f.isDefaultRoute)
+    return fares => (fares || []).filter(f => fareSelectorName !== 'default' || f.isDefaultRoute)
         .sort((f1, f2) => f1.price - f2.price)[0];
+}
+
+function getPreferredFareSelectorListFunction(fareSelectorName) {
+    return fares => (fares || []).filter(f => fareSelectorName !== 'default' || f.isDefaultRoute)
+        .sort((f1, f2) => f1.price - f2.price);
 }
 
 function filterFaresByTravelTime(fares) {
