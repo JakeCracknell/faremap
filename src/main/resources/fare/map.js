@@ -17,10 +17,7 @@ function draw() {
     pointsMap.forEach(translateAndSetCoordinates);
     const drawableStations = getDrawableStationsAsList();
     setMaxPriceCurrentlyDisplayedFromList(drawableStations);
-
-    voronoi(drawableStations).forEach(function (d) {
-        d.point.cell = d;
-    });
+    createVoronoiPolygons(drawableStations);
 
     let topLeft = map.latLngToLayerPoint(map.getBounds().getNorthWest());
     var svg = d3.select(map.getPanes().overlayPane).append("svg")
@@ -41,11 +38,11 @@ function draw() {
         .attr("class", "point");
 
     var buildPathFromPoint = function (point) {
-        return "M" + point.cell.join("L") + "Z";
+        return "M" + point.polygon.join("L") + "Z";
     };
 
     svgPoints.append("path")
-        .attr("class", "point-cell")
+        .attr("class", "station-polygon")
         .attr("d", buildPathFromPoint)
         .style('fill', function (d) {
             const fare = preferredFareSelectorFunction(d.fares);
@@ -93,23 +90,28 @@ function getDrawableStationsAsList() {
     });
 }
 
-var voronoi = d3.geom.voronoi()
-    .x(function (d) {
-        return d.x;
-    })
-    .y(function (d) {
-        return d.y;
+function createVoronoiPolygons(drawableStations) {
+    const voronoi = d3.geom.voronoi()
+        .x(function (d) {
+            return d.x;
+        })
+        .y(function (d) {
+            return d.y;
+        });
+    voronoi(drawableStations).forEach(function (d) {
+        d.point.polygon = d; // d.point is the station object.
     });
+}
 
 
 var selectPointForFareQuery = function () {
     d3.selectAll('.selected').classed('selected', false);
 
-    var cell = d3.select(this),
-        point = cell.datum();
+    var polygon = d3.select(this),
+        point = polygon.datum();
 
     lastSelectedPoint = point;
-    cell.classed('selected', true);
+    polygon.classed('selected', true);
 
     fareUrl = "/api/fare/from/" + point.stationId;
     d3.json(fareUrl, function (json) {

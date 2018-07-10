@@ -9,22 +9,22 @@ body {
     flex-direction: column;
 }
 
-.point-cell {
+.station-polygon {
     pointer-events: all;
 }
 
-.point-cell:hover, .point-cell.selected {
+.station-polygon:hover, .station-polygon.selected {
     fill: none;
     stroke: #000;
     stroke-width: 2px;
 }
 
-.point-cell.selected {
+.station-polygon.selected {
     stroke-width: 3px;
 }
 
 /*remove later - only for debugging*/
-.point-cell.nodata {
+.station-polygon.nodata {
     fill: transparent;
 }
 

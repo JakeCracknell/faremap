@@ -1,12 +1,7 @@
 Convex hull on voronoi - spent ages on this. Best I could do was clippath on the svg, which does not look nice
 Add off peak NR fares
 
-Split ticketing using A*:
-    Combine with normal fares
-    Show breakdown of route in separate table
-    Checkbox to show/hide split ticket lines and route in table
-
-Make All Station and TFL data JSON. No more database
+Default fare view only shows oyster for selecting a tube station. Try to add fares like 'London Z1-6 to Hatfield'.
 
 Dijkstra speedups: deduplicate faredetails, cache cheapest fare prices.
 
