@@ -64,9 +64,6 @@
 <div id="main-content-container" class="d-flex">
     <div id='sidebar'>
         <div id='selections' class="selections" style="display: none">
-            <a href='#' class="show">Display Options</a>
-            <div class='content'>
-                <a href='#' class="hide">Hide</a>
                 <div id="mode-toggles">
                     <h3>Station Types</h3>
                     <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
@@ -75,12 +72,6 @@
                     <label><input type="checkbox" value="tflrail" checked="checked">TFL Rail</label>
                     <label><input type="checkbox" value="dlr" checked="checked">TFL DLR</label>
                 </div>
-                <div id="fare-type-toggles" style="display: none">
-                    <h3>Fare Types</h3>
-                    <label><input type="checkbox" value="national-rail" checked="checked">National Rail</label>
-                    <label><input type="checkbox" value="tfl" checked="checked">TFL / Oyster</label>
-                </div>
-            </div>
         </div>
 
         <div class="input-group mb-3">
@@ -98,15 +89,6 @@
         </div>
 
         <div id="fares-container">
-        </div>
-
-        <div id='selected'>
-            <div id="selected-header">
-                <div id="selected-main-price"></div>
-            </div>
-
-            <table id="fare-table">
-            </table>
         </div>
     </div>
     <div id="map"></div>
@@ -128,6 +110,7 @@
 <script src="https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
 <script src="ui.js"></script>
 <script src="fare.js"></script>
+<script src="map.js"></script>
 <script src="voronoi_map.js"></script>
 <script src="init_map.js"></script>
 

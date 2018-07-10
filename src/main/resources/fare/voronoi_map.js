@@ -1,17 +1,3 @@
-addShowHideEventsTo = function (selector) {
-    d3.select(selector).select('.hide').on('click', function () {
-        d3.select(selector)
-            .classed('visible', false)
-            .classed('hidden', true);
-    });
-
-    d3.select(selector).select('.show').on('click', function () {
-        d3.select(selector)
-            .classed('visible', true)
-            .classed('hidden', false);
-    });
-};
-
 voronoiMap = function (map, url) {
     var pointModes = d3.map(),
         points = [],
@@ -48,38 +34,10 @@ voronoiMap = function (map, url) {
     };
 
     var showMouseOverInformationForPoint = function () {
-        const cell = d3.select(this);
-        const point = cell.datum();
-        const faresTable = document.getElementById("fare-table");
-        faresTable.innerHTML = "";
+        const point = d3.select(this).datum();
         document.getElementById("selected-source").value = formatStationName(lastSelectedPoint || point);
-        if (point.fares.length > 0) {
-            document.getElementById("selected-destination").value = formatStationName(point);
-            const mainPrice = preferredFareSelectorFunction(point.fares).price; //TODO Will fail sometimes
-            const fareColour = getFillColourForPrice(mainPrice);
-            const faresToDisplay = point.fares.filter(getFareTypeSelectorFilterFunction());
-            document.getElementById("selected-main-price").style.visibility = "visible";
-            document.getElementById("selected-main-price").textContent = formatPrice(mainPrice);
-            document.getElementById("selected-main-price").style.backgroundColor = fareColour;
-
-            for (i = 0; i < faresToDisplay.length; i++) {
-                const fare = faresToDisplay[i];
-                faresTable.appendChild(getTRForFareDetail(fare));
-                if (fare.hops !== undefined) {
-                    const subFaresTable = document.createElement("tbody");
-                    subFaresTable.className = "sub-fare-table";
-                    for (j = 0; j < fare.hops.length; j++) {
-                        subFaresTable.appendChild(getTRForFareWithWaypoint(fare.hops[j]));
-                    }
-                    faresTable.appendChild(subFaresTable);
-                }
-            }
-        } else {
-            document.getElementById("selected-main-price").style.visibility = "hidden"
-        }
-
+        document.getElementById("selected-destination").value = formatStationName(point);
         displayFares(filterFaresByTravelTime(point.fares));
-
     };
 
     function drawLineBetweenStationsInFare(startPoint, fare) {
@@ -98,20 +56,7 @@ voronoiMap = function (map, url) {
             .attr("class", "route-line");
     }
 
-    function getTRForFareDetail(fare) {
-        var tr = document.createElement("tr");
-        var td = document.createElement("td");
-        td.classList.add("fare-type", fare.isTFL ? "tfl" : "nr");
-        tr.appendChild(td);
-        var td = document.createElement("td");
-        td.appendChild(document.createTextNode(formatPrice(fare.price)));
-        tr.appendChild(td);
-        var td = document.createElement("td");
-        td.appendChild(document.createTextNode(fare.routeDescription));
-        tr.appendChild(td);
-        return tr;
-    }
-
+    //TODO migrate similar
     function getTRForFareWithWaypoint(fare) {
         var tr = document.createElement("tr");
         var td = document.createElement("td");
@@ -129,17 +74,11 @@ voronoiMap = function (map, url) {
         return tr;
     }
 
+    //TODO migrate
     var setupDisplayOptionsPanel = function () {
-        addShowHideEventsTo('#selections');
         d3.selectAll('#mode-toggles, #fare-type-toggles')
             .on("change", drawWithLoading);
     };
-
-    function getFareTypeSelectorFilterFunction() {
-        const fareTypesSelected = getSelectedCheckboxesFromGroup('#fare-type-toggles');
-        return f => (f.offPeakOnly === fareTypesSelected.includes('off-peak')) &&
-            ((f.isTFL && fareTypesSelected.includes('tfl')) || (!f.isTFL && fareTypesSelected.includes('national-rail')));
-    }
 
     var getSelectedCheckboxesFromGroup = function (selector) {
         checkedInputs = document.querySelectorAll(selector + ' input[type=checkbox]:checked');
@@ -259,8 +198,6 @@ voronoiMap = function (map, url) {
             drawWithLoading();
         }
     };
-
-    addShowHideEventsTo('#about');
 
     map.on('ready', function () {
         d3.json(url, function (json) {
