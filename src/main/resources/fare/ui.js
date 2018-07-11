@@ -6,15 +6,12 @@ function formatStationName(station) {
     return station.stationName + ((station.crs && " (" + station.crs + ")") || "");
 }
 
-function displayFares(fares) {
+function displayFares(fareSet) {
     const faresContainer = document.getElementById("fares-container");
-    const topFare = preferredFareSelectorFunction(fares)[0];
-    const topFareCardDiv = getFareCardDiv(topFare, getFillColourForFare(topFare));
-    const otherFareCardDivs = fares.filter(f => f !== topFare)
-        .sort((f1, f2) => f1.price - f2.price)
-        .map(f => getFareCardDiv(f, 'white')).join("");
+    const topFareCardDiv = getFareCardDiv(fareSet.preferred, getFillColourForFare(fareSet.preferred));
+    const otherFareCardDivs = fareSet.valid.map(f => getFareCardDiv(f, 'white')).join("");
     faresContainer.innerHTML = topFareCardDiv + otherFareCardDivs;
-    fares.filter(f => f.hops !== undefined && f.hops.length > 0).forEach(populateSplitTicketModal);
+    fareSet.splitTicket && populateSplitTicketModal(fareSet.splitTicket);
 }
 
 function getFareCardDiv(fare, colour) {

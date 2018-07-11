@@ -47,7 +47,7 @@ function drawSvgOverlay(drawableStations) {
         .attr("r", 2);
 
     d3.selectAll(".route-line").remove();
-    drawableStations.forEach(s => s.fares.forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)));
+    drawableStations.forEach(s => (s.fares || []).forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)));
 }
 
 function getDrawableStationsAsList() {
@@ -101,7 +101,7 @@ var showMouseOverInformationForPoint = function () {
     selectedDestinationStation = d3.select(this).datum();
     document.getElementById("selected-source-station-input").value = formatStationName(selectedSourceStation || selectedDestinationStation);
     document.getElementById("selected-destination-station-input").value = formatStationName(selectedDestinationStation);
-    displayFares(filterFaresByTravelTime(selectedDestinationStation.fares));
+    displayFares(preferredFareSelectorFunction(selectedDestinationStation.fares));
 };
 
 function drawLineBetweenStationsInFare(startPoint, fare) {
