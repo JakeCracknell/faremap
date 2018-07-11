@@ -8,9 +8,9 @@ function formatStationName(station) {
 
 function displayFares(fareSet) {
     const faresContainer = document.getElementById("fares-container");
-    const topFareCardDiv = getFareCardDiv(fareSet.preferred, getFillColourForFare(fareSet.preferred));
+    const preferredFareCardDiv = fareSet.preferred && getFareCardDiv(fareSet.preferred, fareSet.colour);
     const otherFareCardDivs = fareSet.valid.map(f => getFareCardDiv(f, 'white')).join("");
-    faresContainer.innerHTML = topFareCardDiv + otherFareCardDivs;
+    faresContainer.innerHTML = preferredFareCardDiv + otherFareCardDivs;
     fareSet.splitTicket && populateSplitTicketModal(fareSet.splitTicket);
 }
 

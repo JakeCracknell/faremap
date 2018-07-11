@@ -11,13 +11,14 @@ $('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:rad
 function getPreferredFareSelectorFunction(routePreference, travelTimePreference) {
     return function (fares) {
         if (fares === undefined || fares.length === 0) {
-            return {}
+            return {valid: [], invalid: [], colour: 'transparent'}
         }
         let fareSet = splitFaresIntoValidAndNonValidForTravelTime(fares, travelTimePreference);
         fareSet.valid = fareSet.valid.sort((f1, f2) => f1.price - f2.price);
-        fareSet.splitTicket = fareSet.valid.filter(f => f.hops !== undefined && f.hops.length > 0);
+        fareSet.splitTicket = fareSet.valid.filter(f => f.hops !== undefined && f.hops.length > 0)[0];
         fareSet.preferred = fareSet.valid.filter(f => routePreference !== 'default' || f.isDefaultRoute)[0];
         fareSet.valid.splice(fareSet.valid.indexOf(fareSet.preferred), 1);
+        fareSet.colour = getFillColourForFare(fareSet.preferred);
         return fareSet;
     };
 }
@@ -54,10 +55,6 @@ function setMaxPriceCurrentlyDisplayedFromList(stations) {
             return currentMax;
         }
     }, 0);
-}
-
-function getFillColourForStation(station) {
-    return getFillColourForFare(preferredFareSelectorFunction(station.fares).preferred);
 }
 
 function getFillColourForFare(fare) {

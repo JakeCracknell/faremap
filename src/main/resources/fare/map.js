@@ -17,6 +17,7 @@ function draw() {
     const drawableStations = getDrawableStationsAsList();
     setMaxPriceCurrentlyDisplayedFromList(drawableStations);
     createVoronoiPolygons(drawableStations);
+    pointsMap.forEach(initialiseFareSets);
     drawSvgOverlay(drawableStations);
 }
 
@@ -36,7 +37,7 @@ function drawSvgOverlay(drawableStations) {
     svgPoints.append("path")
         .attr("class", "station-polygon")
         .attr("d", station => "M" + station.polygon.join("L") + "Z")
-        .style('fill', getFillColourForStation)
+        .style('fill', station => station.fareSet.colour)
         .on('click', selectPointForFareQuery)
         .on('mouseover', showMouseOverInformationForPoint)
         .classed("selected-source-station-polygon", d => selectedSourceStation === d);
@@ -68,6 +69,10 @@ function getDrawableStationsAsList() {
 
         return true;
     });
+}
+
+function initialiseFareSets(station) {
+    station.fareSet = preferredFareSelectorFunction(station.fares);
 }
 
 function createVoronoiPolygons(drawableStations) {
