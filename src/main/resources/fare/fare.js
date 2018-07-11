@@ -1,32 +1,24 @@
 let preferredFareSelectorFunction = getPreferredFareSelectorFunction("default");
-let preferredFareSelectorListFunction = getPreferredFareSelectorListFunction("default");
 let maxPriceCurrentlyDisplayed = 0;
 
 $('input[name="routePreferenceRadios"]:radio').change(e => {
     preferredFareSelectorFunction = getPreferredFareSelectorFunction(e.target.value);
-    preferredFareSelectorListFunction = getPreferredFareSelectorListFunction(e.target.value);
 });
+
+function getPreferredFareSelectorFunction(fareSelectorName) {
+    return fares => (fares || []).filter(f => fareSelectorName !== 'default' || f.isDefaultRoute)
+        .sort((f1, f2) => f1.price - f2.price);
+}
 
 function setMaxPriceCurrentlyDisplayedFromList(stations) {
     maxPriceCurrentlyDisplayed = stations.reduce(function (currentMax, thisPoint) {
-        const fare = preferredFareSelectorListFunction(thisPoint.fares)[0]; //Poss to use original func?
+        const fare = preferredFareSelectorFunction(thisPoint.fares)[0]; //Poss to use original func?
         if (fare !== undefined) {
             return Math.max(currentMax, fare.price);
         } else {
             return currentMax;
         }
     }, 0);
-}
-
-//TODO choose one of the below and refactor the other
-function getPreferredFareSelectorFunction(fareSelectorName) {
-    return fares => (fares || []).filter(f => fareSelectorName !== 'default' || f.isDefaultRoute)
-        .sort((f1, f2) => f1.price - f2.price)[0];
-}
-
-function getPreferredFareSelectorListFunction(fareSelectorName) {
-    return fares => (fares || []).filter(f => fareSelectorName !== 'default' || f.isDefaultRoute)
-        .sort((f1, f2) => f1.price - f2.price);
 }
 
 function filterFaresByTravelTime(fares) {
@@ -42,7 +34,7 @@ function filterFaresByTravelTime(fares) {
 
 //TODO inline if only one call site
 function getFillColourForStation(station) {
-    const fare = preferredFareSelectorFunction(station.fares);
+    const fare = preferredFareSelectorFunction(station.fares)[0];
     return fare && getFillColourForPrice(fare.price) || 'transparent';
 }
 

@@ -8,7 +8,7 @@ function formatStationName(station) {
 
 function displayFares(fares) {
     const faresContainer = document.getElementById("fares-container");
-    const topFare = preferredFareSelectorFunction(fares);
+    const topFare = preferredFareSelectorFunction(fares)[0];
     faresContainer.innerHTML = getFareCardDiv(topFare, getFillColourForPrice(topFare.price)) +
         fares.filter(f => f !== topFare).sort((f1, f2) => f1.price - f2.price)
             .map(f => getFareCardDiv(f, 'white')).join("");
