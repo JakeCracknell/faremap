@@ -38,7 +38,7 @@ function drawSvgOverlay(drawableStations) {
         .attr("class", "station-polygon")
         .attr("d", station => "M" + station.polygon.join("L") + "Z")
         .style('fill', station => station.fareSet.colour)
-        .on('click', selectPointForFareQuery)
+        .on('click', onStationPolygonClick)
         .on('mouseover', onStationPolygonMouseOver)
         .classed("selected-source-station-polygon", d => selectedSourceStation === d);
 
@@ -80,27 +80,22 @@ function createVoronoiPolygons(drawableStations) {
     voronoiFunction(drawableStations).forEach(d => d.point.polygon = d);  // d.point is the station object.
 }
 
-//TODO refactor
-var selectPointForFareQuery = function () {
+//TODO stages. Current behaviour should only be in the SOURCE SELECTION state
+function onStationPolygonClick() {
+    const polygon = d3.select(this);
+    selectedSourceStation = polygon.datum();
+
     d3.selectAll('.selected').classed('selected', false);
-
-    var polygon = d3.select(this),
-        point = polygon.datum();
-
-    selectedSourceStation = point;
     polygon.classed('selected', true);
 
-    fareUrl = "/api/fare/from/" + point.stationId;
+    fareUrl = "/api/fare/from/" + selectedSourceStation.stationId;
     d3.json(fareUrl, function (json) {
-        pointsMap.forEach(function (station, stationId, m) {
-            station.fares = []
-        });
-        for (var toStationId in json.fares) {
+        for (const toStationId in json.fares) {
             pointsMap.get(toStationId).fares = json.fares[toStationId];
         }
         drawWithLoading();
     })
-};
+}
 
 function onStationPolygonMouseOver() {
     selectedDestinationStation = d3.select(this).datum();
@@ -117,6 +112,7 @@ function drawLineBetweenStationsInFare(startPoint, fare) {
         .attr("d", lineFunction(pointsToDraw))
         .attr("class", "route-line");
 }
+
 function translateAndSetCoordinates(station) {
     station.latlng = new L.LatLng(station.latitude, station.longitude);
     station.xyPoint = map.latLngToLayerPoint(station.latlng);
