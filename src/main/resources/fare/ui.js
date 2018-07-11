@@ -6,6 +6,12 @@ function formatStationName(station) {
     return station.stationName + ((station.crs && " (" + station.crs + ")") || "");
 }
 
+//TODO: should have stages. Pick source, then pick dest.
+function displaySelectedStations(sourceStation, destinationStation) {
+    document.getElementById("selected-source-station-input").value = formatStationName(sourceStation || destinationStation);
+    document.getElementById("selected-destination-station-input").value = formatStationName(destinationStation);
+}
+
 function displayFares(fareSet) {
     const faresContainer = document.getElementById("fares-container");
     const preferredFareCardDiv = (fareSet.preferred && getFareCardDiv(fareSet.preferred, fareSet.colour)) || "";

@@ -39,7 +39,7 @@ function drawSvgOverlay(drawableStations) {
         .attr("d", station => "M" + station.polygon.join("L") + "Z")
         .style('fill', station => station.fareSet.colour)
         .on('click', selectPointForFareQuery)
-        .on('mouseover', showMouseOverInformationForPoint)
+        .on('mouseover', onStationPolygonMouseOver)
         .classed("selected-source-station-polygon", d => selectedSourceStation === d);
 
     svgPoints.append("circle")
@@ -80,7 +80,7 @@ function createVoronoiPolygons(drawableStations) {
     voronoiFunction(drawableStations).forEach(d => d.point.polygon = d);  // d.point is the station object.
 }
 
-
+//TODO refactor
 var selectPointForFareQuery = function () {
     d3.selectAll('.selected').classed('selected', false);
 
@@ -102,12 +102,11 @@ var selectPointForFareQuery = function () {
     })
 };
 
-var showMouseOverInformationForPoint = function () {
+function onStationPolygonMouseOver() {
     selectedDestinationStation = d3.select(this).datum();
-    document.getElementById("selected-source-station-input").value = formatStationName(selectedSourceStation || selectedDestinationStation);
-    document.getElementById("selected-destination-station-input").value = formatStationName(selectedDestinationStation);
-    displayFares(preferredFareSelectorFunction(selectedDestinationStation.fares));
-};
+    displaySelectedStations(selectedSourceStation, selectedDestinationStation);
+    displayFares(selectedDestinationStation.fareSet);
+}
 
 function drawLineBetweenStationsInFare(startPoint, fare) {
     const stationIds = (fare.hops || []).map(h => h.waypoint);
