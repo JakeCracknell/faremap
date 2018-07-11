@@ -17,7 +17,7 @@ public class CompositeSingletonFareDataProvider implements FareDataProvider {
 
     private CompositeSingletonFareDataProvider() {
         stations = StationFileReader.getStations();
-        fareSets = Stream.of(new AtocDataProvider(), new TFLDataProvider()).parallel()
+        fareSets = Stream.of(/*new AtocDataProvider(),*/ new TFLDataProvider()).parallel()
                 .map(FareDataProvider::getAllFareSets).reduce(FareSet::combine).get();
 
        // combineFaresForStationsWithMatchingLocations();

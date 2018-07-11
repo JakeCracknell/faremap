@@ -112,25 +112,6 @@ function drawLineBetweenStationsInFare(startPoint, fare) {
         .attr("d", lineFunction(pointsToDraw))
         .attr("class", "route-line");
 }
-
-//TODO migrate similar
-function getTRForFareWithWaypoint(fare) {
-    var tr = document.createElement("tr");
-    var td = document.createElement("td");
-    td.classList.add("fare-type", fare.fareDetail.isTFL ? "tfl" : "nr");
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.appendChild(document.createTextNode("→ " + formatStationName(pointsMap.get(fare.waypoint))));
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.appendChild(document.createTextNode(formatPrice(fare.fareDetail.price)));
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.appendChild(document.createTextNode(fare.fareDetail.routeDescription));
-    tr.appendChild(td);
-    return tr;
-}
-
 function translateAndSetCoordinates(station) {
     station.latlng = new L.LatLng(station.latitude, station.longitude);
     station.xyPoint = map.latLngToLayerPoint(station.latlng);

@@ -15,7 +15,9 @@ function displayFares(fares) {
 }
 
 function getFareCardDiv(fare, colour) {
-    return `<div class="card fare-card shadow-sm my-2" style='background: linear-gradient(to right, white, ${colour});'>
+    return `<div class="card fare-card shadow-sm my-2"
+                 data-toggle="modal" data-target="#fare-details-modal"
+                 style="background: linear-gradient(to right, white, ${colour});">
               <div class="card-body fare-card-body">
                 <div class="fare-card-header">
                   <h5 class="card-title float-left fare-card-title">${getFareTitle(fare)}</h5>
@@ -25,6 +27,38 @@ function getFareCardDiv(fare, colour) {
               </div>
             </div>`
 }
+
+function populateFareDetailsModal(fare) {
+    $("#fare-details-modal-title").text(getFareTitle(fare));
+    $("#fare-details-modal-body").html(
+        `<div class="card fare-card shadow-sm my-2"
+                 data-toggle="modal" data-target="#fare-details-modal"
+                 style="background: linear-gradient(to right, white, ${colour});">
+              <div class="card-body fare-card-body">
+                <div class="fare-card-header">
+                  <h5 class="card-title float-left fare-card-title">${getFareTitle(fare)}</h5>
+                  <h5 class="card-title float-right fare-card-price">${formatPrice(fare.price)}</h5>
+                </div>
+                <h6 class="card-subtitle float-left text-muted fare-card-description">${fare.routeDescription}</h6>
+              </div>
+            </div>`
+    );
+    // var tr = document.createElement("tr");
+    // var td = document.createElement("td");
+    // td.classList.add("fare-type", fare.fareDetail.isTFL ? "tfl" : "nr");
+    // tr.appendChild(td);
+    // td = document.createElement("td");
+    // td.appendChild(document.createTextNode("→ " + formatStationName(pointsMap.get(fare.waypoint))));
+    // tr.appendChild(td);
+    // td = document.createElement("td");
+    // td.appendChild(document.createTextNode(formatPrice(fare.fareDetail.price)));
+    // tr.appendChild(td);
+    // td = document.createElement("td");
+    // td.appendChild(document.createTextNode(fare.fareDetail.routeDescription));
+    // tr.appendChild(td);
+    // return tr;
+}
+
 
 function getFareTitle(fare) {
     if (fare.hops !== undefined) {

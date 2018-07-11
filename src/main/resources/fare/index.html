@@ -94,12 +94,20 @@
     <div id="map"></div>
 </div>
 
-<div id='about' style="display: none">
-    <p class='content'>
-        Compare train fares in the UK! By Jake Cracknell.
-        Forked from project by <a href="http://chriszetter.com">Chris Zetter</a>.
-        Maps copyright
-        <a href='https://www.mapbox.com/about/maps/' target='_blank'>Mapbox and OpenStreetMap</a>.
+<div class="modal fade" id="fare-details-modal" tabindex="-1" role="dialog" aria-labelledby="fare details" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="fare-details-modal-title">TODO Fare details title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="fare-details-modal-body">
+                TODO fare details body
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
