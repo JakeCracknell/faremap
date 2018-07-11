@@ -95,7 +95,7 @@
 </div>
 
 <div class="modal fade" id="split-ticket-modal" tabindex="-1" role="dialog" aria-labelledby="split ticket" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog split-ticket-modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="split-ticket-modal-title">TODO Fare details title</h5>
@@ -103,8 +103,19 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="split-ticket-modal-body">
-                TODO fare details body
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Destination</th>
+                            <th>Fare</th>
+                            <th>Price</th>
+                            <th>Distance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="split-ticket-modal-tbody"></tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -112,6 +123,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
 <script src="https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
+<script src="util.js"></script>
 <script src="ui.js"></script>
 <script src="fare.js"></script>
 <script src="map.js"></script>

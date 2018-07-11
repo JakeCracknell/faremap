@@ -54,3 +54,7 @@ body {
 .radio-dropdown-menu {
     padding: 0.5rem;
 }
+
+.split-ticket-modal-dialog {
+    max-width: 60%;
+}

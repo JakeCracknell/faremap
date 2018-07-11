@@ -12,7 +12,7 @@ function displayFares(fares) {
     faresContainer.innerHTML = getFareCardDiv(topFare, getFillColourForPrice(topFare.price)) +
         fares.filter(f => f !== topFare).sort((f1, f2) => f1.price - f2.price)
             .map(f => getFareCardDiv(f, 'white')).join("");
-    populateSplitTicketModal(fares.filter(f => f.hops !== undefined && f.hops.length > 0)[0]);
+    fares.filter(f => f.hops !== undefined && f.hops.length > 0).forEach(populateSplitTicketModal);
 }
 
 function getFareCardDiv(fare, colour) {
@@ -29,35 +29,23 @@ function getFareCardDiv(fare, colour) {
             </div>`
 }
 
-function populateSplitTicketModal(fare) {
-    $("#split-ticket-modal-title").text(getFareTitle(fare));
-    $("#split-ticket-modal-body").html( //TODO properly
-        `<div class="card fare-card shadow-sm my-2">
-              <div class="card-body fare-card-body">
-                <div class="fare-card-header">
-                  <h5 class="card-title float-left fare-card-title">${getFareTitle(fare)}</h5>
-                  <h5 class="card-title float-right fare-card-price">${formatPrice(fare.price)}</h5>
-                </div>
-                <h6 class="card-subtitle float-left text-muted fare-card-description">${fare.routeDescription}</h6>
-              </div>
-            </div>`
-    );
-    // var tr = document.createElement("tr");
-    // var td = document.createElement("td");
-    // td.classList.add("fare-type", fare.fareDetail.isTFL ? "tfl" : "nr");
-    // tr.appendChild(td);
-    // td = document.createElement("td");
-    // td.appendChild(document.createTextNode("→ " + formatStationName(pointsMap.get(fare.waypoint))));
-    // tr.appendChild(td);
-    // td = document.createElement("td");
-    // td.appendChild(document.createTextNode(formatPrice(fare.fareDetail.price)));
-    // tr.appendChild(td);
-    // td = document.createElement("td");
-    // td.appendChild(document.createTextNode(fare.fareDetail.routeDescription));
-    // tr.appendChild(td);
-    // return tr;
+function populateSplitTicketModal(splitTicketFare) {
+    let tableHtml = '';
+    let lastStation = selectedSourceStation;
+    splitTicketFare.hops.forEach(fareHop => {
+        const thisStation = pointsMap.get(fareHop.waypoint);
+        tableHtml += `<tr><td>${formatStationName(lastStation)}</td>
+                          <td>${formatStationName(thisStation)}</td>
+                          <td>${getFareTitle(fareHop.fareDetail) + "<br/>" + fareHop.fareDetail.routeDescription}</td>
+                          <td>${formatPrice(fareHop.fareDetail.price)}</td>
+                          <td>${getDistanceFormatted(lastStation, thisStation)}</td>
+                          </tr>`;
+        lastStation = thisStation;
+    });
+    $("#split-ticket-modal-title").text(`Split Ticket from ${formatStationName(selectedSourceStation)} 
+                                                to ${formatStationName(selectedDestinationStation)}`);
+    $("#split-ticket-modal-tbody").html(tableHtml);
 }
-
 
 function getFareTitle(fare) {
     if (fare.hops !== undefined) {
@@ -68,8 +56,6 @@ function getFareTitle(fare) {
         return fare.ticketName;
     }
 }
-
-
 
 //TODO migrate properly
 var getSelectedCheckboxesFromGroup = function (selector) {

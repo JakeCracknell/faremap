@@ -1,5 +1,6 @@
 let pointsMap = {};
 let selectedSourceStation;
+let selectedDestinationStation;
 
 function drawWithLoading(e) {
     if (e && e.type === 'viewreset') {
@@ -97,10 +98,10 @@ var selectPointForFareQuery = function () {
 };
 
 var showMouseOverInformationForPoint = function () {
-    const point = d3.select(this).datum();
-    document.getElementById("selected-source-station-input").value = formatStationName(selectedSourceStation || point);
-    document.getElementById("selected-destination-station-input").value = formatStationName(point);
-    displayFares(filterFaresByTravelTime(point.fares));
+    selectedDestinationStation = d3.select(this).datum();
+    document.getElementById("selected-source-station-input").value = formatStationName(selectedSourceStation || selectedDestinationStation);
+    document.getElementById("selected-destination-station-input").value = formatStationName(selectedDestinationStation);
+    displayFares(filterFaresByTravelTime(selectedDestinationStation.fares));
 };
 
 function drawLineBetweenStationsInFare(startPoint, fare) {
