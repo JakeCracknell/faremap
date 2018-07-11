@@ -9,9 +9,11 @@ function formatStationName(station) {
 function displayFares(fares) {
     const faresContainer = document.getElementById("fares-container");
     const topFare = preferredFareSelectorFunction(fares)[0];
-    faresContainer.innerHTML = getFareCardDiv(topFare, getFillColourForPrice(topFare.price)) +
-        fares.filter(f => f !== topFare).sort((f1, f2) => f1.price - f2.price)
-            .map(f => getFareCardDiv(f, 'white')).join("");
+    const topFareCardDiv = getFareCardDiv(topFare, getFillColourForFare(topFare));
+    const otherFareCardDivs = fares.filter(f => f !== topFare)
+        .sort((f1, f2) => f1.price - f2.price)
+        .map(f => getFareCardDiv(f, 'white')).join("");
+    faresContainer.innerHTML = topFareCardDiv + otherFareCardDivs;
     fares.filter(f => f.hops !== undefined && f.hops.length > 0).forEach(populateSplitTicketModal);
 }
 
