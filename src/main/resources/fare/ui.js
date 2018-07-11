@@ -12,11 +12,12 @@ function displayFares(fares) {
     faresContainer.innerHTML = getFareCardDiv(topFare, getFillColourForPrice(topFare.price)) +
         fares.filter(f => f !== topFare).sort((f1, f2) => f1.price - f2.price)
             .map(f => getFareCardDiv(f, 'white')).join("");
+    populateSplitTicketModal(fares.filter(f => f.hops !== undefined && f.hops.length > 0)[0]);
 }
 
 function getFareCardDiv(fare, colour) {
     return `<div class="card fare-card shadow-sm my-2"
-                 data-toggle="modal" data-target="#fare-details-modal"
+                 data-toggle="modal" data-target="#split-ticket-modal"
                  style="background: linear-gradient(to right, white, ${colour});">
               <div class="card-body fare-card-body">
                 <div class="fare-card-header">
@@ -28,12 +29,10 @@ function getFareCardDiv(fare, colour) {
             </div>`
 }
 
-function populateFareDetailsModal(fare) {
-    $("#fare-details-modal-title").text(getFareTitle(fare));
-    $("#fare-details-modal-body").html(
-        `<div class="card fare-card shadow-sm my-2"
-                 data-toggle="modal" data-target="#fare-details-modal"
-                 style="background: linear-gradient(to right, white, ${colour});">
+function populateSplitTicketModal(fare) {
+    $("#split-ticket-modal-title").text(getFareTitle(fare));
+    $("#split-ticket-modal-body").html( //TODO properly
+        `<div class="card fare-card shadow-sm my-2">
               <div class="card-body fare-card-body">
                 <div class="fare-card-header">
                   <h5 class="card-title float-left fare-card-title">${getFareTitle(fare)}</h5>
