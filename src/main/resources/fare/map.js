@@ -2,13 +2,11 @@ let pointsMap = {};
 let selectedSourceStation;
 
 function drawWithLoading(e) {
-    d3.select('#loading').classed('visible', true);
     if (e && e.type === 'viewreset') {
         d3.select('#map-svg-overlay').remove();
     }
     setTimeout(function () {
         draw();
-        d3.select('#loading').classed('visible', false);
     }, 0);
 }
 
@@ -18,7 +16,10 @@ function draw() {
     const drawableStations = getDrawableStationsAsList();
     setMaxPriceCurrentlyDisplayedFromList(drawableStations);
     createVoronoiPolygons(drawableStations);
+    drawSvgOverlay(drawableStations);
+}
 
+function drawSvgOverlay(drawableStations) {
     const svg = d3.select(map.getPanes().overlayPane).append("svg")
         .attr('id', 'map-svg-overlay')
         .attr("class", "leaflet-zoom-hide")
@@ -40,16 +41,12 @@ function draw() {
         .classed("selected-source-station-polygon", d => selectedSourceStation === d);
 
     svgPoints.append("circle")
-        .attr("transform", function (d) {
-            return "translate(" + d.x + "," + d.y + ")";
-        })
-        .style('fill', function (d) {
-            return '#' + d.color
-        })
+        .attr("transform", d => "translate(" + d.x + "," + d.y + ")")
+        .style('fill', d => '#' + d.color)
         .attr("r", 2);
 
     d3.selectAll(".route-line").remove();
-    drawableStations.forEach(s => s.fares.forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)))
+    drawableStations.forEach(s => s.fares.forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)));
 }
 
 function getDrawableStationsAsList() {
@@ -73,16 +70,8 @@ function getDrawableStationsAsList() {
 }
 
 function createVoronoiPolygons(drawableStations) {
-    const voronoiFunction = d3.geom.voronoi()
-        .x(function (d) {
-            return d.x;
-        })
-        .y(function (d) {
-            return d.y;
-        });
-    voronoiFunction(drawableStations).forEach(function (d) {
-        d.point.polygon = d; // d.point is the station object.
-    });
+    const voronoiFunction = d3.geom.voronoi().x(d => d.x).y(d => d.y);
+    voronoiFunction(drawableStations).forEach(d => d.point.polygon = d);  // d.point is the station object.
 }
 
 
@@ -117,13 +106,7 @@ var showMouseOverInformationForPoint = function () {
 function drawLineBetweenStationsInFare(startPoint, fare) {
     const stationIds = (fare.hops || []).map(h => h.waypoint);
     const pointsToDraw = [startPoint].concat(stationIds.map(id => pointsMap.get(id)));
-    var lineFunction = d3.svg.line()
-        .x(function (d) {
-            return d.x;
-        })
-        .y(function (d) {
-            return d.y;
-        });
+    var lineFunction = d3.svg.line().x(d => d.x).y(d => d.y);
     d3.select("#map-svg-overlay").select("g")
         .append("path")
         .attr("d", lineFunction(pointsToDraw))
@@ -151,6 +134,6 @@ function getTRForFareWithWaypoint(fare) {
 function translateAndSetCoordinates(station) {
     station.latlng = new L.LatLng(station.latitude, station.longitude);
     station.xyPoint = map.latLngToLayerPoint(station.latlng);
-    station.x = station.xyPoint.x; //TODO remove if poss
+    station.x = station.xyPoint.x;
     station.y = station.xyPoint.y;
 }
