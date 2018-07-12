@@ -36,8 +36,7 @@ function drawSvgOverlay(drawableStations) {
         .attr("class", "points")
         .selectAll("g")
         .data(drawableStations)
-        .enter().append("g")
-        .attr("class", "point");
+        .enter().append("g");
 
     svgPoints.append("path")
         .attr("class", "station-polygon")
@@ -50,7 +49,8 @@ function drawSvgOverlay(drawableStations) {
 
 
     svgPoints.append("circle")
-        .attr("transform", s => "translate(" + s.x + "," + s.y + ")");
+        .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
+        .attr("class", "station-point");
 
     d3.selectAll(".route-line").remove();
     drawableStations.forEach(s => (s.fares || []).forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)));

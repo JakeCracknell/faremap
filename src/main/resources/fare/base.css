@@ -22,7 +22,7 @@ body {
     stroke-width: 3px;
 }
 
-.point circle { /*TODO rename*/
+.station-point {
     pointer-events: none;
     r: 2px
 }
