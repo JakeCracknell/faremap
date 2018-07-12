@@ -22,13 +22,18 @@ function draw() {
 }
 
 function drawSvgOverlay(drawableStations) {
+    const topLeft = map.latLngToLayerPoint(map.getBounds().getNorthWest());
     const svg = d3.select(map.getPanes().overlayPane).append("svg")
         .attr('id', 'map-svg-overlay')
         .attr("class", "leaflet-zoom-hide")
         .style("width", map.getSize().x + 'px')
-        .style("height", map.getSize().y + 'px');
+        .style("height", map.getSize().y + 'px')
+        .style("margin-left", topLeft.x + "px")
+        .style("margin-top", topLeft.y + "px");
 
-    const svgPoints = svg.append("g").attr("class", "points")
+    const svgPoints = svg.append("g")
+        .attr("transform", "translate(" + (-topLeft.x) + "," + (-topLeft.y) + ")")
+        .attr("class", "points")
         .selectAll("g")
         .data(drawableStations)
         .enter().append("g")
