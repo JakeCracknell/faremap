@@ -3,8 +3,8 @@ let selectedDestinationStation;
 let pendingSourceStation;
 let pendingDestinationStation;
 
-$("#selected-source-station-input").change(() => selectedSourceStation = null);
-$("#selected-destination-station-input").change(() => selectedDestinationStation = null);
+$("#selected-source-station-input").click(() => selectedSourceStation = null);
+$("#selected-destination-station-input").click(() => selectedDestinationStation = null);
 
 function stationPeek(station) {
     if (!selectedSourceStation) {
@@ -13,7 +13,7 @@ function stationPeek(station) {
         pendingDestinationStation = station;
     }
     displaySelectedStations(selectedSourceStation || pendingSourceStation, selectedDestinationStation || pendingDestinationStation);
-    displayFares(selectedDestinationStation.fareSet);
+    displayFares((selectedDestinationStation || pendingDestinationStation).fareSet);
 }
 
 function stationSelect(station) {
