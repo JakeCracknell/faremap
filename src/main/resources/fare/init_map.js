@@ -7,6 +7,8 @@ const map = L.mapbox.map('map', 'zetter.i73ka9hn', {
     maxZoom: 15
 }).fitBounds([[51.92, 0.61], [51.11, -1.12]]); //London
 
+map.doubleClickZoom.disable();
+
 map.on('ready', function () {
     d3.json('/api/station', function (json) {
         pointsMap = new Map(json.map((p) => [p.stationId, p]));

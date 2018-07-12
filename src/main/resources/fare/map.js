@@ -1,7 +1,6 @@
 let pointsMap = {};
-let selectedSourceStation;
-let selectedDestinationStation;
 
+//TODO add a loading indicator
 function drawWithLoading(e) {
     if (e && e.type === 'viewreset') {
         d3.select('#map-svg-overlay').remove();
@@ -85,33 +84,30 @@ function createVoronoiPolygons(drawableStations) {
     voronoiFunction(drawableStations).forEach(d => d.point.polygon = d);  // d.point is the station object.
 }
 
-//TODO stages. Current behaviour should only be in the SOURCE SELECTION state
-function onStationPolygonClick() {
-    const polygon = d3.select(this);
-    selectedSourceStation = polygon.datum();
-
-    d3.selectAll('.selected').classed('selected', false);
-    polygon.classed('selected', true);
-
+function triggerFareRequest() {
     fareUrl = "/api/fare/from/" + selectedSourceStation.stationId;
     d3.json(fareUrl, function (json) {
         for (const toStationId in json.fares) {
             pointsMap.get(toStationId).fares = json.fares[toStationId];
         }
         drawWithLoading();
-    })
+    });
+}
+
+
+
+function onStationPolygonClick() {
+    stationSelect(d3.select(this).datum());
 }
 
 function onStationPolygonMouseOver() {
-    selectedDestinationStation = d3.select(this).datum();
-    displaySelectedStations(selectedSourceStation, selectedDestinationStation);
-    displayFares(selectedDestinationStation.fareSet);
+    stationPeek(d3.select(this).datum());
 }
 
 function drawLineBetweenStationsInFare(startPoint, fare) {
     const stationIds = (fare.hops || []).map(h => h.waypoint);
     const pointsToDraw = [startPoint].concat(stationIds.map(id => pointsMap.get(id)));
-    var lineFunction = d3.svg.line().x(d => d.x).y(d => d.y);
+    const lineFunction = d3.svg.line().x(d => d.x).y(d => d.y);
     d3.select("#map-svg-overlay").select("g")
         .append("path")
         .attr("d", lineFunction(pointsToDraw))
