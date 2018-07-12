@@ -24,6 +24,7 @@ body {
 
 .point circle { /*TODO rename*/
     pointer-events: none;
+    r: 2px
 }
 
 .route-line {

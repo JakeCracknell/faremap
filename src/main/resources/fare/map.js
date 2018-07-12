@@ -41,16 +41,16 @@ function drawSvgOverlay(drawableStations) {
 
     svgPoints.append("path")
         .attr("class", "station-polygon")
-        .attr("d", station => "M" + station.polygon.join("L") + "Z")
-        .style('fill', station => station.fareSet.colour)
+        .attr("d", s => "M" + s.polygon.join("L") + "Z")
+        .style('fill', s => s.fareSet.colour)
         .on('click', onStationPolygonClick)
         .on('mouseover', onStationPolygonMouseOver)
-        .classed("selected-source-station-polygon", d => selectedSourceStation === d);
+        .classed("selected-source-station-polygon", s => selectedSourceStation === s)
+        .classed("selected-destination-station-polygon", s => selectedDestinationStation === s);
+
 
     svgPoints.append("circle")
-        .attr("transform", d => "translate(" + d.x + "," + d.y + ")")
-        .style('fill', d => '#' + d.color)
-        .attr("r", 2);
+        .attr("transform", s => "translate(" + s.x + "," + s.y + ")");
 
     d3.selectAll(".route-line").remove();
     drawableStations.forEach(s => (s.fares || []).forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)));
