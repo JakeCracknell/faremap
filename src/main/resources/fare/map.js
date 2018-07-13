@@ -42,9 +42,7 @@ function drawSvgOverlay(drawableStations) {
         .attr("d", s => "M" + s.polygon.join("L") + "Z")
         .style('fill', s => s.fareSet.colour)
         .on('click', onStationPolygonClick)
-        .on('mouseover', onStationPolygonMouseOver)
-        .classed("selected-source-station-polygon", s => selectedSourceStation === s)
-        .classed("selected-destination-station-polygon", s => selectedDestinationStation === s);
+        .on('mouseover', onStationPolygonMouseOver);
 
     svgPoints.append("circle")
         .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
