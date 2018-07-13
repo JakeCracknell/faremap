@@ -12,12 +12,14 @@ function stationPeek(station) {
     } else if (!selectedDestinationStation) {
         pendingDestinationStation = station;
     }
-    displaySelectedStations(selectedSourceStation || pendingSourceStation, selectedDestinationStation || pendingDestinationStation);
-    displayFares((selectedDestinationStation || pendingDestinationStation).fareSet);
+    displayStationsAndFares(selectedSourceStation || pendingSourceStation, selectedDestinationStation || pendingDestinationStation);
 }
 
 function stationSelect(station) {
-    if (!selectedSourceStation) {
+    if (station === selectedSourceStation) {
+        selectedSourceStation = null;
+        selectedDestinationStation = null;
+    } else if (!selectedSourceStation) {
         selectedSourceStation = station;
         triggerFareRequest();
     } else if (!selectedDestinationStation) {

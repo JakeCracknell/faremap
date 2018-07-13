@@ -46,13 +46,11 @@ function drawSvgOverlay(drawableStations) {
         .classed("selected-source-station-polygon", s => selectedSourceStation === s)
         .classed("selected-destination-station-polygon", s => selectedDestinationStation === s);
 
-
     svgPoints.append("circle")
         .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
         .attr("class", "station-point");
 
-    d3.selectAll(".route-line").remove();
-    drawableStations.forEach(s => (s.fares || []).forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)));
+    drawSplitTicketSpiderMapOnSvgOverlay(drawableStations);
 }
 
 function getDrawableStationsAsList() {
@@ -94,14 +92,19 @@ function triggerFareRequest() {
     });
 }
 
-
-
 function onStationPolygonClick() {
     stationSelect(d3.select(this).datum());
 }
 
 function onStationPolygonMouseOver() {
     stationPeek(d3.select(this).datum());
+}
+
+function drawSplitTicketSpiderMapOnSvgOverlay(drawableStations) {
+    d3.selectAll(".route-line").remove();
+    if (selectedSourceStation) {
+        drawableStations.forEach(s => (s.fares || []).forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)));
+    }
 }
 
 function drawLineBetweenStationsInFare(startPoint, fare) {

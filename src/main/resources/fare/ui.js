@@ -7,9 +7,12 @@ function formatStationName(station) {
 }
 
 //TODO: should have stages. Pick source, then pick dest.
-function displaySelectedStations(sourceStation, destinationStation) {
-    document.getElementById("selected-source-station-input").value = formatStationName(sourceStation || destinationStation);
-    document.getElementById("selected-destination-station-input").value = formatStationName(destinationStation);
+function displayStationsAndFares(sourceStation, destinationStation) {
+    $("#selected-source-station-input").val(sourceStation && formatStationName(sourceStation) || "");
+    $("#selected-destination-station-input").val(destinationStation && formatStationName(destinationStation) || "");
+    if (destinationStation) {
+        displayFares(destinationStation.fareSet);
+    }
 }
 
 function displayFares(fareSet) {
@@ -47,8 +50,8 @@ function populateSplitTicketModal(splitTicketFare) {
                           </tr>`;
         lastStation = thisStation;
     });
-    $("#split-ticket-modal-title").text(`Split Ticket from ${formatStationName(selectedSourceStation)} 
-                                                to ${formatStationName(selectedDestinationStation)}`);
+    $("#split-ticket-modal-title").text(`Split Ticket from ${formatStationName(selectedSourceStation)} to 
+                                        ${formatStationName(selectedDestinationStation || pendingDestinationStation)}`);
     $("#split-ticket-modal-tbody").html(tableHtml);
 }
 
