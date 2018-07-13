@@ -18,8 +18,7 @@ function stationPeek(station) {
 
 function stationSelect(station) {
     if (station === selectedSourceStation) {
-        selectedSourceStation = null;
-        selectedDestinationStation = null;
+        resetSourceStation();
     } else if (!selectedSourceStation) {
         selectedSourceStation = station;
         triggerFareRequest();
@@ -43,5 +42,5 @@ function resetDestinationStation() {
 }
 
 function setSelectableStatusOnStationPolygons() {
-    $('.station-polygon').toggleClass('selectable', !(selectedSourceStation && selectedDestinationStation));
+    $('.station-polygon, #map').toggleClass('selectable', !(selectedSourceStation && selectedDestinationStation));
 }

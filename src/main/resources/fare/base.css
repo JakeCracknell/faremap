@@ -9,10 +9,6 @@ body {
     flex-direction: column;
 }
 
-.station-polygon {
-    pointer-events: all;
-}
-
 .station-polygon.selectable:hover {
     stroke: black;
     stroke-width: 1px;
@@ -46,6 +42,14 @@ body {
 
 #map {
     flex: 1;
+}
+
+#map .selectable {
+    cursor: pointer;
+}
+
+.leaflet-overlay-pane path {
+    cursor: inherit; /* otherwise it will always show pointer cursor, not grabby*/
 }
 
 .fare-card-header {
