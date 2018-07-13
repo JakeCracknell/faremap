@@ -48,6 +48,7 @@ function drawSvgOverlay(drawableStations) {
         .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
         .attr("class", "station-point");
 
+    setSelectableStatusOnStationPolygons();
     highlightSourceAndDestination();
     drawSplitTicketTreeOnSvgOverlay(drawableStations);
 }

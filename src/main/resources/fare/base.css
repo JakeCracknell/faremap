@@ -13,7 +13,7 @@ body {
     pointer-events: all;
 }
 
-.station-polygon:hover {
+.station-polygon.selectable:hover {
     stroke: black;
     stroke-width: 1px;
 }
