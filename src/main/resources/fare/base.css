@@ -28,10 +28,17 @@ body {
 }
 
 .route-line {
-    stroke: rgba(0, 0, 0, 0.01);
     stroke-width: 5px;
     fill: none;
     pointer-events: none;
+}
+
+.selected-route-line {
+    stroke: rgba(0, 0, 0, 1.0);
+}
+
+.split-ticket-tree {
+    stroke: rgba(0, 0, 0, 0.01);
 }
 
 #sidebar {

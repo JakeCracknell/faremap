@@ -50,7 +50,19 @@ function drawSvgOverlay(drawableStations) {
         .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
         .attr("class", "station-point");
 
-    drawSplitTicketSpiderMapOnSvgOverlay(drawableStations);
+    highlightSourceAndDestination();
+    drawSplitTicketTreeOnSvgOverlay(drawableStations);
+}
+
+function highlightSourceAndDestination() {
+    d3.selectAll(".selected-route-line").remove();
+    if (selectedSourceStation) {
+        const destination = (selectedDestinationStation || pendingDestinationStation);
+        if (destination) {
+            const fareRouteToDraw = destination.fareSet.preferred; //TODO draw split ticket route if this is preferred
+            drawLineBetweenPoints([selectedSourceStation, destination], "selected-route-line");
+        }
+    }
 }
 
 function getDrawableStationsAsList() {
@@ -100,21 +112,22 @@ function onStationPolygonMouseOver() {
     stationPeek(d3.select(this).datum());
 }
 
-function drawSplitTicketSpiderMapOnSvgOverlay(drawableStations) {
-    d3.selectAll(".route-line").remove();
+//TODO refactor and improve performance
+function drawSplitTicketTreeOnSvgOverlay(drawableStations) {
+    d3.selectAll(".split-ticket-tree").remove();
     if (selectedSourceStation) {
-        drawableStations.forEach(s => (s.fares || []).forEach(f => drawLineBetweenStationsInFare(selectedSourceStation, f)));
+        drawableStations.map(dest => dest.fareSet.splitTicket).filter(f => f)
+            .map(fare => [selectedSourceStation].concat(fare.hops.map(hop => pointsMap.get(hop.waypoint))))
+            .map(pts => drawLineBetweenPoints(pts, "split-ticket-tree"));
     }
 }
 
-function drawLineBetweenStationsInFare(startPoint, fare) {
-    const stationIds = (fare.hops || []).map(h => h.waypoint);
-    const pointsToDraw = [startPoint].concat(stationIds.map(id => pointsMap.get(id)));
+function drawLineBetweenPoints(pointsToDraw, className) {
     const lineFunction = d3.svg.line().x(d => d.x).y(d => d.y);
-    d3.select("#map-svg-overlay").select("g")
+    return d3.select("#map-svg-overlay").select("g")
         .append("path")
         .attr("d", lineFunction(pointsToDraw))
-        .attr("class", "route-line");
+        .attr("class", "route-line " + className);
 }
 
 function translateAndSetCoordinates(station) {

@@ -13,6 +13,7 @@ function stationPeek(station) {
         pendingDestinationStation = station;
     }
     displayStationsAndFares(selectedSourceStation || pendingSourceStation, selectedDestinationStation || pendingDestinationStation);
+    highlightSourceAndDestination();
 }
 
 function stationSelect(station) {
