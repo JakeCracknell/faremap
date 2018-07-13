@@ -6,7 +6,11 @@ function formatStationName(station) {
     return station.stationName + ((station.crs && " (" + station.crs + ")") || "");
 }
 
-//TODO: should have stages. Pick source, then pick dest.
+function displaySelectedStationsAndFares() {
+    displayStationsAndFares(selectedSourceStation || pendingSourceStation,
+        selectedDestinationStation || pendingDestinationStation);
+}
+
 function displayStationsAndFares(sourceStation, destinationStation) {
     $("#selected-source-station-input").val(sourceStation && formatStationName(sourceStation) || "");
     $("#selected-destination-station-input").val(destinationStation && formatStationName(destinationStation) || "");

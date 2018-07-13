@@ -12,7 +12,7 @@ function stationPeek(station) {
     } else if (!selectedDestinationStation) {
         pendingDestinationStation = station;
     }
-    displayStationsAndFares(selectedSourceStation || pendingSourceStation, selectedDestinationStation || pendingDestinationStation);
+    displaySelectedStationsAndFares();
     highlightSourceAndDestination();
 }
 
@@ -31,11 +31,14 @@ function stationSelect(station) {
 
 function resetSourceStation() {
     selectedSourceStation = null;
-    setSelectableStatusOnStationPolygons();
+    pendingSourceStation = null;
+    resetDestinationStation();
 }
 
 function resetDestinationStation() {
     selectedDestinationStation = null;
+    pendingDestinationStation = null;
+    displaySelectedStationsAndFares();
     setSelectableStatusOnStationPolygons();
 }
 
