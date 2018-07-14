@@ -15,6 +15,7 @@ function draw() {
     stationsByIdMap.forEach(initialiseFareSets);
     drawSvgOverlay(drawableStations);
 }
+const lineFunction = d3.svg.line().x(d => d.x).y(d => d.y);
 
 function drawSvgOverlay(drawableStations) {
     const topLeft = map.latLngToLayerPoint(map.getBounds().getNorthWest());
@@ -43,11 +44,16 @@ function drawSvgOverlay(drawableStations) {
         .attr("r", 2)
         .attr("class", "station-point");
 
+    svg.filter(dest => dest.fareSet.splitTicket)
+        .append("path")
+        .attr("d", dest => lineFunction([selectedSourceStation].concat(dest.fareSet.splitTicket.hops.map(hop => stationsByIdMap.get(hop.waypoint)))))
+        .attr("class", "route-line split-ticket-tree");
+
     setSelectableStatusOnStationPolygons();
     highlightSourceAndDestination();
     displaySelectedStationsAndFares();
-    drawSplitTicketTreeOnSvgOverlay(drawableStations);
 }
+
 
 function highlightSourceAndDestination() {
     d3.selectAll(".selected-route-line").remove();
@@ -99,18 +105,7 @@ function triggerFareRequest() {
     });
 }
 
-//TODO refactor and improve performance
-function drawSplitTicketTreeOnSvgOverlay(drawableStations) {
-    d3.selectAll(".split-ticket-tree").remove();
-    if (selectedSourceStation) {
-        drawableStations.map(dest => dest.fareSet.splitTicket).filter(f => f)
-            .map(fare => [selectedSourceStation].concat(fare.hops.map(hop => stationsByIdMap.get(hop.waypoint))))
-            .map(pts => drawLineBetweenPoints(pts, "split-ticket-tree"));
-    }
-}
-
 function drawLineBetweenPoints(pointsToDraw, className) {
-    const lineFunction = d3.svg.line().x(d => d.x).y(d => d.y);
     return d3.select("#map-svg-overlay").select("g")
         .append("path")
         .attr("d", lineFunction(pointsToDraw))
