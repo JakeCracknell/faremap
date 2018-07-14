@@ -9,6 +9,10 @@ body {
     flex-direction: column;
 }
 
+.input-group-prepend {
+    user-select: none;
+}
+
 .station-polygon.selectable:hover {
     stroke: black;
     stroke-width: 1px;
