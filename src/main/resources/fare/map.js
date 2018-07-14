@@ -5,9 +5,7 @@ function drawWithLoading(e) {
     if (e && e.type === 'viewreset') {
         d3.select('#map-svg-overlay').remove();
     }
-    setTimeout(function () {
-        draw();
-    }, 0);
+    setTimeout(() => draw(), 0);
 }
 
 function draw() {
@@ -28,23 +26,21 @@ function drawSvgOverlay(drawableStations) {
         .style("width", map.getSize().x + 'px')
         .style("height", map.getSize().y + 'px')
         .style("margin-left", topLeft.x + "px")
-        .style("margin-top", topLeft.y + "px");
-
-    const svgPoints = svg.append("g")
+        .style("margin-top", topLeft.y + "px")
+        .append("g")
         .attr("transform", "translate(" + (-topLeft.x) + "," + (-topLeft.y) + ")")
-        .attr("class", "points")
         .selectAll("g")
         .data(drawableStations)
         .enter().append("g");
 
-    svgPoints.append("path")
+    svg.append("path")
         .attr("class", "station-polygon")
         .attr("d", s => "M" + s.polygon.join("L") + "Z")
         .style('fill', s => s.fareSet.colour)
-        .on('click', onStationPolygonClick)
-        .on('mouseover', onStationPolygonMouseOver);
+        .on('click', stationSelect)
+        .on('mouseover', stationPeek);
 
-    svgPoints.append("circle")
+    svg.append("circle")
         .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
         .attr("r", 2)
         .attr("class", "station-point");
@@ -57,7 +53,7 @@ function drawSvgOverlay(drawableStations) {
 function highlightSourceAndDestination() {
     d3.selectAll(".selected-route-line").remove();
     if (selectedSourceStation) {
-        const destination = (selectedDestinationStation || pendingDestinationStation);
+        const destination = selectedDestinationStation || pendingDestinationStation;
         if (destination) {
             const fareRouteToDraw = destination.fareSet.preferred; //TODO draw split ticket route if this is preferred
             drawLineBetweenPoints([selectedSourceStation, destination], "selected-route-line");
@@ -75,7 +71,7 @@ function getDrawableStationsAsList() {
         }
 
         // filters points that are right on top of each other, of which there are 135 (e.g. Hammersmith, Amersham Rail/Tube)
-        // display messed up if this happens. Long term solution is to change backend to group such stations
+        // display messed up if this happens. TODO Long term solution is to change backend to group such stations
         if (setOfXYPointsToDraw.has(d.xyPoint.toString())) {
             return false;
         }
@@ -102,14 +98,6 @@ function triggerFareRequest() {
         }
         drawWithLoading();
     });
-}
-
-function onStationPolygonClick() {
-    stationSelect(d3.select(this).datum());
-}
-
-function onStationPolygonMouseOver() {
-    stationPeek(d3.select(this).datum());
 }
 
 //TODO refactor and improve performance
