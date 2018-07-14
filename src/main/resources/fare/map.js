@@ -46,6 +46,7 @@ function drawSvgOverlay(drawableStations) {
 
     svgPoints.append("circle")
         .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
+        .attr("r", 2)
         .attr("class", "station-point");
 
     setSelectableStatusOnStationPolygons();
