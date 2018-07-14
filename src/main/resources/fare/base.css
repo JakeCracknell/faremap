@@ -56,10 +56,6 @@ body {
     overflow: hidden
 }
 
-.fare-card:hover .fare-card-title {
-    text-decoration: underline; /* css works, but could look nicer */
-}
-
 .radio-dropdown-menu {
     padding: 0.5rem;
 }

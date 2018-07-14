@@ -28,15 +28,15 @@ function displayFares(fareSet) {
 }
 
 function getFareCardDiv(fare, colour) {
+    const modalProperties = fare.hops && "href='#' data-toggle='modal' data-target='#split-ticket-modal'" || "";
     return `<div class="card fare-card shadow-sm my-2"
-                 data-toggle="modal" data-target="#split-ticket-modal"
                  style="background: linear-gradient(to right, white, ${colour});">
               <div class="card-body fare-card-body">
                 <div class="fare-card-header">
                   <h5 class="card-title float-left fare-card-title">${getFareTitle(fare)}</h5>
                   <h5 class="card-title float-right fare-card-price">${formatPrice(fare.price)}</h5>
                 </div>
-                <h6 class="card-subtitle float-left text-muted fare-card-description">${fare.routeDescription}</h6>
+                <a class="card-subtitle text-muted h6 fare-card-description" ${modalProperties}>${fare.routeDescription}</a>
               </div>
             </div>`
 }
