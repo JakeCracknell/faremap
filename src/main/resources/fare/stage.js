@@ -4,9 +4,6 @@ let selectedDestinationStation;
 let pendingSourceStation;
 let pendingDestinationStation;
 
-$("#selected-source-station-input").click(resetSourceStation);
-$("#selected-destination-station-input").click(resetDestinationStation);
-
 function stationPeek(station) {
     if (!selectedSourceStation) {
         pendingSourceStation = station;

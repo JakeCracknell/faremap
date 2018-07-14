@@ -1,13 +1,6 @@
 let preferredFareSelectorFunction = getPreferredFareSelectorFunction("default", "peak");
 let maxPriceCurrentlyDisplayed = 0;
 
-$('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:radio').change(e => {
-    preferredFareSelectorFunction = getPreferredFareSelectorFunction(
-        document.querySelector('input[name="routePreferenceRadios"]:checked').value,
-        document.querySelector('input[name="travelTimeRadios"]:checked').value
-    );
-});
-
 function getPreferredFareSelectorFunction(routePreference, travelTimePreference) {
     return function (fares) {
         if (fares === undefined || fares.length === 0) {

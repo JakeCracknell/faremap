@@ -12,7 +12,6 @@ map.doubleClickZoom.disable();
 map.on('ready', function () {
     d3.json('/api/station', function (json) {
         stationsByIdMap = new Map(json.map((p) => [p.stationId, p]));
-        $('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:radio').change(drawWithLoading);
         map.addLayer({
             onAdd: function (map) {
                 map.on('viewreset moveend', drawWithLoading);
@@ -20,4 +19,14 @@ map.on('ready', function () {
             }
         });
     })
+});
+
+$("#selected-source-station-input").click(resetSourceStation);
+$("#selected-destination-station-input").click(resetDestinationStation);
+$('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:radio').change(e => {
+    preferredFareSelectorFunction = getPreferredFareSelectorFunction(
+        document.querySelector('input[name="routePreferenceRadios"]:checked').value,
+        document.querySelector('input[name="travelTimeRadios"]:checked').value
+    );
+    drawWithLoading(e);
 });
