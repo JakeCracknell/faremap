@@ -45,6 +45,7 @@ function drawSvgOverlay(drawableStations) {
 
     setSelectableStatusOnStationPolygons();
     highlightSourceAndDestination();
+    displaySelectedStationsAndFares();
     drawSplitTicketTreeOnSvgOverlay(drawableStations);
 }
 
