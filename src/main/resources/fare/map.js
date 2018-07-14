@@ -15,7 +15,6 @@ function draw() {
     stationsByIdMap.forEach(initialiseFareSets);
     drawSvgOverlay(drawableStations);
 }
-const lineFunction = d3.svg.line().x(d => d.x).y(d => d.y);
 
 function drawSvgOverlay(drawableStations) {
     const topLeft = map.latLngToLayerPoint(map.getBounds().getNorthWest());
@@ -45,33 +44,8 @@ function drawSvgOverlay(drawableStations) {
         .attr("class", "station-point");
 
     setSelectableStatusOnStationPolygons();
-    highlightSourceAndDestination();
+    drawSelectedRouteLine();
     displaySelectedStationsAndFares();
-}
-
-
-function highlightSourceAndDestination() {
-    d3.selectAll(".selected-route-line").remove();
-    if (selectedSourceStation) {
-        const destination = selectedDestinationStation || pendingDestinationStation;
-        if (destination && destination.fareSet.preferred) {
-            const stations = [selectedSourceStation].concat((destination.fareSet.preferred.hops || [])
-                .map(hop => stationsByIdMap.get(hop.waypoint))).concat(destination);
-            d3.select("#map-svg-overlay").select("g")
-                .append("path")
-                .attr("d", dest => lineFunction(stations))
-                .attr("class", "route-line selected-route-line");
-        }
-    }
-}
-
-function drawSplitTicketTree() {
-    d3.selectAll(".split-ticket-tree").remove();
-    d3.select("#map-svg-overlay").select("g").selectAll("g")
-        .filter(dest => dest.fareSet.splitTicket)
-        .append("path")
-        .attr("d", dest => lineFunction([selectedSourceStation].concat(dest.fareSet.splitTicket.hops.map(hop => stationsByIdMap.get(hop.waypoint)))))
-        .attr("class", "route-line split-ticket-tree");
 }
 
 function getDrawableStationsAsList() {

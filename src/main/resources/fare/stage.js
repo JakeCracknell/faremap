@@ -11,7 +11,7 @@ function stationPeek(station) {
         pendingDestinationStation = station;
     }
     displaySelectedStationsAndFares();
-    highlightSourceAndDestination();
+    drawSelectedRouteLine();
 }
 
 function stationSelect(station) {
