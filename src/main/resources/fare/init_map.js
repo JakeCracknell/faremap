@@ -11,7 +11,7 @@ map.doubleClickZoom.disable();
 
 map.on('ready', function () {
     d3.json('/api/station', function (json) {
-        pointsMap = new Map(json.map((p) => [p.stationId, p]));
+        stationsByIdMap = new Map(json.map((p) => [p.stationId, p]));
         $('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:radio').change(drawWithLoading);
         map.addLayer({
             onAdd: function (map) {

@@ -1,3 +1,4 @@
+let stationsByIdMap = {};
 let selectedSourceStation;
 let selectedDestinationStation;
 let pendingSourceStation;

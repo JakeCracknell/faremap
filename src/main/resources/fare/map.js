@@ -1,5 +1,3 @@
-let pointsMap = {};
-
 //TODO add a loading indicator
 function drawWithLoading(e) {
     if (e && e.type === 'viewreset') {
@@ -10,11 +8,11 @@ function drawWithLoading(e) {
 
 function draw() {
     d3.select('#map-svg-overlay').remove();
-    pointsMap.forEach(translateAndSetCoordinates);
+    stationsByIdMap.forEach(translateAndSetCoordinates);
     const drawableStations = getDrawableStationsAsList();
     setMaxPriceCurrentlyDisplayedFromList(drawableStations);
     createVoronoiPolygons(drawableStations);
-    pointsMap.forEach(initialiseFareSets);
+    stationsByIdMap.forEach(initialiseFareSets);
     drawSvgOverlay(drawableStations);
 }
 
@@ -65,7 +63,7 @@ function getDrawableStationsAsList() {
     let currentSelectedModes = d3.set(getSelectedCheckboxesFromGroup('#mode-toggles'));
     let drawLimit = map.getBounds().pad(0.4);
     let setOfXYPointsToDraw = d3.set();
-    return [...pointsMap.values()].filter(function (d) {
+    return [...stationsByIdMap.values()].filter(function (d) {
         if (!(d.modes.some(m => currentSelectedModes.has(m)) && drawLimit.contains(d.latlng))) {
             return false;
         }
@@ -94,7 +92,7 @@ function triggerFareRequest() {
     fareUrl = "/api/fare/from/" + selectedSourceStation.stationId;
     d3.json(fareUrl, function (json) {
         for (const toStationId in json.fares) {
-            pointsMap.get(toStationId).fares = json.fares[toStationId];
+            stationsByIdMap.get(toStationId).fares = json.fares[toStationId];
         }
         drawWithLoading();
     });
@@ -105,7 +103,7 @@ function drawSplitTicketTreeOnSvgOverlay(drawableStations) {
     d3.selectAll(".split-ticket-tree").remove();
     if (selectedSourceStation) {
         drawableStations.map(dest => dest.fareSet.splitTicket).filter(f => f)
-            .map(fare => [selectedSourceStation].concat(fare.hops.map(hop => pointsMap.get(hop.waypoint))))
+            .map(fare => [selectedSourceStation].concat(fare.hops.map(hop => stationsByIdMap.get(hop.waypoint))))
             .map(pts => drawLineBetweenPoints(pts, "split-ticket-tree"));
     }
 }

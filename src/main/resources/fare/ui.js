@@ -45,7 +45,7 @@ function populateSplitTicketModal(splitTicketFare) {
     let tableHtml = '';
     let lastStation = selectedSourceStation;
     splitTicketFare.hops.forEach(fareHop => {
-        const thisStation = pointsMap.get(fareHop.waypoint);
+        const thisStation = stationsByIdMap.get(fareHop.waypoint);
         tableHtml += `<tr><td>${formatStationName(lastStation)}</td>
                           <td>${formatStationName(thisStation)}</td>
                           <td>${getFareTitle(fareHop.fareDetail) + "<br/>" + fareHop.fareDetail.routeDescription}</td>
