@@ -44,11 +44,6 @@ function drawSvgOverlay(drawableStations) {
         .attr("r", 2)
         .attr("class", "station-point");
 
-    svg.filter(dest => dest.fareSet.splitTicket)
-        .append("path")
-        .attr("d", dest => lineFunction([selectedSourceStation].concat(dest.fareSet.splitTicket.hops.map(hop => stationsByIdMap.get(hop.waypoint)))))
-        .attr("class", "route-line split-ticket-tree");
-
     setSelectableStatusOnStationPolygons();
     highlightSourceAndDestination();
     displaySelectedStationsAndFares();
@@ -68,6 +63,15 @@ function highlightSourceAndDestination() {
                 .attr("class", "route-line selected-route-line");
         }
     }
+}
+
+function drawSplitTicketTree() {
+    d3.selectAll(".split-ticket-tree").remove();
+    d3.select("#map-svg-overlay").select("g").selectAll("g")
+        .filter(dest => dest.fareSet.splitTicket)
+        .append("path")
+        .attr("d", dest => lineFunction([selectedSourceStation].concat(dest.fareSet.splitTicket.hops.map(hop => stationsByIdMap.get(hop.waypoint)))))
+        .attr("class", "route-line split-ticket-tree");
 }
 
 function getDrawableStationsAsList() {
