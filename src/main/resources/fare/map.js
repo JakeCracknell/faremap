@@ -59,9 +59,13 @@ function highlightSourceAndDestination() {
     d3.selectAll(".selected-route-line").remove();
     if (selectedSourceStation) {
         const destination = selectedDestinationStation || pendingDestinationStation;
-        if (destination) {
-            const fareRouteToDraw = destination.fareSet.preferred; //TODO draw split ticket route if this is preferred
-            drawLineBetweenPoints([selectedSourceStation, destination], "selected-route-line");
+        if (destination && destination.fareSet.preferred) {
+            const stations = [selectedSourceStation].concat((destination.fareSet.preferred.hops || [])
+                .map(hop => stationsByIdMap.get(hop.waypoint))).concat(destination);
+            d3.select("#map-svg-overlay").select("g")
+                .append("path")
+                .attr("d", dest => lineFunction(stations))
+                .attr("class", "route-line selected-route-line");
         }
     }
 }
@@ -103,13 +107,6 @@ function triggerFareRequest() {
         }
         drawWithLoading();
     });
-}
-
-function drawLineBetweenPoints(pointsToDraw, className) {
-    return d3.select("#map-svg-overlay").select("g")
-        .append("path")
-        .attr("d", lineFunction(pointsToDraw))
-        .attr("class", "route-line " + className);
 }
 
 function translateAndSetCoordinates(station) {
