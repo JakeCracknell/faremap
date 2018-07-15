@@ -18,6 +18,20 @@ map.on('ready', function () {
                 drawWithLoading();
             }
         });
+        const typeaheadSource = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.whitespace,
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            local: json.map(formatStationName)
+        });
+
+        $('#selected-source-station-input, #selected-destination-station-input').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            },
+            {
+                source: typeaheadSource
+            });
     })
 });
 
@@ -39,3 +53,4 @@ function showAutocompleteOptions(e) {
     stations.filter(s => s.stationName.match(regex) || (s.crs && s.crs.match(regex)))
         .forEach(s => console.log(formatStationName(s)));
 }
+
