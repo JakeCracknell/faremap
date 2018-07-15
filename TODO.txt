@@ -5,6 +5,8 @@ Default fare view only shows oyster for selecting a tube station. Try to add far
 
 Check for bug: select one from station, then another whilst it is loading. May show incorrect fares in map.
 
+Bug: Split ticket code reuses previous results and will return nested split tickets. e.g A->G when D has been queried previously = [A,B,C,[D,E,F,G]]
+
 Dijkstra speedups: deduplicate faredetails, cache cheapest fare prices.
 
 Notes:

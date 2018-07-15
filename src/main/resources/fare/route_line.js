@@ -8,14 +8,14 @@ function getStationsInFare(fare, destination) {
     }
 }
 
+//TODO: probably should not destroy whole svg every zoom/map-move. When fixed, clean up the below.
 function drawSelectedRouteLine() {
-    d3.selectAll(".selected-route-line").remove();
+    const svgLine = !d3.select(".selected-route-line").empty() ? d3.select(".selected-route-line") :
+        d3.select("#map-svg-overlay").select("g").append("path").attr("class", "route-line selected-route-line");
     if (selectedSourceStation) {
         const destination = selectedDestinationStation || pendingDestinationStation;
         if (destination) {
-            d3.select("#map-svg-overlay").select("g")
-                .append("path")
-                .attr("class", "route-line selected-route-line")
+            svgLine.transition().duration(30)
                 .attr("d", dest => routeLineFunction(getStationsInFare(destination.fareSet.preferred, destination)));
         }
     }
