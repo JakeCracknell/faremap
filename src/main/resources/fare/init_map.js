@@ -21,8 +21,10 @@ map.on('ready', function () {
     })
 });
 
-$("#selected-source-station-input").click(resetSourceStation);
-$("#selected-destination-station-input").click(resetDestinationStation);
+$("#selected-source-station-input").click(resetSourceStation).keyup(showAutocompleteOptions);
+
+$("#selected-destination-station-input").click(resetDestinationStation).keyup(showAutocompleteOptions);
+
 $('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:radio').change(e => {
     preferredFareSelectorFunction = getPreferredFareSelectorFunction(
         document.querySelector('input[name="routePreferenceRadios"]:checked').value,
@@ -30,3 +32,10 @@ $('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:rad
     );
     drawWithLoading(e);
 });
+
+function showAutocompleteOptions(e) {
+    const regex = new RegExp(e.target.value, "i");
+    const stations = [...stationsByIdMap.values()];
+    stations.filter(s => s.stationName.match(regex) || (s.crs && s.crs.match(regex)))
+        .forEach(s => console.log(formatStationName(s)));
+}
