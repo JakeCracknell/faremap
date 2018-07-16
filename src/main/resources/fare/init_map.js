@@ -11,6 +11,7 @@ map.doubleClickZoom.disable();
 
 map.on('ready', function () {
     d3.json('/api/station', function (json) {
+        json.forEach(s => s.name=formatStationName(s));
         stationsByIdMap = new Map(json.map((p) => [p.stationId, p]));
         map.addLayer({
             onAdd: function (map) {
@@ -19,9 +20,10 @@ map.on('ready', function () {
             }
         });
         const typeaheadSource = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.whitespace,
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
-            local: json.map(formatStationName)
+            local: json,
+            identify: s => s.stationId
         });
 
         $('#selected-source-station-input, #selected-destination-station-input').typeahead({
@@ -30,14 +32,22 @@ map.on('ready', function () {
                 minLength: 1
             },
             {
-                source: typeaheadSource
+                source: typeaheadSource.ttAdapter(),
+                displayKey: 'name',
+                name:'station',
+                hint:true
             });
+        $('#selected-source-station-input').bind('typeahead:select', function(ev, suggestion) {
+            console.log(ev);
+            console.log(suggestion);
+        });
+        typeaheadSource.initialize();
     })
 });
 
-$("#selected-source-station-input").click(resetSourceStation).keyup(showAutocompleteOptions);
-
-$("#selected-destination-station-input").click(resetDestinationStation).keyup(showAutocompleteOptions);
+// $("#selected-source-station-input").click(resetSourceStation).keyup(showAutocompleteOptions);
+//
+// $("#selected-destination-station-input").click(resetDestinationStation).keyup(showAutocompleteOptions);
 
 $('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:radio').change(e => {
     preferredFareSelectorFunction = getPreferredFareSelectorFunction(
@@ -47,10 +57,10 @@ $('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:rad
     drawWithLoading(e);
 });
 
-function showAutocompleteOptions(e) {
-    const regex = new RegExp(e.target.value, "i");
-    const stations = [...stationsByIdMap.values()];
-    stations.filter(s => s.stationName.match(regex) || (s.crs && s.crs.match(regex)))
-        .forEach(s => console.log(formatStationName(s)));
-}
-
+// function showAutocompleteOptions(e) {
+//     const regex = new RegExp(e.target.value, "i");
+//     const stations = [...stationsByIdMap.values()];
+//     stations.filter(s => s.stationName.match(regex) || (s.crs && s.crs.match(regex)))
+//         .forEach(s => console.log(formatStationName(s)));
+// }
+//
