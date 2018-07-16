@@ -87,14 +87,32 @@
                 </div>
         </div>
 
-        <div class="input-group mb-3">
-            <input id="selected-source-station-input" type="text" class="typeahead form-control" placeholder="Choose source station"
-                   autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true">
+        <div class="station-picker-container input-group mb-3">
+            <div class="station-picker-pending">
+                <label for="selected-source-station-input" class="h4">Where are you travelling from?</label>
+                <input id="selected-source-station-input" type="text" class="typeahead form-control"
+                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true">
+                <p>or choose a station from the map!</p>
+                <p>or use my current location!</p>
+            </div>
+            <div class="station-picker-selected">
+                <h4>Showing fares from:</h4>
+                <h2 class="station-name-text">Hogwarts (HGW) <span class="badge badge-pill badge-danger">&times;</span></h2>
+            </div>
         </div>
 
-        <div class="input-group mb-3">
-            <input id="selected-destination-station-input" type="text" class="typeahead form-control" placeholder="Choose destination station"
-                   autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true">
+        <div class="station-picker-container input-group mb-3">
+            <div class="station-picker-pending">
+                <label for="selected-destination-station-input" class="h4">Destination</label>
+                <input id="selected-destination-station-input" type="text" class="typeahead form-control"
+                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true">
+                <p>or choose a station from the map!</p>
+                <p>or use my current location!</p>
+            </div>
+            <div class="station-picker-selected">
+                <h4>Destination:</h4>
+                <h2 class="station-name-text">Hogwarts (HGW) <span class="badge badge-pill badge-danger">&times;</span></h2>
+            </div>
         </div>
 
         <div id="fares-container">
