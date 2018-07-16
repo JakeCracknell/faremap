@@ -10,6 +10,7 @@ function stationPeek(station) {
     } else if (!selectedDestinationStation) {
         pendingDestinationStation = station;
     }
+    setTypeAheadField(formatStationName(station));
     displaySelectedStationsAndFares();
     drawSelectedRouteLine();
 }
@@ -19,6 +20,7 @@ function stationSelect(station) {
         resetSourceStation();
     } else if (!selectedSourceStation) {
         selectedSourceStation = station;
+        setTypeAheadField("");
         $("#selected-source-text").text(selectedSourceStation.name).show();
         $("#selected-source-header, #pending-destination-header").show();
         $("#pending-source-header").hide();
@@ -28,6 +30,7 @@ function stationSelect(station) {
         $("#selected-destination-text").text(selectedDestinationStation.name).show();
         $("#selected-destination-header").show();
         $("#pending-destination-header, #pending-station-picker-div").hide();
+        setTypeAheadField("");
     }
     setSelectableStatusOnStationPolygons();
 }
@@ -36,6 +39,7 @@ function resetSourceStation() {
     selectedSourceStation = null;
     pendingSourceStation = null;
     resetDestinationStation();
+    setTypeAheadField("");
     $("#selected-source-header, #selected-source-text, #pending-destination-header").hide();
     $("#pending-source-header, #pending-station-picker-div").show();
 }
@@ -55,4 +59,8 @@ function setSelectableStatusOnStationPolygons() {
 
 function onTypeAheadStationSelect(e, station) {
     stationSelect(station);
+}
+
+function setTypeAheadField(value) {
+    $(".typeahead").typeahead("val", value).typeahead("close");
 }

@@ -11,6 +11,7 @@ function displaySelectedStationsAndFares() {
         selectedDestinationStation || pendingDestinationStation);
 }
 
+//TODO inline
 function displayStationsAndFares(sourceStation, destinationStation) {
     // $("#station-picker-input").val(sourceStation && formatStationName(sourceStation) || "");
     // $("#selected-destination-station-input").val(destinationStation && formatStationName(destinationStation) || "");
