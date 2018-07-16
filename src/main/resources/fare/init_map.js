@@ -26,7 +26,7 @@ map.on('ready', function () {
             identify: s => s.stationId
         });
 
-        $('#selected-source-station-input, #selected-destination-station-input').typeahead({
+        $("#station-picker-input").typeahead({
                 hint: true,
                 highlight: true,
                 minLength: 1
@@ -37,10 +37,7 @@ map.on('ready', function () {
                 name:'station',
                 hint:true
             }
-        ).bind('typeahead:select', function(ev, suggestion) {
-            console.log(ev);
-            console.log(suggestion);
-        });
+        ).bind('typeahead:select', onTypeAheadStationSelect);
         typeaheadSource.initialize();
     })
 });

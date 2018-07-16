@@ -9,14 +9,6 @@ body {
     flex-direction: column;
 }
 
-.twitter-typeahead {
-    width: 100%
-}
-
-.input-group-prepend {
-    user-select: none;
-}
-
 .station-polygon.selectable:hover {
     stroke: black;
     stroke-width: 1px;

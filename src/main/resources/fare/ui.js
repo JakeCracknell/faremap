@@ -12,8 +12,8 @@ function displaySelectedStationsAndFares() {
 }
 
 function displayStationsAndFares(sourceStation, destinationStation) {
-    $("#selected-source-station-input").val(sourceStation && formatStationName(sourceStation) || "");
-    $("#selected-destination-station-input").val(destinationStation && formatStationName(destinationStation) || "");
+    // $("#station-picker-input").val(sourceStation && formatStationName(sourceStation) || "");
+    // $("#selected-destination-station-input").val(destinationStation && formatStationName(destinationStation) || "");
     if (destinationStation) {
         displayFares(destinationStation.fareSet);
     }
