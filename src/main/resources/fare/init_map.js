@@ -9,6 +9,8 @@ const map = L.mapbox.map('map', 'mapbox.streets-basic', {
 
 map.doubleClickZoom.disable();
 
+//TODO refactor all of this. work out which fields are actually needed, replace name with formattedName etc.
+
 map.on('ready', function () {
     d3.json('/api/station', function (json) {
         json.forEach(s => s.name=formatStationName(s));
@@ -20,8 +22,8 @@ map.on('ready', function () {
             }
         });
         const typeaheadSource = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            datumTokenizer: Bloodhound.tokenizers.obj.nonword('name'),
+            queryTokenizer: Bloodhound.tokenizers.nonword,
             local: json,
             identify: s => s.stationId
         });
