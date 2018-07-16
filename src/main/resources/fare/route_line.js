@@ -15,7 +15,7 @@ function drawSelectedRouteLine() {
     if (selectedSourceStation) {
         const destination = selectedDestinationStation || pendingDestinationStation;
         if (destination) {
-            svgLine.transition().duration(30)
+            svgLine.transition().ease("elastic").duration(500)
                 .attr("d", dest => routeLineFunction(getStationsInFare(destination.fareSet.preferred, destination)));
         }
     }
