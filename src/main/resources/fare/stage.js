@@ -57,10 +57,34 @@ function setSelectableStatusOnStationPolygons() {
     $('.station-polygon, #map').toggleClass('selectable', !(selectedSourceStation && selectedDestinationStation));
 }
 
+function initialiseTypeAhead(stationList) {
+    stationList.forEach(s => s.formattedName = formatStationName(s));
+    const bloodhound = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.nonword('formattedName'),
+        queryTokenizer: Bloodhound.tokenizers.nonword,
+        local: stationList,
+        identify: s => s.stationId
+    });
+    $("#station-picker-input").typeahead(
+        {highlight: true},
+        {source: bloodhound.ttAdapter(), displayKey: 'formattedName', name: 'station'})
+        .bind('typeahead:select', onTypeAheadStationSelect)
+        .focus(clearTypeAheadIfNoMenu).click(clearTypeAheadIfNoMenu);
+
+    bloodhound.initialize();
+}
+
 function onTypeAheadStationSelect(e, station) {
     stationSelect(station);
 }
 
 function setTypeAheadField(value) {
     $(".typeahead").typeahead("val", value).typeahead("close");
+}
+
+//Not perfect, but good enough. First onfocus event will bring up menu then this event will fire
+function clearTypeAheadIfNoMenu() {
+    if ($('#pending-station-picker-div').find('.tt-menu').is(":hidden")) {
+        setTypeAheadField("");
+    }
 }

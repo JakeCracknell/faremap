@@ -9,38 +9,16 @@ const map = L.mapbox.map('map', 'mapbox.streets-basic', {
 
 map.doubleClickZoom.disable();
 
-//TODO refactor all of this. work out which fields are actually needed, replace name with formattedName etc.
-
 map.on('ready', function () {
-    d3.json('/api/station', function (json) {
-        json.forEach(s => s.formattedName = formatStationName(s));
-        stationsByIdMap = new Map(json.map((p) => [p.stationId, p]));
+    d3.json('/api/station', function (stationList) {
+        stationsByIdMap = new Map(stationList.map((p) => [p.stationId, p]));
+        initialiseTypeAhead(stationList);
         map.addLayer({
             onAdd: function (map) {
                 map.on('viewreset moveend', drawWithLoading);
                 drawWithLoading();
             }
         });
-        const typeaheadSource = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.nonword('name'),
-            queryTokenizer: Bloodhound.tokenizers.nonword,
-            local: json,
-            identify: s => s.stationId
-        });
-
-        $("#station-picker-input").typeahead({
-                hint: true,
-                highlight: true,
-                minLength: 1
-            },
-            {
-                source: typeaheadSource.ttAdapter(),
-                displayKey: 'name',
-                name:'station',
-                hint:true
-            }
-        ).bind('typeahead:select', onTypeAheadStationSelect);
-        typeaheadSource.initialize();
     })
 });
 
