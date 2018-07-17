@@ -63,6 +63,8 @@ body {
     max-width: 60%;
 }
 
-.selected-station-div:hover {
-    background-color: red;
+/*increases clickable area of button*/
+.station-deselect-button {
+    padding: 1em;
+    margin: -1em;
 }

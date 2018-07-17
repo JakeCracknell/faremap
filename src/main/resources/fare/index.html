@@ -91,17 +91,23 @@
             <div id="selected-source" class="card mb-3 selected-station-div" style="display: none;">
                 <div class="card-header">
                     Showing fares from
+                    <a class="close station-deselect-button" href="#">
+                        <span class="align-text-top">&times;</span>
+                    </a>
                 </div>
                 <div class="card-body">
-                    <h2 id="selected-source-text" class="card-text"></h2>
+                    <h5 id="selected-source-text" class="card-text"></h5>
                 </div>
             </div>
             <div id="selected-destination" class="card mb-3 selected-station-div" style="display: none;">
                 <div class="card-header">
                     Destination
+                    <a class="close station-deselect-button" href="#">
+                        <span class="align-text-top">&times;</span>
+                    </a>
                 </div>
                 <div class="card-body">
-                    <h2 id="selected-destination-text" class="card-text"></h2>
+                    <h5 id="selected-destination-text" class="card-text"></h5>
                 </div>
             </div>
             <label id="pending-destination-header" for="station-picker-input" class="h4" style="display: none;">Destination:</label>
@@ -113,7 +119,7 @@
                 <p>or use my current location!</p>
             </div>
         </div>
-
+        <hr/>
         <div id="fares-container">
         </div>
     </div>

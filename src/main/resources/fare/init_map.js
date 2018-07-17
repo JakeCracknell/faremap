@@ -29,3 +29,6 @@ $('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:rad
     );
     drawWithLoading(e);
 });
+
+$("#selected-source").find(".station-deselect-button").click(resetSourceStation);
+$("#selected-destination").find(".station-deselect-button").click(resetDestinationStation);
