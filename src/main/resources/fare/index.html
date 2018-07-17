@@ -88,13 +88,21 @@
         </div>
 
         <div class="station-picker-container">
-            <div id="selected-source" class="selected-station-div" style="display: none;">
-                <h5 id="selected-source-header">Showing fares from:</h5>
-                <h2 id="selected-source-text" class="mb-4"></h2>
+            <div id="selected-source" class="card mb-3 selected-station-div" style="display: none;">
+                <div class="card-header">
+                    Showing fares from
+                </div>
+                <div class="card-body">
+                    <h2 id="selected-source-text" class="card-text"></h2>
+                </div>
             </div>
-            <div id="selected-destination" class="selected-station-div" style="display: none;">
-                <h5 id="selected-destination-header">Destination:</h5>
-                <h2 id="selected-destination-text" class="mb-4"></h2>
+            <div id="selected-destination" class="card mb-3 selected-station-div" style="display: none;">
+                <div class="card-header">
+                    Destination
+                </div>
+                <div class="card-body">
+                    <h2 id="selected-destination-text" class="card-text"></h2>
+                </div>
             </div>
             <label id="pending-destination-header" for="station-picker-input" class="h4" style="display: none;">Destination:</label>
             <label id="pending-source-header" for="station-picker-input" class="h4">Where are you travelling from?</label>

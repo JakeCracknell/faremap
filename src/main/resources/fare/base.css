@@ -62,3 +62,7 @@ body {
 .split-ticket-modal-dialog {
     max-width: 60%;
 }
+
+.selected-station-div:hover {
+    background-color: red;
+}
