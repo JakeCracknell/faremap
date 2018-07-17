@@ -47,16 +47,16 @@ function populateSplitTicketModal(splitTicketFare) {
     let lastStation = selectedSourceStation;
     splitTicketFare.hops.forEach(fareHop => {
         const thisStation = stationsByIdMap.get(fareHop.waypoint);
-        tableHtml += `<tr><td>${formatStationName(lastStation)}</td>
-                          <td>${formatStationName(thisStation)}</td>
+        tableHtml += `<tr><td>${lastStation.formattedName}</td>
+                          <td>${thisStation.formattedName}</td>
                           <td>${getFareTitle(fareHop.fareDetail) + "<br/>" + fareHop.fareDetail.routeDescription}</td>
                           <td>${formatPrice(fareHop.fareDetail.price)}</td>
                           <td>${getDistanceFormatted(lastStation, thisStation)}</td>
                           </tr>`;
         lastStation = thisStation;
     });
-    $("#split-ticket-modal-title").text(`Split Ticket from ${formatStationName(selectedSourceStation)} to 
-                                        ${formatStationName(selectedDestinationStation || pendingDestinationStation)}`);
+    $("#split-ticket-modal-title").text(`Split Ticket from ${selectedSourceStation.formattedName} to 
+                                        ${(selectedDestinationStation || pendingDestinationStation).formattedName}`);
     $("#split-ticket-modal-tbody").html(tableHtml);
 }
 

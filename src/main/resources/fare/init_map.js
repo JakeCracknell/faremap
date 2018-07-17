@@ -13,7 +13,7 @@ map.doubleClickZoom.disable();
 
 map.on('ready', function () {
     d3.json('/api/station', function (json) {
-        json.forEach(s => s.name=formatStationName(s));
+        json.forEach(s => s.formattedName = formatStationName(s));
         stationsByIdMap = new Map(json.map((p) => [p.stationId, p]));
         map.addLayer({
             onAdd: function (map) {

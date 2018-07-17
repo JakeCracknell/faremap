@@ -10,7 +10,7 @@ function stationPeek(station) {
     } else if (!selectedDestinationStation) {
         pendingDestinationStation = station;
     }
-    setTypeAheadField(formatStationName(station));
+    setTypeAheadField(station.formattedName);
     displaySelectedStationsAndFares();
     drawSelectedRouteLine();
 }
@@ -21,13 +21,13 @@ function stationSelect(station) {
     } else if (!selectedSourceStation) {
         selectedSourceStation = station;
         setTypeAheadField("");
-        $("#selected-source-text").text(selectedSourceStation.name).show();
+        $("#selected-source-text").text(selectedSourceStation.formattedName).show();
         $("#selected-source-header, #pending-destination-header").show();
         $("#pending-source-header").hide();
         triggerFareRequest();
     } else if (!selectedDestinationStation) {
         selectedDestinationStation = station;
-        $("#selected-destination-text").text(selectedDestinationStation.name).show();
+        $("#selected-destination-text").text(selectedDestinationStation.formattedName).show();
         $("#selected-destination-header").show();
         $("#pending-destination-header, #pending-station-picker-div").hide();
         setTypeAheadField("");
