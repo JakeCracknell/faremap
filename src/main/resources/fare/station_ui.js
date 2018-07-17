@@ -21,14 +21,14 @@ function stationSelect(station) {
     } else if (!selectedSourceStation) {
         selectedSourceStation = station;
         setTypeAheadField("");
-        $("#selected-source-text").text(selectedSourceStation.formattedName).show();
-        $("#selected-source-header, #pending-destination-header").show();
+        $("#selected-source-text").text(selectedSourceStation.formattedName);
+        $("#selected-source, #pending-destination-header").show();
         $("#pending-source-header").hide();
         triggerFareRequest();
     } else if (!selectedDestinationStation) {
         selectedDestinationStation = station;
-        $("#selected-destination-text").text(selectedDestinationStation.formattedName).show();
-        $("#selected-destination-header").show();
+        $("#selected-destination-text").text(selectedDestinationStation.formattedName);
+        $("#selected-destination").show();
         $("#pending-destination-header, #pending-station-picker-div").hide();
         setTypeAheadField("");
     }
@@ -40,7 +40,7 @@ function resetSourceStation() {
     pendingSourceStation = null;
     resetDestinationStation();
     setTypeAheadField("");
-    $("#selected-source-header, #selected-source-text, #pending-destination-header").hide();
+    $("#selected-source, #pending-destination-header").hide();
     $("#pending-source-header, #pending-station-picker-div").show();
 }
 
@@ -49,7 +49,7 @@ function resetDestinationStation() {
     pendingDestinationStation = null;
     displaySelectedStationsAndFares();
     setSelectableStatusOnStationPolygons();
-    $("#selected-destination-header, #selected-destination-text").hide();
+    $("#selected-destination").hide();
     $("#pending-destination-header, #pending-station-picker-div").show();
 }
 
