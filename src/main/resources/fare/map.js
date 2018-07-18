@@ -80,9 +80,7 @@ function createVoronoiPolygons(drawableStations) {
 function triggerFareRequest() {
     fareUrl = "/api/fare/from/" + selectedSourceStation.stationId;
     d3.json(fareUrl, function (json) {
-        for (const toStationId in json.fares) {
-            stationsByIdMap.get(toStationId).fares = json.fares[toStationId];
-        }
+        stationsByIdMap.forEach((station, stationId) => station.fares = json.fares[stationId]);
         drawWithLoading();
     });
 }
