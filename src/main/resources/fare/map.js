@@ -3,7 +3,7 @@ function drawWithLoading(e) {
     if (e && e.type === 'viewreset') {
         d3.select('#map-svg-overlay').remove();
     }
-    setTimeout(() => draw(), 0);
+    requestAnimationFrame(() => draw());
 }
 
 function draw() {
