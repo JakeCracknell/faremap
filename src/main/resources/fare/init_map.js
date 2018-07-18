@@ -15,7 +15,8 @@ map.on('ready', function () {
         initialiseTypeAhead(stationList);
         map.addLayer({
             onAdd: function (map) {
-                map.on('viewreset moveend', drawWithLoading);
+                map.on('viewreset', removeSvgLayer);
+                map.on('moveend', drawWithLoading); // on zoom, fires viewreset, then moveend.      rezie=moveend
                 drawWithLoading();
             }
         });

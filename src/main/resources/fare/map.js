@@ -1,13 +1,14 @@
 //TODO add a loading indicator
-function drawWithLoading(e) {
-    if (e && e.type === 'viewreset') {
-        d3.select('#map-svg-overlay').remove();
-    }
+function drawWithLoading() {
     requestAnimationFrame(() => draw());
 }
 
-function draw() {
+function removeSvgLayer() {
     d3.select('#map-svg-overlay').remove();
+}
+
+function draw() {
+    removeSvgLayer();
     stationsByIdMap.forEach(translateAndSetCoordinates);
     const drawableStations = getDrawableStationsAsList();
     setMaxPriceCurrentlyDisplayedFromList(drawableStations);
