@@ -68,3 +68,12 @@ body {
     padding: 1em;
     margin: -1em;
 }
+
+#color-key {
+    background: linear-gradient(to right, hsla(0,100%,50%,1), hsla(63,100%,50%,1), hsla(127,100%,50%,1), hsla(191,100%,50%,1), hsla(255,100%,50%,1));
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: crosshair;
+    width: 20%;
+    height: 2em;
+}
