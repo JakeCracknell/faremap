@@ -47,6 +47,7 @@ function drawSvgOverlay(drawableStations) {
     setSelectableStatusOnStationPolygons();
     drawSelectedRouteLine();
     displaySelectedStationsAndFares();
+    showColorKeyIfFaresExist();
 }
 
 function getDrawableStationsAsList() {
@@ -76,14 +77,6 @@ function initialiseFareSets(station) {
 function createVoronoiPolygons(drawableStations) {
     const voronoiFunction = d3.geom.voronoi().x(d => d.x).y(d => d.y);
     voronoiFunction(drawableStations).forEach(d => d.point.polygon = d);  // d.point is the station object.
-}
-
-function triggerFareRequest() {
-    fareUrl = "/api/fare/from/" + selectedSourceStation.stationId;
-    d3.json(fareUrl, function (json) {
-        stationsByIdMap.forEach((station, stationId) => station.fares = json.fares[stationId]);
-        drawWithLoading();
-    });
 }
 
 function translateAndSetCoordinates(station) {

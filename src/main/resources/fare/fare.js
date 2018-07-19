@@ -58,3 +58,16 @@ function getFillColourForFare(fare) {
     const hue = (percentage * 360).toString(10);
     return "hsla(" + hue + ",100%,50%,0.5)";
 }
+
+function triggerFareRequest() {
+    d3.json("/api/fare/from/" + selectedSourceStation.stationId, loadFaresJson);
+}
+
+function loadFaresJson(fareJson) {
+    stationsByIdMap.forEach((station, stationId) => station.fares = fareJson.fares[stationId]);
+    drawWithLoading();
+}
+
+function showColorKeyIfFaresExist() {
+    $('#color-key')[maxPriceCurrentlyDisplayed > 0 ? 'fadeIn' : 'fadeOut']();
+}

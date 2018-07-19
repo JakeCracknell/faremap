@@ -42,6 +42,8 @@ function resetSourceStation() {
     setTypeAheadField("");
     $("#selected-source, #pending-destination-header").hide();
     $("#pending-source-header, #pending-station-picker-div").show();
+    stationsByIdMap.forEach((station) => station.fares = []);
+    drawWithLoading();
 }
 
 function resetDestinationStation() {
