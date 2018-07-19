@@ -33,3 +33,15 @@ $('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:rad
 
 $("#selected-source").find(".station-deselect-button").click(resetSourceStation);
 $("#selected-destination").find(".station-deselect-button").click(resetDestinationStation);
+
+function showPriceForColorKeyHover(e) {
+    $("#color-key").tooltip('hide')
+        .attr('data-original-title', formatPrice(maxPriceCurrentlyDisplayed * (e.offsetX / e.target.clientWidth)))
+        .tooltip('show');
+}
+
+$("#color-key").mousemove(showPriceForColorKeyHover);
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
