@@ -31,8 +31,9 @@ public class DijkstraRouteFinder {
         Map<String, FareDetailAndWaypoint> stationIdToNode = new HashMap<>(stations.size());
         stationIdToNode.put(fromId, FareDetailAndWaypoint.startNode(fromId));
 
+        Comparator<String> nextNodeChooserComparator = Comparator.comparingInt(minFaresForStations::get);
         while (!unsettled.isEmpty()) {
-            String node = unsettled.stream().sorted(Comparator.comparingDouble(minFaresForStations::get)).findFirst().get();
+            String node = unsettled.stream().sorted(nextNodeChooserComparator).findFirst().get();
             unsettled.remove(node);
             settled.add(node);
             Integer fareToNode = minFaresForStations.get(node);
