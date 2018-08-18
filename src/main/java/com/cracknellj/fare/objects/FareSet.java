@@ -46,24 +46,22 @@ public class FareSet {
         return faresList;
     }
 
-    public static FareSet combine(FareSet fareSet1, FareSet fareSet2) {
-        Map<String, List<FareDetail>> faresMap = new HashMap<>(fareSet1.fares);
-        fareSet2.fares.forEach((toId, fares) -> {
-            if (faresMap.containsKey(toId)) {
-                faresMap.get(toId).addAll(fares);
+    public void combineWith(FareSet fareSet2) {
+        fareSet2.fares.forEach((toId, faresList) -> {
+            if (fares.containsKey(toId)) {
+                fares.get(toId).addAll(faresList);
             } else {
-                faresMap.put(toId, fares);
+                fares.put(toId, faresList);
             }
         });
-        return new FareSet(fareSet1.fromId, faresMap);
     }
 
     public static Map<String, FareSet> combine(Map<String, FareSet> fareSetMap1, Map<String, FareSet> fareSetMap2) {
         Map<String, FareSet> fareSetMap = new HashMap<>();
         for (String fromId : Sets.union(fareSetMap1.keySet(), fareSetMap2.keySet())) {
-            FareSet fareSet1 = fareSetMap1.getOrDefault(fromId, new FareSet(fromId));
-            FareSet fareSet2 = fareSetMap2.getOrDefault(fromId, new FareSet(fromId));
-            fareSetMap.put(fromId, combine(fareSet1, fareSet2));
+            FareSet combinedFareSet = fareSetMap1.getOrDefault(fromId, new FareSet(fromId));
+            combinedFareSet.combineWith(fareSetMap2.getOrDefault(fromId, new FareSet(fromId)));
+            fareSetMap.put(fromId, combinedFareSet);
         }
         return fareSetMap;
     }

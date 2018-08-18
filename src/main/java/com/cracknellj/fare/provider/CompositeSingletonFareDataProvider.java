@@ -5,13 +5,16 @@ import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 import com.cracknellj.fare.routefinding.DijkstraRouteFinder;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Stream;
 
 public class CompositeSingletonFareDataProvider implements FareDataProvider {
-    private final Map<String, FareSet> fareSets;
     private final List<Station> stations;
+    private final Map<String, FareSet> fareSets;
+    private final Set<String> stationIdsWithSplitTicketResults;
 
     private static CompositeSingletonFareDataProvider ourInstance = new CompositeSingletonFareDataProvider();
 
@@ -19,15 +22,18 @@ public class CompositeSingletonFareDataProvider implements FareDataProvider {
         stations = StationFileReader.getStations();
         fareSets = Stream.of(new AtocDataProvider(), new TFLDataProvider()).parallel()
                 .map(FareDataProvider::getAllFareSets).reduce(FareSet::combine).get();
-
+        stationIdsWithSplitTicketResults = new HashSet<>();
        // combineFaresForStationsWithMatchingLocations();
     }
 
     @Override
     public FareSet getFaresFrom(String fromId) {
-        DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, this); //hmmmm
-        FareSet fareSet = dijkstraRouteFinder.findCheapestRoutes(fromId);
-        return FareSet.combine(fareSets.getOrDefault(fromId, new FareSet(fromId)), fareSet);
+        if (stationIdsWithSplitTicketResults.add(fromId)) {
+            DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, this);
+            FareSet splitTicketFareSet = dijkstraRouteFinder.findCheapestRoutes(fromId);
+            fareSets.getOrDefault(fromId, new FareSet(fromId)).combineWith(splitTicketFareSet);
+        }
+        return fareSets.get(fromId);
     }
 
     //    private void combineFaresForStationsWithMatchingLocations() {
