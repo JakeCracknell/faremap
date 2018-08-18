@@ -55,7 +55,7 @@ function getDrawableStationsAsList() {
     let drawLimit = map.getBounds().pad(0.4);
     let setOfXYPointsToDraw = d3.set();
     return [...stationsByIdMap.values()].filter(function (d) {
-        if (!(d.modes.some(m => currentSelectedModes.has(m)) && drawLimit.contains(d.latlng))) {
+        if (!(d.tags.some(m => currentSelectedModes.has(m)) && drawLimit.contains(d.latlng))) {
             return false;
         }
 

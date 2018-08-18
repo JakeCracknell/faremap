@@ -3,6 +3,7 @@ package com.cracknellj.fare.offline.tfl;
 import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.Fare;
 import com.cracknellj.fare.objects.FareSet;
+import com.cracknellj.fare.objects.StationTag;
 import com.cracknellj.fare.provider.TFLDataProvider;
 import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
@@ -24,7 +25,7 @@ public class RebuildTFLData {
 
     public static void main(String[] args) throws SQLException {
         stationIds = StationFileReader.getStations().stream()
-                .filter(s -> s.oysterAccepted)
+                .filter(s -> s.tags.contains(StationTag.OYSTER))
                 .map(s -> s.stationId)
                 .sorted().collect(Collectors.toList());
 

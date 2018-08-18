@@ -1,10 +1,7 @@
 package com.cracknellj.fare.offline.tfl;
 
 import com.cracknellj.fare.io.StationFileReader;
-import com.cracknellj.fare.objects.Fare;
-import com.cracknellj.fare.objects.FareDetail;
-import com.cracknellj.fare.objects.FareSet;
-import com.cracknellj.fare.objects.Station;
+import com.cracknellj.fare.objects.*;
 import com.cracknellj.fare.provider.FareDataProvider;
 import com.cracknellj.fare.provider.SplitTicketDataProvider;
 import com.cracknellj.fare.provider.TFLDataProvider;
@@ -23,7 +20,7 @@ public class GenerateTFLSplitTicketSpreadsheet {
 
     public static void main(String[] args) throws Exception {
         Map<String, Station> tflStations = StationFileReader.getStations().stream()
-                .filter(s -> s.oysterAccepted).collect(toMap(s -> s.stationId, Function.identity()));
+                .filter(s -> s.tags.contains(StationTag.OYSTER)).collect(toMap(s -> s.stationId, Function.identity()));
         FareDataProvider tflFaresProvider = new TFLDataProvider();
 
         SplitTicketDataProvider provider = new SplitTicketDataProvider();
