@@ -23,12 +23,13 @@ public class DijkstraRouteFinderTest {
         stations = StationFileReader.getStations();
     }
 
-    @Test //3700 ms
+    @Test //3200 ms
     public void performanceTestHAT() throws Exception {
         for (int i = 0; i < 5; i++) {
             Stopwatch stopwatch = Stopwatch.createStarted();
             DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, fareDataProvider);
             FareSet cheapestRoutes = dijkstraRouteFinder.findCheapestRoutes("910GHATFILD");
+            FareSet cheapestRoutes2 = dijkstraRouteFinder.findCheapestRoutes("910GWELHAMG");
             System.out.println(stopwatch.elapsed(TimeUnit.MILLISECONDS));
         }
     }

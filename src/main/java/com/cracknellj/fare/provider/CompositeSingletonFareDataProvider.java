@@ -13,7 +13,7 @@ public class CompositeSingletonFareDataProvider implements FareDataProvider {
     private final Map<String, FareSet> fareSets;
     private final List<Station> stations;
 
-    private static FareDataProvider ourInstance = new CompositeSingletonFareDataProvider();
+    private static CompositeSingletonFareDataProvider ourInstance = new CompositeSingletonFareDataProvider();
 
     private CompositeSingletonFareDataProvider() {
         stations = StationFileReader.getStations();
@@ -61,7 +61,7 @@ public class CompositeSingletonFareDataProvider implements FareDataProvider {
 //
 //    }
 
-    public synchronized static FareDataProvider getInstance() {
+    public synchronized static CompositeSingletonFareDataProvider getInstance() {
         return ourInstance;
     }
 

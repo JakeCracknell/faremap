@@ -36,9 +36,13 @@ public class MultiHopFareDetailBuilder {
             nodes.addFirst(node);
             node = predecessors.get(node);
         }
+        return Collections.singletonList(getFareDetailFromNodes(nodes));
+    }
+
+    private FareDetail getFareDetailFromNodes(LinkedList<FareDetailAndWaypoint> nodes) {
         FareDetail fareDetail = new FareDetail(nodes);
         fareDetail.routeDescription = "Via " + nodes.stream().limit(nodes.size() - 1)
                 .map(n -> stations.get(n.waypoint).stationName).collect(Collectors.joining(", "));
-        return Collections.singletonList(fareDetail);
+        return fareDetail;
     }
 }
