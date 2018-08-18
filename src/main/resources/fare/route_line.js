@@ -28,9 +28,9 @@ function drawSplitTicketTree() {
         .append("path")
         .attr("class", "route-line split-ticket-tree")
         .attr("d", dest => routeLineFunction(getStationsInFare(dest.fareSet.splitTicket, dest)))
-        .attr("stroke-dasharray", 1000 + " " + 1000)
-        .attr("stroke-dashoffset", 1000)
+        .attr("stroke-dasharray", "100%")
+        .attr("stroke-dashoffset", "100%")
         .transition().duration(2000)
-        .attr("stroke-dashoffset", 0);
+        .attr("stroke-dashoffset", "0%");
 
 }
