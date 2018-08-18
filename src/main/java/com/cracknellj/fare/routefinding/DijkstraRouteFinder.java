@@ -1,5 +1,6 @@
 package com.cracknellj.fare.routefinding;
 
+import com.cracknellj.fare.Haversine;
 import com.cracknellj.fare.objects.FareDetail;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
@@ -41,8 +42,15 @@ public class DijkstraRouteFinder {
                 if (!settled.contains(nextStationId)) {
                     getFareDetailIfExists(node, nextStationId).ifPresent(fareDetail -> {
                         int proposedFare = fareToNode + fareDetail.price;
-                        if (minFaresForStations.get(nextStationId) > proposedFare) {
+                        Integer existingFare = minFaresForStations.get(nextStationId);
+                        if (existingFare > proposedFare) {
                             minFaresForStations.put(nextStationId, proposedFare);
+                            FareDetailAndWaypoint nextNode = new FareDetailAndWaypoint(nextStationId, fareDetail);
+                            predecessors.put(nextStationId, node);
+                            unsettled.add(nextStationId);
+                            stationIdToNode.put(nextStationId, nextNode);
+                        } else if (existingFare == proposedFare &&
+                                isProposedViaPointCloser(nextStationId, predecessors.get(nextStationId), node)) {
                             FareDetailAndWaypoint nextNode = new FareDetailAndWaypoint(nextStationId, fareDetail);
                             predecessors.put(nextStationId, node);
                             unsettled.add(nextStationId);
@@ -56,6 +64,12 @@ public class DijkstraRouteFinder {
                 .collect(Collectors.toMap(e -> stationIdToNode.get(e.getKey()), e -> stationIdToNode.get(e.getValue())));
         MultiHopFareDetailBuilder multiHopFareDetailBuilder = new MultiHopFareDetailBuilder(stations, nodePredecessors);
         return new FareSet(fromId, multiHopFareDetailBuilder.createMap());
+    }
+
+    private boolean isProposedViaPointCloser(String endStationId, String existingViaPointId, String proposedViaPointId) {
+        Station nextStation = stations.get(endStationId);
+        return Haversine.distance(nextStation, stations.get(proposedViaPointId)) <
+                Haversine.distance(nextStation, stations.get(existingViaPointId));
     }
 
 

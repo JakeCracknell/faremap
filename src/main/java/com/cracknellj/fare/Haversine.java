@@ -1,5 +1,7 @@
 package com.cracknellj.fare;
 
+import com.cracknellj.fare.objects.Station;
+
 public class Haversine {
     private static final int EARTH_RADIUS = 6371; // Approx Earth radius in KM
 
@@ -20,5 +22,9 @@ public class Haversine {
 
     private static double haversin(double val) {
         return Math.pow(Math.sin(val / 2), 2);
+    }
+
+    public static double distance(Station station1, Station station2) {
+        return distance(station1.latitude, station1.longitude, station2.latitude, station2.longitude);
     }
 }
