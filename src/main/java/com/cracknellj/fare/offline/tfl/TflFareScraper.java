@@ -16,8 +16,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class TFLFareScraper {
-    private static final Logger LOG = LogManager.getLogger(TFLFareScraper.class);
+public class TflFareScraper {
+    private static final Logger LOG = LogManager.getLogger(TflFareScraper.class);
     private static final int MAX_TRIES = 10;
     private static final BigDecimal PRICE_MULTIPLICAND = BigDecimal.valueOf(100);
     private final Gson gson = new Gson();

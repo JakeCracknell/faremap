@@ -17,10 +17,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.zip.GZIPOutputStream;
 
-public class RebuildTFLData {
-    private static final Logger LOG = LogManager.getLogger(RebuildTFLData.class);
+public class RebuildTflFaresData {
+    private static final Logger LOG = LogManager.getLogger(RebuildTflFaresData.class);
 
-    private static TFLFareScraper tflFareScraper = new TFLFareScraper();
+    private static TflFareScraper tflFareScraper = new TflFareScraper();
     private static List<String> stationIds;
 
     public static void main(String[] args) throws SQLException {
