@@ -46,11 +46,13 @@ function populateSplitTicketModal(splitTicketFare) {
     let lastStation = selectedSourceStation;
     splitTicketFare.hops.forEach(fareHop => {
         const thisStation = stationsByIdMap.get(fareHop.waypoint);
+        const distance = getDistance(lastStation, thisStation);
         tableHtml += `<tr><td>${lastStation.formattedName}</td>
                           <td>${thisStation.formattedName}</td>
                           <td>${getFareTitle(fareHop.fareDetail) + "<br/>" + fareHop.fareDetail.routeDescription}</td>
                           <td>${formatPrice(fareHop.fareDetail.price)}</td>
-                          <td>${getDistanceFormatted(lastStation, thisStation)}</td>
+                          <td>${distance.toFixed(1) + " km"}</td>
+                          <td>${formatPrice(fareHop.fareDetail.price / distance) + "/km"}</td>
                           </tr>`;
         lastStation = thisStation;
     });
