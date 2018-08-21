@@ -10,9 +10,7 @@ function stationPeek(station) {
     } else if (!selectedDestinationStation) {
         pendingDestinationStation = station;
     }
-    setTypeAheadField(station.formattedName);
-    displaySelectedStationsAndFares();
-    drawSelectedRouteLine();
+    showStationFaresAndRouteForPeekOrSelect(station);
 }
 
 function stationSelect(station) {
@@ -30,9 +28,15 @@ function stationSelect(station) {
         $("#selected-destination-text").text(selectedDestinationStation.formattedName);
         $("#selected-destination").show();
         $("#pending-destination-header, #pending-station-picker-div").hide();
-        setTypeAheadField("");
+        showStationFaresAndRouteForPeekOrSelect(selectedDestinationStation);
     }
     setSelectableStatusOnStationPolygons();
+}
+
+function showStationFaresAndRouteForPeekOrSelect(station) {
+    setTypeAheadField(station.formattedName);
+    displaySelectedStationsAndFares();
+    drawSelectedRouteLine();
 }
 
 function resetSourceStation() {
@@ -70,14 +74,10 @@ function initialiseTypeAhead(stationList) {
     $("#station-picker-input").typeahead(
         {highlight: true},
         {source: bloodhound.ttAdapter(), displayKey: 'formattedName', name: 'station'})
-        .bind('typeahead:select', onTypeAheadStationSelect)
+        .bind('typeahead:select', (e, station) => stationSelect(station))
         .focus(clearTypeAheadIfNoMenu).click(clearTypeAheadIfNoMenu);
 
     bloodhound.initialize();
-}
-
-function onTypeAheadStationSelect(e, station) {
-    stationSelect(station);
 }
 
 function setTypeAheadField(value) {
