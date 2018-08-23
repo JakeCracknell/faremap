@@ -22,6 +22,9 @@ Mysteries:
 Tring->Harrow on the Hill. BRFares/shops return many incl 1393 -> 0786 ZONE U1256 LONDN. HOH not in 0786, in ATOC.
 
 
+https://www.whatdotheyknow.com/request/out_of_station_interchange_usage#outgoing-800038
+https://github.com/mapbox/delaunator#performance
+
 Extra Features:
 Stations to have tags instead of modes. Examples:
 HDW: Great Northern, Zone 6, TFL, National Rail, DFT Category E

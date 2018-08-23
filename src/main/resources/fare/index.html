@@ -54,21 +54,24 @@
                 </a>
                 <div class="dropdown-menu radio-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferDefaultRouteRadio" value="default" checked>
-                        <label class="form-check-label" for="preferDefaultRouteRadio">
-                            Prefer Default Route
+                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferCheapestRouteRadio" value="cheapest" checked>
+                        <label class="form-check-label" for="preferCheapestRouteRadio">
+                            Prefer Cheapest Route
                         </label>
                     </div>
                     <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferCheapestRouteRadio" value="cheapest">
-                        <label class="form-check-label" for="preferCheapestRouteRadio">
-                            Prefer Cheapest Route
+                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferDefaultRouteRadio" value="default">
+                        <label class="form-check-label" for="preferDefaultRouteRadio">
+                            Prefer Default Route
                         </label>
                     </div>
                 </div>
             </li>
             <li>
                 <a class="nav-item nav-link" href="#" onclick="drawSplitTicketTree()">Draw Split Ticket Tree</a>
+            </li>
+            <li>
+                <a class="nav-item nav-link" href="#" data-toggle='modal' data-target='#about-modal'>About</a>
             </li>
         </ul>
     </div>
@@ -131,7 +134,7 @@
     <div class="modal-dialog split-ticket-modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="split-ticket-modal-title">TODO Fare details title</h5>
+                <h5 class="modal-title" id="split-ticket-modal-title"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -150,6 +153,49 @@
                     </thead>
                     <tbody id="split-ticket-modal-tbody"></tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="about" aria-hidden="true">
+    <div class="modal-dialog split-ticket-modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">About this project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Limitations etc...
+                </p>
+
+                <h5>Acknowledgements</h5>
+                <p>
+                    UK Train Fare Map was developed by <a href="https://uk.linkedin.com/in/jake-cracknell-b32006b9" target="_blank">Jake Cracknell</a>.
+                    The source code is available on <a href="https://github.com/JakeCracknell" target="_blank">GitHub</a>.
+                    <br/>
+                    With thanks to Chris Zetter for his
+                    <a href="https://chriszetter.com/blog/2014/06/15/building-a-voronoi-map-with-d3-and-leaflet/" target="_blank">blog post</a>
+                    which provided a starting point for this project.
+                    <br/>
+                    For information and inspiration, I thank
+                    <a href="https://www.youtube.com/user/geofftech2/" target="_blank">Geoff Marshall</a>,
+                    <a href="https://www.oyster-rail.org.uk/" target="_blank">Mike Whitaker</a>,
+                    <a href="http://dracos.co.uk/" target="_blank">Matthew Somerville</a>
+                    and <a href="http://www.brfares.com" target="_blank">Paul Kelly</a>.
+                </p>
+
+                <h5>Data</h5>
+                <p>
+                    Train fares data under licence from <a href="http://data.atoc.org/fares-data" target="_blank">RSP</a>
+                    <br/>
+                    Powered by <a href="https://api.tfl.gov.uk/swagger/ui/index.html" target="_blank">TfL Open Data</a> (Oyster fares, station and line information)
+                    <br/>
+                    Contains OS data © Crown copyright and database rights 2016
+                </p>
             </div>
         </div>
     </div>
