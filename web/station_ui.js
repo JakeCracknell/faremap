@@ -7,10 +7,11 @@ let pendingDestinationStation;
 function stationPeek(station) {
     if (!selectedSourceStation) {
         pendingSourceStation = station;
+        showStationFaresAndRouteForPeekOrSelect(station);
     } else if (!selectedDestinationStation) {
         pendingDestinationStation = station;
+        showStationFaresAndRouteForPeekOrSelect(station);
     }
-    showStationFaresAndRouteForPeekOrSelect(station);
 }
 
 function stationSelect(station) {
