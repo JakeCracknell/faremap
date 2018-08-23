@@ -60,7 +60,7 @@ function getFillColourForFare(fare) {
 }
 
 function triggerFareRequest() {
-    d3.json("/api/fare/from/" + selectedSourceStation.stationId, loadFaresJson);
+    d3.json(`./data/fares/${selectedSourceStation.stationId}.json`, loadFaresJson);
 }
 
 function loadFaresJson(fareJson) {

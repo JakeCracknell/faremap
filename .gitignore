@@ -4,3 +4,4 @@ target/
 *.log
 *.gz
 atoc/
+web/data/fares/

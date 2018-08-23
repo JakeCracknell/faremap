@@ -4,10 +4,9 @@ import com.cracknellj.fare.objects.Station;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -18,11 +17,9 @@ public class StationFileReader {
 
     public static List<Station> getStations() {
         if (stationList.isEmpty()) {
-            final File dataFile = new File("stations.json");
-            try (final InputStreamReader inputStreamReader = new InputStreamReader(
-                    new BufferedInputStream(new FileInputStream(dataFile)))) {
+            try (Reader reader = Files.newBufferedReader(Paths.get("web/data/stations.json"))) {
                 final Gson gson = new Gson();
-                Station[] stations = gson.fromJson(new JsonReader(inputStreamReader), Station[].class);
+                Station[] stations = gson.fromJson(new JsonReader(reader), Station[].class);
                 stationList = Arrays.asList(stations);
             } catch (Exception e) {
                 e.printStackTrace();

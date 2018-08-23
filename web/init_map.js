@@ -10,7 +10,7 @@ const map = L.mapbox.map('map', 'mapbox.streets-basic', {
 map.doubleClickZoom.disable();
 
 map.on('ready', function () {
-    d3.json('/api/station', function (stationList) {
+    d3.json('./data/stations.json', function (stationList) {
         stationsByIdMap = new Map(stationList.map((p) => [p.stationId, p]));
         initialiseTypeAhead(stationList);
         map.addLayer({
