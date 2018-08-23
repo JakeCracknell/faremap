@@ -1,6 +1,5 @@
 package com.cracknellj.fare.atoc;
 
-import com.cracknellj.fare.objects.AtocTicketCode;
 import jersey.repackaged.com.google.common.collect.Maps;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
