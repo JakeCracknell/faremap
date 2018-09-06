@@ -4748,7 +4748,7 @@
     "crs": "CBH"
   },
   {
-    "stationId": "NAPTANMISSINGCMB",
+    "stationId": "9100CAMBNTH",
     "stationName": "Cambridge North",
     "tags": [
       "TRAIN"
@@ -8899,7 +8899,7 @@
     "crs": "EDB"
   },
   {
-    "stationId": "NAPTANMISSINGEGY",
+    "stationId": "9100EDINGWY",
     "stationName": "Edinburgh Gateway",
     "tags": [
       "TRAIN"
@@ -14149,6 +14149,16 @@
     "crs": "KEN"
   },
   {
+    "stationId": "9100KENLSTN",
+    "stationName": "Kenilworth",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 52.3422,
+    "longitude": -1.5724,
+    "crs": "KEN"
+  },
+  {
     "stationId": "910GKNLY",
     "stationName": "Kenley",
     "tags": [
@@ -16730,6 +16740,16 @@
     "latitude": 53.5065,
     "longitude": -2.93085,
     "crs": "MAG"
+  },
+  {
+    "stationId": "NONAPTANMAGHULLNORTH",
+    "stationName": "Maghull North",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 53.516,
+    "longitude": -2.922,
+    "crs": "MNS"
   },
   {
     "stationId": "940GZZLUMVL",
@@ -20948,7 +20968,7 @@
     "crs": "PWL"
   },
   {
-    "stationId": "NAPTANMISSINGPYE",
+    "stationId": "9100PYECRNR",
     "stationName": "Pye Corner",
     "tags": [
       "TRAIN"
