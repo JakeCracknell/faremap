@@ -24791,7 +24791,7 @@
   },
   {
     "stationId": "940GZZDLSTD",
-    "stationName": "Stratford",
+    "stationName": "Stratford DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -24801,7 +24801,7 @@
   },
   {
     "stationId": "940GZZLUSTD",
-    "stationName": "Stratford",
+    "stationName": "Stratford Underground",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -24811,7 +24811,7 @@
   },
   {
     "stationId": "910GSTFD",
-    "stationName": "Stratford (London)",
+    "stationName": "Stratford NR",
     "tags": [
       "OVERGROUND",
       "TFLRAIL",

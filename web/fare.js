@@ -64,7 +64,8 @@ function triggerFareRequest() {
 }
 
 function loadFaresJson(fareJson) {
-    stationsByIdMap.forEach((station, stationId) => station.fares = fareJson.fares[stationId]);
+    faresList = (fareJson && fareJson.fares) || {};
+    stationsByIdMap.forEach((station, stationId) => station.fares = faresList[stationId]);
     drawWithLoading();
 }
 
