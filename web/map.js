@@ -59,6 +59,10 @@ function getDrawableStationsAsList() {
             return false;
         }
 
+        if (selectedSourceStation && !d.fares) {
+            return false; // hide if no fare data (ok if just split ticket exists)
+        }
+
         // filters points that are right on top of each other, of which there are 135 (e.g. Hammersmith, Amersham Rail/Tube)
         // display messed up if this happens. TODO Long term solution is to change backend to group such stations
         if (setOfXYPointsToDraw.has(d.xyPoint.toString())) {

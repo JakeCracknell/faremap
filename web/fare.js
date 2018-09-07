@@ -1,4 +1,4 @@
-let preferredFareSelectorFunction = getPreferredFareSelectorFunction("default", "peak");
+let preferredFareSelectorFunction = getPreferredFareSelectorFunction("cheapest", "peak");
 let maxPriceCurrentlyDisplayed = 0;
 
 function getPreferredFareSelectorFunction(routePreference, travelTimePreference) {
