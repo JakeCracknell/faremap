@@ -8,6 +8,19 @@ function getStationsInFare(fare, destination) {
     }
 }
 
+function getStationPairsInSplitTicketFare(station) {
+    if (station && station.fareSet && station.fareSet.splitTicket) {
+        let hops = station.fareSet.splitTicket.hops.map(hop => stationsByIdMap.get(hop.waypoint));
+        let pairs = [[selectedSourceStation, hops[0]]];
+        for (let i = 0; i < hops.length - 1; i++) {
+            pairs.push(hops.slice(i, i + 2));
+        }
+        return pairs;
+    } else {
+        return [];
+    }
+}
+
 //TODO: probably should not destroy whole svg every zoom/map-move. When fixed, clean up the below.
 function drawSelectedRouteLine() {
     const svgLine = !d3.select(".selected-route-line").empty() ? d3.select(".selected-route-line") :
@@ -21,16 +34,29 @@ function drawSelectedRouteLine() {
     }
 }
 
+function getHopsToDrawOnSplitTicketTree() {
+    const hopsBySplitTicket = [...stationsByIdMap.values()].map(getStationPairsInSplitTicketFare);
+    const allHops = [].concat.apply([], hopsBySplitTicket);
+    const linesAndCounts = allHops.map(routeLineFunction).reduce((result, line) => {
+        if (!result.hasOwnProperty(line)) {
+            result[line] = 0;
+        }
+        result[line]++;
+        return result;
+    }, {});
+    return d3.entries(linesAndCounts);
+}
+
 function drawSplitTicketTree() {
-    d3.selectAll(".split-ticket-tree").remove();
-    d3.select("#map-svg-overlay").select("g").selectAll("g")
-        .filter(dest => dest.fareSet.splitTicket)
+    d3.select("#map-svg-overlay")
+        .select("g")
+        .selectAll(".split-ticket-tree")
+        .data(getHopsToDrawOnSplitTicketTree())
+        .enter()
         .append("path")
         .attr("class", "route-line split-ticket-tree")
-        .attr("d", dest => routeLineFunction(getStationsInFare(dest.fareSet.splitTicket, dest)))
-        .attr("stroke-dasharray", "100%")
-        .attr("stroke-dashoffset", "100%")
-        .transition().duration(2000)
-        .attr("stroke-dashoffset", "0%");
-
+        .attr("d", d => d.key)
+        .style("stroke-width", d => Math.max(Math.min(10, d.value / 100), 1))
+        .style("opacity", d => d.value / 10);
+    d3.selectAll(".station-point").remove();
 }

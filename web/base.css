@@ -19,18 +19,18 @@ body {
 }
 
 .route-line {
-    stroke-width: 5px;
+    stroke: rgba(0, 0, 0, 1);
     fill: none;
     pointer-events: none;
 }
 
 .selected-route-line {
-    stroke: rgba(0, 0, 0, 1);
     stroke-dasharray: 5;
+    stroke-width: 5px;
 }
 
 .split-ticket-tree {
-    stroke: rgba(0, 0, 0, 0.1);
+    stroke-linecap: round;
 }
 
 #sidebar {
