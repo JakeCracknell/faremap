@@ -19,12 +19,12 @@
     <script src="fare.js"></script>
     <script src="route_line.js"></script>
     <script src="map.js"></script>
-    <title>faremap.ml</title>
+    <title>faremap</title>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">faremap.ml</a>
+    <a class="navbar-brand" href="#">faremap</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -170,12 +170,36 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Limitations etc...
+                    The aim of faremap is to beautifully display the cost of train travel in the UK.
                 </p>
+                <ul>
+                    <li>
+                        The website runs best in Google Chrome on desktop. It may run slowly or not at all in other web browsers.
+                    </li>
+                    <li>
+                        Despite my best efforts, fares shown may be incorrect or out of date. Feel free to contact me if you find any.
+                    </li>
+                    <li>
+                        Many split tickets will require changing trains in unusual places. I optimise for price, not for convenience!
+                    </li>
+                    <li>
+                        Split ticketing fares in London will require you to use multiple Oyster or contactless cards.
+                        You need to touch out with one card and back in again with different cards.
+                    </li>
+                    <li>
+                        This website shows single fares that are available on the day of travel.
+                        In many cases (but not all), return, advance or season tickets will be cheaper.
+                        It can be cheaper to split these as well.
+                        You can use this website as a starting point for your research.
+                    </li>
+                    <li>
+                        Not all off-peak train tickets are shown.
+                    </li>
+                </ul>
 
                 <h5>Acknowledgements</h5>
                 <p>
-                    faremap.ml was developed by <a href="https://uk.linkedin.com/in/jake-cracknell-b32006b9" target="_blank">Jake Cracknell</a>.
+                    faremap was developed by <a href="https://uk.linkedin.com/in/jake-cracknell-b32006b9" target="_blank">Jake Cracknell</a>.
                     The source code is available on <a href="https://github.com/JakeCracknell" target="_blank">GitHub</a>.
                     <br/>
                     With thanks to Chris Zetter for his
@@ -196,6 +220,10 @@
                     Powered by <a href="https://api.tfl.gov.uk/swagger/ui/index.html" target="_blank">TfL Open Data</a> (Oyster fares, station and line information)
                     <br/>
                     Contains OS data © Crown copyright and database rights 2016
+                    <br/>
+                    Station usage figures from <a href="http://orr.gov.uk/statistics/published-stats/station-usage-estimates" target="_blank">ORR</a>
+                    and <a href="https://tfl.gov.uk/corporate/publications-and-reports/underground-services-performance" target="_blank">TFL</a>
+                    and a <a href="https://www.whatdotheyknow.com/request/up_to_date_dlr_entry_exit_statis" target="_blank">FOI request</a>
                 </p>
             </div>
         </div>
