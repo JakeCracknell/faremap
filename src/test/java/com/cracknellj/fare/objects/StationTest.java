@@ -12,7 +12,7 @@ public class StationTest {
     @Test
     public void serialiseAndDeserialise() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        Station station1 = new Station("940GZZDLABR", "Abbey Road", EnumSet.of(StationTag.DLR), 51.5319f, 0.003737f, null);
+        Station station1 = new Station("940GZZDLABR", "Abbey Road", EnumSet.of(StationTag.DLR), 51.5319f, 0.003737f, null, 12345);
         String stationJson1 = gson.toJson(station1);
         Station station2 = gson.fromJson(stationJson1, Station.class);
         String stationJson2 = gson.toJson(station2);
