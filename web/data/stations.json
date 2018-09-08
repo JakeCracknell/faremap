@@ -102,7 +102,7 @@
   },
   {
     "stationId": "910GABGLELE",
-    "stationName": "Abergele & Pensarn",
+    "stationName": "Abergele \u0026 Pensarn",
     "tags": [
       "TRAIN"
     ],
@@ -204,8 +204,8 @@
     "stationId": "910GACTNCTL",
     "stationName": "Acton Central",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5087,
@@ -761,7 +761,7 @@
   },
   {
     "stationId": "910GANSDELL",
-    "stationName": "Ansdell & Fairhaven",
+    "stationName": "Ansdell \u0026 Fairhaven",
     "tags": [
       "TRAIN"
     ],
@@ -991,7 +991,7 @@
   },
   {
     "stationId": "910GARCHRAT",
-    "stationName": "Arrochar & Tarbet",
+    "stationName": "Arrochar \u0026 Tarbet",
     "tags": [
       "TRAIN"
     ],
@@ -1161,7 +1161,7 @@
   },
   {
     "stationId": "910GASHWELC",
-    "stationName": "Ashwell & Morden",
+    "stationName": "Ashwell \u0026 Morden",
     "tags": [
       "TRAIN"
     ],
@@ -1665,8 +1665,8 @@
     "stationId": "910GBARKING",
     "stationName": "Barking",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5394,
@@ -1948,7 +1948,7 @@
   },
   {
     "stationId": "910GBATABAL",
-    "stationName": "Bat & Ball",
+    "stationName": "Bat \u0026 Ball",
     "tags": [
       "TRAIN"
     ],
@@ -2891,7 +2891,7 @@
   },
   {
     "stationId": "910GBSPSLYD",
-    "stationName": "Bishop's Lydeard",
+    "stationName": "Bishop\u0027s Lydeard",
     "tags": [
       "TRAIN"
     ],
@@ -2984,8 +2984,8 @@
     "stationId": "910GBLCHSRD",
     "stationName": "Blackhorse Road",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5868,
@@ -3184,7 +3184,7 @@
   },
   {
     "stationId": "910GBLNDLAC",
-    "stationName": "Blundellsands & Crosby",
+    "stationName": "Blundellsands \u0026 Crosby",
     "tags": [
       "TRAIN"
     ],
@@ -3334,7 +3334,7 @@
   },
   {
     "stationId": "910GBORWGAW",
-    "stationName": "Borough Green & Wrotham",
+    "stationName": "Borough Green \u0026 Wrotham",
     "tags": [
       "TRAIN"
     ],
@@ -3495,7 +3495,7 @@
   },
   {
     "stationId": "910GBOXHAWH",
-    "stationName": "Box Hill & Westhumble",
+    "stationName": "Box Hill \u0026 Westhumble",
     "tags": [
       "TRAIN"
     ],
@@ -3708,8 +3708,8 @@
     "stationId": "910GBRTWOOD",
     "stationName": "Brentwood",
     "tags": [
-      "TFLRAIL",
       "TRAIN",
+      "TFLRAIL",
       "OYSTER"
     ],
     "latitude": 51.6136,
@@ -3972,8 +3972,8 @@
     "stationId": "910GBROCKLY",
     "stationName": "Brockley",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4646,
@@ -4078,8 +4078,8 @@
     "stationId": "910GBRBYPK",
     "stationName": "Brondesbury Park",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5407,
@@ -4171,8 +4171,8 @@
     "stationId": "910GBRUCGRV",
     "stationName": "Bruce Grove",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.594,
@@ -4533,8 +4533,8 @@
     "stationId": "910GBHILLPK",
     "stationName": "Bush Hill Park",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6415,
@@ -4585,7 +4585,7 @@
   },
   {
     "stationId": "910GBYFLANH",
-    "stationName": "Byfleet & New Haw",
+    "stationName": "Byfleet \u0026 New Haw",
     "tags": [
       "TRAIN"
     ],
@@ -4675,7 +4675,7 @@
   },
   {
     "stationId": "910GCLDNNRB",
-    "stationName": "Caledonian Road & Barnsbury",
+    "stationName": "Caledonian Road \u0026 Barnsbury",
     "tags": [
       "TRAIN",
       "OVERGROUND",
@@ -4697,7 +4697,7 @@
   },
   {
     "stationId": "910GDURSLEY",
-    "stationName": "Cam & Dursley",
+    "stationName": "Cam \u0026 Dursley",
     "tags": [
       "TRAIN"
     ],
@@ -4739,8 +4739,8 @@
     "stationId": "910GCAMHTH",
     "stationName": "Cambridge Heath (London)",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.532,
@@ -4771,8 +4771,8 @@
     "stationId": "910GCMDNRD",
     "stationName": "Camden Road",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5418,
@@ -4803,8 +4803,8 @@
     "stationId": "910GCNDAW",
     "stationName": "Canada Water",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4981,
@@ -4897,8 +4897,8 @@
     "stationId": "910GCNNB",
     "stationName": "Canonbury",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5487,
@@ -5129,8 +5129,8 @@
     "stationId": "910GCRPNDPK",
     "stationName": "Carpenders Park",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6283,
@@ -5348,7 +5348,7 @@
   },
   {
     "stationId": "910GCHLFNAL",
-    "stationName": "Chalfont & Latimer",
+    "stationName": "Chalfont \u0026 Latimer",
     "tags": [
       "TRAIN",
       "TUBE",
@@ -5430,7 +5430,7 @@
   },
   {
     "stationId": "910GCHPWKSC",
-    "stationName": "Chappel & Wakes Colne",
+    "stationName": "Chappel \u0026 Wakes Colne",
     "tags": [
       "TRAIN"
     ],
@@ -5657,8 +5657,8 @@
     "stationId": "910GCHESHNT",
     "stationName": "Cheshunt",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.7029,
@@ -5729,7 +5729,7 @@
   },
   {
     "stationId": "910GCHSW",
-    "stationName": "Chestfield & Swalecliffe",
+    "stationName": "Chestfield \u0026 Swalecliffe",
     "tags": [
       "TRAIN"
     ],
@@ -5791,8 +5791,8 @@
     "stationId": "910GCHINGFD",
     "stationName": "Chingford",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6331,
@@ -5935,7 +5935,7 @@
   },
   {
     "stationId": "910GCHOS",
-    "stationName": "Church & Oswaldtwistle",
+    "stationName": "Church \u0026 Oswaldtwistle",
     "tags": [
       "TRAIN"
     ],
@@ -6028,8 +6028,8 @@
     "stationId": "910GCLPHHS",
     "stationName": "Clapham High Street",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4655,
@@ -6072,8 +6072,8 @@
     "stationId": "910GCLAPTON",
     "stationName": "Clapton",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5616,
@@ -6233,7 +6233,7 @@
   },
   {
     "stationId": "910GCBHMSDA",
-    "stationName": "Cobham & Stoke d'Abernon",
+    "stationName": "Cobham \u0026 Stoke d\u0027Abernon",
     "tags": [
       "TRAIN"
     ],
@@ -7073,8 +7073,8 @@
     "stationId": "910GCRYSTLP",
     "stationName": "Crystal Palace",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4181,
@@ -7346,8 +7346,8 @@
     "stationId": "910GDALS",
     "stationName": "Dalston Junction",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5461,
@@ -7358,8 +7358,8 @@
     "stationId": "910GDALSKLD",
     "stationName": "Dalston Kingsland",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5481,
@@ -7621,8 +7621,8 @@
     "stationId": "910GDENMRKH",
     "stationName": "Denmark Hill",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4682,
@@ -7732,7 +7732,7 @@
   },
   {
     "stationId": "910GDIGBY",
-    "stationName": "Digby & Sowton",
+    "stationName": "Digby \u0026 Sowton",
     "tags": [
       "TRAIN"
     ],
@@ -7932,7 +7932,7 @@
   },
   {
     "stationId": "910GDORE",
-    "stationName": "Dore & Totley",
+    "stationName": "Dore \u0026 Totley",
     "tags": [
       "TRAIN"
     ],
@@ -8324,7 +8324,7 @@
   },
   {
     "stationId": "910GDUNKELD",
-    "stationName": "Dunkeld & Birnam",
+    "stationName": "Dunkeld \u0026 Birnam",
     "tags": [
       "TRAIN"
     ],
@@ -8455,7 +8455,7 @@
   },
   {
     "stationId": "940GZZLUECT",
-    "stationName": "Earl's Court",
+    "stationName": "Earl\u0027s Court",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -8972,7 +8972,7 @@
   },
   {
     "stationId": "910GELPHNAC",
-    "stationName": "Elephant & Castle",
+    "stationName": "Elephant \u0026 Castle",
     "tags": [
       "TRAIN",
       "OYSTER"
@@ -8983,7 +8983,7 @@
   },
   {
     "stationId": "940GZZLUEAC",
-    "stationName": "Elephant & Castle",
+    "stationName": "Elephant \u0026 Castle",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -9075,7 +9075,7 @@
   },
   {
     "stationId": "910GELTR",
-    "stationName": "Elstree & Borehamwood",
+    "stationName": "Elstree \u0026 Borehamwood",
     "tags": [
       "TRAIN",
       "OYSTER"
@@ -9097,7 +9097,7 @@
   },
   {
     "stationId": "910GELTON",
-    "stationName": "Elton & Orston",
+    "stationName": "Elton \u0026 Orston",
     "tags": [
       "TRAIN"
     ],
@@ -9139,8 +9139,8 @@
     "stationId": "910GEMRSPKH",
     "stationName": "Emerson Park",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5686,
@@ -9159,7 +9159,7 @@
   },
   {
     "stationId": "910GERGNCHP",
-    "stationName": "Energlyn & Churchill Park",
+    "stationName": "Energlyn \u0026 Churchill Park",
     "tags": [
       "TRAIN"
     ],
@@ -9319,8 +9319,8 @@
     "stationName": "Euston",
     "tags": [
       "TRAIN",
-      "OVERGROUND",
       "TUBE",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5274,
@@ -9844,10 +9844,10 @@
   },
   {
     "stationId": "910GFNCHLYR",
-    "stationName": "Finchley Road & Frognal",
+    "stationName": "Finchley Road \u0026 Frognal",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5503,
@@ -9907,7 +9907,7 @@
   },
   {
     "stationId": "910GFGDHGWK",
-    "stationName": "Fishguard & Goodwick",
+    "stationName": "Fishguard \u0026 Goodwick",
     "tags": [
       "TRAIN"
     ],
@@ -10049,8 +10049,8 @@
     "stationId": "910GFRSTGT",
     "stationName": "Forest Gate",
     "tags": [
-      "TFLRAIL",
       "TRAIN",
+      "TFLRAIL",
       "OYSTER"
     ],
     "latitude": 51.5494,
@@ -10868,8 +10868,8 @@
     "stationId": "910GGODMAYS",
     "stationName": "Goodmayes",
     "tags": [
-      "TFLRAIL",
       "TRAIN",
+      "TFLRAIL",
       "OYSTER"
     ],
     "latitude": 51.5656,
@@ -10919,7 +10919,7 @@
   },
   {
     "stationId": "910GGORASTR",
-    "stationName": "Goring & Streatley",
+    "stationName": "Goring \u0026 Streatley",
     "tags": [
       "TRAIN"
     ],
@@ -11462,8 +11462,8 @@
     "stationId": "910GHACKNYC",
     "stationName": "Hackney Central",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5471,
@@ -11474,8 +11474,8 @@
     "stationId": "910GHAKNYNM",
     "stationName": "Hackney Downs",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5488,
@@ -11486,8 +11486,8 @@
     "stationId": "910GHACKNYW",
     "stationName": "Hackney Wick",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5434,
@@ -11496,7 +11496,7 @@
   },
   {
     "stationId": "910GHADMATP",
-    "stationName": "Haddenham & Thame Parkway",
+    "stationName": "Haddenham \u0026 Thame Parkway",
     "tags": [
       "TRAIN"
     ],
@@ -11649,7 +11649,7 @@
   },
   {
     "stationId": "910GHITW",
-    "stationName": "Hall i' th' Wood",
+    "stationName": "Hall i\u0027 th\u0027 Wood",
     "tags": [
       "TRAIN"
     ],
@@ -11719,7 +11719,7 @@
   },
   {
     "stationId": "940GZZLUHSD",
-    "stationName": "Hammersmith (Dist&Picc Line)",
+    "stationName": "Hammersmith (Dist\u0026Picc Line)",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -11729,7 +11729,7 @@
   },
   {
     "stationId": "940GZZLUHSC",
-    "stationName": "Hammersmith (H&C Line)",
+    "stationName": "Hammersmith (H\u0026C Line)",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -12012,8 +12012,8 @@
     "stationId": "910GHRGYGL",
     "stationName": "Harringay Green Lanes",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5772,
@@ -12042,10 +12042,10 @@
   },
   {
     "stationId": "910GHROW",
-    "stationName": "Harrow & Wealdstone",
+    "stationName": "Harrow \u0026 Wealdstone",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5922,
@@ -12054,7 +12054,7 @@
   },
   {
     "stationId": "940GZZLUHAW",
-    "stationName": "Harrow & Wealdstone",
+    "stationName": "Harrow \u0026 Wealdstone",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -12177,8 +12177,8 @@
     "stationId": "910GHTCHEND",
     "stationName": "Hatch End",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6094,
@@ -12187,7 +12187,7 @@
   },
   {
     "stationId": "910GHTFLASF",
-    "stationName": "Hatfield & Stainforth",
+    "stationName": "Hatfield \u0026 Stainforth",
     "tags": [
       "TRAIN"
     ],
@@ -12338,7 +12338,7 @@
   },
   {
     "stationId": "910GHAYESAH",
-    "stationName": "Hayes & Harlington",
+    "stationName": "Hayes \u0026 Harlington",
     "tags": [
       "TRAIN",
       "OYSTER"
@@ -12422,8 +12422,8 @@
     "stationId": "910GHEDSTNL",
     "stationName": "Headstone Lane",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6026,
@@ -12498,8 +12498,8 @@
     "stationId": "940GZZLUHRC",
     "stationName": "Heathrow Terminals 1-2-3",
     "tags": [
-      "TUBE",
       "TRAIN",
+      "TUBE",
       "OYSTER"
     ],
     "latitude": 51.4716,
@@ -12893,8 +12893,8 @@
     "stationId": "910GHGHMSPK",
     "stationName": "Highams Park",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6083,
@@ -12903,7 +12903,7 @@
   },
   {
     "stationId": "910GHGHBRDG",
-    "stationName": "Highbridge & Burnham-on-Sea",
+    "stationName": "Highbridge \u0026 Burnham-on-Sea",
     "tags": [
       "TRAIN"
     ],
@@ -12913,7 +12913,7 @@
   },
   {
     "stationId": "910GHGHI",
-    "stationName": "Highbury & Islington",
+    "stationName": "Highbury \u0026 Islington",
     "tags": [
       "TRAIN",
       "OVERGROUND",
@@ -12925,7 +12925,7 @@
   },
   {
     "stationId": "940GZZLUHAI",
-    "stationName": "Highbury & Islington",
+    "stationName": "Highbury \u0026 Islington",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -13188,8 +13188,8 @@
     "stationId": "910GHOMRTON",
     "stationName": "Homerton",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.547,
@@ -13453,7 +13453,7 @@
   },
   {
     "stationId": "910GWROXHAM",
-    "stationName": "Hoveton & Wroxham",
+    "stationName": "Hoveton \u0026 Wroxham",
     "tags": [
       "TRAIN"
     ],
@@ -13747,8 +13747,8 @@
     "stationId": "910GILFORD",
     "stationName": "Ilford",
     "tags": [
-      "TFLRAIL",
       "TRAIN",
+      "TFLRAIL",
       "OYSTER"
     ],
     "latitude": 51.5591,
@@ -13779,8 +13779,8 @@
     "stationId": "910GCSEAH",
     "stationName": "Imperial Wharf",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4756,
@@ -13789,7 +13789,7 @@
   },
   {
     "stationId": "910GINEL",
-    "stationName": "Ince & Elton",
+    "stationName": "Ince \u0026 Elton",
     "tags": [
       "TRAIN"
     ],
@@ -14237,8 +14237,8 @@
     "stationId": "910GKENOLYM",
     "stationName": "Kensington (Olympia)",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4962,
@@ -14291,8 +14291,8 @@
     "stationId": "910GKNTSHTW",
     "stationName": "Kentish Town West",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5465,
@@ -14303,8 +14303,8 @@
     "stationId": "910GKTON",
     "stationName": "Kenton",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5818,
@@ -14449,8 +14449,8 @@
     "stationId": "910GKLBRNHR",
     "stationName": "Kilburn High Road",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5373,
@@ -14559,7 +14559,7 @@
   },
   {
     "stationId": "940GZZLUKSX",
-    "stationName": "King's Cross St. Pancras",
+    "stationName": "King\u0027s Cross St. Pancras",
     "tags": [
       "TRAIN",
       "TUBE",
@@ -14803,7 +14803,7 @@
   },
   {
     "stationId": "910GKIRKHAM",
-    "stationName": "Kirkham & Wesham",
+    "stationName": "Kirkham \u0026 Wesham",
     "tags": [
       "TRAIN"
     ],
@@ -15295,7 +15295,7 @@
   },
   {
     "stationId": "910GLAZKRKO",
-    "stationName": "Lazonby & Kirkoswald",
+    "stationName": "Lazonby \u0026 Kirkoswald",
     "tags": [
       "TRAIN"
     ],
@@ -15763,7 +15763,7 @@
   },
   {
     "stationId": "910GLTHH",
-    "stationName": "Lisvane & Thornhill",
+    "stationName": "Lisvane \u0026 Thornhill",
     "tags": [
       "TRAIN"
     ],
@@ -15875,10 +15875,10 @@
     "stationId": "940GZZLULVT",
     "stationName": "Liverpool Street",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
-      "TFLRAIL",
       "TUBE",
+      "OVERGROUND",
+      "TFLRAIL",
       "OYSTER"
     ],
     "latitude": 51.5179,
@@ -17188,8 +17188,8 @@
     "stationId": "910GMRYLAND",
     "stationName": "Maryland",
     "tags": [
-      "TFLRAIL",
       "TRAIN",
+      "TFLRAIL",
       "OYSTER"
     ],
     "latitude": 51.5461,
@@ -18060,7 +18060,7 @@
   },
   {
     "stationId": "910GMOTFONT",
-    "stationName": "Mottisfont & Dunbridge",
+    "stationName": "Mottisfont \u0026 Dunbridge",
     "tags": [
       "TRAIN"
     ],
@@ -18180,7 +18180,7 @@
   },
   {
     "stationId": "910GNAILSEA",
-    "stationName": "Nailsea & Backwell",
+    "stationName": "Nailsea \u0026 Backwell",
     "tags": [
       "TRAIN"
     ],
@@ -18374,8 +18374,8 @@
     "stationId": "910GNWCROSS",
     "stationName": "New Cross",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4763,
@@ -18386,8 +18386,8 @@
     "stationId": "910GNEWXGTE",
     "stationName": "New Cross Gate",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4751,
@@ -18985,8 +18985,8 @@
     "stationId": "910GNWEMBLY",
     "stationName": "North Wembley",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5626,
@@ -19566,8 +19566,8 @@
     "stationId": "940GZZLUPAC",
     "stationName": "Paddington",
     "tags": [
-      "TUBE",
       "TRAIN",
+      "TUBE",
       "OYSTER"
     ],
     "latitude": 51.517,
@@ -19839,7 +19839,7 @@
   },
   {
     "stationId": "910GPMBRYBP",
-    "stationName": "Pembrey & Burry Port",
+    "stationName": "Pembrey \u0026 Burry Port",
     "tags": [
       "TRAIN"
     ],
@@ -19932,8 +19932,8 @@
     "stationId": "910GPENEW",
     "stationName": "Penge West",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4176,
@@ -20173,7 +20173,7 @@
   },
   {
     "stationId": "910GPVNSYAW",
-    "stationName": "Pevensey & Westham",
+    "stationName": "Pevensey \u0026 Westham",
     "tags": [
       "TRAIN"
     ],
@@ -20535,7 +20535,7 @@
   },
   {
     "stationId": "910GPONTYPL",
-    "stationName": "Pontypool & New Inn",
+    "stationName": "Pontypool \u0026 New Inn",
     "tags": [
       "TRAIN"
     ],
@@ -20675,7 +20675,7 @@
   },
   {
     "stationId": "910GPSEA",
-    "stationName": "Portsmouth & Southsea",
+    "stationName": "Portsmouth \u0026 Southsea",
     "tags": [
       "TRAIN"
     ],
@@ -20705,7 +20705,7 @@
   },
   {
     "stationId": "910GPOSILPK",
-    "stationName": "Possilpark & Parkhouse",
+    "stationName": "Possilpark \u0026 Parkhouse",
     "tags": [
       "TRAIN"
     ],
@@ -20845,7 +20845,7 @@
   },
   {
     "stationId": "910GPHLD",
-    "stationName": "Priesthill & Darnley",
+    "stationName": "Priesthill \u0026 Darnley",
     "tags": [
       "TRAIN"
     ],
@@ -21009,7 +21009,7 @@
   },
   {
     "stationId": "940GZZLUQPS",
-    "stationName": "Queen's Park",
+    "stationName": "Queen\u0027s Park",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -21041,8 +21041,8 @@
     "stationId": "910GQPRK",
     "stationName": "Queens Park (London)",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5344,
@@ -21195,7 +21195,7 @@
   },
   {
     "stationId": "910GRMSWILP",
-    "stationName": "Ramsgreave & Wilpshire",
+    "stationName": "Ramsgreave \u0026 Wilpshire",
     "tags": [
       "TRAIN"
     ],
@@ -21461,7 +21461,7 @@
   },
   {
     "stationId": "940GZZLURGP",
-    "stationName": "Regent's Park",
+    "stationName": "Regent\u0027s Park",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -21645,7 +21645,7 @@
   },
   {
     "stationId": "910GRISCA",
-    "stationName": "Risca & Pontymister",
+    "stationName": "Risca \u0026 Pontymister",
     "tags": [
       "TRAIN"
     ],
@@ -22292,7 +22292,7 @@
   },
   {
     "stationId": "910GSABR",
-    "stationName": "Sandal & Agbrigg",
+    "stationName": "Sandal \u0026 Agbrigg",
     "tags": [
       "TRAIN"
     ],
@@ -22373,7 +22373,7 @@
   },
   {
     "stationId": "910GSNDWDUD",
-    "stationName": "Sandwell & Dudley",
+    "stationName": "Sandwell \u0026 Dudley",
     "tags": [
       "TRAIN"
     ],
@@ -22553,7 +22553,7 @@
   },
   {
     "stationId": "910GSFRTHAL",
-    "stationName": "Seaforth & Litherland",
+    "stationName": "Seaforth \u0026 Litherland",
     "tags": [
       "TRAIN"
     ],
@@ -22676,8 +22676,8 @@
     "stationId": "910GSVNKNGS",
     "stationName": "Seven Kings",
     "tags": [
-      "TFLRAIL",
       "TRAIN",
+      "TFLRAIL",
       "OYSTER"
     ],
     "latitude": 51.564,
@@ -22688,8 +22688,8 @@
     "stationId": "910GSEVNSIS",
     "stationName": "Seven Sisters",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5829,
@@ -22862,7 +22862,7 @@
   },
   {
     "stationId": "940GZZLUSBC",
-    "stationName": "Shepherd's Bush (Central)",
+    "stationName": "Shepherd\u0027s Bush (Central)",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -22872,7 +22872,7 @@
   },
   {
     "stationId": "940GZZLUSBM",
-    "stationName": "Shepherd's Bush Market",
+    "stationName": "Shepherd\u0027s Bush Market",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -23220,8 +23220,8 @@
     "stationId": "910GSIVRST",
     "stationName": "Silver Street",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6147,
@@ -23483,8 +23483,8 @@
     "stationId": "910GSACTON",
     "stationName": "South Acton",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4997,
@@ -23600,8 +23600,8 @@
     "stationId": "910GSKENTON",
     "stationName": "South Kenton",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5702,
@@ -23674,8 +23674,8 @@
     "stationId": "910GSTOTNHM",
     "stationName": "South Tottenham",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5804,
@@ -23767,8 +23767,8 @@
     "stationId": "910GSBURY",
     "stationName": "Southbury",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6487,
@@ -24170,8 +24170,8 @@
     "stationId": "910GSTJMSST",
     "stationName": "St James Street (London)",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.581,
@@ -24274,7 +24274,7 @@
   },
   {
     "stationId": "940GZZLUSJP",
-    "stationName": "St. James's Park",
+    "stationName": "St. James\u0027s Park",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -24284,7 +24284,7 @@
   },
   {
     "stationId": "940GZZLUSJW",
-    "stationName": "St. John's Wood",
+    "stationName": "St. John\u0027s Wood",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -24294,7 +24294,7 @@
   },
   {
     "stationId": "940GZZLUSPU",
-    "stationName": "St. Paul's",
+    "stationName": "St. Paul\u0027s",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -24366,8 +24366,8 @@
     "stationId": "910GSTMFDHL",
     "stationName": "Stamford Hill",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5745,
@@ -24396,7 +24396,7 @@
   },
   {
     "stationId": "910GSTNLWAT",
-    "stationName": "Stanlow & Thornton",
+    "stationName": "Stanlow \u0026 Thornton",
     "tags": [
       "TRAIN"
     ],
@@ -24506,7 +24506,7 @@
   },
   {
     "stationId": "910GSTEETON",
-    "stationName": "Steeton & Silsden",
+    "stationName": "Steeton \u0026 Silsden",
     "tags": [
       "TRAIN"
     ],
@@ -24648,8 +24648,8 @@
     "stationId": "910GSTKNWNG",
     "stationName": "Stoke Newington",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5652,
@@ -24690,8 +24690,8 @@
     "stationId": "910GSTNBGPK",
     "stationName": "Stonebridge Park",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.544,
@@ -24823,9 +24823,9 @@
     "stationId": "910GSTFD",
     "stationName": "Stratford NR",
     "tags": [
+      "TRAIN",
       "OVERGROUND",
       "TFLRAIL",
-      "TRAIN",
       "OYSTER"
     ],
     "latitude": 51.5415,
@@ -24998,7 +24998,7 @@
   },
   {
     "stationId": "910GSDBRYHR",
-    "stationName": "Sudbury & Harrow Road",
+    "stationName": "Sudbury \u0026 Harrow Road",
     "tags": [
       "TRAIN",
       "OYSTER"
@@ -25134,8 +25134,8 @@
     "stationId": "910GSURREYQ",
     "stationName": "Surrey Quays",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.4932,
@@ -25647,8 +25647,8 @@
     "stationId": "910GTHBLDSG",
     "stationName": "Theobalds Grove",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6925,
@@ -26101,7 +26101,7 @@
   },
   {
     "stationId": "940GZZLUTAW",
-    "stationName": "Totteridge & Whetstone",
+    "stationName": "Totteridge \u0026 Whetstone",
     "tags": [
       "TUBE",
       "OYSTER"
@@ -26123,8 +26123,8 @@
     "stationId": "940GZZLUTWH",
     "stationName": "Tower Hill / Tower Gateway / Fenchurch Street",
     "tags": [
-      "TUBE",
       "TRAIN",
+      "TUBE",
       "DLR",
       "OYSTER"
     ],
@@ -26307,8 +26307,8 @@
     "stationId": "910GTURKYST",
     "stationName": "Turkey Street",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6726,
@@ -26337,7 +26337,7 @@
   },
   {
     "stationId": "910GTUTBURY",
-    "stationName": "Tutbury & Hatton",
+    "stationName": "Tutbury \u0026 Hatton",
     "tags": [
       "TRAIN"
     ],
@@ -26582,8 +26582,8 @@
     "stationId": "910GUPRHLWY",
     "stationName": "Upper Holloway",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5636,
@@ -26872,8 +26872,8 @@
     "stationName": "Walthamstow Central",
     "tags": [
       "TRAIN",
-      "OVERGROUND",
       "TUBE",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5829,
@@ -26884,8 +26884,8 @@
     "stationId": "910GWLTHQRD",
     "stationName": "Walthamstow Queens Road",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5815,
@@ -26980,8 +26980,8 @@
     "stationId": "910GWNSTDPK",
     "stationName": "Wanstead Park",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5517,
@@ -26992,8 +26992,8 @@
     "stationId": "910GWAPPING",
     "stationName": "Wapping",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5044,
@@ -27187,8 +27187,8 @@
     "stationId": "910GWATFDHS",
     "stationName": "Watford High Street",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6527,
@@ -27199,8 +27199,8 @@
     "stationId": "910GWATFDJ",
     "stationName": "Watford Junction",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.6639,
@@ -27372,8 +27372,8 @@
     "stationId": "910GWMBY",
     "stationName": "Wembley Central",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5523,
@@ -27507,8 +27507,8 @@
     "stationId": "910GWCROYDN",
     "stationName": "West Croydon",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.3788,
@@ -28091,8 +28091,8 @@
     "stationId": "910GWCHAPEL",
     "stationName": "Whitechapel",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5195,
@@ -28346,8 +28346,8 @@
     "stationId": "910GWLSDJHL",
     "stationName": "Willesden Junction",
     "tags": [
-      "OVERGROUND",
       "TRAIN",
+      "OVERGROUND",
       "OYSTER"
     ],
     "latitude": 51.5326,
@@ -28509,7 +28509,7 @@
   },
   {
     "stationId": "910GWINDSEC",
-    "stationName": "Windsor & Eton Central",
+    "stationName": "Windsor \u0026 Eton Central",
     "tags": [
       "TRAIN"
     ],
@@ -28519,7 +28519,7 @@
   },
   {
     "stationId": "910GWSORAER",
-    "stationName": "Windsor & Eton Riverside",
+    "stationName": "Windsor \u0026 Eton Riverside",
     "tags": [
       "TRAIN"
     ],

@@ -1,8 +1,8 @@
 package com.cracknellj.fare.offline;
 
 import com.cracknellj.fare.io.StationFileReader;
+import com.cracknellj.fare.io.StationFileWriter;
 import com.cracknellj.fare.objects.Station;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,15 +24,17 @@ public class StationUsageParser {
         stations = StationFileReader.getStations();
         Files.lines(Paths.get("stationusage", "tfl.csv")).forEach(StationUsageParser::readTflStation);
         Files.lines(Paths.get("stationusage", "nr.csv")).forEach(StationUsageParser::readNationalRailStation);
-
+        StationFileWriter.writeStations(stations);
     }
 
     private static void readTflStation(String line) {
         String[] split = line.split(",");
-        List<Station> collect = stations.stream().sorted(
-                Comparator.comparingInt(s -> LevenshteinDistance.getDefaultInstance().apply(s.stationName, split[0]))
-        ).collect(Collectors.toList());
-        LOG.info(line + " -> " + collect.get(0));
+        Station station = stations.stream()
+                .min(Comparator.comparingInt(s -> LevenshteinDistance.getDefaultInstance().apply(s.stationName, split[0])))
+                .orElseThrow(() -> new RuntimeException(""));
+        if (!station.stationName.equals(split[0])) {
+            LOG.info(line + " ??? " + station);
+        }
 
 
     }
