@@ -10915,7 +10915,7 @@
     ],
     "latitude": 55.8403,
     "longitude": -3.04651,
-    "crs": "GBB"
+    "crs": "GBG"
   },
   {
     "stationId": "910GGORASTR",
@@ -12496,7 +12496,7 @@
   },
   {
     "stationId": "940GZZLUHRC",
-    "stationName": "Heathrow Terminals 1-2-3 ",
+    "stationName": "Heathrow Terminals 1-2-3",
     "tags": [
       "TUBE",
       "TRAIN",
@@ -15262,6 +15262,16 @@
     ],
     "latitude": 51.5134,
     "longitude": -0.217799
+  },
+  {
+    "stationId": "9100LRNCKRK",
+    "stationName": "Laurencekirk",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 56.8368,
+    "longitude": -2.4653,
+    "crs": "LAU"
   },
   {
     "stationId": "910GLAWRNCH",
@@ -18892,7 +18902,7 @@
   },
   {
     "stationId": "910GFAMBDGE",
-    "stationName": "North Fambridge ",
+    "stationName": "North Fambridge",
     "tags": [
       "TRAIN"
     ],

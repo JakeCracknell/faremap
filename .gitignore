@@ -4,4 +4,5 @@ target/
 *.log
 *.gz
 atoc/
+stationusage/
 web/data/fares/
