@@ -1,7 +1,7 @@
 [
   {
     "stationId": "940GZZDLABR",
-    "stationName": "Abbey Road",
+    "stationName": "Abbey Road DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -524,7 +524,7 @@
   },
   {
     "stationId": "940GZZDLALL",
-    "stationName": "All Saints",
+    "stationName": "All Saints DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -1717,7 +1717,7 @@
   },
   {
     "stationId": "940GZZDLBNK",
-    "stationName": "Bank",
+    "stationName": "Bank DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -2375,7 +2375,7 @@
   },
   {
     "stationId": "940GZZDLBEC",
-    "stationName": "Beckton",
+    "stationName": "Beckton DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -2386,7 +2386,7 @@
   },
   {
     "stationId": "940GZZDLBPK",
-    "stationName": "Beckton Park",
+    "stationName": "Beckton Park DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -3356,7 +3356,7 @@
   },
   {
     "stationId": "940GZZDLBLA",
-    "stationName": "Blackwall",
+    "stationName": "Blackwall DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -3796,7 +3796,7 @@
   },
   {
     "stationId": "940GZZDLBOW",
-    "stationName": "Bow Church",
+    "stationName": "Bow Church DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -5299,7 +5299,7 @@
   },
   {
     "stationId": "940GZZDLCAN",
-    "stationName": "Canary Wharf",
+    "stationName": "Canary Wharf DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -5332,7 +5332,7 @@
   },
   {
     "stationId": "940GZZDLCGT",
-    "stationName": "Canning Town",
+    "stationName": "Canning Town DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -7633,7 +7633,7 @@
   },
   {
     "stationId": "940GZZDLCLA",
-    "stationName": "Crossharbour",
+    "stationName": "Crossharbour DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -7857,7 +7857,7 @@
   },
   {
     "stationId": "940GZZDLCUS",
-    "stationName": "Custom House (for ExCel)",
+    "stationName": "Custom House (for ExCel) DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -7868,7 +7868,7 @@
   },
   {
     "stationId": "940GZZDLCUT",
-    "stationName": "Cutty Sark (for Maritime Greenwich)",
+    "stationName": "Cutty Sark (for Maritime Greenwich) DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -7923,7 +7923,7 @@
   },
   {
     "stationId": "940GZZDLCYP",
-    "stationName": "Cyprus",
+    "stationName": "Cyprus DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -8416,7 +8416,7 @@
   },
   {
     "stationId": "940GZZDLDEP",
-    "stationName": "Deptford Bridge",
+    "stationName": "Deptford Bridge DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -8460,7 +8460,7 @@
   },
   {
     "stationId": "940GZZDLDEV",
-    "stationName": "Devons Road",
+    "stationName": "Devons Road DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -9468,7 +9468,7 @@
   },
   {
     "stationId": "940GZZDLEIN",
-    "stationName": "East India",
+    "stationName": "East India DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -10004,7 +10004,7 @@
   },
   {
     "stationId": "940GZZDLELV",
-    "stationName": "Elverson Road",
+    "stationName": "Elverson Road DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -11338,7 +11338,7 @@
   },
   {
     "stationId": "940GZZDLGAL",
-    "stationName": "Gallions Reach",
+    "stationName": "Gallions Reach DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -12386,7 +12386,7 @@
   },
   {
     "stationId": "940GZZDLGRE",
-    "stationName": "Greenwich",
+    "stationName": "Greenwich DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -13970,7 +13970,7 @@
   },
   {
     "stationId": "940GZZDLHEQ",
-    "stationName": "Heron Quays",
+    "stationName": "Heron Quays DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -15298,7 +15298,7 @@
   },
   {
     "stationId": "940GZZDLISL",
-    "stationName": "Island Gardens",
+    "stationName": "Island Gardens DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -15978,7 +15978,7 @@
   },
   {
     "stationId": "940GZZDLKGV",
-    "stationName": "King George V",
+    "stationName": "King George V DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -16611,7 +16611,7 @@
   },
   {
     "stationId": "940GZZDLLDP",
-    "stationName": "Langdon Park",
+    "stationName": "Langdon Park DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -17098,7 +17098,7 @@
   },
   {
     "stationId": "940GZZDLLEW",
-    "stationName": "Lewisham",
+    "stationName": "Lewisham DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -17224,7 +17224,7 @@
   },
   {
     "stationId": "940GZZDLLIM",
-    "stationName": "Limehouse",
+    "stationName": "Limehouse DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -17934,7 +17934,7 @@
   },
   {
     "stationId": "940GZZDLLCA",
-    "stationName": "London City Airport",
+    "stationName": "London City Airport DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -19902,7 +19902,7 @@
   },
   {
     "stationId": "940GZZDLMUD",
-    "stationName": "Mudchute",
+    "stationName": "Mudchute DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -22533,7 +22533,7 @@
   },
   {
     "stationId": "940GZZDLPDK",
-    "stationName": "Pontoon Dock",
+    "stationName": "Pontoon Dock DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -22588,7 +22588,7 @@
   },
   {
     "stationId": "940GZZDLPOP",
-    "stationName": "Poplar",
+    "stationName": "Poplar DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -22907,7 +22907,7 @@
   },
   {
     "stationId": "940GZZDLPRE",
-    "stationName": "Prince Regent",
+    "stationName": "Prince Regent DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -22951,7 +22951,7 @@
   },
   {
     "stationId": "940GZZDLPUD",
-    "stationName": "Pudding Mill Lane",
+    "stationName": "Pudding Mill Lane DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -24076,7 +24076,7 @@
   },
   {
     "stationId": "940GZZDLRAL",
-    "stationName": "Royal Albert",
+    "stationName": "Royal Albert DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -24098,7 +24098,7 @@
   },
   {
     "stationId": "940GZZDLRVC",
-    "stationName": "Royal Victoria",
+    "stationName": "Royal Victoria DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -24988,7 +24988,7 @@
   },
   {
     "stationId": "940GZZDLSHA",
-    "stationName": "Shadwell",
+    "stationName": "Shadwell DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -25966,7 +25966,7 @@
   },
   {
     "stationId": "940GZZDLSOQ",
-    "stationName": "South Quay",
+    "stationName": "South Quay DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -26861,7 +26861,7 @@
   },
   {
     "stationId": "940GZZDLSTL",
-    "stationName": "Star Lane",
+    "stationName": "Star Lane DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -27276,7 +27276,7 @@
   },
   {
     "stationId": "940GZZDLSHS",
-    "stationName": "Stratford High Street",
+    "stationName": "Stratford High Street DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -27287,7 +27287,7 @@
   },
   {
     "stationId": "940GZZDLSIT",
-    "stationName": "Stratford International",
+    "stationName": "Stratford International DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -30279,7 +30279,7 @@
   },
   {
     "stationId": "940GZZDLWHM",
-    "stationName": "West Ham",
+    "stationName": "West Ham DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -30346,7 +30346,7 @@
   },
   {
     "stationId": "940GZZDLWIQ",
-    "stationName": "West India Quay",
+    "stationName": "West India Quay DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -30447,7 +30447,7 @@
   },
   {
     "stationId": "940GZZDLWSV",
-    "stationName": "West Silvertown",
+    "stationName": "West Silvertown DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -30593,7 +30593,7 @@
   },
   {
     "stationId": "940GZZDLWFE",
-    "stationName": "Westferry",
+    "stationName": "Westferry DLR",
     "tags": [
       "DLR",
       "OYSTER"
@@ -31711,7 +31711,7 @@
   },
   {
     "stationId": "940GZZDLWLA",
-    "stationName": "Woolwich Arsenal",
+    "stationName": "Woolwich Arsenal DLR",
     "tags": [
       "DLR",
       "OYSTER"
