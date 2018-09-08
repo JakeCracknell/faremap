@@ -8,14 +8,11 @@ import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
-import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class StationUsageParser {
     private static final Logger LOG = LogManager.getLogger(StationUsageParser.class);
@@ -24,14 +21,15 @@ public class StationUsageParser {
 
     public static void main(String[] args) throws Exception {
         stations = StationFileReader.getStations();
-        Files.lines(Paths.get("stationusage", "tfl.csv")).forEach(StationUsageParser::readTflStation);
+        Files.lines(Paths.get("stationusage", "tube.csv")).forEach(StationUsageParser::readTubeStation);
+        Files.lines(Paths.get("stationusage", "dlr.csv")).forEach(StationUsageParser::readDlrStation);
         Files.lines(Paths.get("stationusage", "nr.csv")).forEach(StationUsageParser::readNationalRailStation);
         LOG.info("No yearly usage figures saved for: ");
         stations.stream().filter(s -> s.yearlyUsage == 0).forEach(LOG::info);
         StationFileWriter.writeStations(stations);
     }
 
-    private static void readTflStation(String line) {
+    private static void readTubeStation(String line) {
         String[] split = line.split(",");
         Station station = stations.stream()
                 .filter(m -> m.tags.contains(StationTag.TUBE))
@@ -39,6 +37,19 @@ public class StationUsageParser {
                 .orElseThrow(() -> new RuntimeException(""));
         if (station.stationName.equals(split[0])) {
             station.yearlyUsage = (int) (Double.parseDouble(split[1]) * 1000000);
+        } else {
+            LOG.info(line + " ??? " + station);
+        }
+    }
+
+    private static void readDlrStation(String line) {
+        String[] split = line.split(",");
+        Station station = stations.stream()
+                .filter(m -> m.tags.contains(StationTag.DLR))
+                .min(Comparator.comparingInt(s -> LevenshteinDistance.getDefaultInstance().apply(s.stationName, split[0])))
+                .orElseThrow(() -> new RuntimeException(""));
+        if (station.stationName.equals(split[0])) {
+            station.yearlyUsage = Integer.parseInt(split[1]);
         } else {
             LOG.info(line + " ??? " + station);
         }
