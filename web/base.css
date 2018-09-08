@@ -25,8 +25,15 @@ body {
 }
 
 .selected-route-line {
-    stroke-dasharray: 5;
     stroke-width: 5px;
+    stroke-dasharray: 3;
+    animation: dash 1000s linear infinite;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 10000px;
+    }
 }
 
 .split-ticket-tree {
