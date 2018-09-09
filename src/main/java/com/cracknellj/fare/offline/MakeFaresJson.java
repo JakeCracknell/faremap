@@ -18,7 +18,7 @@ public class MakeFaresJson {
 
     public static void main(String[] args) {
         List<Station> stations = StationFileReader.getStations();
-        stations.parallelStream().filter(s -> "HAT".equals(s.crs))
+        stations.parallelStream().filter(s -> "910GGTWK".equals(s.stationId))
                 .forEach(MakeFaresJson::writeFaresJson);
     }
 

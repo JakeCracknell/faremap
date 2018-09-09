@@ -6,10 +6,9 @@ import com.google.gson.GsonBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.sql.SQLException;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -20,8 +19,9 @@ public class RebuildLinesData {
 
     private static TflLinesScraper tflLinesScraper = new TflLinesScraper();
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws Exception {
         Set<String> lineIds = tflLinesScraper.getLineIds();
+        LOG.info("Got " + lineIds + " line ids: " + lineIds);
         List<TransportLine> lines = lineIds.parallelStream()
                 .map(id -> tflLinesScraper.getTransportLine(id))
                 .filter(Optional::isPresent).map(Optional::get)
@@ -30,8 +30,7 @@ public class RebuildLinesData {
     }
 
     private static void writeRouteLinesToFile(List<TransportLine> lines) {
-        try (OutputStreamWriter writer = new OutputStreamWriter(new BufferedOutputStream(
-                new FileOutputStream("transport_lines.json")))) {
+        try (Writer writer = Files.newBufferedWriter(Paths.get("web", "data", "transport_lines.json"))) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(lines, writer);
         } catch (Exception e) {

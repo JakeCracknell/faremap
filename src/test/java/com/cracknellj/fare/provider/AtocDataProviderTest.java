@@ -5,7 +5,7 @@ import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.FareDetail;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
-import jersey.repackaged.com.google.common.base.Stopwatch;
+import com.google.common.base.Stopwatch;
 import org.junit.Ignore;
 import org.junit.Test;
 
