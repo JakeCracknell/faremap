@@ -3,7 +3,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiZHJzcGE0NCIsImEiOiJjamo5MWloNDYwNHZ6M2txeGVrM
 const map = L.mapbox.map('map', 'mapbox.streets-basic', {
     zoomControl: false,
     maxBounds:[[58.62, -5.88], [50.00, 1.76]], //GB
-    minZoom: 7,
+    minZoom: 6,
     maxZoom: 15
 }).fitBounds([[51.92, 0.61], [51.11, -1.12]]); //London
 
