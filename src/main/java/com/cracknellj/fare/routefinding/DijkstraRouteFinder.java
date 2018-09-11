@@ -16,10 +16,12 @@ public class DijkstraRouteFinder {
 
     private final Map<String, Station> stations;
     private final FareDataProvider fareDataProvider;
+    private final boolean includeOffPeak;
 
-    public DijkstraRouteFinder(Collection<Station> stations, FareDataProvider fareDataProvider) {
+    public DijkstraRouteFinder(Collection<Station> stations, FareDataProvider fareDataProvider, boolean includeOffPeak) {
         this.stations = Maps.uniqueIndex(stations, s -> s.stationId);
         this.fareDataProvider = fareDataProvider;
+        this.includeOffPeak = includeOffPeak;
     }
 
     public FareSet findCheapestRoutes(String fromId) {
@@ -75,7 +77,7 @@ public class DijkstraRouteFinder {
 
     private Optional<FareDetail> getFareDetailIfExists(String fromId, String toId) {
         return fareDataProvider.getFares(fromId, toId).stream()
-                .filter(f -> !f.offPeakOnly)
+                .filter(f -> includeOffPeak || !f.offPeakOnly)
                 .sorted(Comparator.comparing(f -> f.price)).findFirst();
     }
 

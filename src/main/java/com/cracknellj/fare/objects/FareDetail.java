@@ -31,7 +31,7 @@ public class FareDetail {
         this.ticketName = "Split Ticket";
         this.hops = hops;
         this.isDefaultRoute = false;
-        this.offPeakOnly = hops.stream().anyMatch(h -> h.fareDetail.offPeakOnly) && false; //TODO make UI nicer
+        this.offPeakOnly = hops.stream().anyMatch(h -> h.fareDetail.offPeakOnly);
         this.isTFL = hops.stream().allMatch(h -> h.fareDetail.isTFL);
         this.price = hops.stream().mapToInt(h -> h.fareDetail.price).sum();
     }

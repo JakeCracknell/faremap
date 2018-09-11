@@ -8,12 +8,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public class TicketTypeFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(TicketTypeFileReader.class);
 
     private static final String FILE_EXTENSION = "TTY";
+    private static final Pattern OFF_PEAK_PATTERN = Pattern.compile("((SUP(ER)?) )?OFF.?P.*K.* (DAY|S)");
 
     public TicketTypeFileReader() throws IOException {
         super(FILE_EXTENSION);
@@ -30,8 +32,10 @@ public class TicketTypeFileReader extends AtocFileReader {
                         String ticketCode = line.substring(1, 4);
                         String description = line.substring(28, 28 + 15).trim();
                         if (description.startsWith("ANYTIME")) {
-                            ticketCodes.add(new AtocTicketCode(ticketCode, description));
-                        }
+                            ticketCodes.add(new AtocTicketCode(ticketCode, description, false));
+                        } else if (OFF_PEAK_PATTERN.matcher(description).matches()) {
+                            ticketCodes.add(new AtocTicketCode(ticketCode, description, true));
+                        } // otherwise it is advance, carnet, smart, unusual, etc...
                     }
                 }
             });

@@ -27,7 +27,7 @@ public class DijkstraRouteFinderTest {
     public void performanceTestHAT() throws Exception {
         for (int i = 0; i < 5; i++) {
             Stopwatch stopwatch = Stopwatch.createStarted();
-            DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, fareDataProvider);
+            DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, fareDataProvider, false);
             FareSet cheapestRoutes = dijkstraRouteFinder.findCheapestRoutes("910GHATFILD");
             FareSet cheapestRoutes2 = dijkstraRouteFinder.findCheapestRoutes("910GWELHAMG");
             System.out.println(stopwatch.elapsed(TimeUnit.MILLISECONDS));

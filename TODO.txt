@@ -1,3 +1,13 @@
+Must do:
+Remove mapbox
+loading indicator, as files are big
+toggles not dropdowns
+show split tickets for off peak separately
+refactor json generation, split ticket stuff.
+
+
+Nice to have:
+
 Convex hull on voronoi?
 Add off peak NR fares
 

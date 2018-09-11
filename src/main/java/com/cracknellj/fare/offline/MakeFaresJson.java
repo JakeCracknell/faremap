@@ -24,14 +24,16 @@ public class MakeFaresJson {
         Set<String> existing = Files.list(Paths.get("web", "data", "fares"))
                 .map(p -> p.getFileName().toString().replace(".json", ""))
                 .collect(Collectors.toSet());
-        stations.parallelStream().filter(s -> !existing.contains(s.stationId))
+//        stations.parallelStream().filter(s -> !existing.contains(s.stationId))
+//                .forEach(MakeFaresJson::writeFaresJson);
+        stations.parallelStream().filter(s -> "HAT".equals(s.crs))
                 .forEach(MakeFaresJson::writeFaresJson);
     }
 
     private static void writeFaresJson(Station station) {
-        LOG.info("Writing data for " + station);
         FareSet fareSet = CompositeSingletonFareDataProvider.getInstance().getFaresFrom(station.stationId);
         try (Writer writer = Files.newBufferedWriter(Paths.get("web", "data", "fares", station.stationId + ".json"))) {
+            LOG.info("Writing data for " + station);
             new Gson().toJson(fareSet, writer);
             LOG.info("Writing data for " + station + " - DONE");
         } catch (Exception e) {
