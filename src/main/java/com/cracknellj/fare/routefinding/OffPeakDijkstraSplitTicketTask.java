@@ -6,11 +6,12 @@ import com.cracknellj.fare.provider.FareDataProvider;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.Map;
 import java.util.Optional;
 
 public class OffPeakDijkstraSplitTicketTask extends DijkstraSplitTicketTask {
-    public OffPeakDijkstraSplitTicketTask(Collection<Station> stations, FareDataProvider fareDataProvider) {
-        super(stations, fareDataProvider);
+    public OffPeakDijkstraSplitTicketTask(Map<String, Station> stations, FareDataProvider fareDataProvider, String fromId) {
+        super(stations, fareDataProvider, fromId);
     }
 
     @Override

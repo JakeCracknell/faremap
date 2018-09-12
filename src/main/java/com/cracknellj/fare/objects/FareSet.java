@@ -69,4 +69,10 @@ public class FareSet {
         }
         return fareSetMap;
     }
+
+    public void replaceWith(FareSet fareSet2) {
+        fareSet2.fares.forEach((toId, faresList) -> {
+                fares.put(toId, faresList);
+        });
+    }
 }

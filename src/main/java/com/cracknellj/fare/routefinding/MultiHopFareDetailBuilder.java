@@ -5,6 +5,7 @@ import com.cracknellj.fare.objects.Station;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MultiHopFareDetailBuilder {
     private final Map<String, Station> stations;
@@ -36,10 +37,12 @@ public class MultiHopFareDetailBuilder {
             nodes.addFirst(node);
             node = predecessors.get(node);
         }
-        return Collections.singletonList(getFareDetailFromNodes(nodes));
+        List<FareDetailAndWaypoint> normalisedHops = nodes.stream()
+                .flatMap(h -> h.fareDetail.hops != null ? h.fareDetail.hops.stream() : Stream.of(h)).collect(Collectors.toList());
+        return Collections.singletonList(getFareDetailFromNodes(normalisedHops));
     }
 
-    private FareDetail getFareDetailFromNodes(LinkedList<FareDetailAndWaypoint> nodes) {
+    private FareDetail getFareDetailFromNodes(List<FareDetailAndWaypoint> nodes) {
         FareDetail fareDetail = new FareDetail(nodes);
         fareDetail.routeDescription = "Via " + nodes.stream().limit(nodes.size() - 1)
                 .map(n -> stations.get(n.waypoint).stationName).collect(Collectors.joining(", "));

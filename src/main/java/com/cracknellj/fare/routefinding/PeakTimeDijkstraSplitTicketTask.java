@@ -4,13 +4,13 @@ import com.cracknellj.fare.objects.FareDetail;
 import com.cracknellj.fare.objects.Station;
 import com.cracknellj.fare.provider.FareDataProvider;
 
-import java.util.Collection;
 import java.util.Comparator;
+import java.util.Map;
 import java.util.Optional;
 
 public class PeakTimeDijkstraSplitTicketTask extends DijkstraSplitTicketTask {
-    public PeakTimeDijkstraSplitTicketTask(Collection<Station> stations, FareDataProvider fareDataProvider) {
-        super(stations, fareDataProvider);
+    public PeakTimeDijkstraSplitTicketTask(Map<String, Station> stations, FareDataProvider fareDataProvider, String fromId) {
+        super(stations, fareDataProvider, fromId);
     }
 
     @Override
