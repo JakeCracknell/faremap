@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class FareSet {
     public final String fromId;
@@ -49,7 +50,10 @@ public class FareSet {
     public void combineWith(FareSet fareSet2) {
         fareSet2.fares.forEach((toId, faresList) -> {
             if (fares.containsKey(toId)) {
-                fares.get(toId).addAll(faresList);
+                List<FareDetail> combinedFareDetails = new ArrayList<>(fares.size() + faresList.size());
+                combinedFareDetails.addAll(fares.get(toId));
+                combinedFareDetails.addAll(faresList);
+                fares.put(toId, combinedFareDetails);
             } else {
                 fares.put(toId, faresList);
             }

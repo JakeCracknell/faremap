@@ -12,8 +12,6 @@ import org.junit.Test;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.*;
-
 public class AtocDataProviderTest {
     @Test
     @Ignore
@@ -28,7 +26,7 @@ public class AtocDataProviderTest {
 
     @Test
     public void analyseJourneyValue() throws Exception {
-        FareDataProvider fareDataProvider = CompositeSingletonFareDataProvider.getInstance();
+        FareDataProvider fareDataProvider = CompositeFareDataProvider.load();
         List<Station> stations = StationFileReader.getStations();
 
         double cheapestPricePerKm = Double.MAX_VALUE;

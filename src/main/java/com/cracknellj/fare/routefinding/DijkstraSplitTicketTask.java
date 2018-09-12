@@ -11,17 +11,15 @@ import com.google.common.collect.Sets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class DijkstraRouteFinder {
+public abstract class DijkstraSplitTicketTask {
     public static final int MAX_PRICE = Integer.MAX_VALUE;
 
     private final Map<String, Station> stations;
-    private final FareDataProvider fareDataProvider;
-    private final boolean includeOffPeak;
+    final FareDataProvider fareDataProvider;
 
-    public DijkstraRouteFinder(Collection<Station> stations, FareDataProvider fareDataProvider, boolean includeOffPeak) {
+    public DijkstraSplitTicketTask(Collection<Station> stations, FareDataProvider fareDataProvider) {
         this.stations = Maps.uniqueIndex(stations, s -> s.stationId);
         this.fareDataProvider = fareDataProvider;
-        this.includeOffPeak = includeOffPeak;
     }
 
     public FareSet findCheapestRoutes(String fromId) {
@@ -75,11 +73,6 @@ public class DijkstraRouteFinder {
     }
 
 
-    private Optional<FareDetail> getFareDetailIfExists(String fromId, String toId) {
-        return fareDataProvider.getFares(fromId, toId).stream()
-                .filter(f -> includeOffPeak || !f.offPeakOnly)
-                .sorted(Comparator.comparing(f -> f.price)).findFirst();
-    }
-
+    abstract Optional<FareDetail> getFareDetailIfExists(String fromId, String toId);
 
 }
