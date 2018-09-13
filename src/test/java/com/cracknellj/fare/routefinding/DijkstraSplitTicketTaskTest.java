@@ -12,8 +12,9 @@ import org.junit.Test;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class DijkstraSplitTicketTaskTest {
+import static org.junit.Assert.assertTrue;
 
+public class DijkstraSplitTicketTaskTest {
     private static FareDataProvider fareDataProvider;
     private static Map<String, Station> stations;
 
@@ -32,4 +33,5 @@ public class DijkstraSplitTicketTaskTest {
             System.out.println(stopwatch.elapsed(TimeUnit.MILLISECONDS));
         }
     }
+
 }

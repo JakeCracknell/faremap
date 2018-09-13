@@ -1,6 +1,5 @@
 package com.cracknellj.fare.routefinding;
 
-import com.cracknellj.fare.Haversine;
 import com.cracknellj.fare.objects.FareDetail;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
@@ -70,7 +69,7 @@ public abstract class DijkstraSplitTicketTask {
                 Optional<FareDetail> fareDetailIfExists = getFareDetailIfExists(node, nextStationId);
                 if (fareDetailIfExists.isPresent()) {
                     FareDetail fareDetail = fareDetailIfExists.get();
-                    int proposedCost = costToNode + fareDetail.price;
+                    int proposedCost = costToNode + fareDetail.price + 1; //1p penalty for every hop.
                     Integer existingCost = minCostsForStations.get(nextStationId);
                     if (existingCost > proposedCost) {
                         minCostsForStations.put(nextStationId, proposedCost);
@@ -78,24 +77,10 @@ public abstract class DijkstraSplitTicketTask {
                         predecessors.put(nextStationId, node);
                         stationIdToNode.put(nextStationId, nextNode);
                         unsettled.add(nextStationId);
-
-                        //TODO this elseif should be combined with above once the secondary cost function is improved.
-                    } else if (existingCost == proposedCost &&
-                            isProposedViaPointCloser(nextStationId, predecessors.get(nextStationId), node)) {
-                        FareDetailAndWaypoint nextNode = new FareDetailAndWaypoint(nextStationId, fareDetail);
-                        predecessors.put(nextStationId, node);
-                        unsettled.add(nextStationId);
-                        stationIdToNode.put(nextStationId, nextNode);
                     }
                 };
             }
         }
-    }
-
-    private boolean isProposedViaPointCloser(String endStationId, String existingViaPointId, String proposedViaPointId) {
-        Station nextStation = stations.get(endStationId);
-        return Haversine.distance(nextStation, stations.get(proposedViaPointId)) <
-                Haversine.distance(nextStation, stations.get(existingViaPointId));
     }
 
     private FareSet generateFareSet() {
