@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 public class FareSet {
     public final String fromId;
@@ -27,6 +26,7 @@ public class FareSet {
         add(fare.toId, fare.fareDetail);
     }
 
+    // TODO Does this even work. Check HAT -> BWK
     public void add(String toId, FareDetail fareDetailToAdd) {
         List<FareDetail> fareDetails = fares.computeIfAbsent(toId, x -> new ArrayList<>());
         for (int i = 0; i < fareDetails.size(); i++) {
@@ -70,9 +70,9 @@ public class FareSet {
         return fareSetMap;
     }
 
-    public void replaceWith(FareSet fareSet2) {
-        fareSet2.fares.forEach((toId, faresList) -> {
-                fares.put(toId, faresList);
-        });
+    public static FareSet combine(FareSet fareSet1, FareSet fareSet2) {
+        fareSet1.combineWith(fareSet2);
+        return fareSet1;
     }
+
 }

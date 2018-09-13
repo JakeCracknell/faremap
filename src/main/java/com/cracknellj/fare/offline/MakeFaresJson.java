@@ -34,13 +34,14 @@ public class MakeFaresJson {
                 .forEach(station -> {
                     Stopwatch stopwatch = Stopwatch.createStarted();
                     LOG.info("Starting " + station);
-                    Stream.of(
+                    FareSet splitTicketFareset = Stream.of(
                             new OffPeakDijkstraSplitTicketTask(stations, fareDataProvider, station),
                             new PeakTimeDijkstraSplitTicketTask(stations, fareDataProvider, station)
-                    ).map(DijkstraSplitTicketTask::findCheapestRoutes)
-                            .forEach(fareSet -> fareDataProvider.add(station, fareSet));
+                            ).map(DijkstraSplitTicketTask::findCheapestRoutes)
+                            .reduce(FareSet::combine).orElse(new FareSet(station));
+                    splitTicketFareset.combineWith(fareDataProvider.getFaresFrom(station));
                     LOG.info(String.format("Completed %s in %d seconds", station, stopwatch.elapsed().getSeconds()));
-                    writeFaresJson(fareDataProvider.getFaresFrom(station));
+                    writeFaresJson(splitTicketFareset);
                 });
 
 

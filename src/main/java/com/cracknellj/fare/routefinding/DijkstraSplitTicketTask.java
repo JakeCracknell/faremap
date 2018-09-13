@@ -77,11 +77,7 @@ public abstract class DijkstraSplitTicketTask {
                         FareDetailAndWaypoint nextNode = new FareDetailAndWaypoint(nextStationId, fareDetail);
                         predecessors.put(nextStationId, node);
                         stationIdToNode.put(nextStationId, nextNode);
-                        if (fareDetail.hops != null) { //TODO this is incorrect logic
-                            settleNode(nextStationId);
-                        } else {
-                            unsettled.add(nextStationId);
-                        }
+                        unsettled.add(nextStationId);
 
                         //TODO this elseif should be combined with above once the secondary cost function is improved.
                     } else if (existingCost == proposedCost &&

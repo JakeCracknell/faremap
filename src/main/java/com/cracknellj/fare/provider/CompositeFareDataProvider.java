@@ -21,7 +21,7 @@ public class CompositeFareDataProvider implements FareDataProvider {
     }
 
     public void add(String fromId, FareSet fareSet) {
-        fareSets.computeIfAbsent(fromId, x -> new FareSet(fromId)).replaceWith(fareSet);
+        fareSets.computeIfAbsent(fromId, x -> new FareSet(fromId)).combineWith(fareSet);
     }
 
     @Override

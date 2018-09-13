@@ -37,9 +37,7 @@ public class MultiHopFareDetailBuilder {
             nodes.addFirst(node);
             node = predecessors.get(node);
         }
-        List<FareDetailAndWaypoint> normalisedHops = nodes.stream()
-                .flatMap(h -> h.fareDetail.hops != null ? h.fareDetail.hops.stream() : Stream.of(h)).collect(Collectors.toList());
-        return Collections.singletonList(getFareDetailFromNodes(normalisedHops));
+        return Collections.singletonList(getFareDetailFromNodes(nodes));
     }
 
     private FareDetail getFareDetailFromNodes(List<FareDetailAndWaypoint> nodes) {
