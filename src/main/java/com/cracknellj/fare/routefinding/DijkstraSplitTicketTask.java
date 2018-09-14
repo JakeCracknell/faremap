@@ -66,9 +66,8 @@ public abstract class DijkstraSplitTicketTask {
         Integer costToNode = minCostsForStations.get(node);
         for (String nextStationId : stations.keySet()) {
             if (!settled.contains(nextStationId)) {
-                Optional<FareDetail> fareDetailIfExists = getFareDetailIfExists(node, nextStationId);
-                if (fareDetailIfExists.isPresent()) {
-                    FareDetail fareDetail = fareDetailIfExists.get();
+                FareDetail fareDetail = getFareDetailIfExistsOrNull(node, nextStationId);
+                if (fareDetail != null) {
                     int proposedCost = costToNode + fareDetail.price + 1; //1p penalty for every hop.
                     Integer existingCost = minCostsForStations.get(nextStationId);
                     if (existingCost > proposedCost) {
@@ -91,6 +90,6 @@ public abstract class DijkstraSplitTicketTask {
     }
 
 
-    abstract Optional<FareDetail> getFareDetailIfExists(String fromId, String toId);
+    abstract FareDetail getFareDetailIfExistsOrNull(String fromId, String toId);
 
 }

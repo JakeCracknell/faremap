@@ -3,10 +3,10 @@ package com.cracknellj.fare.provider;
 import com.cracknellj.fare.Haversine;
 import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.FareDetail;
+import com.cracknellj.fare.objects.FareDetailCollection;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,8 +22,10 @@ public class WalkingFareDataProvider implements FareDataProvider {
         stations.forEach(fromStation -> {
             stations.forEach(toStation -> {
                 if (Haversine.distance(fromStation, toStation) < 0.5) {
+                    FareDetailCollection fareDetailCollection = new FareDetailCollection(1);
+                    fareDetailCollection.add(WALKING_FARE_DETAIL);
                     fareSetMap.computeIfAbsent(fromStation.stationId, x -> new FareSet(fromStation.stationId))
-                            .fares.put(toStation.stationId, Collections.singletonList(WALKING_FARE_DETAIL));
+                            .fares.put(toStation.stationId, fareDetailCollection);
                 }
             });
         });

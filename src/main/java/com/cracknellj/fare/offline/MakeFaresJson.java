@@ -16,21 +16,27 @@ import org.apache.logging.log4j.Logger;
 import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MakeFaresJson {
     private static final Logger LOG = LogManager.getLogger(MakeFaresJson.class);
 
-    //Takes 2 hours to regenerate everything
+    //Takes 1-2 hours to regenerate everything
     public static void main(String[] args) throws Exception {
         Map<String, Station> stations = Maps.uniqueIndex(StationFileReader.getStations(), s -> s.stationId);
         CompositeFareDataProvider fareDataProvider = CompositeFareDataProvider.load();
-//
-//        stations.parallelStream()
-//                .filter(s -> s.crs != null && s.crs.startsWith("H"))
-//                .map(s -> s.stationId)
-        Stream.of("910GHADLYWD", "910GHATFILD")
+
+        Set<String> existing = Files.list(Paths.get("web", "data", "fares"))
+                .map(p -> p.getFileName().toString().replace(".json", ""))
+                .collect(Collectors.toSet());
+
+        stations.values().parallelStream()
+                .map(s -> s.stationId)
+                .filter(s -> !existing.contains(s))
                 .forEach(station -> {
                     Stopwatch stopwatch = Stopwatch.createStarted();
                     LOG.info("Starting " + station);
@@ -43,14 +49,6 @@ public class MakeFaresJson {
                     LOG.info(String.format("Completed %s in %d seconds", station, stopwatch.elapsed().getSeconds()));
                     writeFaresJson(splitTicketFareset);
                 });
-
-
-//        Set<String> existing = Files.list(Paths.get("web", "data", "fares"))
-//                .map(p -> p.getFileName().toString().replace(".json", ""))
-//                .collect(Collectors.toSet());
-//        stations.parallelStream().filter(s -> !existing.contains(s.stationId))
-//                .forEach(MakeFaresJson::writeFaresJson);
-
     }
 
     private static void writeFaresJson(FareSet fareSet) {

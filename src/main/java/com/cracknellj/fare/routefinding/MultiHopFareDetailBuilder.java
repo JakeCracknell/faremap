@@ -1,11 +1,11 @@
 package com.cracknellj.fare.routefinding;
 
 import com.cracknellj.fare.objects.FareDetail;
+import com.cracknellj.fare.objects.FareDetailCollection;
 import com.cracknellj.fare.objects.Station;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class MultiHopFareDetailBuilder {
     private final Map<String, Station> stations;
@@ -17,7 +17,7 @@ public class MultiHopFareDetailBuilder {
         cleanPredecessors();
     }
 
-    public Map<String, List<FareDetail>> createMap() {
+    public Map<String, FareDetailCollection> createMap() {
         return predecessors.keySet().stream().collect(Collectors.toMap(n -> n.waypoint, this::getFareDetailsForDestinationNode));
     }
 
@@ -31,13 +31,15 @@ public class MultiHopFareDetailBuilder {
         predecessors = cleanedPredecessors;
     }
 
-    private List<FareDetail> getFareDetailsForDestinationNode(FareDetailAndWaypoint node) {
+    private FareDetailCollection getFareDetailsForDestinationNode(FareDetailAndWaypoint node) {
         LinkedList<FareDetailAndWaypoint> nodes = new LinkedList<>();
         while (node != null) {
             nodes.addFirst(node);
             node = predecessors.get(node);
         }
-        return Collections.singletonList(getFareDetailFromNodes(nodes));
+        FareDetailCollection fareDetails = new FareDetailCollection(1);
+        fareDetails.add(getFareDetailFromNodes(nodes));
+        return fareDetails;
     }
 
     private FareDetail getFareDetailFromNodes(List<FareDetailAndWaypoint> nodes) {

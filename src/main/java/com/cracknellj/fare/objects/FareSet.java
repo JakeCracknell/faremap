@@ -3,16 +3,15 @@ package com.cracknellj.fare.objects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class FareSet {
     public final String fromId;
-    public final Map<String, List<FareDetail>> fares;
+    public final Map<String, FareDetailCollection> fares;
 
-    public FareSet(String fromId, Map<String, List<FareDetail>> fares) {
+    public FareSet(String fromId, Map<String, FareDetailCollection> fares) {
         this.fromId = fromId;
         this.fares = fares;
     }
@@ -28,7 +27,7 @@ public class FareSet {
 
     // TODO Does this even work. Check HAT -> BWK
     public void add(String toId, FareDetail fareDetailToAdd) {
-        List<FareDetail> fareDetails = fares.computeIfAbsent(toId, x -> new ArrayList<>());
+        List<FareDetail> fareDetails = fares.computeIfAbsent(toId, x -> new FareDetailCollection());
         for (int i = 0; i < fareDetails.size(); i++) {
             FareDetail fareDetailToReplace = fareDetails.get(i);
             if (fareDetailToAdd.equalsExceptForPrice(fareDetailToReplace)) {
@@ -41,16 +40,10 @@ public class FareSet {
         fareDetails.add(fareDetailToAdd);
     }
 
-    public List<Fare> toFareList() {
-        List<Fare> faresList = new ArrayList<>();
-        fares.forEach((toId, fareDetails) -> fareDetails.forEach(fd -> faresList.add(new Fare(fromId, toId, fd))));
-        return faresList;
-    }
-
     public void combineWith(FareSet fareSet2) {
         fareSet2.fares.forEach((toId, faresList) -> {
             if (fares.containsKey(toId)) {
-                List<FareDetail> combinedFareDetails = new ArrayList<>(fares.size() + faresList.size());
+                FareDetailCollection combinedFareDetails = new FareDetailCollection(fares.size() + faresList.size());
                 combinedFareDetails.addAll(fares.get(toId));
                 combinedFareDetails.addAll(faresList);
                 fares.put(toId, combinedFareDetails);
