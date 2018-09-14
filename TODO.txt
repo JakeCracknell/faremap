@@ -1,40 +1,27 @@
 Must do:
 Remove mapbox
-loading indicator, as files are big
-toggles not dropdowns
-show split tickets for off peak separately
-refactor json generation, split ticket stuff.
-
 
 Nice to have:
 
-Convex hull on voronoi?
-Add off peak NR fares
-
-Default fare view only shows oyster for selecting a tube station. Try to add fares like 'London Z1-6 to Hatfield'.
-
-Check for bug: select one from station, then another whilst it is loading. May show incorrect fares in map.
-
-Bug: Split ticket code reuses previous results and will return nested split tickets. e.g A->G when D has been queried previously = [A,B,C,[D,E,F,G]]
-
-Notes:
-Deduplicated where there existed stations with oyster not accepted.
-Should result in no gaps for inner London queries.
-Will need to deduplicate and merge fares for benefit of outer London queries,
-e.g. HAT -> stratford. Need to merge as not identical:
-select * from fare where to_id='940GZZLUHWC' and from_id in ("910GVAUXHLM","940GZZLUVXL");
-
-Mysteries:
-Tring->Harrow on the Hill. BRFares/shops return many incl 1393 -> 0786 ZONE U1256 LONDN. HOH not in 0786, in ATOC.
-
-HAT->Elephant and castle. None! http://www.brfares.com/#expert?orig=HAT&dest=EPH
-
-Add OSIs as £0 fares.
+Convex hull on voronoi - I have tried this many times. It might be easier with different voronoi lib
+Z1-6 fares for travelling to tube stn from outside london
+Add OSIs as £0 fares. Also there are some OSIs outside of london
 https://www.whatdotheyknow.com/request/out_of_station_interchange_usage#outgoing-800038
-
 Dijkstra to read in lines.json and optimise for price and then number of changes.
 
-Extra Features:
-Stations to have tags instead of modes. Examples:
-HDW: Great Northern, Zone 6, TFL, National Rail, DFT Category E
-KWG: London Overground, District Line, Zone 3, Zone 4, TFL, National Rail
+Add more tags and show them on page:
+    HDW: Great Northern, Zone 6, TFL, National Rail, DFT Category E
+    KWG: London Overground, District Line, Zone 3, Zone 4, TFL, National Rail
+
+
+Notes on stations removed:
+    Deduplicated where there existed stations with oyster not accepted.
+    Should result in no gaps for inner London queries.
+    Will need to deduplicate and merge fares for benefit of outer London queries,
+    e.g. HAT -> stratford. Need to merge as not identical:
+    select * from fare where to_id='940GZZLUHWC' and from_id in ("910GVAUXHLM","940GZZLUVXL");
+
+
+Mysteries:
+    Tring->Harrow on the Hill. BRFares/shops return many incl 1393 -> 0786 ZONE U1256 LONDN. HOH not in 0786, in ATOC.
+    HAT->Elephant and castle. None! http://www.brfares.com/#expert?orig=HAT&dest=EPH

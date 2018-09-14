@@ -1,4 +1,3 @@
-//TODO add a loading indicator
 function drawWithLoading() {
     requestAnimationFrame(() => draw());
 }
