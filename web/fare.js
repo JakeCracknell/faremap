@@ -50,13 +50,19 @@ function getFillColourForFare(fare) {
 }
 
 function triggerFareRequest() {
-    d3.json(`./data/fares/${selectedSourceStation.stationId}.json`, loadFaresJson);
+    $("#progress-bar").css("width", 0 + "%");
+    $("#progress-container").show();
+    d3.json(`./data/fares/${selectedSourceStation.stationId}.json`, loadFaresJson)
+        .on("progress", () => {
+        $("#progress-bar").css("width", 100 * (d3.event.loaded / d3.event.total) + "%");
+    });
 }
 
 function loadFaresJson(fareJson) {
     faresList = (fareJson && fareJson.fares) || {};
     stationsByIdMap.forEach((station, stationId) => station.fares = faresList[stationId]);
     drawWithLoading();
+    $("#progress-container").hide();
 }
 
 function showColorKeyIfFaresExist() {
