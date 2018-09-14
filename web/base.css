@@ -62,8 +62,8 @@ body {
     overflow: hidden
 }
 
-.radio-dropdown-menu {
-    padding: 0.5rem;
+.navbar-button-group {
+    margin-right: 10px;
 }
 
 .split-ticket-modal-dialog {
@@ -79,7 +79,7 @@ body {
 #color-key {
     background: linear-gradient(to right, hsla(0,100%,50%,1), hsla(90,100%,50%,1), hsla(180,100%,50%,1), hsla(270,100%,50%,1), hsla(360,100%,50%,1));
     border: 2px solid white;
-    border-radius: 5px;
+    border-radius: .2rem;
     cursor: crosshair;
     width: 10%;
     height: 2em;

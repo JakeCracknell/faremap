@@ -23,10 +23,10 @@ map.on('ready', function () {
     })
 });
 
-$('input[name="routePreferenceRadios"]:radio, input[name="travelTimeRadios"]:radio').change(e => {
+$('input[name="route-preference-options"]:radio, input[name="travel-time-options"]:radio').change(e => {
     preferredFareSelectorFunction = getPreferredFareSelectorFunction(
-        document.querySelector('input[name="routePreferenceRadios"]:checked').value,
-        document.querySelector('input[name="travelTimeRadios"]:checked').value
+        document.querySelector('input[name="route-preference-options"]:checked').value,
+        document.querySelector('input[name="travel-time-options"]:checked').value
     );
     drawWithLoading(e);
 });

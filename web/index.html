@@ -30,53 +30,51 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="travelTimeNavDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Travel Time
-                </a>
-                <div class="dropdown-menu radio-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="travelTimeRadios" id="peakTimeRadio" value="peak" checked>
-                        <label class="form-check-label" for="peakTimeRadio">
-                            Peak Time Tickets
-                        </label>
-                    </div>
-                    <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="travelTimeRadios" id="offPeakRadio" value="off-peak">
-                        <label class="form-check-label" for="offPeakRadio">
-                            Off-Peak Tickets
-                        </label>
-                    </div>
+
+            <!--TODO not valid to have this form here. how to fix?-->
+
+            <form class="form-inline navbar-button-group">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-sm btn-info active">
+                        <input type="radio" name="travel-time-options" value="peak" autocomplete="off" checked> Peak Time
+                    </label>
+                    <label class="btn btn-sm btn-info">
+                        <input type="radio" name="travel-time-options" value="offpeak" autocomplete="off"> Off Peak
+                    </label>
                 </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="routePreferenceNavDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Route Preference
-                </a>
-                <div class="dropdown-menu radio-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferCheapestRouteRadio" value="cheapest" checked>
-                        <label class="form-check-label" for="preferCheapestRouteRadio">
-                            Prefer Cheapest Route
-                        </label>
-                    </div>
-                    <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferDefaultRouteRadio" value="default">
-                        <label class="form-check-label" for="preferDefaultRouteRadio">
-                            Prefer Default Route
-                        </label>
-                    </div>
+            </form>
+
+            <form class="form-inline navbar-button-group">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-sm btn-info active">
+                        <input type="radio" name="route-preference-options" value="cheapest" autocomplete="off" checked> Prefer Cheapest Route
+                    </label>
+                    <label class="btn btn-sm btn-info">
+                        <input type="radio" name="route-preference-options" value="default" autocomplete="off"> Prefer Default Route
+                    </label>
                 </div>
-            </li>
-            <li>
-                <a class="nav-item nav-link" href="#" onclick="drawSplitTicketTree()">Draw Split Ticket Tree</a>
-            </li>
+            </form>
+
+            <form class="form-inline navbar-button-group">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-sm btn-info active">
+                        <input type="radio" name="point-display-options" id="stations" autocomplete="off" checked> Station Blobs
+                    </label>
+                    <label class="btn btn-sm btn-info">
+                        <input type="radio" name="point-display-options" id="tree" autocomplete="off" onfocus="drawSplitTicketTree()"> Split Ticket Tree
+                    </label>
+                    <label class="btn btn-sm btn-info">
+                        <input type="radio" name="point-display-options" id="none" autocomplete="off" > No Overlay
+                    </label>
+                </div>
+            </form>
+
             <li>
                 <a class="nav-item nav-link" href="#" data-toggle='modal' data-target='#about-modal'>About</a>
             </li>
         </ul>
     </div>
-    <div id="color-key" data-toggle="tooltip" data-placement="left">
+    <div id="color-key" data-toggle="tooltip" data-placement="left" style="display: none;">
     </div>
 </nav>
 
