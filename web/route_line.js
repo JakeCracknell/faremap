@@ -76,11 +76,11 @@ function drawStationsOverlay() {
         .selectAll("g")
         .append("circle")
         .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
-        .attr("r", getRadiusForStationPoint)
+        .attr("r", getRadiusForStationBlob)
         .attr("class", "station-blob");
 }
 
-function getRadiusForStationPoint(station) {
+function getRadiusForStationBlob(station) {
     if (station.yearlyUsage < 250000) {
         return 1;
     } else if (station.yearlyUsage < 500000) {
