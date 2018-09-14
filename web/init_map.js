@@ -23,7 +23,7 @@ map.on('ready', function () {
     })
 });
 
-$('input[name="route-preference-options"]:radio, input[name="travel-time-options"]:radio').change(e => {
+$("input[name*='-options']:radio").change(e => {
     preferredFareSelectorFunction = getPreferredFareSelectorFunction(
         document.querySelector('input[name="route-preference-options"]:checked').value,
         document.querySelector('input[name="travel-time-options"]:checked').value

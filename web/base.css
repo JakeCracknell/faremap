@@ -14,7 +14,7 @@ body {
     stroke-width: 1px;
 }
 
-.station-point {
+.station-blob {
     pointer-events: none;
 }
 

@@ -34,17 +34,13 @@ function drawSelectedRouteLine() {
     }
 }
 
-function getHopsToDrawOnSplitTicketTree() {
-    const hopsBySplitTicket = [...stationsByIdMap.values()].map(getStationPairsInSplitTicketFare);
-    const allHops = [].concat.apply([], hopsBySplitTicket);
-    const linesAndCounts = allHops.map(routeLineFunction).reduce((result, line) => {
-        if (!result.hasOwnProperty(line)) {
-            result[line] = 0;
-        }
-        result[line]++;
-        return result;
-    }, {});
-    return d3.entries(linesAndCounts);
+function drawOptionalOverlay() {
+    switch (document.querySelector('input[name="point-display-options"]:checked').value) {
+        case 'stations':
+            return drawStationsOverlay();
+        case 'tree':
+            return drawSplitTicketTree();
+    }
 }
 
 function drawSplitTicketTree() {
@@ -59,4 +55,41 @@ function drawSplitTicketTree() {
         .style("stroke-width", d => Math.max(Math.min(10, d.value / 100), 1))
         .style("opacity", d => d.value / 10);
     d3.selectAll(".station-point").remove();
+}
+
+function getHopsToDrawOnSplitTicketTree() {
+    const hopsBySplitTicket = [...stationsByIdMap.values()].map(getStationPairsInSplitTicketFare);
+    const allHops = [].concat.apply([], hopsBySplitTicket);
+    const linesAndCounts = allHops.map(routeLineFunction).reduce((result, line) => {
+        if (!result.hasOwnProperty(line)) {
+            result[line] = 0;
+        }
+        result[line]++;
+        return result;
+    }, {});
+    return d3.entries(linesAndCounts);
+}
+
+function drawStationsOverlay() {
+    d3.select("#map-svg-overlay")
+        .select("g")
+        .selectAll("g")
+        .append("circle")
+        .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
+        .attr("r", getRadiusForStationPoint)
+        .attr("class", "station-blob");
+}
+
+function getRadiusForStationPoint(station) {
+    if (station.yearlyUsage < 250000) {
+        return 1;
+    } else if (station.yearlyUsage < 500000) {
+        return 2;
+    } else if (station.yearlyUsage < 2000000) {
+        return 3;
+    } else if (station.yearlyUsage < 5000000) {
+        return 4;
+    } else {
+        return 5;
+    }
 }
