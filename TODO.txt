@@ -1,5 +1,6 @@
 Must do:
 Remove mapbox
+analytics
 
 Nice to have:
 
