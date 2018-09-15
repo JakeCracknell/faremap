@@ -26,10 +26,13 @@ public class FareFlowFileReader extends AtocFileReader {
                 switch (line.charAt(1)) {
                     case 'F':
                         boolean publishable = line.charAt(41) == 'Y';
-                        if (publishable) {
+                        if (true || publishable) {
                             String flowId = line.substring(42, 49);
                             String fromNlc = line.substring(2, 6);
                             String toNlc = line.substring(6, 10);
+                            if (line.substring(2, 10).equals("60700825")) {
+                                System.out.println("");
+                            }
                             String routeCode = line.substring(10, 15);
                             boolean reversible = line.charAt(19) == 'R';
                             flowMap.put(flowId, new AtocFlowRecord(fromNlc, toNlc, routeCode, reversible));

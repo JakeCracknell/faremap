@@ -5,7 +5,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
@@ -15,6 +17,7 @@ public class LocationFileReader extends AtocFileReader {
     private static final Logger LOG = LogManager.getLogger(LocationFileReader.class);
 
     private static final String FILE_EXTENSION = "LOC";
+    private static final Pattern LONDON_ZONE_GROUP_PATTERN = Pattern.compile("ZONE U.+LONDN");
 
     public LocationFileReader() throws IOException {
         super(FILE_EXTENSION);
@@ -48,6 +51,8 @@ public class LocationFileReader extends AtocFileReader {
     public Map<String, Set<String>> getStationGroups() throws IOException {
         try (Stream<String> lineStream = getStreamOfLines()) {
             Map<String, Set<String>> map = new HashMap<>();
+            Map<Integer, Set<String>> crssByLondonZone = new HashMap<>();
+            Map<String, String> nlcsToLondonZoneString = new HashMap<>();
             lineStream.forEach(line -> {
                 switch (line.charAt(1)) {
                     case 'L':
@@ -59,6 +64,15 @@ public class LocationFileReader extends AtocFileReader {
                             if (!nlc.equals(fareGroup) && crs.charAt(0) != ' ') {
                                 map.computeIfAbsent(fareGroup, x -> new HashSet<>()).add(crs);
                             }
+                            char londonZone = line.charAt(83);
+                            if (Character.isDigit(londonZone)) {
+                                crssByLondonZone.computeIfAbsent(Character.getNumericValue(londonZone), x -> new HashSet<>()).add(crs);
+                            }
+                            String description = line.substring(40, 56);
+                            if (LONDON_ZONE_GROUP_PATTERN.matcher(description).matches()) {
+                                String londonZoneString = line.substring(46, 50); // '1245' or 'U2* ' etc
+                                nlcsToLondonZoneString.put(nlc, londonZoneString);
+                            }
                         }
                         break;
                     case 'M':
@@ -68,6 +82,16 @@ public class LocationFileReader extends AtocFileReader {
                 }
             });
             removeInvalidStationGroups(map);
+
+            nlcsToLondonZoneString.forEach((nlc, zoneString) -> {
+                String cleanedZoneList = zoneString.replaceAll("[^\\d]", "");
+                IntStream.rangeClosed(Character.getNumericValue(cleanedZoneList.charAt(0)),
+                        Character.getNumericValue(cleanedZoneList.charAt(cleanedZoneList.length() - 1)))
+                        .forEach(zoneNumber -> {
+                            map.computeIfAbsent(nlc, x -> new HashSet<>()).addAll(crssByLondonZone.get(zoneNumber));
+                        });
+            });
+
             LOG.info(map.size() + " station groups found");
             return map;
         }
