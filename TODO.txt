@@ -22,6 +22,14 @@ Notes on stations removed:
     select * from fare where to_id='940GZZLUHWC' and from_id in ("910GVAUXHLM","940GZZLUVXL");
 
 
+NR -> TFL underground:
+    Z1-6 fares for travelling to tube stn from outside london are not included
+    There is no direct way to map a group like 0825 ZONE U234* LONDN to a station like 0647 MORDEN UND
+    The only way (used by Brfares/librailfare in locations.c:514) is to parse the description of the group
+        and the zone indicator of the und station
+    Will also require setting the CRS for every TFL station
+    However even then, the fare I checked for HAT -> ZMO was unpublishable and I ran out of memory trying to include those.
+
 Mysteries:
     Tring->Harrow on the Hill. BRFares/shops return many incl 1393 -> 0786 ZONE U1256 LONDN. HOH not in 0786, in ATOC.
     HAT->Elephant and castle. None! http://www.brfares.com/#expert?orig=HAT&dest=EPH
