@@ -67,7 +67,7 @@ body {
 }
 
 .split-ticket-modal-dialog {
-    max-width: 60%;
+    max-width: 1000px;
 }
 
 /*increases clickable area of button*/
