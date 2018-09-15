@@ -9,6 +9,7 @@
         gtag('config', 'UA-125852665-1');
     </script>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=1024, shrink-to-fit=no">
     <meta name="description" content="Mapping the cost of UK train travel and split ticketing">
     <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.css" integrity="sha384-ZDBUvY/seENyR1fE6u4p1oMFfsKVjIlkiB6TrCdXjeZVPlYanREcmZopTV8WFZ0q" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -17,9 +18,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
-    <script src="https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
-    <script src="lib/typeahead.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js" integrity="sha384-clfMtG87GbgPQucGZi1lEBXNr86UAuyta5EmHTpbsjYaRhqHf7aU53o4rX2ovYlo" crossorigin="anonymous"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.js" integrity="sha384-RIOuxiXOmovmIxeDCaAvWrMaX/XWXpPiRTUIBEjiZt5HQ8orGVqQhlmfno0eoLaX" crossorigin="anonymous"></script>    <script src="lib/typeahead.bundle.min.js"></script>
     <script src="util.js"></script>
     <script src="ui.js"></script>
     <script src="station_ui.js"></script>
@@ -40,7 +40,7 @@
 
             <!--TODO not valid to have this form here. how to fix?-->
 
-            <form class="form-inline navbar-button-group">
+            <div class="form-inline navbar-button-group">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-sm btn-info active">
                         <input type="radio" name="travel-time-options" value="peak" autocomplete="off" checked> Peak Time
@@ -49,9 +49,9 @@
                         <input type="radio" name="travel-time-options" value="offpeak" autocomplete="off"> Off Peak
                     </label>
                 </div>
-            </form>
+            </div>
 
-            <form class="form-inline navbar-button-group">
+            <div class="form-inline navbar-button-group">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-sm btn-info active">
                         <input type="radio" name="route-preference-options" value="cheapest" autocomplete="off" checked> Prefer Cheapest Route
@@ -60,9 +60,9 @@
                         <input type="radio" name="route-preference-options" value="default" autocomplete="off"> Prefer Default Route
                     </label>
                 </div>
-            </form>
+            </div>
 
-            <form class="form-inline navbar-button-group">
+            <div class="form-inline navbar-button-group">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-sm btn-info active">
                         <input type="radio" name="point-display-options" value="stations" autocomplete="off" checked> Station Blobs
@@ -74,7 +74,7 @@
                         <input type="radio" name="point-display-options" value="none" autocomplete="off" > No Overlay
                     </label>
                 </div>
-            </form>
+            </div>
 
             <li>
                 <a class="nav-item nav-link" href="#" data-toggle='modal' data-target='#about-modal'>About</a>
