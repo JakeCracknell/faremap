@@ -29,9 +29,12 @@ public class CompositeSingletonFareDataProvider implements FareDataProvider {
     @Override
     public FareSet getFaresFrom(String fromId) {
         if (stationIdsWithSplitTicketResults.add(fromId)) {
-            DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, this);
+            DijkstraRouteFinder dijkstraRouteFinder = new DijkstraRouteFinder(stations, this, true);
             FareSet splitTicketFareSet = dijkstraRouteFinder.findCheapestRoutes(fromId);
             fareSets.computeIfAbsent(fromId, x -> new FareSet(fromId)).combineWith(splitTicketFareSet);
+//            dijkstraRouteFinder = new DijkstraRouteFinder(stations, this, false);
+//            splitTicketFareSet = dijkstraRouteFinder.findCheapestRoutes(fromId);
+//            fareSets.computeIfAbsent(fromId, x -> new FareSet(fromId)).combineWith(splitTicketFareSet);
         }
         return fareSets.get(fromId);
     }

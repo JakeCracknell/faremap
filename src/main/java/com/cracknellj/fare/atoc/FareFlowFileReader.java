@@ -35,23 +35,21 @@ public class FareFlowFileReader extends AtocFileReader {
                             flowMap.put(flowId, new AtocFlowRecord(fromNlc, toNlc, routeCode, reversible));
                         }
                     case 'T':
-                        String restriction = line.substring(20, 22);
-                        if (restriction.charAt(0) == ' ') {
-                            String ticketCodeString = line.substring(9, 12);
-                            if (ticketCodes.containsKey(ticketCodeString)) {
-                                AtocTicketCode ticketCode = ticketCodes.get(ticketCodeString);
-                                String tFlowId = line.substring(2, 9);
-                                String farePence = line.substring(12, 20);
-                                AtocFlowRecord atocFlowRecord = flowMap.get(tFlowId);
-                                if (atocFlowRecord != null) {
-                                    FareDetail fare = new FareDetail(Integer.parseInt(farePence), ticketCode.isOffPeak(),
-                                            ticketCode.description, ticketCode.isDefaultFare(), false);
-                                    fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc,
-                                            atocFlowRecord.reversible, atocFlowRecord.routeCode, fare));
-                                }
+                        String restriction = line.substring(20, 22); // previously tested = '  '. removed for off peak.
+                        String ticketCodeString = line.substring(9, 12);
+                        if (ticketCodes.containsKey(ticketCodeString)) {
+                            AtocTicketCode ticketCode = ticketCodes.get(ticketCodeString);
+                            String tFlowId = line.substring(2, 9);
+                            String farePence = line.substring(12, 20);
+                            AtocFlowRecord atocFlowRecord = flowMap.get(tFlowId);
+                            if (atocFlowRecord != null) {
+                                FareDetail fare = new FareDetail(Integer.parseInt(farePence), ticketCode.isOffPeak(),
+                                        ticketCode.description + " " + restriction,
+                                        true, false);
+                                fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc,
+                                        atocFlowRecord.reversible, atocFlowRecord.routeCode, fare));
                             }
                         }
-
                 }
             });
         }
