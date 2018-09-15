@@ -1,26 +1,18 @@
-L.mapbox.accessToken = 'pk.eyJ1IjoiZHJzcGE0NCIsImEiOiJjamo5MWloNDYwNHZ6M2txeGVrMWJxc3ppIn0.RibkexMCj1fRzadpmTdgFw';
-
-const map = L.mapbox.map('map', 'mapbox.streets-basic', {
-    zoomControl: false,
-    maxBounds:[[58.62, -5.88], [50.00, 1.76]], //GB
+const map = L.map('map', {
     minZoom: 6,
-    maxZoom: 15
-}).fitBounds([[51.92, 0.61], [51.11, -1.12]]); //London
+    maxZoom: 15,
+    maxBounds: new L.LatLngBounds(new L.LatLng(58.62, -5.88), new L.LatLng(50.00, 1.76))
+}).setView([54.5, -3], 6);
 
 map.doubleClickZoom.disable();
 
-map.on('ready', function () {
-    d3.json('./data/stations.json', function (stationList) {
-        stationsByIdMap = new Map(stationList.map((p) => [p.stationId, p]));
-        initialiseTypeAhead(stationList);
-        map.addLayer({
-            onAdd: function (map) {
-                map.on('viewreset', removeSvgLayer);
-                map.on('moveend', drawWithLoading); // on zoom, fires viewreset, then moveend.      rezie=moveend
-                drawWithLoading();
-            }
-        });
-    })
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {opacity: 0.5}).addTo(map);
+
+d3.json('./data/stations.json', function (stationList) {
+    stationsByIdMap = new Map(stationList.map((p) => [p.stationId, p]));
+    initialiseTypeAhead(stationList);
+    map.on('viewreset', removeSvgLayer);
+    map.on('moveend', drawWithLoading); // on zoom, fires viewreset, then moveend.      rezie=moveend
 });
 
 $("input[name*='-options']:radio").change(e => {

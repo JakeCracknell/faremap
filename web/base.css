@@ -52,6 +52,7 @@ body {
 
 #map .selectable {
     cursor: pointer;
+    pointer-events: all;
 }
 
 .leaflet-overlay-pane path {
