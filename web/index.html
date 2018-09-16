@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125852665-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-125852665-1');
+    </script>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet'/>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link href="typeahead.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=1024, shrink-to-fit=no">
+    <meta name="description" content="Mapping the cost of UK train travel and split ticketing">
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.css" integrity="sha384-ZDBUvY/seENyR1fE6u4p1oMFfsKVjIlkiB6TrCdXjeZVPlYanREcmZopTV8WFZ0q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="lib/typeahead.css" rel="stylesheet"/>
     <link href="base.css" rel="stylesheet"/>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
-    <script src="https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
-    <script src="typeahead.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js" integrity="sha384-clfMtG87GbgPQucGZi1lEBXNr86UAuyta5EmHTpbsjYaRhqHf7aU53o4rX2ovYlo" crossorigin="anonymous"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.js" integrity="sha384-RIOuxiXOmovmIxeDCaAvWrMaX/XWXpPiRTUIBEjiZt5HQ8orGVqQhlmfno0eoLaX" crossorigin="anonymous"></script>    <script src="lib/typeahead.bundle.min.js"></script>
     <script src="util.js"></script>
     <script src="ui.js"></script>
     <script src="station_ui.js"></script>
@@ -30,53 +37,51 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="travelTimeNavDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Travel Time
-                </a>
-                <div class="dropdown-menu radio-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="travelTimeRadios" id="peakTimeRadio" value="peak" checked>
-                        <label class="form-check-label" for="peakTimeRadio">
-                            Peak Time Tickets
-                        </label>
-                    </div>
-                    <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="travelTimeRadios" id="offPeakRadio" value="off-peak">
-                        <label class="form-check-label" for="offPeakRadio">
-                            Off-Peak Tickets
-                        </label>
-                    </div>
+
+            <!--TODO not valid to have this form here. how to fix?-->
+
+            <li class="form-inline navbar-button-group">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-sm btn-info active">
+                        <input type="radio" name="travel-time-options" value="peak" autocomplete="off" checked> Peak Time
+                    </label>
+                    <label class="btn btn-sm btn-info">
+                        <input type="radio" name="travel-time-options" value="offpeak" autocomplete="off"> Off Peak
+                    </label>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="routePreferenceNavDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Route Preference
-                </a>
-                <div class="dropdown-menu radio-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferCheapestRouteRadio" value="cheapest" checked>
-                        <label class="form-check-label" for="preferCheapestRouteRadio">
-                            Prefer Cheapest Route
-                        </label>
-                    </div>
-                    <div class="form-check dropdown-item">
-                        <input class="form-check-input" type="radio" name="routePreferenceRadios" id="preferDefaultRouteRadio" value="default">
-                        <label class="form-check-label" for="preferDefaultRouteRadio">
-                            Prefer Default Route
-                        </label>
-                    </div>
+
+            <li class="form-inline navbar-button-group">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-sm btn-info active">
+                        <input type="radio" name="route-preference-options" value="cheapest" autocomplete="off" checked> Prefer Cheapest Route
+                    </label>
+                    <label class="btn btn-sm btn-info">
+                        <input type="radio" name="route-preference-options" value="default" autocomplete="off"> Prefer Default Route
+                    </label>
                 </div>
             </li>
-            <li>
-                <a class="nav-item nav-link" href="#" onclick="drawSplitTicketTree()">Draw Split Ticket Tree</a>
+
+            <li class="form-inline navbar-button-group">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-sm btn-info active">
+                        <input type="radio" name="point-display-options" value="stations" autocomplete="off" checked> Station Blobs
+                    </label>
+                    <label class="btn btn-sm btn-info">
+                        <input type="radio" name="point-display-options" value="tree" autocomplete="off" onfocus="drawSplitTicketTree()"> Split Ticket Tree
+                    </label>
+                    <label class="btn btn-sm btn-info">
+                        <input type="radio" name="point-display-options" value="none" autocomplete="off" > No Overlay
+                    </label>
+                </div>
             </li>
+
             <li>
                 <a class="nav-item nav-link" href="#" data-toggle='modal' data-target='#about-modal'>About</a>
             </li>
         </ul>
     </div>
-    <div id="color-key" data-toggle="tooltip" data-placement="left">
+    <div id="color-key" data-toggle="tooltip" data-placement="left" style="display: none;">
     </div>
 </nav>
 
@@ -96,7 +101,7 @@
         <div class="station-picker-container">
             <div id="selected-source" class="card text-white bg-info mb-3 selected-station-div" style="display: none;">
                 <div class="card-header">
-                    Showing fares from
+                        Showing fares from
                     <a class="close station-deselect-button" href="#">
                         <span class="align-text-top">&times;</span>
                     </a>
@@ -125,6 +130,14 @@
             </div>
         </div>
         <hr/>
+        <div id="progress-container" style="display: none;">
+            Loading fare data...
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+                     role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0"></div>
+            </div>
+        </div>
+
         <div id="fares-container">
         </div>
     </div>
@@ -190,18 +203,21 @@
                         This website shows single fares that are available on the day of travel.
                         In many cases (but not all), return, advance or season tickets will be cheaper.
                         It can be even cheaper to split these as well.
-                        You can use this website as a starting point for your research.
+                        You can use this website's suggested routes and the excellent
+                        <a href="http://www.brfares.com" target="_blank">BRFares.com</a> to find the best fare overall.
                     </li>
                     <li>
-                        Not all off-peak train tickets are shown.
+                        Tickets to or from London underground stations, such as Cambridge to London Z1-6, are not shown.
+                        These are not represented very well in the data available to the public.
+                        Fortunately, most of these fares are beaten by split-ticketing and using Oyster as much as possible.
                     </li>
                 </ul>
 
                 <h5>Acknowledgements</h5>
                 <p>
                     faremap was developed by Jake Cracknell
-                    <a href="https://uk.linkedin.com/in/jake-cracknell-b32006b9" target="_blank">LinkedIn</a>
-                    <a href="https://twitter.com/drspa44" target="_blank">Twitter</a>.
+                    (<a href="https://uk.linkedin.com/in/jake-cracknell-b32006b9" target="_blank">LinkedIn</a>,
+                    <a href="https://twitter.com/drspa44" target="_blank">Twitter</a>).
                     The source code is available on <a href="https://github.com/JakeCracknell" target="_blank">GitHub</a>.
                     <br/>
                     With thanks to Chris Zetter for his

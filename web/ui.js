@@ -36,7 +36,7 @@ function getFareCardDiv(fare, colour) {
                   <h5 class="card-title float-left fare-card-title">${getFareTitle(fare)}</h5>
                   <h5 class="card-title float-right fare-card-price">${formatPrice(fare.price)}</h5>
                 </div>
-                <a class="card-subtitle text-muted h6 fare-card-description" ${modalProperties}>${fare.routeDescription}</a>
+                <a class="card-subtitle fare-card-description" ${modalProperties}>${fare.routeDescription}</a>
               </div>
             </div>`
 }

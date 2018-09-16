@@ -8,7 +8,7 @@ function getPreferredFareSelectorFunction(routePreference, travelTimePreference)
         }
         let fareSet = splitFaresIntoValidAndNonValidForTravelTime(fares, travelTimePreference);
         fareSet.valid = fareSet.valid.sort((f1, f2) => f1.price - f2.price);
-        fareSet.splitTicket = fareSet.valid.filter(f => f.hops !== undefined && f.hops.length > 0)[0];
+        fareSet.splitTicket = fareSet.valid.filter(f => f.hops && f.hops.length > 0)[0];
         fareSet.preferred = fareSet.valid.filter(f => routePreference !== 'default' || f.isDefaultRoute)[0];
         fareSet.valid.splice(fareSet.valid.indexOf(fareSet.preferred), 1);
         fareSet.colour = getFillColourForFare(fareSet.preferred);
@@ -22,20 +22,10 @@ function splitFaresIntoValidAndNonValidForTravelTime(fares, travelTimePreference
     if (travelTimePreference === 'peak') {
         return {valid: peakFares, invalid: offPeakFares}
     } else { // valid = fares marked as off-peak only and anytime fares with no off-peak equivalent.
-        const universalFares = peakFares.filter(fare => !offPeakFares.some(oFare =>
+        const universalFares = peakFares.filter(fare => !(fare.hops && fare.hops.length > 0) &&
+            !offPeakFares.some(oFare =>
             oFare.ticketType === fare.ticketType && oFare.routeDescription === fare.routeDescription));
         return {valid: offPeakFares.concat(universalFares), invalid: peakFares.filter(f => universalFares.indexOf(f) < 0)};
-    }
-}
-
-function filterFaresByTravelTime(fares, travelTimePreference) {
-    if (travelTimePreference === 'peak') {
-        return fares.filter(fare => !fare.offPeakOnly)
-    } else {
-        const offPeakFares = fares.filter(fare => fare.offPeakOnly);
-        const universalFares = fares.filter(fare => !offPeakFares.some(oFare =>
-            oFare.ticketType === fare.ticketType && oFare.routeDescription === fare.routeDescription));
-        return offPeakFares.concat(universalFares);
     }
 }
 
@@ -60,13 +50,19 @@ function getFillColourForFare(fare) {
 }
 
 function triggerFareRequest() {
-    d3.json(`./data/fares/${selectedSourceStation.stationId}.json`, loadFaresJson);
+    $("#progress-bar").css("width", 0 + "%");
+    $("#progress-container").show();
+    d3.json(`./data/fares/${selectedSourceStation.stationId}.json`, loadFaresJson)
+        .on("progress", () => {
+        $("#progress-bar").css("width", 100 * (d3.event.loaded / d3.event.total) + "%");
+    });
 }
 
 function loadFaresJson(fareJson) {
     faresList = (fareJson && fareJson.fares) || {};
     stationsByIdMap.forEach((station, stationId) => station.fares = faresList[stationId]);
     drawWithLoading();
+    $("#progress-container").hide();
 }
 
 function showColorKeyIfFaresExist() {

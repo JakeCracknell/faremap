@@ -1,4 +1,3 @@
-//TODO add a loading indicator
 function drawWithLoading() {
     requestAnimationFrame(() => draw());
 }
@@ -15,20 +14,6 @@ function draw() {
     createVoronoiPolygons(drawableStations);
     stationsByIdMap.forEach(initialiseFareSets);
     drawSvgOverlay(drawableStations);
-}
-
-function getRadiusForStationPoint(station) {
-    if (station.yearlyUsage < 250000) {
-        return 1;
-    } else if (station.yearlyUsage < 500000) {
-        return 2;
-    } else if (station.yearlyUsage < 2000000) {
-        return 3;
-    } else if (station.yearlyUsage < 5000000) {
-        return 4;
-    } else {
-        return 5;
-    }
 }
 
 function drawSvgOverlay(drawableStations) {
@@ -53,11 +38,7 @@ function drawSvgOverlay(drawableStations) {
         .on('click', stationSelect)
         .on('mouseover', stationPeek);
 
-    svg.append("circle")
-        .attr("transform", s => "translate(" + s.x + "," + s.y + ")")
-        .attr("r", getRadiusForStationPoint)
-        .attr("class", "station-point");
-
+    drawOptionalOverlay();
     setSelectableStatusOnStationPolygons();
     drawSelectedRouteLine();
     displaySelectedStationsAndFares();
