@@ -2,7 +2,7 @@ const map = L.map('map', {
     minZoom: 6,
     maxZoom: 15,
     maxBounds: new L.LatLngBounds(new L.LatLng(58.62, -5.88), new L.LatLng(50.00, 1.76))
-}).setView([54.5, -3], 6);
+}).setView([51.5, -0.6], 9);
 
 map.doubleClickZoom.disable();
 
