@@ -1,6 +1,10 @@
 Must do:
 Remove mapbox
 
+add some of these https://developers.google.com/analytics/devguides/collection/analyticsjs/events
+Bug: Split ticket SAC -> OXS peak shows twice.
+timetable split ticket disclaimer
+
 Nice to have:
 
 Convex hull on voronoi - I have tried this many times. It might be easier with different voronoi lib
