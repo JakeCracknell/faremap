@@ -55,23 +55,6 @@ function getFillColourForFare(fare) {
     return "hsla(" + hue + ",100%,50%,0.5)";
 }
 
-function triggerFareRequest() {
-    gtag('event', 'FareSetRequest', {'event_label' : selectedSourceStation.stationName});
-    $("#progress-bar").css("width", 0 + "%");
-    $("#progress-container").show();
-    d3.json(`./data/fares/${selectedSourceStation.stationId}.json`, loadFaresJson)
-        .on("progress", () => {
-        $("#progress-bar").css("width", 100 * (d3.event.loaded / d3.event.total) + "%");
-    });
-}
-
-function loadFaresJson(fareJson) {
-    faresList = (fareJson && fareJson.fares) || {};
-    stationsByIdMap.forEach((station, stationId) => station.fares = faresList[stationId]);
-    drawWithLoading();
-    $("#progress-container").hide();
-}
-
 function showColorKeyIfFaresExist() {
     $('#color-key')[maxPriceCurrentlyDisplayed > 0 ? 'fadeIn' : 'fadeOut']();
 }

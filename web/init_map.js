@@ -9,14 +9,6 @@ map.doubleClickZoom.disable();
 const osmAttrib='Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {opacity: 0.5, attribution: osmAttrib}).addTo(map);
 
-d3.json('./data/stations.json', function (stationList) {
-    stationsByIdMap = new Map(stationList.map((p) => [p.stationId, p]));
-    initialiseTypeAhead(stationList);
-    map.on('viewreset zoomstart', removeSvgLayer);
-    map.on('moveend', drawWithLoading); // on zoom, fires viewreset, then moveend.      rezie=moveend
-    drawWithLoading();
-});
-
 $("input[name*='-options']:radio").change(e => {
     preferredFareSelectorFunction = getPreferredFareSelectorFunction(
         document.querySelector('input[name="route-preference-options"]:checked').value,
@@ -39,4 +31,6 @@ $("#color-key").mousemove(showPriceForColorKeyHover);
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
-})
+});
+
+loadStationsAsync();
