@@ -10,8 +10,8 @@ function onStationsLoaded(stationList) {
     stationsByIdMap = new Map(stationList.map((p) => [p.stationId, p]));
     initialiseTypeAhead(stationList);
     map.on('viewreset zoomstart', removeSvgLayer); // otherwise the old overlay will be visible for a short time after zoom.
-    map.on('moveend', drawWithLoading); // on zoom, fires viewreset, then moveend.
-    drawWithLoading();
+    map.on('moveend', drawMap); // on zoom, fires viewreset, then moveend.
+    drawMap();
     hideProgressBar()
 }
 
@@ -25,7 +25,7 @@ function loadFaresAsync() {
 function onFaresLoaded(fareJson) {
     faresList = (fareJson && fareJson.fares) || {};
     stationsByIdMap.forEach((station, stationId) => station.fares = faresList[stationId]);
-    drawWithLoading();
+    drawMap();
     hideProgressBar()
 }
 
