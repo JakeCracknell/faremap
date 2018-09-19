@@ -11,7 +11,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {opacity: 0.5}
 d3.json('./data/stations.json', function (stationList) {
     stationsByIdMap = new Map(stationList.map((p) => [p.stationId, p]));
     initialiseTypeAhead(stationList);
-    map.on('viewreset', removeSvgLayer);
+    map.on('viewreset zoomstart', removeSvgLayer);
     map.on('moveend', drawWithLoading); // on zoom, fires viewreset, then moveend.      rezie=moveend
     drawWithLoading();
 });
