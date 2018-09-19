@@ -13,6 +13,7 @@ d3.json('./data/stations.json', function (stationList) {
     initialiseTypeAhead(stationList);
     map.on('viewreset', removeSvgLayer);
     map.on('moveend', drawWithLoading); // on zoom, fires viewreset, then moveend.      rezie=moveend
+    drawWithLoading();
 });
 
 $("input[name*='-options']:radio").change(e => {
