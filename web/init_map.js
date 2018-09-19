@@ -14,7 +14,7 @@ $("input[name*='-options']:radio").change(e => {
         document.querySelector('input[name="route-preference-options"]:checked').value,
         document.querySelector('input[name="travel-time-options"]:checked').value
     );
-    drawWithLoading(e);
+    drawMap();
 });
 
 $("#selected-source").find(".station-deselect-button").click(resetSourceStation);

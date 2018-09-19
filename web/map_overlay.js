@@ -34,7 +34,8 @@ function drawSelectedRouteLine() {
     }
 }
 
-function drawOptionalOverlay() {
+function drawMapOverlay() {
+    drawSelectedRouteLine();
     switch (document.querySelector('input[name="point-display-options"]:checked').value) {
         case 'stations':
             return drawStationsOverlay();
