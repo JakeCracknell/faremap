@@ -34,6 +34,7 @@ function showPriceForColorKeyHover(e) {
 }
 
 $("#color-key").mousemove(showPriceForColorKeyHover);
+$("#color-key").mouseleave(() => hidePolygonsWithPriceGreaterThan(maxPriceCurrentlyDisplayed));
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
