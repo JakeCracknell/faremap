@@ -20,16 +20,17 @@ $("input[name*='-options']:radio").change(e => {
 $("#selected-source").find(".station-deselect-button").click(resetSourceStation);
 $("#selected-destination").find(".station-deselect-button").click(resetDestinationStation);
 
+function hidePolygonsWithPriceGreaterThan(price) {
+    d3.select("#map-svg-overlay").select("g").selectAll("g")
+        .style("opacity", s => (s.fareSet.preferred && s.fareSet.preferred.price <= price) ? 1 : 0);
+}
+
 function showPriceForColorKeyHover(e) {
     const price = Math.max(0, maxPriceCurrentlyDisplayed * (e.offsetX / e.target.clientWidth));
-
     $("#color-key")
         .attr('data-original-title', formatPrice(price))
         .tooltip('show');
-
-    d3.select("#map-svg-overlay").select("g").selectAll("g").select("path")
-        .style("fill", s => (s.fareSet.preferred && s.fareSet.preferred.price < price) ? "transparent" : s.fareSet.colour)
-
+    hidePolygonsWithPriceGreaterThan(price);
 }
 
 $("#color-key").mousemove(showPriceForColorKeyHover);
