@@ -1,7 +1,3 @@
-Must do:
-Remove mapbox
-
-Nice to have:
 
 Convex hull on voronoi - I have tried this many times. It might be easier with different voronoi lib
 Z1-6 fares for travelling to tube stn from outside london
