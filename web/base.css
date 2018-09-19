@@ -55,8 +55,12 @@ body {
     pointer-events: all;
 }
 
+.leaflet-pane {
+    pointer-events: none; /* otherwise mouseover is very very very slow on firefox >:( */
+}
+
 .leaflet-overlay-pane path {
-    cursor: inherit; /* otherwise it will always show pointer cursor, not grabby*/
+    cursor: inherit; /* otherwise it will always show pointer cursor, not grabby */
 }
 
 .fare-card-header {
