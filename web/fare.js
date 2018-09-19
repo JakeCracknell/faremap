@@ -54,7 +54,3 @@ function getFillColourForFare(fare) {
     const hue = (percentage * 360).toString(10);
     return "hsla(" + hue + ",100%,50%,0.5)";
 }
-
-function showColorKeyIfFaresExist() {
-    $('#color-key')[maxPriceCurrentlyDisplayed > 0 ? 'fadeIn' : 'fadeOut']();
-}
