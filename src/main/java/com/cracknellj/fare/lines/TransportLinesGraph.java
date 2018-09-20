@@ -25,7 +25,7 @@ public class TransportLinesGraph {
 
     public TransportLinesGraph() {
         this.network = NetworkBuilder.directed().build();
-        stations = Maps.uniqueIndex(StationFileReader.getStations(), s -> s.stationId);
+        stations = StationFileReader.getStationsAsMap();
         stations.values().forEach(s -> network.addNode(s.stationId));
         Arrays.stream(loadLinesFromFile()).flatMap(tl -> tl.branches.stream()).map(b -> b.stationIds).forEach(branch -> {
             for (int i = 0; i < branch.size() - 1; i++) {

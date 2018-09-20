@@ -27,7 +27,7 @@ public class MakeFaresJson {
 
     //Takes 1-2 hours to regenerate everything
     public static void main(String[] args) throws Exception {
-        Map<String, Station> stations = Maps.uniqueIndex(StationFileReader.getStations(), s -> s.stationId);
+        Map<String, Station> stations = StationFileReader.getStationsAsMap();
         CompositeFareDataProvider fareDataProvider = CompositeFareDataProvider.load();
 
         Set<String> existing = Files.list(Paths.get("web", "data", "fares"))

@@ -21,7 +21,7 @@ public class DijkstraSplitTicketTaskTest {
     @BeforeClass
     public static void setUp() throws Exception {
         fareDataProvider = CompositeFareDataProvider.load();
-        stations = Maps.uniqueIndex(StationFileReader.getStations(), s -> s.stationId);
+        stations = StationFileReader.getStationsAsMap();
     }
 
     @Test //3200 ms

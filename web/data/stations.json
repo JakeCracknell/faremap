@@ -254,6 +254,7 @@
     ],
     "latitude": 51.5031,
     "longitude": -0.280462,
+    "crs": "ZAT",
     "yearlyUsage": 6040000
   },
   {
@@ -453,6 +454,7 @@
     ],
     "latitude": 51.5142,
     "longitude": -0.075689,
+    "crs": "ZAD",
     "yearlyUsage": 8850000
   },
   {
@@ -464,6 +466,7 @@
     ],
     "latitude": 51.515,
     "longitude": -0.072384,
+    "crs": "ZAE",
     "yearlyUsage": 14000000
   },
   {
@@ -531,6 +534,7 @@
     ],
     "latitude": 51.511,
     "longitude": -0.013135,
+    "crs": "ZAS",
     "yearlyUsage": 1990905
   },
   {
@@ -586,6 +590,7 @@
     ],
     "latitude": 51.5406,
     "longitude": -0.29961,
+    "crs": "ZAP",
     "yearlyUsage": 3050000
   },
   {
@@ -787,6 +792,7 @@
     ],
     "latitude": 51.5328,
     "longitude": -0.105992,
+    "crs": "ZAN",
     "yearlyUsage": 19200000
   },
   {
@@ -931,6 +937,7 @@
     ],
     "latitude": 51.5655,
     "longitude": -0.134819,
+    "crs": "ZAR",
     "yearlyUsage": 9280000
   },
   {
@@ -1063,6 +1070,7 @@
     ],
     "latitude": 51.6164,
     "longitude": -0.133062,
+    "crs": "ZAG",
     "yearlyUsage": 4610000
   },
   {
@@ -1107,6 +1115,7 @@
     ],
     "latitude": 51.5587,
     "longitude": -0.107457,
+    "crs": "ZAL",
     "yearlyUsage": 2820000
   },
   {
@@ -1591,6 +1600,7 @@
     ],
     "latitude": 51.5229,
     "longitude": -0.15713,
+    "crs": "ZBS",
     "yearlyUsage": 28780000
   },
   {
@@ -1735,6 +1745,7 @@
     ],
     "latitude": 51.5134,
     "longitude": -0.089095,
+    "crs": "ZBA",
     "yearlyUsage": 61800000
   },
   {
@@ -1859,6 +1870,7 @@
     ],
     "latitude": 51.5857,
     "longitude": 0.088585,
+    "crs": "ZBN",
     "yearlyUsage": 1620000
   },
   {
@@ -2005,6 +2017,7 @@
     ],
     "latitude": 51.4903,
     "longitude": -0.213427,
+    "crs": "ZBQ",
     "yearlyUsage": 7120000
   },
   {
@@ -2248,6 +2261,7 @@
     ],
     "latitude": 51.5123,
     "longitude": -0.187938,
+    "crs": "ZBY",
     "yearlyUsage": 4710000
   },
   {
@@ -2382,6 +2396,7 @@
     ],
     "latitude": 51.5144,
     "longitude": 0.061453,
+    "crs": "ZBV",
     "yearlyUsage": 2640289
   },
   {
@@ -2393,6 +2408,7 @@
     ],
     "latitude": 51.5088,
     "longitude": 0.054932,
+    "crs": "ZBJ",
     "yearlyUsage": 379400
   },
   {
@@ -2404,6 +2420,7 @@
     ],
     "latitude": 51.5403,
     "longitude": 0.127016,
+    "crs": "ZBZ",
     "yearlyUsage": 3640000
   },
   {
@@ -2571,6 +2588,7 @@
     ],
     "latitude": 51.5503,
     "longitude": -0.164648,
+    "crs": "ZBP",
     "yearlyUsage": 6240000
   },
   {
@@ -2715,6 +2733,7 @@
     ],
     "latitude": 51.498,
     "longitude": -0.063769,
+    "crs": "ZBE",
     "yearlyUsage": 10640000
   },
   {
@@ -3363,6 +3382,7 @@
     ],
     "latitude": 51.508,
     "longitude": -0.006969,
+    "crs": "ZBH",
     "yearlyUsage": 1840504
   },
   {
@@ -3594,6 +3614,7 @@
     ],
     "latitude": 51.5143,
     "longitude": -0.149723,
+    "crs": "ZBD",
     "yearlyUsage": 38800000
   },
   {
@@ -3660,6 +3681,7 @@
     ],
     "latitude": 51.5012,
     "longitude": -0.09337,
+    "crs": "ZBU",
     "yearlyUsage": 5870000
   },
   {
@@ -3715,6 +3737,7 @@
     ],
     "latitude": 51.4956,
     "longitude": -0.324939,
+    "crs": "ZBM",
     "yearlyUsage": 2290000
   },
   {
@@ -3803,6 +3826,7 @@
     ],
     "latitude": 51.5279,
     "longitude": -0.020936,
+    "crs": "ZBC",
     "yearlyUsage": 3251812
   },
   {
@@ -3814,6 +3838,7 @@
     ],
     "latitude": 51.5269,
     "longitude": -0.025128,
+    "crs": "ZBR",
     "yearlyUsage": 5660000
   },
   {
@@ -4057,6 +4082,7 @@
     ],
     "latitude": 51.5766,
     "longitude": -0.213622,
+    "crs": "ZBT",
     "yearlyUsage": 2520000
   },
   {
@@ -4451,6 +4477,7 @@
     ],
     "latitude": 51.5248,
     "longitude": -0.011538,
+    "crs": "ZBW",
     "yearlyUsage": 3750000
   },
   {
@@ -4678,6 +4705,7 @@
     ],
     "latitude": 51.6266,
     "longitude": 0.046757,
+    "crs": "ZBI",
     "yearlyUsage": 2300000
   },
   {
@@ -4887,6 +4915,7 @@
     ],
     "latitude": 51.6028,
     "longitude": -0.264048,
+    "crs": "ZBO",
     "yearlyUsage": 4490000
   },
   {
@@ -5133,6 +5162,7 @@
     ],
     "latitude": 51.5485,
     "longitude": -0.118493,
+    "crs": "ZCR",
     "yearlyUsage": 5720000
   },
   {
@@ -5260,6 +5290,7 @@
     ],
     "latitude": 51.5393,
     "longitude": -0.14274,
+    "crs": "ZCT",
     "yearlyUsage": 22510000
   },
   {
@@ -5306,6 +5337,7 @@
     ],
     "latitude": 51.5037,
     "longitude": -0.019121,
+    "crs": "ZIQ",
     "yearlyUsage": 19035198
   },
   {
@@ -5317,6 +5349,7 @@
     ],
     "latitude": 51.5037,
     "longitude": -0.019121,
+    "crs": "ZCZ",
     "yearlyUsage": 50910000
   },
   {
@@ -5350,6 +5383,7 @@
     ],
     "latitude": 51.514,
     "longitude": 0.008025,
+    "crs": "ZCB",
     "yearlyUsage": 13280000
   },
   {
@@ -5398,6 +5432,7 @@
     ],
     "latitude": 51.6077,
     "longitude": -0.294693,
+    "crs": "ZCP",
     "yearlyUsage": 3070000
   },
   {
@@ -5895,6 +5930,7 @@
     ],
     "latitude": 51.5441,
     "longitude": -0.153388,
+    "crs": "ZCF",
     "yearlyUsage": 5890000
   },
   {
@@ -5917,6 +5953,7 @@
     ],
     "latitude": 51.5182,
     "longitude": -0.111583,
+    "crs": "ZCY",
     "yearlyUsage": 17480000
   },
   {
@@ -6208,6 +6245,7 @@
     ],
     "latitude": 51.7052,
     "longitude": -0.611247,
+    "crs": "ZCM",
     "yearlyUsage": 1130000
   },
   {
@@ -6333,6 +6371,7 @@
     ],
     "latitude": 51.6179,
     "longitude": 0.075041,
+    "crs": "ZCG",
     "yearlyUsage": 500000
   },
   {
@@ -6448,6 +6487,7 @@
     ],
     "latitude": 51.4946,
     "longitude": -0.267972,
+    "crs": "ZCI",
     "yearlyUsage": 2250000
   },
   {
@@ -6615,6 +6655,7 @@
     ],
     "latitude": 51.4617,
     "longitude": -0.138317,
+    "crs": "ZCC",
     "yearlyUsage": 10490000
   },
   {
@@ -6663,6 +6704,7 @@
     ],
     "latitude": 51.4527,
     "longitude": -0.147582,
+    "crs": "ZCA",
     "yearlyUsage": 8650000
   },
   {
@@ -6864,6 +6906,7 @@
     ],
     "latitude": 51.6515,
     "longitude": -0.149171,
+    "crs": "ZCK",
     "yearlyUsage": 1930000
   },
   {
@@ -6930,6 +6973,7 @@
     ],
     "latitude": 51.5954,
     "longitude": -0.249919,
+    "crs": "ZCD",
     "yearlyUsage": 7140000
   },
   {
@@ -6941,6 +6985,7 @@
     ],
     "latitude": 51.4182,
     "longitude": -0.178086,
+    "crs": "ZCL",
     "yearlyUsage": 6700000
   },
   {
@@ -7317,6 +7362,7 @@
     ],
     "latitude": 51.5131,
     "longitude": -0.124436,
+    "crs": "ZCV",
     "yearlyUsage": 17540000
   },
   {
@@ -7640,6 +7686,7 @@
     ],
     "latitude": 51.4957,
     "longitude": -0.014606,
+    "crs": "ZCH",
     "yearlyUsage": 4127963
   },
   {
@@ -7752,6 +7799,7 @@
     ],
     "latitude": 51.647,
     "longitude": -0.441718,
+    "crs": "ZCO",
     "yearlyUsage": 1130000
   },
   {
@@ -7864,6 +7912,7 @@
     ],
     "latitude": 51.5097,
     "longitude": 0.026699,
+    "crs": "ZCE",
     "yearlyUsage": 4063117
   },
   {
@@ -7875,6 +7924,7 @@
     ],
     "latitude": 51.4817,
     "longitude": -0.010802,
+    "crs": "ZCS",
     "yearlyUsage": 6953684
   },
   {
@@ -7930,6 +7980,7 @@
     ],
     "latitude": 51.5085,
     "longitude": 0.063925,
+    "crs": "ZCQ",
     "yearlyUsage": 1546555
   },
   {
@@ -7953,6 +8004,7 @@
     ],
     "latitude": 51.5441,
     "longitude": 0.166017,
+    "crs": "ZDE",
     "yearlyUsage": 3000000
   },
   {
@@ -7964,6 +8016,7 @@
     ],
     "latitude": 51.5416,
     "longitude": 0.147527,
+    "crs": "ZDH",
     "yearlyUsage": 6080000
   },
   {
@@ -8299,6 +8352,7 @@
     ],
     "latitude": 51.6454,
     "longitude": 0.083782,
+    "crs": "ZDB",
     "yearlyUsage": 2470000
   },
   {
@@ -8423,6 +8477,7 @@
     ],
     "latitude": 51.4742,
     "longitude": -0.022438,
+    "crs": "ZDP",
     "yearlyUsage": 4377896
   },
   {
@@ -8467,6 +8522,7 @@
     ],
     "latitude": 51.5227,
     "longitude": -0.017615,
+    "crs": "ZDR",
     "yearlyUsage": 2115739
   },
   {
@@ -8665,6 +8721,7 @@
     ],
     "latitude": 51.552,
     "longitude": -0.239068,
+    "crs": "ZDO",
     "yearlyUsage": 4260000
   },
   {
@@ -9284,6 +9341,7 @@
     ],
     "latitude": 51.5101,
     "longitude": -0.288265,
+    "crs": "ZEC",
     "yearlyUsage": 3190000
   },
   {
@@ -9295,6 +9353,7 @@
     ],
     "latitude": 51.4921,
     "longitude": -0.193378,
+    "crs": "ZET",
     "yearlyUsage": 19990000
   },
   {
@@ -9363,6 +9422,7 @@
     ],
     "latitude": 51.5166,
     "longitude": -0.247248,
+    "crs": "ZEA",
     "yearlyUsage": 4080000
   },
   {
@@ -9431,6 +9491,7 @@
     ],
     "latitude": 51.5871,
     "longitude": -0.165012,
+    "crs": "ZEF",
     "yearlyUsage": 7310000
   },
   {
@@ -9464,6 +9525,7 @@
     ],
     "latitude": 51.5389,
     "longitude": 0.051186,
+    "crs": "ZEH",
     "yearlyUsage": 14700000
   },
   {
@@ -9475,6 +9537,7 @@
     ],
     "latitude": 51.5094,
     "longitude": -0.002326,
+    "crs": "ZEI",
     "yearlyUsage": 3652706
   },
   {
@@ -9519,6 +9582,7 @@
     ],
     "latitude": 51.4592,
     "longitude": -0.211,
+    "crs": "ZPU",
     "yearlyUsage": 6180000
   },
   {
@@ -9574,6 +9638,7 @@
     ],
     "latitude": 51.5765,
     "longitude": -0.397373,
+    "crs": "ZEE",
     "yearlyUsage": 3010000
   },
   {
@@ -9751,6 +9816,7 @@
     ],
     "latitude": 51.6137,
     "longitude": -0.274928,
+    "crs": "ZED",
     "yearlyUsage": 5280000
   },
   {
@@ -9762,6 +9828,7 @@
     ],
     "latitude": 51.5199,
     "longitude": -0.167832,
+    "crs": "ZEM",
     "yearlyUsage": 11770000
   },
   {
@@ -9908,6 +9975,7 @@
     ],
     "latitude": 51.5498,
     "longitude": 0.19864,
+    "crs": "ZEP",
     "yearlyUsage": 3280000
   },
   {
@@ -10011,6 +10079,7 @@
     ],
     "latitude": 51.4691,
     "longitude": -0.016728,
+    "crs": "ZER",
     "yearlyUsage": 1808974
   },
   {
@@ -10127,6 +10196,7 @@
     ],
     "latitude": 51.6937,
     "longitude": 0.113767,
+    "crs": "ZEG",
     "yearlyUsage": 3970000
   },
   {
@@ -10254,6 +10324,7 @@
     ],
     "latitude": 51.5256,
     "longitude": -0.135829,
+    "crs": "ZES",
     "yearlyUsage": 14130000
   },
   {
@@ -10421,6 +10492,7 @@
     ],
     "latitude": 51.5956,
     "longitude": 0.091004,
+    "crs": "ZFA",
     "yearlyUsage": 1240000
   },
   {
@@ -10798,6 +10870,7 @@
     ],
     "latitude": 51.6009,
     "longitude": -0.192527,
+    "crs": "ZFC",
     "yearlyUsage": 7200000
   },
   {
@@ -10809,6 +10882,7 @@
     ],
     "latitude": 51.5468,
     "longitude": -0.179845,
+    "crs": "ZFR",
     "yearlyUsage": 9630000
   },
   {
@@ -11267,6 +11341,7 @@
     ],
     "latitude": 51.4801,
     "longitude": -0.195422,
+    "crs": "ZFB",
     "yearlyUsage": 9630000
   },
   {
@@ -11345,6 +11420,7 @@
     ],
     "latitude": 51.5089,
     "longitude": 0.071555,
+    "crs": "ZGC",
     "yearlyUsage": 1113457
   },
   {
@@ -11356,6 +11432,7 @@
     ],
     "latitude": 51.5765,
     "longitude": 0.066185,
+    "crs": "ZGA",
     "yearlyUsage": 6830000
   },
   {
@@ -11800,6 +11877,7 @@
     ],
     "latitude": 51.4943,
     "longitude": -0.182658,
+    "crs": "ZGR",
     "yearlyUsage": 13840000
   },
   {
@@ -11866,6 +11944,7 @@
     ],
     "latitude": 51.5723,
     "longitude": -0.194039,
+    "crs": "ZGG",
     "yearlyUsage": 8410000
   },
   {
@@ -11877,6 +11956,7 @@
     ],
     "latitude": 51.502,
     "longitude": -0.226715,
+    "crs": "ZGW",
     "yearlyUsage": 2140000
   },
   {
@@ -11932,6 +12012,7 @@
     ],
     "latitude": 51.5206,
     "longitude": -0.134361,
+    "crs": "ZGS",
     "yearlyUsage": 7520000
   },
   {
@@ -12080,6 +12161,7 @@
     ],
     "latitude": 51.6134,
     "longitude": 0.092066,
+    "crs": "ZGH",
     "yearlyUsage": 670000
   },
   {
@@ -12247,6 +12329,7 @@
     ],
     "latitude": 51.5238,
     "longitude": -0.144262,
+    "crs": "ZGP",
     "yearlyUsage": 8080000
   },
   {
@@ -12280,6 +12363,7 @@
     ],
     "latitude": 51.5069,
     "longitude": -0.142787,
+    "crs": "ZGE",
     "yearlyUsage": 39340000
   },
   {
@@ -12714,6 +12798,7 @@
     ],
     "latitude": 51.6037,
     "longitude": 0.093482,
+    "crs": "ZHT",
     "yearlyUsage": 3800000
   },
   {
@@ -12879,6 +12964,7 @@
     ],
     "latitude": 51.4923,
     "longitude": -0.223619,
+    "crs": "ZHZ",
     "yearlyUsage": 29310000
   },
   {
@@ -12890,6 +12976,7 @@
     ],
     "latitude": 51.4923,
     "longitude": -0.223619,
+    "crs": "ZHA",
     "yearlyUsage": 10850000
   },
   {
@@ -12923,6 +13010,7 @@
     ],
     "latitude": 51.5566,
     "longitude": -0.178487,
+    "crs": "ZHM",
     "yearlyUsage": 4830000
   },
   {
@@ -13038,6 +13126,7 @@
     ],
     "latitude": 51.5302,
     "longitude": -0.292704,
+    "crs": "ZHL",
     "yearlyUsage": 3890000
   },
   {
@@ -13458,6 +13547,7 @@
     ],
     "latitude": 51.4667,
     "longitude": -0.423191,
+    "crs": "ZHX",
     "yearlyUsage": 3210000
   },
   {
@@ -13888,6 +13978,7 @@
     ],
     "latitude": 51.5833,
     "longitude": -0.226424,
+    "crs": "ZHN",
     "yearlyUsage": 7800000
   },
   {
@@ -13977,6 +14068,7 @@
     ],
     "latitude": 51.5034,
     "longitude": -0.021421,
+    "crs": "ZHQ",
     "yearlyUsage": 7910911
   },
   {
@@ -14099,6 +14191,7 @@
     ],
     "latitude": 51.6505,
     "longitude": -0.194298,
+    "crs": "ZHB",
     "yearlyUsage": 4260000
   },
   {
@@ -14213,6 +14306,7 @@
     ],
     "latitude": 51.5775,
     "longitude": -0.145857,
+    "crs": "ZHG",
     "yearlyUsage": 5870000
   },
   {
@@ -14257,6 +14351,7 @@
     ],
     "latitude": 51.5537,
     "longitude": -0.449828,
+    "crs": "ZHD",
     "yearlyUsage": 1810000
   },
   {
@@ -14390,6 +14485,7 @@
     ],
     "latitude": 51.5176,
     "longitude": -0.120475,
+    "crs": "ZHO",
     "yearlyUsage": 32540000
   },
   {
@@ -14401,6 +14497,7 @@
     ],
     "latitude": 51.5071,
     "longitude": -0.205679,
+    "crs": "ZHP",
     "yearlyUsage": 3630000
   },
   {
@@ -14423,6 +14520,7 @@
     ],
     "latitude": 51.5527,
     "longitude": -0.113244,
+    "crs": "ZHR",
     "yearlyUsage": 6790000
   },
   {
@@ -14626,6 +14724,7 @@
     ],
     "latitude": 51.5541,
     "longitude": 0.219116,
+    "crs": "ZHU",
     "yearlyUsage": 2240000
   },
   {
@@ -14738,6 +14837,7 @@
     ],
     "latitude": 51.4713,
     "longitude": -0.366578,
+    "crs": "ZHC",
     "yearlyUsage": 3950000
   },
   {
@@ -14749,6 +14849,7 @@
     ],
     "latitude": 51.4732,
     "longitude": -0.356474,
+    "crs": "ZHE",
     "yearlyUsage": 4040000
   },
   {
@@ -14760,6 +14861,7 @@
     ],
     "latitude": 51.4735,
     "longitude": -0.386544,
+    "crs": "ZHW",
     "yearlyUsage": 3520000
   },
   {
@@ -15026,6 +15128,7 @@
     ],
     "latitude": 51.503,
     "longitude": -0.152441,
+    "crs": "ZHY",
     "yearlyUsage": 5540000
   },
   {
@@ -15081,6 +15184,7 @@
     ],
     "latitude": 51.562,
     "longitude": -0.442001,
+    "crs": "ZIC",
     "yearlyUsage": 1170000
   },
   {
@@ -15305,6 +15409,7 @@
     ],
     "latitude": 51.4878,
     "longitude": -0.010139,
+    "crs": "ZIG",
     "yearlyUsage": 3113785
   },
   {
@@ -15582,6 +15687,7 @@
     ],
     "latitude": 51.4883,
     "longitude": -0.105963,
+    "crs": "ZKE",
     "yearlyUsage": 5580000
   },
   {
@@ -16097,6 +16203,7 @@
     ],
     "latitude": 51.5848,
     "longitude": -0.27879,
+    "crs": "ZKY",
     "yearlyUsage": 5220000
   },
   {
@@ -16385,6 +16492,7 @@
     ],
     "latitude": 51.5017,
     "longitude": -0.160508,
+    "crs": "ZKN",
     "yearlyUsage": 17210000
   },
   {
@@ -16452,6 +16560,7 @@
     ],
     "latitude": 51.5174,
     "longitude": -0.210391,
+    "crs": "ZLG",
     "yearlyUsage": 5950000
   },
   {
@@ -16530,6 +16639,7 @@
     ],
     "latitude": 51.4988,
     "longitude": -0.112315,
+    "crs": "ZLN",
     "yearlyUsage": 3530000
   },
   {
@@ -16574,6 +16684,7 @@
     ],
     "latitude": 51.5117,
     "longitude": -0.175494,
+    "crs": "ZLA",
     "yearlyUsage": 6240000
   },
   {
@@ -16761,6 +16872,7 @@
     ],
     "latitude": 51.5134,
     "longitude": -0.217799,
+    "crs": "ZLR",
     "yearlyUsage": 2460000
   },
   {
@@ -16950,6 +17062,7 @@
     ],
     "latitude": 51.5114,
     "longitude": -0.128426,
+    "crs": "ZLC",
     "yearlyUsage": 36730000
   },
   {
@@ -17127,6 +17240,7 @@
     ],
     "latitude": 51.5566,
     "longitude": -0.005523,
+    "crs": "ZLY",
     "yearlyUsage": 13470000
   },
   {
@@ -17151,6 +17265,7 @@
     ],
     "latitude": 51.5683,
     "longitude": 0.008194,
+    "crs": "ZLE",
     "yearlyUsage": 11000000
   },
   {
@@ -18175,6 +18290,7 @@
     ],
     "latitude": 51.6414,
     "longitude": 0.055476,
+    "crs": "ZLO",
     "yearlyUsage": 3580000
   },
   {
@@ -18418,6 +18534,7 @@
     ],
     "latitude": 51.5298,
     "longitude": -0.185758,
+    "crs": "ZMV",
     "yearlyUsage": 3290000
   },
   {
@@ -18606,6 +18723,7 @@
     ],
     "latitude": 51.5707,
     "longitude": -0.096118,
+    "crs": "ZMR",
     "yearlyUsage": 8690000
   },
   {
@@ -18685,6 +18803,7 @@
     ],
     "latitude": 51.5121,
     "longitude": -0.094009,
+    "crs": "ZMH",
     "yearlyUsage": 6410000
   },
   {
@@ -18696,6 +18815,7 @@
     ],
     "latitude": 51.5134,
     "longitude": -0.158953,
+    "crs": "ZMA",
     "yearlyUsage": 14000000
   },
   {
@@ -19230,6 +19350,7 @@
     ],
     "latitude": 51.5251,
     "longitude": -0.03364,
+    "crs": "ZME",
     "yearlyUsage": 15750000
   },
   {
@@ -19286,6 +19407,7 @@
     ],
     "latitude": 51.6082,
     "longitude": -0.209986,
+    "crs": "ZML",
     "yearlyUsage": 1380000
   },
   {
@@ -19519,6 +19641,7 @@
     ],
     "latitude": 51.6298,
     "longitude": -0.432454,
+    "crs": "ZMP",
     "yearlyUsage": 940000
   },
   {
@@ -19609,7 +19732,6 @@
     "latitude": 51.4021,
     "longitude": -0.194839,
     "crs": "ZMO",
-
     "yearlyUsage": 10410000
   },
   {
@@ -19699,6 +19821,7 @@
     ],
     "latitude": 51.5347,
     "longitude": -0.138789,
+    "crs": "ZMN",
     "yearlyUsage": 5080000
   },
   {
@@ -19911,6 +20034,7 @@
     ],
     "latitude": 51.4907,
     "longitude": -0.014738,
+    "crs": "ZMC",
     "yearlyUsage": 2310829
   },
   {
@@ -20043,6 +20167,7 @@
     ],
     "latitude": 51.554,
     "longitude": -0.249837,
+    "crs": "ZNN",
     "yearlyUsage": 3840000
   },
   {
@@ -20714,6 +20839,7 @@
     ],
     "latitude": 51.5235,
     "longitude": -0.259755,
+    "crs": "ZNA",
     "yearlyUsage": 6790000
   },
   {
@@ -20759,6 +20885,7 @@
     ],
     "latitude": 51.5175,
     "longitude": -0.288868,
+    "crs": "ZNE",
     "yearlyUsage": 830000
   },
   {
@@ -20781,6 +20908,7 @@
     ],
     "latitude": 51.5005,
     "longitude": 0.004295,
+    "crs": "NGR",
     "yearlyUsage": 28150000
   },
   {
@@ -20792,6 +20920,7 @@
     ],
     "latitude": 51.5849,
     "longitude": -0.362408,
+    "crs": "ZNH",
     "yearlyUsage": 1920000
   },
   {
@@ -20916,6 +21045,7 @@
     ],
     "latitude": 51.4993,
     "longitude": -0.314719,
+    "crs": "ZNF",
     "yearlyUsage": 3990000
   },
   {
@@ -20938,6 +21068,7 @@
     ],
     "latitude": 51.5482,
     "longitude": -0.368699,
+    "crs": "ZNO",
     "yearlyUsage": 5180000
   },
   {
@@ -20984,6 +21115,7 @@
     ],
     "latitude": 51.5785,
     "longitude": -0.318056,
+    "crs": "ZNK",
     "yearlyUsage": 4520000
   },
   {
@@ -20995,6 +21127,7 @@
     ],
     "latitude": 51.6111,
     "longitude": -0.423829,
+    "crs": "ZND",
     "yearlyUsage": 3040000
   },
   {
@@ -21006,6 +21139,7 @@
     ],
     "latitude": 51.6006,
     "longitude": -0.409464,
+    "crs": "ZNS",
     "yearlyUsage": 2009999
   },
   {
@@ -21052,6 +21186,7 @@
     ],
     "latitude": 51.5091,
     "longitude": -0.196104,
+    "crs": "ZNG",
     "yearlyUsage": 16340000
   },
   {
@@ -21164,6 +21299,7 @@
     ],
     "latitude": 51.6477,
     "longitude": -0.132182,
+    "crs": "ZOA",
     "yearlyUsage": 2890000
   },
   {
@@ -21343,6 +21479,7 @@
     ],
     "latitude": 51.4813,
     "longitude": -0.352224,
+    "crs": "ZOY",
     "yearlyUsage": 2190000
   },
   {
@@ -21398,6 +21535,7 @@
     ],
     "latitude": 51.4818,
     "longitude": -0.112439,
+    "crs": "ZOV",
     "yearlyUsage": 7360000
   },
   {
@@ -21453,6 +21591,7 @@
     ],
     "latitude": 51.5152,
     "longitude": -0.141903,
+    "crs": "ZOC",
     "yearlyUsage": 84090000
   },
   {
@@ -21643,6 +21782,7 @@
     ],
     "latitude": 51.5271,
     "longitude": -0.284341,
+    "crs": "ZPK",
     "yearlyUsage": 2020000
   },
   {
@@ -21687,6 +21827,7 @@
     ],
     "latitude": 51.4753,
     "longitude": -0.20117,
+    "crs": "ZPG",
     "yearlyUsage": 6760000
   },
   {
@@ -22077,6 +22218,7 @@
     ],
     "latitude": 51.5367,
     "longitude": -0.323446,
+    "crs": "ZPE",
     "yearlyUsage": 2510000
   },
   {
@@ -22199,6 +22341,7 @@
     ],
     "latitude": 51.5101,
     "longitude": -0.133798,
+    "crs": "ZPC",
     "yearlyUsage": 40820000
   },
   {
@@ -22221,6 +22364,7 @@
     ],
     "latitude": 51.4891,
     "longitude": -0.133761,
+    "crs": "ZPO",
     "yearlyUsage": 10970000
   },
   {
@@ -22243,6 +22387,7 @@
     ],
     "latitude": 51.5929,
     "longitude": -0.381161,
+    "crs": "ZPI",
     "yearlyUsage": 3430000
   },
   {
@@ -22276,6 +22421,7 @@
     ],
     "latitude": 51.5313,
     "longitude": 0.017451,
+    "crs": "ZPS",
     "yearlyUsage": 6130000
   },
   {
@@ -22597,6 +22743,7 @@
     ],
     "latitude": 51.5077,
     "longitude": -0.017384,
+    "crs": "ZPL",
     "yearlyUsage": 2709860
   },
   {
@@ -22861,6 +23008,7 @@
     ],
     "latitude": 51.572,
     "longitude": -0.295107,
+    "crs": "ZPR",
     "yearlyUsage": 3630000
   },
   {
@@ -22916,6 +23064,7 @@
     ],
     "latitude": 51.5093,
     "longitude": 0.034158,
+    "crs": "ZPD",
     "yearlyUsage": 2811871
   },
   {
@@ -22960,6 +23109,7 @@
     ],
     "latitude": 51.5343,
     "longitude": -0.012755,
+    "crs": "ZPM",
     "yearlyUsage": 766398
   },
   {
@@ -23030,6 +23180,7 @@
     ],
     "latitude": 51.4683,
     "longitude": -0.208731,
+    "crs": "ZPB",
     "yearlyUsage": 5380000
   },
   {
@@ -23144,6 +23295,7 @@
     ],
     "latitude": 51.5942,
     "longitude": -0.286219,
+    "crs": "ZQB",
     "yearlyUsage": 4650000
   },
   {
@@ -23167,6 +23319,7 @@
     ],
     "latitude": 51.5103,
     "longitude": -0.187152,
+    "crs": "ZQW",
     "yearlyUsage": 8520000
   },
   {
@@ -23345,6 +23498,7 @@
     ],
     "latitude": 51.4941,
     "longitude": -0.235881,
+    "crs": "ZRA",
     "yearlyUsage": 3210000
   },
   {
@@ -23389,6 +23543,7 @@
     ],
     "latitude": 51.5751,
     "longitude": -0.371127,
+    "crs": "ZRL",
     "yearlyUsage": 4320000
   },
   {
@@ -23581,6 +23736,7 @@
     ],
     "latitude": 51.5233,
     "longitude": -0.146444,
+    "crs": "ZRP",
     "yearlyUsage": 3610000
   },
   {
@@ -23882,6 +24038,7 @@
     ],
     "latitude": 51.6172,
     "longitude": 0.043647,
+    "crs": "ZRV",
     "yearlyUsage": 370000
   },
   {
@@ -24085,6 +24242,7 @@
     ],
     "latitude": 51.5084,
     "longitude": 0.045935,
+    "crs": "ZRC",
     "yearlyUsage": 1526402
   },
   {
@@ -24096,6 +24254,7 @@
     ],
     "latitude": 51.5191,
     "longitude": -0.188748,
+    "crs": "ZRY",
     "yearlyUsage": 2620000
   },
   {
@@ -24107,6 +24266,7 @@
     ],
     "latitude": 51.5093,
     "longitude": 0.018505,
+    "crs": "ZRB",
     "yearlyUsage": 4017497
   },
   {
@@ -24195,6 +24355,7 @@
     ],
     "latitude": 51.5714,
     "longitude": -0.421898,
+    "crs": "ZRU",
     "yearlyUsage": 1990000
   },
   {
@@ -24206,6 +24367,7 @@
     ],
     "latitude": 51.5607,
     "longitude": -0.41071,
+    "crs": "ZRG",
     "yearlyUsage": 1160000
   },
   {
@@ -24217,6 +24379,7 @@
     ],
     "latitude": 51.5732,
     "longitude": -0.412973,
+    "crs": "ZRM",
     "yearlyUsage": 2040000
   },
   {
@@ -24261,6 +24424,7 @@
     ],
     "latitude": 51.5231,
     "longitude": -0.124285,
+    "crs": "ZRS",
     "yearlyUsage": 11450000
   },
   {
@@ -25646,6 +25810,7 @@
     ],
     "latitude": 51.4923,
     "longitude": -0.156377,
+    "crs": "ZSO",
     "yearlyUsage": 17230000
   },
   {
@@ -25734,6 +25899,7 @@
     ],
     "latitude": 51.5807,
     "longitude": 0.02144,
+    "crs": "ZSN",
     "yearlyUsage": 2930000
   },
   {
@@ -25848,6 +26014,7 @@
     ],
     "latitude": 51.501,
     "longitude": -0.307424,
+    "crs": "ZSE",
     "yearlyUsage": 3660000
   },
   {
@@ -25906,6 +26073,7 @@
     ],
     "latitude": 51.5649,
     "longitude": -0.352492,
+    "crs": "ZSX",
     "yearlyUsage": 2220000
   },
   {
@@ -25917,6 +26085,7 @@
     ],
     "latitude": 51.4941,
     "longitude": -0.174138,
+    "crs": "ZSK",
     "yearlyUsage": 33860000
   },
   {
@@ -25975,6 +26144,7 @@
     ],
     "latitude": 51.5,
     "longitude": -0.015975,
+    "crs": "ZSQ",
     "yearlyUsage": 5300403
   },
   {
@@ -26033,6 +26203,7 @@
     ],
     "latitude": 51.4153,
     "longitude": -0.192005,
+    "crs": "ZSI",
     "yearlyUsage": 4870000
   },
   {
@@ -26044,6 +26215,7 @@
     ],
     "latitude": 51.5919,
     "longitude": 0.027338,
+    "crs": "ZQS",
     "yearlyUsage": 5280000
   },
   {
@@ -26179,6 +26351,7 @@
     ],
     "latitude": 51.4451,
     "longitude": -0.206602,
+    "crs": "SDS",
     "yearlyUsage": 6030000
   },
   {
@@ -26190,6 +26363,7 @@
     ],
     "latitude": 51.6323,
     "longitude": -0.127816,
+    "crs": "ZSA",
     "yearlyUsage": 5590000
   },
   {
@@ -26670,6 +26844,7 @@
     ],
     "latitude": 51.4995,
     "longitude": -0.133608,
+    "crs": "ZSS",
     "yearlyUsage": 14290000
   },
   {
@@ -26681,6 +26856,7 @@
     ],
     "latitude": 51.5345,
     "longitude": -0.173948,
+    "crs": "ZSJ",
     "yearlyUsage": 7790000
   },
   {
@@ -26692,6 +26868,7 @@
     ],
     "latitude": 51.5149,
     "longitude": -0.097567,
+    "crs": "ZSP",
     "yearlyUsage": 17200000
   },
   {
@@ -26758,6 +26935,7 @@
     ],
     "latitude": 51.4949,
     "longitude": -0.245704,
+    "crs": "ZSF",
     "yearlyUsage": 2690000
   },
   {
@@ -26815,6 +26993,7 @@
     ],
     "latitude": 51.6198,
     "longitude": -0.303266,
+    "crs": "ZSM",
     "yearlyUsage": 3920000
   },
   {
@@ -26936,6 +27115,7 @@
     ],
     "latitude": 51.5219,
     "longitude": -0.046596,
+    "crs": "ZSG",
     "yearlyUsage": 6340000
   },
   {
@@ -27057,6 +27237,7 @@
     ],
     "latitude": 51.4722,
     "longitude": -0.122644,
+    "crs": "ZSL",
     "yearlyUsage": 11700000
   },
   {
@@ -27511,6 +27692,7 @@
     ],
     "latitude": 51.5508,
     "longitude": -0.315745,
+    "crs": "ZSY",
     "yearlyUsage": 1810000
   },
   {
@@ -27804,6 +27986,7 @@
     ],
     "latitude": 51.5437,
     "longitude": -0.174894,
+    "crs": "ZSC",
     "yearlyUsage": 7760000
   },
   {
@@ -28064,6 +28247,7 @@
     ],
     "latitude": 51.511,
     "longitude": -0.11426,
+    "crs": "ZTM",
     "yearlyUsage": 8950000
   },
   {
@@ -28199,6 +28383,7 @@
     ],
     "latitude": 51.6718,
     "longitude": 0.103085,
+    "crs": "ZTY",
     "yearlyUsage": 950000
   },
   {
@@ -28576,6 +28761,7 @@
     ],
     "latitude": 51.4357,
     "longitude": -0.159736,
+    "crs": "ZTB",
     "yearlyUsage": 8070000
   },
   {
@@ -28587,6 +28773,7 @@
     ],
     "latitude": 51.4276,
     "longitude": -0.168374,
+    "crs": "ZTO",
     "yearlyUsage": 16210000
   },
   {
@@ -28642,6 +28829,7 @@
     ],
     "latitude": 51.5164,
     "longitude": -0.13041,
+    "crs": "ZTC",
     "yearlyUsage": 41330000
   },
   {
@@ -28676,6 +28864,7 @@
     ],
     "latitude": 51.6306,
     "longitude": -0.17921,
+    "crs": "ZTW",
     "yearlyUsage": 2540000
   },
   {
@@ -28855,6 +29044,7 @@
     ],
     "latitude": 51.5568,
     "longitude": -0.138433,
+    "crs": "ZTP",
     "yearlyUsage": 4110000
   },
   {
@@ -28913,6 +29103,7 @@
     ],
     "latitude": 51.4951,
     "longitude": -0.254555,
+    "crs": "ZTR",
     "yearlyUsage": 6160000
   },
   {
@@ -28924,6 +29115,7 @@
     ],
     "latitude": 51.5903,
     "longitude": -0.102953,
+    "crs": "ZTL",
     "yearlyUsage": 10740000
   },
   {
@@ -29169,6 +29361,7 @@
     ],
     "latitude": 51.5586,
     "longitude": 0.235809,
+    "crs": "ZUB",
     "yearlyUsage": 1150000
   },
   {
@@ -29180,6 +29373,7 @@
     ],
     "latitude": 51.5384,
     "longitude": 0.10153,
+    "crs": "ZUY",
     "yearlyUsage": 2700000
   },
   {
@@ -29249,6 +29443,7 @@
     ],
     "latitude": 51.5353,
     "longitude": 0.035263,
+    "crs": "ZUP",
     "yearlyUsage": 9590000
   },
   {
@@ -29293,6 +29488,7 @@
     ],
     "latitude": 51.5466,
     "longitude": -0.477949,
+    "crs": "ZUX",
     "yearlyUsage": 8380000
   },
   {
@@ -29627,6 +29823,7 @@
     ],
     "latitude": 51.5755,
     "longitude": 0.028527,
+    "crs": "ZWN",
     "yearlyUsage": 2950000
   },
   {
@@ -29731,6 +29928,7 @@
     ],
     "latitude": 51.525,
     "longitude": -0.138321,
+    "crs": "ZWS",
     "yearlyUsage": 20110000
   },
   {
@@ -29775,6 +29973,7 @@
     ],
     "latitude": 51.5233,
     "longitude": -0.183783,
+    "crs": "ZWV",
     "yearlyUsage": 4270000
   },
   {
@@ -29854,6 +30053,7 @@
     ],
     "latitude": 51.6574,
     "longitude": -0.417377,
+    "crs": "ZWT",
     "yearlyUsage": 1860000
   },
   {
@@ -30092,6 +30292,7 @@
     ],
     "latitude": 51.5632,
     "longitude": -0.279262,
+    "crs": "ZWY",
     "yearlyUsage": 16579999
   },
   {
@@ -30148,6 +30349,7 @@
     ],
     "latitude": 51.518,
     "longitude": -0.28098,
+    "crs": "ZWE",
     "yearlyUsage": 1720000
   },
   {
@@ -30265,6 +30467,7 @@
     ],
     "latitude": 51.6094,
     "longitude": -0.188362,
+    "crs": "ZWH",
     "yearlyUsage": 1690000
   },
   {
@@ -30333,6 +30536,7 @@
     ],
     "latitude": 51.5797,
     "longitude": -0.3534,
+    "crs": "ZWX",
     "yearlyUsage": 1530000
   },
   {
@@ -30366,6 +30570,7 @@
     ],
     "latitude": 51.4905,
     "longitude": -0.206636,
+    "crs": "ZWK",
     "yearlyUsage": 5230000
   },
   {
@@ -30513,6 +30718,7 @@
     ],
     "latitude": 51.5211,
     "longitude": -0.201065,
+    "crs": "ZWU",
     "yearlyUsage": 4130000
   },
   {
@@ -30602,6 +30808,7 @@
     ],
     "latitude": 51.5094,
     "longitude": -0.02675,
+    "crs": "ZWF",
     "yearlyUsage": 5904442
   },
   {
@@ -30635,6 +30842,7 @@
     ],
     "latitude": 51.5016,
     "longitude": -0.125984,
+    "crs": "ZWM",
     "yearlyUsage": 25600000
   },
   {
@@ -30822,6 +31030,7 @@
     ],
     "latitude": 51.512,
     "longitude": -0.224297,
+    "crs": "ZWC",
     "yearlyUsage": 8840000
   },
   {
@@ -31126,6 +31335,7 @@
     ],
     "latitude": 51.5491,
     "longitude": -0.221537,
+    "crs": "ZWG",
     "yearlyUsage": 8800000
   },
   {
@@ -31251,6 +31461,7 @@
     ],
     "latitude": 51.4346,
     "longitude": -0.199719,
+    "crs": "WMP",
     "yearlyUsage": 2180000
   },
   {
@@ -31538,6 +31749,7 @@
     ],
     "latitude": 51.5975,
     "longitude": -0.109886,
+    "crs": "ZWD",
     "yearlyUsage": 12890000
   },
   {
@@ -31584,6 +31796,7 @@
     ],
     "latitude": 51.6069,
     "longitude": 0.03397,
+    "crs": "ZWO",
     "yearlyUsage": 5980000
   },
   {
@@ -31664,6 +31877,7 @@
     ],
     "latitude": 51.618,
     "longitude": -0.18542,
+    "crs": "ZWI",
     "yearlyUsage": 3540000
   },
   {

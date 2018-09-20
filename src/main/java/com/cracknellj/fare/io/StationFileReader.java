@@ -1,6 +1,7 @@
 package com.cracknellj.fare.io;
 
 import com.cracknellj.fare.objects.Station;
+import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
@@ -10,6 +11,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class StationFileReader {
 
@@ -26,6 +28,10 @@ public class StationFileReader {
             }
         }
         return stationList;
+    }
+
+    public static Map<String, Station> getStationsAsMap() {
+        return Maps.uniqueIndex(getStations(), s -> s.stationId);
     }
 
 }
