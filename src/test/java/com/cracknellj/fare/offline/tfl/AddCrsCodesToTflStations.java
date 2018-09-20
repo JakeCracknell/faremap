@@ -31,6 +31,11 @@ public class AddCrsCodesToTflStations {
         StationFileWriter.writeStations(new ArrayList<>(stationsAsMap.values()));
     }
 
+    @Test
+    public void showMissingCrsCodes() throws Exception {
+        List<Station> collect = StationFileReader.getStations().stream().filter(s -> s.crs == null).collect(Collectors.toList());
+        System.out.println(collect);
+    }
 
     List<String[]> list = Arrays.asList(
             new String[] {"NGR","NGW","940GZZLUNGW","SE100PH"},

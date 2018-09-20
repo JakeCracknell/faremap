@@ -41,14 +41,15 @@ public class FareSet {
     }
 
     public void combineWith(FareSet fareSet2) {
-        fareSet2.fares.forEach((toId, faresList) -> {
+        fareSet2.fares.forEach((toId, extraFaresList) -> {
             if (fares.containsKey(toId)) {
-                FareDetailCollection combinedFareDetails = new FareDetailCollection(fares.size() + faresList.size());
-                combinedFareDetails.addAll(fares.get(toId));
-                combinedFareDetails.addAll(faresList);
+                FareDetailCollection thisFaresList = fares.get(toId);
+                FareDetailCollection combinedFareDetails = new FareDetailCollection(thisFaresList.size() + extraFaresList.size());
+                combinedFareDetails.addAll(thisFaresList);
+                combinedFareDetails.addAll(extraFaresList);
                 fares.put(toId, combinedFareDetails);
             } else {
-                fares.put(toId, faresList);
+                fares.put(toId, extraFaresList);
             }
         });
     }

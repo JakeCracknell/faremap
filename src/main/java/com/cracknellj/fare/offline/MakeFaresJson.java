@@ -34,7 +34,7 @@ public class MakeFaresJson {
                 .map(p -> p.getFileName().toString().replace(".json", ""))
                 .collect(Collectors.toSet());
 
-        stations.values().parallelStream().filter(s->"HAT".equals(s.crs) || "940GZZLUMDN".equals(s.stationId))
+        stations.values().parallelStream().filter(s->"HAT".equals(s.crs))
                 .map(s -> s.stationId)
                 .filter(s -> !existing.contains(s))
                 .forEach(station -> {
