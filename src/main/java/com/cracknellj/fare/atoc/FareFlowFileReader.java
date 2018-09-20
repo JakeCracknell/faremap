@@ -25,15 +25,14 @@ public class FareFlowFileReader extends AtocFileReader {
             lineStream.forEach(line -> {
                 switch (line.charAt(1)) {
                     case 'F':
-                        boolean publishable = line.charAt(41) == 'Y';
-                        if (publishable) {
-                            String flowId = line.substring(42, 49);
-                            String fromNlc = line.substring(2, 6);
-                            String toNlc = line.substring(6, 10);
-                            String routeCode = line.substring(10, 15);
-                            boolean reversible = line.charAt(19) == 'R';
-                            flowMap.put(flowId, new AtocFlowRecord(fromNlc, toNlc, routeCode, reversible));
-                        }
+                        //We now ignore this because it caused black holes in places like Kenilworth:
+                        // boolean publishable = line.charAt(41) == 'Y';
+                        String flowId = line.substring(42, 49);
+                        String fromNlc = line.substring(2, 6);
+                        String toNlc = line.substring(6, 10);
+                        String routeCode = line.substring(10, 15);
+                        boolean reversible = line.charAt(19) == 'R';
+                        flowMap.put(flowId, new AtocFlowRecord(fromNlc, toNlc, routeCode, reversible));
                     case 'T':
                         String restriction = line.substring(20, 22); // previously tested = '  '. removed for off peak.
                         String ticketCodeString = line.substring(9, 12);
