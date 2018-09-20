@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125852665-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-125852665-1');
+    </script>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet'/>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <meta name="viewport" content="width=1024, shrink-to-fit=no">
+    <meta name="description" content="Mapping the cost of UK train travel and split ticketing">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="lib/typeahead.css" rel="stylesheet"/>
     <link href="base.css" rel="stylesheet"/>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
-    <script src="https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js" integrity="sha384-clfMtG87GbgPQucGZi1lEBXNr86UAuyta5EmHTpbsjYaRhqHf7aU53o4rX2ovYlo" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
     <script src="lib/typeahead.bundle.min.js"></script>
     <script src="util.js"></script>
-    <script src="ui.js"></script>
-    <script src="station_ui.js"></script>
+    <script src="fare_display.js"></script>
+    <script src="station_select.js"></script>
     <script src="fare.js"></script>
-    <script src="route_line.js"></script>
+    <script src="map_overlay.js"></script>
+    <script src="color_key.js"></script>
     <script src="map.js"></script>
+    <script src="api.js"></script>
     <title>faremap</title>
 </head>
 <body>
@@ -30,10 +40,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-
-            <!--TODO not valid to have this form here. how to fix?-->
-
-            <form class="form-inline navbar-button-group">
+            <li class="form-inline navbar-button-group">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-sm btn-info active">
                         <input type="radio" name="travel-time-options" value="peak" autocomplete="off" checked> Peak Time
@@ -42,9 +49,9 @@
                         <input type="radio" name="travel-time-options" value="offpeak" autocomplete="off"> Off Peak
                     </label>
                 </div>
-            </form>
+            </li>
 
-            <form class="form-inline navbar-button-group">
+            <li class="form-inline navbar-button-group">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-sm btn-info active">
                         <input type="radio" name="route-preference-options" value="cheapest" autocomplete="off" checked> Prefer Cheapest Route
@@ -53,9 +60,9 @@
                         <input type="radio" name="route-preference-options" value="default" autocomplete="off"> Prefer Default Route
                     </label>
                 </div>
-            </form>
+            </li>
 
-            <form class="form-inline navbar-button-group">
+            <li class="form-inline navbar-button-group">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-sm btn-info active">
                         <input type="radio" name="point-display-options" value="stations" autocomplete="off" checked> Station Blobs
@@ -67,7 +74,7 @@
                         <input type="radio" name="point-display-options" value="none" autocomplete="off" > No Overlay
                     </label>
                 </div>
-            </form>
+            </li>
 
             <li>
                 <a class="nav-item nav-link" href="#" data-toggle='modal' data-target='#about-modal'>About</a>
@@ -124,11 +131,12 @@
         </div>
         <hr/>
         <div id="progress-container" style="display: none;">
-            Loading fare data...
+            <span id="progress-header"></span>
             <div class="progress">
                 <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-info"
                      role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0"></div>
             </div>
+            <span id="progress-footer"></span>
         </div>
 
         <div id="fares-container">
@@ -186,29 +194,36 @@
                         Despite my best efforts, fares shown may be incorrect or out of date. Feel free to contact me if you find any.
                     </li>
                     <li>
-                        Many split tickets will require changing trains in unusual places. I optimise for price, not for convenience!
+                        Many split tickets will require changing trains in unusual places. A journey might not even be
+                        possible to complete in a single day if timetables are sparse. I optimise for price, not for convenience!
+                        More sensible journeys can be found on <a href="https://split.traintimes.org.uk/">split.traintimes.org.uk</a>.
                     </li>
                     <li>
-                        Split ticketing fares in London will require you to use multiple Oyster or contactless cards.
+                        Split ticketing Oyster/contactless fares in London will require you to use multiple cards.
                         You need to touch out with one card and back in again with a different card.
+                        If a TfL fare says 'Avoiding Zone N via Stations X, Y, Z', you will need to change trains
+                        at stations X, Y and Z and tap the pink Oyster readers as you do so. If in doubt, check with TfL!
                     </li>
                     <li>
                         This website shows single fares that are available on the day of travel.
                         In many cases (but not all), return, advance or season tickets will be cheaper.
                         It can be even cheaper to split these as well.
-                        You can use this website as a starting point for your research.
+                        You can use this website's suggested routes and the excellent
+                        <a href="http://www.brfares.com" target="_blank">BRFares.com</a> to find the best fare overall.
                     </li>
                     <li>
-                        Not all off-peak train tickets are shown.
+                        Tickets to or from London underground stations, such as Cambridge to London Z1-6, are not shown.
+                        These are not represented very well in the data available to the public.
+                        Fortunately, most of these fares are beaten by split-ticketing and using Oyster as much as possible.
                     </li>
                 </ul>
 
                 <h5>Acknowledgements</h5>
                 <p>
                     faremap was developed by Jake Cracknell
-                    <a href="https://uk.linkedin.com/in/jake-cracknell-b32006b9" target="_blank">LinkedIn</a>
-                    <a href="https://twitter.com/drspa44" target="_blank">Twitter</a>.
-                    The source code is available on <a href="https://github.com/JakeCracknell" target="_blank">GitHub</a>.
+                    (<a href="https://uk.linkedin.com/in/jake-cracknell-b32006b9" target="_blank">LinkedIn</a>,
+                    <a href="https://twitter.com/drspa44" target="_blank">Twitter</a>).
+                    The source code is available on <a href="https://github.com/JakeCracknell/fare_map" target="_blank">GitHub</a>.
                     <br/>
                     With thanks to Chris Zetter for his
                     <a href="https://chriszetter.com/blog/2014/06/15/building-a-voronoi-map-with-d3-and-leaflet/" target="_blank">blog post</a>
@@ -230,7 +245,7 @@
                     Contains OS data © Crown copyright and database rights 2016
                     <br/>
                     Station usage figures from <a href="http://orr.gov.uk/statistics/published-stats/station-usage-estimates" target="_blank">ORR</a>
-                    and <a href="https://tfl.gov.uk/corporate/publications-and-reports/underground-services-performance" target="_blank">TFL</a>
+                    and <a href="https://tfl.gov.uk/corporate/publications-and-reports/underground-services-performance" target="_blank">TfL</a>
                     and a <a href="https://www.whatdotheyknow.com/request/up_to_date_dlr_entry_exit_statis" target="_blank">FOI request</a>
                 </p>
             </div>

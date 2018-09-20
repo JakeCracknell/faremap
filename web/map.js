@@ -1,22 +1,20 @@
-function drawWithLoading() {
-    requestAnimationFrame(() => draw());
+function drawMap() {
+    requestAnimationFrame(() => {
+        removeSvgLayer();
+        stationsByIdMap.forEach(translateAndSetCoordinates);
+        const drawableStations = getDrawableStationsAsList();
+        setMaxPriceCurrentlyDisplayedFromList(drawableStations);
+        createVoronoiPolygons(drawableStations);
+        stationsByIdMap.forEach(initialiseFareSets);
+        drawSvg(drawableStations);
+    });
 }
 
 function removeSvgLayer() {
     d3.select('#map-svg-overlay').remove();
 }
 
-function draw() {
-    removeSvgLayer();
-    stationsByIdMap.forEach(translateAndSetCoordinates);
-    const drawableStations = getDrawableStationsAsList();
-    setMaxPriceCurrentlyDisplayedFromList(drawableStations);
-    createVoronoiPolygons(drawableStations);
-    stationsByIdMap.forEach(initialiseFareSets);
-    drawSvgOverlay(drawableStations);
-}
-
-function drawSvgOverlay(drawableStations) {
+function drawSvg(drawableStations) {
     const topLeft = map.latLngToLayerPoint(map.getBounds().getNorthWest());
     const svg = d3.select(map.getPanes().overlayPane).append("svg")
         .attr('id', 'map-svg-overlay')
@@ -38,9 +36,8 @@ function drawSvgOverlay(drawableStations) {
         .on('click', stationSelect)
         .on('mouseover', stationPeek);
 
-    drawOptionalOverlay();
+    drawMapOverlay();
     setSelectableStatusOnStationPolygons();
-    drawSelectedRouteLine();
     displaySelectedStationsAndFares();
     showColorKeyIfFaresExist();
 }

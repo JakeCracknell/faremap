@@ -23,7 +23,7 @@ function stationSelect(station) {
         $("#selected-source-text").text(selectedSourceStation.formattedName);
         $("#selected-source, #pending-destination-header").show();
         $("#pending-source-header").hide();
-        triggerFareRequest();
+        loadFaresAsync();
     } else if (!selectedDestinationStation) {
         selectedDestinationStation = station;
         $("#selected-destination-text").text(selectedDestinationStation.formattedName);
@@ -43,12 +43,13 @@ function showStationFaresAndRouteForPeekOrSelect(station) {
 function resetSourceStation() {
     selectedSourceStation = null;
     pendingSourceStation = null;
+    abortAnyFareAjaxRequests();
     resetDestinationStation();
     setTypeAheadField("");
     $("#selected-source, #pending-destination-header").hide();
     $("#pending-source-header, #pending-station-picker-div").show();
     stationsByIdMap.forEach((station) => station.fares = []);
-    drawWithLoading();
+    drawMap();
 }
 
 function resetDestinationStation() {
