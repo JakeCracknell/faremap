@@ -42,9 +42,10 @@ public class FareFlowFileReader extends AtocFileReader {
                             String farePence = line.substring(12, 20);
                             AtocFlowRecord atocFlowRecord = flowMap.get(tFlowId);
                             if (atocFlowRecord != null) {
+                                //e.g. SDS OFF-PEAK S VW
+                                String ticketName = ticketCode.ticketCode + " " + ticketCode.description.trim() + " " + restriction;
                                 FareDetail fare = new FareDetail(Integer.parseInt(farePence), ticketCode.isOffPeak(),
-                                        ticketCode.description + " " + restriction,
-                                        true, false);
+                                        ticketName, true, false);
                                 fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc,
                                         atocFlowRecord.reversible, atocFlowRecord.routeCode, fare));
                             }

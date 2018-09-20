@@ -8,7 +8,6 @@ import com.cracknellj.fare.routefinding.DijkstraSplitTicketTask;
 import com.cracknellj.fare.routefinding.OffPeakDijkstraSplitTicketTask;
 import com.cracknellj.fare.routefinding.PeakTimeDijkstraSplitTicketTask;
 import com.google.common.base.Stopwatch;
-import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,7 +15,6 @@ import org.apache.logging.log4j.Logger;
 import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Comparator;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -34,7 +32,7 @@ public class MakeFaresJson {
                 .map(p -> p.getFileName().toString().replace(".json", ""))
                 .collect(Collectors.toSet());
 
-        stations.values().parallelStream().filter(s->"HAT".equals(s.crs))
+        stations.values().parallelStream()
                 .map(s -> s.stationId)
                 .filter(s -> !existing.contains(s))
                 .forEach(station -> {
