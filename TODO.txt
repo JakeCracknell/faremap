@@ -22,7 +22,10 @@ Notes on stations removed:
     select * from fare where to_id='940GZZLUHWC' and from_id in ("910GVAUXHLM","940GZZLUVXL");
 
 
+People have expressed interest in return fares
+    Will double the amount of json - maybe it should be segregated
+    Some returns require return travel on same or next day. Will need to assume the most restrictive
+    Need to incorporate singles data.
 
-Mysteries:
-    Tring->Harrow on the Hill. BRFares/shops return many incl 1393 -> 0786 ZONE U1256 LONDN. HOH not in 0786, in ATOC.
-    HAT->Elephant and castle. None! http://www.brfares.com/#expert?orig=HAT&dest=EPH
+I would like to see what the season ticket map looks like.
+

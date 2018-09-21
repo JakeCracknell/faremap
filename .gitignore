@@ -2,7 +2,6 @@ target/
 *.iml
 .idea
 *.log
-*.gz
 atoc/
 stationusage/
 web/data/fares/

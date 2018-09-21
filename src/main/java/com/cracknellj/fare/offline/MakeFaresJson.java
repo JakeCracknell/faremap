@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 public class MakeFaresJson {
     private static final Logger LOG = LogManager.getLogger(MakeFaresJson.class);
 
-    //Takes 1-2 hours to regenerate everything
+    //Takes 30 mins to regenerate everything
     public static void main(String[] args) throws Exception {
         Map<String, Station> stations = StationFileReader.getStationsAsMap();
         CompositeFareDataProvider fareDataProvider = CompositeFareDataProvider.load();
