@@ -102,10 +102,10 @@ public class LocationFileReader extends AtocFileReader {
         }
     }
 
-    //
+    //TODO check for Z?? crs only? HAMMERSMTH M/UND ??? Some dont have any like SOUTHFIELDS or NORTH GREENWICH
     private boolean isEligibleForZonalTicket(String stationName) {
         return stationName.endsWith(" DLR") || stationName.endsWith(" UND") ||
-                stationName.endsWith(" UNDERGD") || stationName.endsWith(" LT");
+                stationName.endsWith(" UNDERGD") || stationName.endsWith(" LT") || stationName.endsWith(" LRT");
     }
 
     //Tempted to remove this, as bus routes will still slip through. e.g. HAT->LUT

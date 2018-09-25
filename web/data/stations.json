@@ -2400,7 +2400,7 @@
     ],
     "latitude": 51.5144,
     "longitude": 0.061453,
-    "crs": "ZBV",
+    "crs": "ZTN",
     "yearlyUsage": 2640289
   },
   {
@@ -7934,7 +7934,7 @@
     ],
     "latitude": 51.4817,
     "longitude": -0.010802,
-    "crs": "ZCS",
+    "crs": "ZAA",
     "yearlyUsage": 6953684
   },
   {
@@ -8362,7 +8362,7 @@
     ],
     "latitude": 51.6454,
     "longitude": 0.083782,
-    "crs": "ZDB",
+    "crs": "ZDD",
     "yearlyUsage": 2470000
   },
   {
@@ -8487,7 +8487,7 @@
     ],
     "latitude": 51.4742,
     "longitude": -0.022438,
-    "crs": "ZDP",
+    "crs": "ZDB",
     "yearlyUsage": 4377896
   },
   {
@@ -10091,7 +10091,7 @@
     ],
     "latitude": 51.4691,
     "longitude": -0.016728,
-    "crs": "ZER",
+    "crs": "ZAC",
     "yearlyUsage": 1808974
   },
   {
@@ -17083,7 +17083,7 @@
     ],
     "latitude": 51.5114,
     "longitude": -0.128426,
-    "crs": "ZLC",
+    "crs": "ZLS",
     "yearlyUsage": 36730000
   },
   {
@@ -18538,7 +18538,7 @@
     "yearlyUsage": 1865348
   },
   {
-    "stationId": "NONAPTANMAGHULLNORTH",
+    "stationId": "910GMAGHNTH",
     "stationName": "Maghull North",
     "tags": [
       "TRAIN"
@@ -19846,7 +19846,7 @@
     ],
     "latitude": 51.5347,
     "longitude": -0.138789,
-    "crs": "ZMN",
+    "crs": "ZMC",
     "yearlyUsage": 5080000
   },
   {
@@ -20059,7 +20059,7 @@
     ],
     "latitude": 51.4907,
     "longitude": -0.014738,
-    "crs": "ZMC",
+    "crs": "ZMU",
     "yearlyUsage": 2310829
   },
   {
@@ -26383,7 +26383,7 @@
     ],
     "latitude": 51.4451,
     "longitude": -0.206602,
-    "crs": "SDS",
+    "crs": "SFS",
     "yearlyUsage": 6030000
   },
   {
@@ -31506,7 +31506,7 @@
     ],
     "latitude": 51.4346,
     "longitude": -0.199719,
-    "crs": "WMP",
+    "crs": "WPK",
     "yearlyUsage": 2180000
   },
   {
