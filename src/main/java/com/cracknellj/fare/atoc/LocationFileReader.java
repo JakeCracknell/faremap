@@ -47,6 +47,8 @@ public class LocationFileReader extends AtocFileReader {
         return map;
     }
 
+    //London zonal logic largely copied from BRFares/librailfare locations.c
+
     //RG7010720311229990104200001042000LONDON TERMINALS
     public Map<String, Set<String>> getStationGroups() throws IOException {
         try (Stream<String> lineStream = getStreamOfLines()) {
@@ -66,7 +68,10 @@ public class LocationFileReader extends AtocFileReader {
                             }
                             char londonZone = line.charAt(83);
                             if (Character.isDigit(londonZone)) {
-                                crssByLondonZone.computeIfAbsent(Character.getNumericValue(londonZone), x -> new HashSet<>()).add(crs);
+                                String stationName = line.substring(87, 103).trim();
+                                if (isEligibleForZonalTicket(stationName)) {
+                                    crssByLondonZone.computeIfAbsent(Character.getNumericValue(londonZone), x -> new HashSet<>()).add(crs);
+                                }
                             }
                             String description = line.substring(40, 56);
                             if (LONDON_ZONE_GROUP_PATTERN.matcher(description).matches()) {
@@ -95,6 +100,12 @@ public class LocationFileReader extends AtocFileReader {
             LOG.info(map.size() + " station groups found");
             return map;
         }
+    }
+
+    //
+    private boolean isEligibleForZonalTicket(String stationName) {
+        return stationName.endsWith(" DLR") || stationName.endsWith(" UND") ||
+                stationName.endsWith(" UNDERGD") || stationName.endsWith(" LT");
     }
 
     //Tempted to remove this, as bus routes will still slip through. e.g. HAT->LUT
