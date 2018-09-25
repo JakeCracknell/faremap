@@ -18,6 +18,7 @@ public class LocationFileReader extends AtocFileReader {
 
     private static final String FILE_EXTENSION = "LOC";
     private static final Pattern LONDON_ZONE_GROUP_PATTERN = Pattern.compile("ZONE U.+LONDN");
+    private static final Pattern LONDON_UND_STATION_PATTERN = Pattern.compile(".+\\W(UND|UNDERGD|DLR|LT|LRT)");
 
     public LocationFileReader() throws IOException {
         super(FILE_EXTENSION);
@@ -69,7 +70,7 @@ public class LocationFileReader extends AtocFileReader {
                             char londonZone = line.charAt(83);
                             if (Character.isDigit(londonZone)) {
                                 String stationName = line.substring(87, 103).trim();
-                                if (isEligibleForZonalTicket(stationName)) {
+                                if (LONDON_UND_STATION_PATTERN.matcher(stationName).matches()) {
                                     crssByLondonZone.computeIfAbsent(Character.getNumericValue(londonZone), x -> new HashSet<>()).add(crs);
                                 }
                             }
@@ -100,12 +101,6 @@ public class LocationFileReader extends AtocFileReader {
             LOG.info(map.size() + " station groups found");
             return map;
         }
-    }
-
-    //TODO check for Z?? crs only? HAMMERSMTH M/UND ??? Some dont have any like SOUTHFIELDS or NORTH GREENWICH
-    private boolean isEligibleForZonalTicket(String stationName) {
-        return stationName.endsWith(" DLR") || stationName.endsWith(" UND") ||
-                stationName.endsWith(" UNDERGD") || stationName.endsWith(" LT") || stationName.endsWith(" LRT");
     }
 
     //Tempted to remove this, as bus routes will still slip through. e.g. HAT->LUT
