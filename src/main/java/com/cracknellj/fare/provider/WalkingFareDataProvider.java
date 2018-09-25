@@ -21,7 +21,7 @@ public class WalkingFareDataProvider implements FareDataProvider {
         List<Station> stations = StationFileReader.getStations();
         stations.forEach(fromStation -> {
             stations.forEach(toStation -> {
-                if (Haversine.distance(fromStation, toStation) < 0.5) {
+                if (fromStation != toStation && Haversine.distance(fromStation, toStation) < 0.5) {
                     FareDetailCollection fareDetailCollection = new FareDetailCollection(1);
                     fareDetailCollection.add(WALKING_FARE_DETAIL);
                     fareSetMap.computeIfAbsent(fromStation.stationId, x -> new FareSet(fromStation.stationId))
