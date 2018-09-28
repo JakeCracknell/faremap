@@ -17,7 +17,7 @@ public class CompositeFareDataProvider implements FareDataProvider {
 
     public static CompositeFareDataProvider load() {
         return new CompositeFareDataProvider(
-                Stream.of(new AtocDataProvider(), new TFLDataProvider()).parallel()
+                Stream.of(new AtocDataProvider(), new TFLDataProvider(), new WalkingFareDataProvider()).parallel()
                         .map(FareDataProvider::getAllFareSets).reduce(FareSet::combine)
                         .orElseThrow(() -> new RuntimeException("Failed to load any fare datas"))
         );

@@ -13,6 +13,6 @@ public class OffPeakDijkstraSplitTicketTask extends DijkstraSplitTicketTask {
 
     @Override
     FareDetail getFareDetailIfExistsOrNull(String fromId, String toId) {
-        return fareDataProvider.getFares(fromId, toId).cheapestOffpeak;
+        return fareDataProvider.getFares(fromId, toId).cheapestOffPeak;
     }
 }

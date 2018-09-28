@@ -9,8 +9,9 @@ public class FareDetailCollection extends ArrayList<FareDetail> implements List<
     private static final FareDetailCollection EMPTY_INSTANCE = new FareDetailCollection(0);
     private static final Comparator<FareDetail> FARE_DETAIL_COMPARATOR = Comparator.comparingInt(f -> f.price);
 
-    public transient FareDetail cheapestOffpeak;
+    public transient FareDetail cheapestOffPeak;
     public transient FareDetail cheapestPeak;
+    public transient FareDetail walkingFare;
 
     public FareDetailCollection(int capacity) {
         super(capacity);
@@ -25,8 +26,18 @@ public class FareDetailCollection extends ArrayList<FareDetail> implements List<
     }
 
     public void calculateAndCacheCheapestFares() {
-        cheapestOffpeak = this.stream().min(FARE_DETAIL_COMPARATOR).orElse(null);
-        cheapestPeak = this.stream().filter(f -> !f.offPeakOnly).min(FARE_DETAIL_COMPARATOR).orElse(null);
+        this.stream().sorted(FARE_DETAIL_COMPARATOR).forEach(fare -> {
+            if (fare.price == 0) {
+                walkingFare = fare;
+            } else {
+                if (cheapestOffPeak == null) {
+                    cheapestOffPeak = fare;
+                }
+                if (cheapestPeak == null && !fare.offPeakOnly) {
+                    cheapestPeak = fare;
+                }
+            }
+        });
     }
 
 }

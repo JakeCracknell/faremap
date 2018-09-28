@@ -11,19 +11,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//TODO - to replace with OSIs. This is good, but will give a journey like HAT -> CHX -> LECSQ -> PICC, totalling >0.5km walk
 public class WalkingFareDataProvider implements FareDataProvider {
-
-    private static final FareDetail WALKING_FARE_DETAIL = new FareDetail(0, false, "Walk", true, false);
+    private static final double DISTANCE_KM_THRESHOLD = 1.0;
+    private static final double DISTANCE_KM_TO_MINUTES = 12; // or 5 km/h
     private final Map<String, FareSet> fareSetMap = new HashMap<>();
 
     public WalkingFareDataProvider() {
         List<Station> stations = StationFileReader.getStations();
         stations.forEach(fromStation -> {
             stations.forEach(toStation -> {
-                if (fromStation != toStation && Haversine.distance(fromStation, toStation) < 0.5) {
+                double distance = Haversine.distance(fromStation, toStation);
+                if (fromStation != toStation && distance < DISTANCE_KM_THRESHOLD) {
                     FareDetailCollection fareDetailCollection = new FareDetailCollection(1);
-                    fareDetailCollection.add(WALKING_FARE_DETAIL);
+                    FareDetail fareDetail = new FareDetail(0, false, "Walk", true, false);
+                    fareDetail.routeDescription = String.format("%.1f km, a %.0f minutes walk", distance, distance * DISTANCE_KM_TO_MINUTES);
+                    fareDetailCollection.add(fareDetail);
                     fareSetMap.computeIfAbsent(fromStation.stationId, x -> new FareSet(fromStation.stationId))
                             .fares.put(toStation.stationId, fareDetailCollection);
                 }
