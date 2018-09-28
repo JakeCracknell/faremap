@@ -10,10 +10,12 @@ import java.util.stream.Collectors;
 public class MultiHopFareDetailBuilder {
     private final Map<String, Station> stations;
     private Map<FareDetailAndWaypoint, FareDetailAndWaypoint> predecessors;
+    private final boolean offPeakOnly;
 
-    public MultiHopFareDetailBuilder(Map<String, Station> stations, Map<FareDetailAndWaypoint, FareDetailAndWaypoint> predecessors) {
+    public MultiHopFareDetailBuilder(Map<String, Station> stations, Map<FareDetailAndWaypoint, FareDetailAndWaypoint> predecessors, boolean offPeakOnly) {
         this.stations = stations;
         this.predecessors = predecessors;
+        this.offPeakOnly = offPeakOnly;
         cleanPredecessors();
     }
 
@@ -43,7 +45,7 @@ public class MultiHopFareDetailBuilder {
     }
 
     private FareDetail getFareDetailFromNodes(List<FareDetailAndWaypoint> nodes) {
-        FareDetail fareDetail = new FareDetail(nodes);
+        FareDetail fareDetail = new FareDetail(nodes, offPeakOnly);
         fareDetail.routeDescription = "Via " + nodes.stream().limit(nodes.size() - 1)
                 .map(n -> stations.get(n.waypoint).stationName).collect(Collectors.joining(", "));
         return fareDetail;

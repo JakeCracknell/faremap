@@ -1,5 +1,6 @@
 package com.cracknellj.fare.routefinding;
 
+import com.cracknellj.fare.io.StationFileReader;
 import com.cracknellj.fare.objects.FareDetail;
 import com.cracknellj.fare.objects.FareSet;
 import com.cracknellj.fare.objects.Station;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 
 public abstract class DijkstraSplitTicketTask {
     public static final int MAX_PRICE = Integer.MAX_VALUE;
+    private static final FareDetail WALKING_FARE_DETAIL = new FareDetail(0, false, "Walk", true, false);
 
     private final Map<String, Station> stations;
     final FareDataProvider fareDataProvider;
@@ -63,10 +65,12 @@ public abstract class DijkstraSplitTicketTask {
     }
 
     private void expandSearchFromNode(String node) {
+        Set<String> walkingDestinations = getWalkingDestinationsIfAllowed(node);
         Integer costToNode = minCostsForStations.get(node);
         for (String nextStationId : stations.keySet()) {
             if (!settled.contains(nextStationId)) {
-                FareDetail fareDetail = getFareDetailIfExistsOrNull(node, nextStationId);
+                FareDetail fareDetail = walkingDestinations.contains(nextStationId) ?
+                        WALKING_FARE_DETAIL : getFareDetailIfExistsOrNull(node, nextStationId);
                 if (fareDetail != null) {
                     int proposedCost = costToNode + fareDetail.price + 1; //1p penalty for every hop.
                     Integer existingCost = minCostsForStations.get(nextStationId);
@@ -82,13 +86,21 @@ public abstract class DijkstraSplitTicketTask {
         }
     }
 
+    private Set<String> getWalkingDestinationsIfAllowed(String node) {
+        FareDetail lastFareDetail = stationIdToNode.get(node).fareDetail;
+        if (lastFareDetail == null || lastFareDetail.price > 0) {
+            return StationFileReader.getNearbyStations(node);
+        }
+        return Collections.emptySet();
+    }
+
     private FareSet generateFareSet() {
         Map<FareDetailAndWaypoint, FareDetailAndWaypoint> nodePredecessors = predecessors.entrySet().stream()
                 .collect(Collectors.toMap(e -> stationIdToNode.get(e.getKey()), e -> stationIdToNode.get(e.getValue())));
-        MultiHopFareDetailBuilder multiHopFareDetailBuilder = new MultiHopFareDetailBuilder(stations, nodePredecessors);
+        MultiHopFareDetailBuilder multiHopFareDetailBuilder = new MultiHopFareDetailBuilder(stations, nodePredecessors,
+                this.getClass().getSimpleName().contains("OffPeak"));
         return new FareSet(fromId, multiHopFareDetailBuilder.createMap());
     }
-
 
     abstract FareDetail getFareDetailIfExistsOrNull(String fromId, String toId);
 

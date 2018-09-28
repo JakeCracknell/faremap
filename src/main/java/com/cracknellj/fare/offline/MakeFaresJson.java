@@ -32,9 +32,8 @@ public class MakeFaresJson {
                 .map(p -> p.getFileName().toString().replace(".json", ""))
                 .collect(Collectors.toSet());
 
-        stations.values().parallelStream().filter(s -> s.stationName.startsWith("Farring"))
+        stations.values().parallelStream().filter(s-> s.stationName.startsWith("Eust"))
                 .map(s -> s.stationId)
-                .filter(s -> !existing.contains(s))
                 .forEach(station -> {
                     Stopwatch stopwatch = Stopwatch.createStarted();
                     LOG.info("Starting " + station);

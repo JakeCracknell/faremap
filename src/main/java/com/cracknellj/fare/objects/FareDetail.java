@@ -16,7 +16,7 @@ public class FareDetail {
     public final String ticketName;
     public final boolean isDefaultRoute;
     public final boolean isTFL;
-    public String routeDescription;
+    public String routeDescription = "";
 
     public FareDetail(int price, boolean offPeakOnly, String ticketName, boolean isDefaultRoute, boolean isTFL) {
         this.price = price;
@@ -27,11 +27,11 @@ public class FareDetail {
         this.hops = null;
     }
 
-    public FareDetail(List<FareDetailAndWaypoint> hops) {
+    public FareDetail(List<FareDetailAndWaypoint> hops, boolean offPeakOnly) {
         this.ticketName = "Split Ticket";
         this.hops = hops;
         this.isDefaultRoute = false;
-        this.offPeakOnly = hops.stream().anyMatch(h -> h.fareDetail.offPeakOnly);
+        this.offPeakOnly = offPeakOnly;
         this.isTFL = hops.stream().allMatch(h -> h.fareDetail.isTFL);
         this.price = hops.stream().mapToInt(h -> h.fareDetail.price).sum();
     }
