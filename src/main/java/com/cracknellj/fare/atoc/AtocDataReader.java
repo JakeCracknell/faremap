@@ -54,13 +54,28 @@ public class AtocDataReader {
     }
 
     private void convertDataIntoFares() {
+        Set<String> keysToKeep = rawFaresList.stream()
+                .filter(f -> !stationClusters.containsKey(f.fromNlc) && !stationClusters.containsKey(f.toNlc))
+                .map(AtocFare::getKey).collect(Collectors.toSet());
+
         for (AtocFare fare : rawFaresList) {
             fare.fareDetail.routeDescription = atocRoutes.get(fare.routeCode).description;
-            List<String> fromIds = getStationIDsFromNLC(fare.fromNlc);
-            List<String> toIds = getStationIDsFromNLC(fare.toNlc);
-            addFareForEach(fare.fareDetail, fromIds, toIds);
-            if (fare.reversible) {
-                addFareForEach(fare.fareDetail, toIds, fromIds);
+            List<String> fromNlcs = stationClusters.getOrDefault(fare.fromNlc, Collections.singletonList(fare.fromNlc));
+            List<String> toNlcs = stationClusters.getOrDefault(fare.toNlc, Collections.singletonList(fare.toNlc));
+            boolean isOverridable = stationClusters.containsKey(fare.fromNlc) || stationClusters.containsKey(fare.toNlc);
+
+            for (String fromClusterNlc : fromNlcs) {
+                List<String> fromStationIds = getStationIDsFromNLC(fromClusterNlc);
+                for (String toClusterNlc : toNlcs) {
+                    String clusterKey = AtocFare.getKey(fromClusterNlc, toClusterNlc, fare.routeCode);
+                    if (isOverridable && !keysToKeep.contains(clusterKey)) {
+                        List<String> toStationIds = getStationIDsFromNLC(toClusterNlc);
+                        addFareForEach(fare.fareDetail, fromStationIds, toStationIds);
+                        if (fare.reversible) { //might be incorrect. what if one direction is overridden?
+                            addFareForEach(fare.fareDetail, toStationIds, fromStationIds);
+                        }
+                    }
+                }
             }
         }
     }
@@ -79,6 +94,16 @@ public class AtocDataReader {
     private List<String> getStationIDsFromNLC(String nlc) {
         return nlcToStationIDsMap.computeIfAbsent(nlc, x -> {
             List<String> nlcs = stationClusters.getOrDefault(nlc, Lists.newArrayList(nlc));
+            Stream<String> crssFromDirectMappings = nlcs.stream().filter(nlcToCRSMap::containsKey).map(nlcToCRSMap::get);
+            Stream<String> crssFromStationGroups = nlcs.stream().filter(stationGroups::containsKey).map(stationGroups::get).flatMap(Collection::stream);
+            List<String> crss = Stream.concat(crssFromDirectMappings, crssFromStationGroups).collect(Collectors.toList());
+            return crss.stream().filter(crsToStation::containsKey).map(crsToStation::get).map(s -> s.stationId).collect(Collectors.toList());
+        });
+    }
+
+    private List<String> getStationIDsFromNLC2(String nlc) {
+        return nlcToStationIDsMap.computeIfAbsent(nlc, x -> {
+            List<String> nlcs = Lists.newArrayList(nlc);
             Stream<String> crssFromDirectMappings = nlcs.stream().filter(nlcToCRSMap::containsKey).map(nlcToCRSMap::get);
             Stream<String> crssFromStationGroups = nlcs.stream().filter(stationGroups::containsKey).map(stationGroups::get).flatMap(Collection::stream);
             List<String> crss = Stream.concat(crssFromDirectMappings, crssFromStationGroups).collect(Collectors.toList());

@@ -15,7 +15,7 @@ public class FareDetail {
     public final boolean offPeakOnly;
     public final String ticketName;
     public final boolean isDefaultRoute;
-    public final boolean isTFL;
+    public boolean isTFL;
     public String routeDescription = "";
 
     public FareDetail(int price, boolean offPeakOnly, String ticketName, boolean isDefaultRoute, boolean isTFL) {
