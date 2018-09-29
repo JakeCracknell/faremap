@@ -9,7 +9,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -33,12 +32,12 @@ public class AtocDataReader {
             readDataFromFiles();
             cleanupConflictingData();
             convertDataIntoFares();
-        } catch (SQLException | IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException("Failed to read ATOC data", e);
         }
     }
 
-    private void readDataFromFiles() throws SQLException, IOException {
+    private void readDataFromFiles() throws IOException {
         crsToStation = StationFileReader.getStations().stream().filter(s -> s.crs != null).collect(toMap(s -> s.crs, s -> s));
         stationClusters = new StationClusterFileReader().getStationClusters();
         nlcToCRSMap = new LocationFileReader().getNLCToCRSMap();
@@ -68,13 +67,13 @@ public class AtocDataReader {
                 List<String> fromStationIds = getStationIDsFromNLC(fromClusterNlc);
                 for (String toClusterNlc : toNlcs) {
                     String clusterKey = AtocFare.getKey(fromClusterNlc, toClusterNlc, fare.routeCode);
-                    if (isOverridable && !keysToKeep.contains(clusterKey)) {
+                    if (!isOverridable || !keysToKeep.contains(clusterKey)) {
                         List<String> toStationIds = getStationIDsFromNLC(toClusterNlc);
                         addFareForEach(fare.fareDetail, fromStationIds, toStationIds);
                         if (fare.reversible) { //might be incorrect. what if one direction is overridden?
                             addFareForEach(fare.fareDetail, toStationIds, fromStationIds);
                         }
-                    }
+                    }  // ELSE Cluster fare is to be overwritten by non-cluster fare. e.g. York to Selby.
                 }
             }
         }
@@ -94,16 +93,6 @@ public class AtocDataReader {
     private List<String> getStationIDsFromNLC(String nlc) {
         return nlcToStationIDsMap.computeIfAbsent(nlc, x -> {
             List<String> nlcs = stationClusters.getOrDefault(nlc, Lists.newArrayList(nlc));
-            Stream<String> crssFromDirectMappings = nlcs.stream().filter(nlcToCRSMap::containsKey).map(nlcToCRSMap::get);
-            Stream<String> crssFromStationGroups = nlcs.stream().filter(stationGroups::containsKey).map(stationGroups::get).flatMap(Collection::stream);
-            List<String> crss = Stream.concat(crssFromDirectMappings, crssFromStationGroups).collect(Collectors.toList());
-            return crss.stream().filter(crsToStation::containsKey).map(crsToStation::get).map(s -> s.stationId).collect(Collectors.toList());
-        });
-    }
-
-    private List<String> getStationIDsFromNLC2(String nlc) {
-        return nlcToStationIDsMap.computeIfAbsent(nlc, x -> {
-            List<String> nlcs = Lists.newArrayList(nlc);
             Stream<String> crssFromDirectMappings = nlcs.stream().filter(nlcToCRSMap::containsKey).map(nlcToCRSMap::get);
             Stream<String> crssFromStationGroups = nlcs.stream().filter(stationGroups::containsKey).map(stationGroups::get).flatMap(Collection::stream);
             List<String> crss = Stream.concat(crssFromDirectMappings, crssFromStationGroups).collect(Collectors.toList());

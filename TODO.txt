@@ -2,6 +2,8 @@ Some fares can be overridden like so, but we dont show the override: http://www.
     This means many of the fare prices quoted are incorrect
     A cluster fare is overridden if a specific fare with the same route code exists.
 
+Anytime fares should be shown always, even when off peak selected. Sometimes off peak is more expensive!
+
 Convex hull on voronoi - I have tried this many times. It might be easier with different voronoi lib
 Dijkstra to read in lines.json and optimise for price and then number of changes.
 
