@@ -24,7 +24,7 @@ function splitFaresIntoValidAndNonValidForTravelTime(fares, travelTimePreference
     } else { // valid = fares marked as off-peak only and anytime fares with no off-peak equivalent.
         const universalFares = peakFares.filter(fare => !(fare.hops && fare.hops.length > 0) &&
             !offPeakFares.some(oFare =>
-            oFare.ticketType === fare.ticketType && oFare.routeDescription === fare.routeDescription));
+            oFare.ticketName === fare.ticketName && oFare.routeDescription === fare.routeDescription));
         return {valid: offPeakFares.concat(universalFares), invalid: peakFares.filter(f => universalFares.indexOf(f) < 0)};
     }
 }
