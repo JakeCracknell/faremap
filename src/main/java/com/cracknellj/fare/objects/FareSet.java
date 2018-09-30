@@ -25,18 +25,8 @@ public class FareSet {
         add(fare.toId, fare.fareDetail);
     }
 
-    // TODO Does this even work. Check HAT -> BWK
     public void add(String toId, FareDetail fareDetailToAdd) {
         List<FareDetail> fareDetails = fares.computeIfAbsent(toId, x -> new FareDetailCollection());
-        for (int i = 0; i < fareDetails.size(); i++) {
-            FareDetail fareDetailToReplace = fareDetails.get(i);
-            if (fareDetailToAdd.equalsExceptForPrice(fareDetailToReplace)) {
-                if (fareDetailToAdd.price < fareDetailToReplace.price) {
-                    fareDetails.set(i, fareDetailToAdd);
-                }
-                return;
-            }
-        }
         fareDetails.add(fareDetailToAdd);
     }
 

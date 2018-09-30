@@ -71,9 +71,6 @@ public class AtocDataReader {
                     if (!isOverridable || !keysToKeep.contains(clusterKey)) {
                         List<String> toStationIds = getStationIDsFromNLC(toClusterNlc);
                         addFareForEach(fare.fareDetail, fromStationIds, toStationIds);
-                        if (fare.reversible) { //might be incorrect. what if one direction is overridden?
-                            addFareForEach(fare.fareDetail, toStationIds, fromStationIds);
-                        }
                     }  // ELSE Cluster fare is to be overwritten by non-cluster fare. e.g. York to Selby.
                 }
             }

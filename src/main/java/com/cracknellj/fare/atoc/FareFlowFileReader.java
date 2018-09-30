@@ -49,7 +49,11 @@ public class FareFlowFileReader extends AtocFileReader {
                                 FareDetail fare = new FareDetail(Integer.parseInt(farePence), ticketCode.isOffPeak(),
                                         ticketName, true, false);
                                 fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc,
-                                        atocFlowRecord.reversible, atocFlowRecord.routeCode, fare));
+                                        atocFlowRecord.routeCode, fare));
+                                if (atocFlowRecord.reversible) {
+                                    fares.add(new AtocFare(atocFlowRecord.toNlc, atocFlowRecord.fromNlc,
+                                            atocFlowRecord.routeCode, fare));
+                                }
                             }
                         }
                 }
