@@ -36,6 +36,14 @@ public class FareDetail {
         this.price = hops.stream().mapToInt(h -> h.fareDetail.price).sum();
     }
 
+    public boolean equalsExceptForPrice(FareDetail other) {
+        return offPeakOnly == other.offPeakOnly &&
+                isDefaultRoute == other.isDefaultRoute &&
+                isTFL == other.isTFL &&
+                Objects.equals(ticketName, other.ticketName) &&
+                Objects.equals(routeDescription, other.routeDescription);
+    }
+
     @Override
     public String toString() {
         return "FareDetail{" +
