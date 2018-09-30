@@ -53,6 +53,7 @@ public class AtocDataReader {
     }
 
     private void convertDataIntoFares() {
+        LOG.info("Converting raw fares list into FareSets");
         Set<String> keysToKeep = rawFaresList.stream()
                 .filter(f -> !stationClusters.containsKey(f.fromNlc) && !stationClusters.containsKey(f.toNlc))
                 .map(AtocFare::getKey).collect(Collectors.toSet());
