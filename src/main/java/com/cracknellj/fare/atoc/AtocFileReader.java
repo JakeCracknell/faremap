@@ -12,7 +12,8 @@ public abstract class AtocFileReader {
 
     private static final String FILE_PATH_PREFIX = "atoc";
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("ddMMyyyy");
-    private Path filePath;
+    private static final LocalDate QUERY_DATE = LocalDate.now();
+    private final Path filePath;
 
     public AtocFileReader(String fileExtension) throws IOException {
         this.filePath = Files.list(Paths.get(FILE_PATH_PREFIX))
@@ -27,9 +28,9 @@ public abstract class AtocFileReader {
 
     protected boolean isCurrentTimeBetweenDateString(String startDateInclusive, String endDateInclusive) {
         LocalDate startDate = LocalDate.parse(startDateInclusive, DATE_FORMAT);
-        if (!LocalDate.now().isBefore(startDate)) {
+        if (!QUERY_DATE.isBefore(startDate)) {
             LocalDate endDate = LocalDate.parse(endDateInclusive, DATE_FORMAT);
-            return !LocalDate.now().isAfter(endDate);
+            return !QUERY_DATE.isAfter(endDate);
         }
         return false;
     }
