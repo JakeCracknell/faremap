@@ -1,4 +1,4 @@
-# fare_map
+# faremap
 Mapping UK train fares and split tickets, using data from ATOC and TFL.
 
 http://faremap.ml
