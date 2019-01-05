@@ -1,7 +1,7 @@
-target/
+/target/
 *.iml
 .idea
 *.log
-atoc/
-stationusage/
-web/data/fares/
+/atoc/
+/stationusage/
+/web/data/fares/
