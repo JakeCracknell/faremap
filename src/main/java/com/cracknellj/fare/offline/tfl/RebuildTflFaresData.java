@@ -13,7 +13,6 @@ import org.apache.logging.log4j.Logger;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
-import java.sql.SQLException;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -57,9 +56,9 @@ public class RebuildTflFaresData {
 
     private static void logProgress(int completedCount, int totalCount, Stopwatch stopwatch) {
         double percComplete = (double) completedCount / totalCount;
-        Duration timeLeft = Duration.ofMillis((long) (stopwatch.elapsed().toMillis() / percComplete));
+        Duration timeLeft = Duration.ofMillis((long) (stopwatch.elapsed().toMillis() * (1.0 / percComplete - 1)));
         LOG.info(String.format("%d/%d completed, %.3f%%, %s elapsed, %s left, ETA %s", completedCount, totalCount,
-                percComplete, stopwatch.elapsed(), timeLeft, LocalDateTime.now().plus(timeLeft)));
+                percComplete * 100, stopwatch.elapsed(), timeLeft, LocalDateTime.now().plus(timeLeft)));
     }
 
     private static List<Fare> getMissingFaresToQuery(Map<String, FareSet> fareSetMap) {
@@ -74,7 +73,7 @@ public class RebuildTflFaresData {
 
     private static void writeFaresToFile(Map<String, FareSet> fareSetMap) {
         try (OutputStreamWriter writer = new OutputStreamWriter(new BufferedOutputStream(
-                new GZIPOutputStream(new FileOutputStream("tfl2.json.gz"))))) {
+                new GZIPOutputStream(new FileOutputStream(System.currentTimeMillis() + "-tfl.json.gz"))))) {
             Gson gson = new Gson();
             gson.toJson(fareSetMap, writer);
         } catch (Exception e) {
