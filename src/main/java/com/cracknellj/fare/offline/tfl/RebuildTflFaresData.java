@@ -23,7 +23,7 @@ public class RebuildTflFaresData {
     private static TflFareScraper tflFareScraper = new TflFareScraper();
     private static List<String> stationIds;
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         stationIds = StationFileReader.getStations().stream()
                 .filter(s -> s.tags.contains(StationTag.OYSTER))
                 .map(s -> s.stationId)

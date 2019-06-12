@@ -797,18 +797,6 @@
     "yearlyUsage": 19200000
   },
   {
-    "stationId": "910GANGELRD",
-    "stationName": "Angel Road",
-    "tags": [
-      "TRAIN",
-      "OYSTER"
-    ],
-    "latitude": 51.6124,
-    "longitude": -0.048791,
-    "crs": "AGR",
-    "yearlyUsage": 33544
-  },
-  {
     "stationId": "910GANGMRNG",
     "stationName": "Angmering",
     "tags": [
@@ -2249,7 +2237,8 @@
     "stationId": "910GBAYFORD",
     "stationName": "Bayford",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.7577,
     "longitude": -0.09561,
@@ -7851,7 +7840,8 @@
     "stationId": "910GCUFFLEY",
     "stationName": "Cuffley",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.7087,
     "longitude": -0.109783,
@@ -10216,7 +10206,8 @@
     "stationId": "910GEPSM",
     "stationName": "Epsom",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.3344,
     "longitude": -0.268778,
@@ -14113,7 +14104,8 @@
     "stationId": "910GHFDN",
     "stationName": "Hertford North",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.7989,
     "longitude": -0.091788,
@@ -19230,6 +19222,18 @@
     "longitude": 0.356952,
     "crs": "MEP",
     "yearlyUsage": 322562
+  },
+  {
+    "stationId": "910GMWRWSTN",
+    "stationName": "Meridian Water",
+    "tags": [
+      "TRAIN",
+      "OYSTER"
+    ],
+    "latitude": 51.610034,
+    "longitude": -0.050196,
+    "crs": "MRW",
+    "yearlyUsage": 33544
   },
   {
     "stationId": "910GMRRYTON",
