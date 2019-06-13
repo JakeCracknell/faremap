@@ -27,7 +27,6 @@ body {
 .selected-route-line {
     stroke-width: 5px;
     stroke-dasharray: 3;
-    animation: dash 1000s linear infinite;
 }
 
 @keyframes dash {
