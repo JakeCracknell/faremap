@@ -15,23 +15,13 @@ function stationPeek(station) {
 }
 
 function stationSelect(station) {
-    if (station === selectedSourceStation) {
-        resetSourceStation();
-    } else if (!selectedSourceStation) {
-        selectedSourceStation = station;
-        setTypeAheadField("");
-        $("#selected-source-text").text(selectedSourceStation.formattedName);
-        $("#selected-source, #pending-destination-header").show();
-        $("#pending-source-header").hide();
-        loadFaresAsync();
-    } else if (!selectedDestinationStation) {
-        selectedDestinationStation = station;
-        $("#selected-destination-text").text(selectedDestinationStation.formattedName);
-        $("#selected-destination").show();
-        $("#pending-destination-header, #pending-station-picker-div").hide();
-        showStationFaresAndRouteForPeekOrSelect(selectedDestinationStation);
+    if (!station.fares || station.fares.length === 0) {
+        station.fares = [{"price":210,"offPeakOnly":false,"ticketName":"CBB SUPER OFFPEAK S FB","isDefaultRoute":true,"isTFL":false,"routeDescription":"ANY - PERMITTED"}];
+    } else {
+        station.fares = [];
     }
-    setSelectableStatusOnStationPolygons();
+    initialiseFareSets(station);
+    drawMap();
 }
 
 function showStationFaresAndRouteForPeekOrSelect(station) {
