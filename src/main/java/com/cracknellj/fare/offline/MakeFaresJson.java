@@ -17,11 +17,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MakeFaresJson {
     private static final Logger LOG = LogManager.getLogger(MakeFaresJson.class);
+    public static final Gson GSON = new Gson();
 
     //Takes 30 mins to regenerate everything
     public static void main(String[] args) throws Exception {
@@ -32,26 +35,34 @@ public class MakeFaresJson {
                 .map(p -> p.getFileName().toString().replace(".json", ""))
                 .collect(Collectors.toSet());
 
-        stations.values().parallelStream()
+        doWithTwiceAsManyThreads(() -> stations.values().parallelStream().filter(s -> s.stationName.startsWith("Ba"))
                 .map(s -> s.stationId)
-                .forEach(station -> {
+                .forEach(stationId -> {
                     Stopwatch stopwatch = Stopwatch.createStarted();
-                    LOG.info("Starting " + station);
+                    logTime(stationId, "starting", stopwatch);
                     FareSet splitTicketFareset = Stream.of(
-                            new OffPeakDijkstraSplitTicketTask(stations, fareDataProvider, station),
-                            new PeakTimeDijkstraSplitTicketTask(stations, fareDataProvider, station)
-                            ).map(DijkstraSplitTicketTask::findCheapestRoutes)
-                            .reduce(FareSet::combine).orElse(new FareSet(station));
-                    splitTicketFareset.combineWith(fareDataProvider.getFaresFrom(station));
-                    LOG.info(String.format("Completed %s in %d seconds", station, stopwatch.elapsed().getSeconds()));
+                            new OffPeakDijkstraSplitTicketTask(stations, fareDataProvider, stationId),
+                            new PeakTimeDijkstraSplitTicketTask(stations, fareDataProvider, stationId)
+                    ).map(DijkstraSplitTicketTask::findCheapestRoutes)
+                            .reduce(FareSet::combine).orElse(new FareSet(stationId));
+                    splitTicketFareset.combineWith(fareDataProvider.getFaresFrom(stationId));
+                    logTime(stationId, "calculation complete", stopwatch);
                     writeFaresJson(splitTicketFareset);
-                });
+                    logTime(stationId, "json file written", stopwatch);
+                }));
+    }
+
+    private static void logTime(String stationId, String stepComplete, Stopwatch stopwatch) {
+        LOG.info(String.format("%s - %s - %.2f seconds", stationId, stepComplete, stopwatch.elapsed().toMillis() / 1000.0));
+    }
+
+    private static void doWithTwiceAsManyThreads(Runnable task) throws InterruptedException, ExecutionException {
+        new ForkJoinPool(Runtime.getRuntime().availableProcessors() * 2).submit(task).get();
     }
 
     private static void writeFaresJson(FareSet fareSet) {
         try (Writer writer = Files.newBufferedWriter(Paths.get("web", "data", "fares", fareSet.fromId + ".json"))) {
-            new Gson().toJson(fareSet, writer);
-            LOG.info("Writing data for " + fareSet.fromId + " - DONE");
+            GSON.toJson(fareSet, writer);
         } catch (Exception e) {
             e.printStackTrace();
         }
