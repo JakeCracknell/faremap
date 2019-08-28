@@ -4519,7 +4519,8 @@
     "stationId": "910GBRKMNPK",
     "stationName": "Brookmans Park",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.7211,
     "longitude": -0.204549,
@@ -22935,7 +22936,8 @@
     "stationId": "910GPOTRSBR",
     "stationName": "Potters Bar",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.6971,
     "longitude": -0.192605,
@@ -23379,7 +23381,8 @@
     "stationId": "910GRADLETT",
     "stationName": "Radlett",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.6852,
     "longitude": -0.317244,
