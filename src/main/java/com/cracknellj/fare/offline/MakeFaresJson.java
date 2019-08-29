@@ -35,7 +35,7 @@ public class MakeFaresJson {
                 .map(p -> p.getFileName().toString().replace(".json", ""))
                 .collect(Collectors.toSet());
 
-        doWithTwiceAsManyThreads(() -> stations.values().parallelStream().filter(s -> s.stationName.startsWith("Ba"))
+        doWithTwiceAsManyThreads(() -> stations.values().parallelStream()
                 .map(s -> s.stationId)
                 .forEach(stationId -> {
                     Stopwatch stopwatch = Stopwatch.createStarted();
