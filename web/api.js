@@ -30,9 +30,10 @@ function onFaresLoaded(fareJson) {
 }
 
 function showAjaxProgressOnProgressBar() {
+    let total = d3.event.total || Math.max(500000, d3.event.loaded); // if (mod_deflate) then total=0
     $("#progress-container").show();
-    $("#progress-bar").css("width", 100 * (d3.event.loaded / d3.event.total) + "%");
-    $("#progress-footer").text(`${Math.round(d3.event.loaded / 1024)} / ${Math.round(d3.event.total / 1024)} KB`);
+    $("#progress-bar").css("width", 100 * (d3.event.loaded / total) + "%");
+    $("#progress-footer").text(`${Math.round(d3.event.loaded / 1024)} / ${Math.round(total / 1024)} KB`);
 }
 
 function resetProgressBarAndShowText(text) {
