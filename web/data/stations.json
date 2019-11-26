@@ -5254,7 +5254,7 @@
     "latitude": 52.2233,
     "longitude": 0.157778,
     "crs": "CMB",
-    "yearlyUsage": 0
+    "yearlyUsage": 488878
   },
   {
     "stationId": "910GCMBSLNG",
@@ -13255,7 +13255,8 @@
     "stationId": "910GHRPNDN",
     "stationName": "Harpenden",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.8146,
     "longitude": -0.35148,
@@ -13494,7 +13495,8 @@
     "stationId": "910GHATFILD",
     "stationName": "Hatfield (Herts)",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.7639,
     "longitude": -0.215589,
@@ -15230,7 +15232,7 @@
     "latitude": 52.9796,
     "longitude": -1.29493,
     "crs": "ILN",
-    "yearlyUsage": 0
+    "yearlyUsage": 252772
   },
   {
     "stationId": "910GILKLEY",
@@ -18318,7 +18320,7 @@
     "latitude": 53.7499,
     "longitude": -1.7534,
     "crs": "LMR",
-    "yearlyUsage": 0
+    "yearlyUsage": 133060
   },
   {
     "stationId": "910GLOWDHAM",
@@ -18380,7 +18382,8 @@
     "stationId": "910GLUTOAPY",
     "stationName": "Luton Airport Parkway",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.8724,
     "longitude": -0.395881,
@@ -26586,7 +26589,8 @@
     "stationId": "910GSTALBCY",
     "stationName": "St Albans City",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.7505,
     "longitude": -0.327538,
@@ -30222,7 +30226,8 @@
     "stationId": "910GWELHAMG",
     "stationName": "Welham Green",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.7364,
     "longitude": -0.210692,
@@ -30278,7 +30283,8 @@
     "stationId": "910GWLWYNGC",
     "stationName": "Welwyn Garden City",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.801,
     "longitude": -0.20407,
