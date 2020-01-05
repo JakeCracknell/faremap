@@ -4843,7 +4843,8 @@
     "stationId": "910GBNHAM",
     "stationName": "Burnham (Berks)",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5235,
     "longitude": -0.646374,
@@ -15451,7 +15452,8 @@
     "stationId": "910GIVER",
     "stationName": "Iver",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5085,
     "longitude": -0.506726,
@@ -16762,7 +16764,8 @@
     "stationId": "910GLANGLEY",
     "stationName": "Langley (Berks)",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5081,
     "longitude": -0.541756,
@@ -18571,7 +18574,8 @@
     "stationId": "910GMDNHEAD",
     "stationName": "Maidenhead",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5187,
     "longitude": -0.72266,
@@ -23599,7 +23603,8 @@
     "stationId": "910GRDNGSTN",
     "stationName": "Reading",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.4588,
     "longitude": -0.971863,
@@ -25859,7 +25864,8 @@
     "stationId": "910GSLOUGH",
     "stationName": "Slough",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5119,
     "longitude": -0.59151,
@@ -28201,7 +28207,8 @@
     "stationId": "910GTAPLOW",
     "stationName": "Taplow",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5236,
     "longitude": -0.68137,
@@ -29206,7 +29213,8 @@
     "stationId": "910GTWYFORD",
     "stationName": "Twyford",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.4755,
     "longitude": -0.863293,
