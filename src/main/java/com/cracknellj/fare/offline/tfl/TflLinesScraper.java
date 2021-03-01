@@ -36,7 +36,7 @@ public class TflLinesScraper {
                 request.connect();
                 return Optional.ofNullable(IOUtils.toString(new InputStreamReader(request.getInputStream())));
             } catch (Exception e) {
-                LOG.error(String.format("Failed to get %s. Try [%d/%d]", urlString, tryNumber, MAX_TRIES), e);
+                LOG.error(String.format("Failed to get %s. Try [%d/%d] (%s)", urlString, tryNumber, MAX_TRIES, e));
             }
         }
         return Optional.empty();

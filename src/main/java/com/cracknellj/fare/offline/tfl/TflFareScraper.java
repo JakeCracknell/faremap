@@ -23,7 +23,8 @@ public class TflFareScraper {
     private final Gson gson = new Gson();
 
     public List<Fare> lookupFare(String fromId, String toId) {
-        String urlString = String.format("https://api.tfl.gov.uk/Stoppoint/%s/FareTo/%s", fromId, toId);
+        String urlString = String.format("https://api.tfl.gov.uk/Stoppoint/%s/FareTo/%s/" +
+                "?app_id=8268063a&app_key=14f7f5ff5d64df2e88701cef2049c804", fromId, toId);
         List<FareDetail> fareDetails = lookupFareInternalMultiTry(urlString);
         LOG.info(String.format("Retrieved %d fares from %s", fareDetails.size(), urlString));
         return fareDetails.stream().map(fd -> new Fare(fromId, toId, fd)).collect(Collectors.toList());
@@ -37,7 +38,7 @@ public class TflFareScraper {
                 }
                 return lookupFareInternalOneTry(urlString);
             } catch (Exception e) {
-                LOG.error(String.format("Failed to get %s. Try [%d/%d]", urlString, tryNumber, MAX_TRIES), e);
+                LOG.error(String.format("Failed to get %s. Try [%d/%d] (%s)", urlString, tryNumber, MAX_TRIES, e));
             }
         }
         return Collections.emptyList();
