@@ -3839,6 +3839,17 @@
     "yearlyUsage": 5660000
   },
   {
+    "stationId": "910GBOWSTRT",
+    "stationName": "Bow Street",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 52.44,
+    "longitude": -4.03,
+    "crs": "BOW",
+    "yearlyUsage": 0
+  },
+  {
     "stationId": "910GBOWESPK",
     "stationName": "Bowes Park",
     "tags": [
@@ -14706,6 +14717,17 @@
     "yearlyUsage": 1332
   },
   {
+    "stationId": "910GHORDEN",
+    "stationName": "Horden",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 54.763879,
+    "longitude": -1.307347,
+    "crs": "HRE",
+    "yearlyUsage": 0
+  },
+  {
     "stationId": "910GHORLEY",
     "stationName": "Horley",
     "tags": [
@@ -16279,6 +16301,17 @@
     "longitude": -1.44599,
     "crs": "KIT",
     "yearlyUsage": 99484
+  },
+  {
+    "stationId": "910GKINTORE",
+    "stationName": "Kintore",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 57.243611,
+    "longitude": -2.350278,
+    "crs": "KTR",
+    "yearlyUsage": 0
   },
   {
     "stationId": "910GKIRBYX",

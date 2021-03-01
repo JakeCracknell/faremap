@@ -18,3 +18,8 @@ To generate the JSON files in `web/data/fares/`:
 
 ## Rebuilding TfL data
 Run `RebuildTflFaresData.java`. It will look at any stations with the tag OYSTER in `stations.json` and attempt to fill in any gaps it sees in `tfl.json.gz`. If you want to rebuild the file from scratch, delete it, run as normal and prepare to wait a few hours.
+
+## Useful Resources
+For adding new stations to stations.json:
+* https://www.railfuture.org.uk/New+stations
+* http://www.railwaycodes.org.uk/crs/crsb.shtm
