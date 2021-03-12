@@ -1,5 +1,12 @@
-let preferredFareSelectorFunction = getPreferredFareSelectorFunction("cheapest", "peak");
+let preferredFareSelectorFunction;
 let maxPriceCurrentlyDisplayed = 0;
+
+function setPreferredFareSelectorFunctionFromChecked() {
+    preferredFareSelectorFunction = getPreferredFareSelectorFunction(
+        document.querySelector('input[name="route-preference-options"]:checked').value,
+        document.querySelector('input[name="travel-time-options"]:checked').value
+    );
+}
 
 function getPreferredFareSelectorFunction(routePreference, travelTimePreference) {
     return function (fares) {

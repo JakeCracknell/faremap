@@ -10,15 +10,13 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     .addTo(map);
 
 $("input[name*='-options']:radio").change(e => {
-    preferredFareSelectorFunction = getPreferredFareSelectorFunction(
-        document.querySelector('input[name="route-preference-options"]:checked').value,
-        document.querySelector('input[name="travel-time-options"]:checked').value
-    );
+    setPreferredFareSelectorFunctionFromChecked();
     drawMap();
 });
 
 $("#selected-source").find(".station-deselect-button").click(resetSourceStation);
 $("#selected-destination").find(".station-deselect-button").click(resetDestinationStation);
 
+setPreferredFareSelectorFunctionFromChecked();
 initialiseColorKey();
 loadStationsAsync();
