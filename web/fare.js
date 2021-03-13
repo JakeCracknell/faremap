@@ -39,7 +39,7 @@ function splitFaresIntoValidAndNonValidForTravelTime(fares, travelTimePreference
 function setMaxPriceCurrentlyDisplayedFromList(stations) {
     maxPriceCurrentlyDisplayed = stations.reduce(function (currentMax, thisPoint) {
         const fare = preferredFareSelectorFunction(thisPoint.fares).preferred; //Poss to use original func?
-        if (fare !== undefined) {
+        if (fare !== undefined && fare.price < 500_00) { // MUF makes this necessary. TODO: fix in atoc code?
             return Math.max(currentMax, fare.price);
         } else {
             return currentMax;
