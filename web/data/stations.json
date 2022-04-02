@@ -2212,6 +2212,18 @@
     "yearlyUsage": 1782560
   },
   {
+    "stationId": "940GZZBPSUST",
+    "stationName": "Battersea Power Station",
+    "tags": [
+      "TUBE",
+      "OYSTER"
+    ],
+    "latitude": 51.47950,
+    "longitude": -0.14200,
+    "crs": "ZLT",
+    "yearlyUsage": 1782560
+  },
+  {
     "stationId": "910GBATTLE",
     "stationName": "Battle",
     "tags": [
@@ -13835,7 +13847,7 @@
   },
   {
     "stationId": "940GZZLUHRC",
-    "stationName": "Heathrow Terminals 1-2-3",
+    "stationName": "Heathrow Terminals 2 \u0026 3",
     "tags": [
       "TRAIN",
       "TUBE",
@@ -20834,6 +20846,18 @@
     "yearlyUsage": 161722
   },
   {
+    "stationId": "940GZZNEUGST",
+    "stationName": "Nine Elms",
+    "tags": [
+      "TUBE",
+      "OYSTER"
+    ],
+    "latitude": 51.48000,
+    "longitude": -0.12850,
+    "crs": "ZNM",
+    "yearlyUsage": 1782560
+  },
+  {
     "stationId": "910GNINIANP",
     "stationName": "Ninian Park",
     "tags": [
@@ -26015,6 +26039,17 @@
     "longitude": 1.2137,
     "crs": "SWO",
     "yearlyUsage": 6932
+  },
+  {
+    "stationId": "910GSOHAM",
+    "stationName": "Soham",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 52.33415,
+    "longitude": 0.32770,
+    "crs": "SOJ",
+    "yearlyUsage": 0
   },
   {
     "stationId": "910GSOLEST",
