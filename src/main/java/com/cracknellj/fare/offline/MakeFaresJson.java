@@ -12,15 +12,21 @@ import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.zip.GZIPOutputStream;
 
 public class MakeFaresJson {
     private static final Logger LOG = LogManager.getLogger(MakeFaresJson.class);
@@ -32,10 +38,11 @@ public class MakeFaresJson {
         CompositeFareDataProvider fareDataProvider = CompositeFareDataProvider.load();
 
         Set<String> existing = Files.list(Paths.get("web", "data", "fares"))
-                .map(p -> p.getFileName().toString().replace(".json", ""))
+                .map(p -> p.getFileName().toString().replace(".json.gz", ""))
                 .collect(Collectors.toSet());
 
         doWithTwiceAsManyThreads(() -> stations.values().parallelStream()
+                //.filter(s -> Arrays.asList("HAT","PBR","HMC","BNS", "KWG","RMD","SAC","TED","PUT","HDW","BPK").contains(s.crs))
                 .map(s -> s.stationId)
                 .forEach(stationId -> {
                     Stopwatch stopwatch = Stopwatch.createStarted();
@@ -61,11 +68,13 @@ public class MakeFaresJson {
     }
 
     private static void writeFaresJson(FareSet fareSet) {
-        try (Writer writer = Files.newBufferedWriter(Paths.get("web", "data", "fares", fareSet.fromId + ".json"))) {
-            GSON.toJson(fareSet, writer);
+        Path path = Paths.get("web", "data", "fares", fareSet.fromId + ".json.gz");
+        try (OutputStreamWriter writer = new OutputStreamWriter(new BufferedOutputStream(
+                new GZIPOutputStream(Files.newOutputStream(path.toFile().toPath()))))) {
+            Gson gson = new Gson();
+            gson.toJson(fareSet, writer);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
