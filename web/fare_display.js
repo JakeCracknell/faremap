@@ -64,8 +64,6 @@ function populateSplitTicketModal(splitTicketFare) {
 function getFareTitle(fare) {
     if (fare.hops !== undefined) {
         return "Split Ticket (" + fare.hops.length + " hops)";
-    } else if (fare.isTFL) {
-        return "TFL Oyster / Contactless";
     } else {
         return fare.ticketName;
     }

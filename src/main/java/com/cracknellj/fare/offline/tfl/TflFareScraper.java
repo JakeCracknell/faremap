@@ -55,9 +55,10 @@ public class TflFareScraper {
             for (TFLResponseRow row : section.rows) {
                 for (TFLResponseTicket ticket : row.ticketsAvailable) {
                     if (!ticket.ticketType.type.equals("CashSingle")) {
+                        String ticketName = "TFL " + (row.contactlessPAYGOnlyFare ? "" : "Oyster / ") + "Contactless";
                         FareDetail fareDetail = new FareDetail(ticket.cost.multiply(PRICE_MULTIPLICAND).intValue(),
                                 "Off Peak".equals(ticket.ticketTime.type),
-                                "TFL", section.index == 1, true);
+                                ticketName, section.index == 1, true);
                         fareDetail.routeDescription = row.routeDescription;
                         fareDetails.add(fareDetail);
                     }
@@ -75,6 +76,7 @@ public class TflFareScraper {
     private class TFLResponseRow {
         public String routeDescription;
         public List<TFLResponseTicket> ticketsAvailable;
+        public boolean contactlessPAYGOnlyFare;
     }
 
     private class TFLResponseTicket {

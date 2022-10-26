@@ -42,7 +42,6 @@ public class MakeFaresJson {
                 .collect(Collectors.toSet());
 
         doWithTwiceAsManyThreads(() -> stations.values().parallelStream()
-                //.filter(s -> Arrays.asList("HAT","PBR","HMC","BNS", "KWG","RMD","SAC","TED","PUT","HDW","BPK").contains(s.crs))
                 .map(s -> s.stationId)
                 .forEach(stationId -> {
                     Stopwatch stopwatch = Stopwatch.createStarted();
