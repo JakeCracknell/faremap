@@ -1866,6 +1866,19 @@
     "yearlyUsage": 1620000
   },
   {
+    "stationId": "910GBKRVS",
+    "stationName": "Barking Riverside",
+    "tags": [
+      "TRAIN",
+      "TUBE",
+      "OYSTER"
+    ],
+    "latitude": 51.519108,
+    "longitude": 0.114764,
+    "crs": "BGV",
+    "yearlyUsage": 0
+  },
+  {
     "stationId": "910GBARLSTN",
     "stationName": "Barlaston",
     "tags": [
@@ -23860,6 +23873,17 @@
     "longitude": -4.58613,
     "crs": "RTN",
     "yearlyUsage": 118166
+  },
+  {
+    "stationId": "910GRESTON",
+    "stationName": "Reston",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 55.8506,
+    "longitude": -2.1972,
+    "crs": "RSN",
+    "yearlyUsage": 0
   },
   {
     "stationId": "910GRTFD",
