@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 import java.util.zip.GZIPOutputStream;
 
 public class RebuildTflFaresData {
+    private static final boolean REWRITE_ALL = false;
     private static final Logger LOG = LogManager.getLogger(RebuildTflFaresData.class);
 
     private static TflFareScraper tflFareScraper = new TflFareScraper();
@@ -33,6 +34,11 @@ public class RebuildTflFaresData {
                 .sorted().collect(Collectors.toList());
 
         Map<String, FareSet> fareSetMap = new TFLDataProvider().getAllFareSets();
+        if (REWRITE_ALL) {
+            LOG.info("Clearing all fares, as REWRITE_ALL is set");
+            fareSetMap.clear();
+        }
+
         List<Fare> faresToQuery = getMissingFaresToQuery(fareSetMap);
         LOG.info("There are " + faresToQuery.size() + " fares to query");
         List<Fare> faresToInsert = lookupFares(faresToQuery);
