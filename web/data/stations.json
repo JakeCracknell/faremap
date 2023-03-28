@@ -3799,7 +3799,8 @@
     "stationId": "910GBORNEND",
     "stationName": "Bourne End",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5771,
     "longitude": -0.710473,
@@ -7194,7 +7195,8 @@
     "stationId": "910GCOOKHAM",
     "stationName": "Cookham",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5575,
     "longitude": -0.722079,
@@ -11414,7 +11416,8 @@
     "stationId": "910GFURZEP",
     "stationName": "Furze Platt",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.533,
     "longitude": -0.728473,
@@ -14053,7 +14056,8 @@
     "stationId": "910GHNLYOT",
     "stationName": "Henley-on-Thames",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5342,
     "longitude": -0.900212,
@@ -18980,7 +18984,8 @@
     "stationId": "910GMARLOW",
     "stationName": "Marlow",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.571,
     "longitude": -0.766431,
@@ -25574,7 +25579,8 @@
     "stationId": "910GSHPLAKE",
     "stationName": "Shiplake",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.5115,
     "longitude": -0.882602,
@@ -30053,7 +30059,8 @@
     "stationId": "910GWARGRAV",
     "stationName": "Wargrave",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.4982,
     "longitude": -0.876517,
@@ -31704,7 +31711,8 @@
     "stationId": "910GWINDSEC",
     "stationName": "Windsor \u0026 Eton Central",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "OYSTER"
     ],
     "latitude": 51.4833,
     "longitude": -0.61038,
