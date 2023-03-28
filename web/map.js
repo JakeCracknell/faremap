@@ -4,6 +4,7 @@ function drawMap() {
         stationsByIdMap.forEach(translateAndSetCoordinates);
         const drawableStations = getDrawableStationsAsList();
         setMaxPriceCurrentlyDisplayedFromList(drawableStations);
+        resetColorKey();
         createVoronoiPolygons(drawableStations);
         stationsByIdMap.forEach(initialiseFareSets);
         drawSvg(drawableStations);

@@ -88,3 +88,7 @@ body {
     width: 10%;
     height: 2em;
 }
+
+#color-key.locked {
+    border: 8px solid black;
+}
