@@ -41,6 +41,10 @@ public class RebuildTflFaresData {
 
         List<Fare> faresToQuery = getMissingFaresToQuery(fareSetMap);
         LOG.info("There are " + faresToQuery.size() + " fares to query");
+        LOG.info("In particular, the most missing fares are from: " + faresToQuery.stream()
+                .collect(Collectors.groupingBy(f -> f.fromId, Collectors.counting()))
+                .entrySet().stream().sorted(Comparator.comparing(e -> -e.getValue())).limit(50)
+                .collect(Collectors.toList()));
         List<Fare> faresToInsert = lookupFares(faresToQuery);
         faresToInsert.forEach(f -> fareSetMap.computeIfAbsent(f.fromId, (x) -> new FareSet(f.fromId)).add(f));
 
