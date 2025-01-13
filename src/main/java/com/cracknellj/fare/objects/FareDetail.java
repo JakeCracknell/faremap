@@ -12,34 +12,29 @@ public class FareDetail {
     public final List<FareDetailAndWaypoint> hops;
 
     public final int price; //in GBP pence
-    public final boolean offPeakOnly;
     public final String ticketName;
-    public final boolean isDefaultRoute;
-    public boolean isTFL;
     public String routeDescription = "";
+    public final boolean isDefaultRoute;
+    public final boolean offPeakOnly;
+    public final boolean isTFL;
+    public final boolean railcardsValid;
 
-    public FareDetail(int price, boolean offPeakOnly, String ticketName, boolean isDefaultRoute, boolean isTFL) {
-        this.price = price;
-        this.offPeakOnly = offPeakOnly;
-        this.ticketName = ticketName;
-        this.isDefaultRoute = isDefaultRoute;
-        this.isTFL = isTFL;
-        this.hops = null;
-    }
-
-    public FareDetail(List<FareDetailAndWaypoint> hops, boolean offPeakOnly) {
-        this.ticketName = "Split Ticket";
+    public FareDetail(List<FareDetailAndWaypoint> hops, int price, String ticketName, String routeDescription, boolean isDefaultRoute, boolean offPeakOnly, boolean isTFL, boolean railcardsValid) {
         this.hops = hops;
-        this.isDefaultRoute = false;
+        this.price = price;
+        this.ticketName = ticketName;
+        this.routeDescription = routeDescription;
+        this.isDefaultRoute = isDefaultRoute;
         this.offPeakOnly = offPeakOnly;
-        this.isTFL = hops.stream().allMatch(h -> h.fareDetail.isTFL);
-        this.price = hops.stream().mapToInt(h -> h.fareDetail.price).sum();
+        this.isTFL = isTFL;
+        this.railcardsValid = railcardsValid;
     }
 
     public boolean equalsExceptForPrice(FareDetail other) {
         return offPeakOnly == other.offPeakOnly &&
                 isDefaultRoute == other.isDefaultRoute &&
                 isTFL == other.isTFL &&
+                railcardsValid == other.railcardsValid &&
                 Objects.equals(ticketName, other.ticketName) &&
                 Objects.equals(routeDescription, other.routeDescription);
     }

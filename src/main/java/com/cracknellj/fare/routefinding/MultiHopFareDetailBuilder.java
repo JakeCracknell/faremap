@@ -1,6 +1,7 @@
 package com.cracknellj.fare.routefinding;
 
 import com.cracknellj.fare.objects.FareDetail;
+import com.cracknellj.fare.objects.FareDetailBuilder;
 import com.cracknellj.fare.objects.FareDetailCollection;
 import com.cracknellj.fare.objects.Station;
 
@@ -45,9 +46,9 @@ public class MultiHopFareDetailBuilder {
     }
 
     private FareDetail getFareDetailFromNodes(List<FareDetailAndWaypoint> nodes) {
-        FareDetail fareDetail = new FareDetail(nodes, offPeakOnly);
-        fareDetail.routeDescription = "Via " + nodes.stream().limit(nodes.size() - 1)
+        String routeDescription = "Via " + nodes.stream().limit(nodes.size() - 1)
                 .map(n -> stations.get(n.waypoint).stationName).collect(Collectors.joining(", "));
+        FareDetail fareDetail = new FareDetailBuilder().withSplitTicketHops(nodes).withRouteDescription(routeDescription).build();
         return fareDetail;
     }
 }

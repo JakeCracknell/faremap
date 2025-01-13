@@ -1,6 +1,7 @@
 package com.cracknellj.fare.atoc;
 
 import com.cracknellj.fare.objects.FareDetail;
+import com.cracknellj.fare.objects.FareDetailBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -46,8 +47,14 @@ public class FareFlowFileReader extends AtocFileReader {
                             if (atocFlowRecord != null) {
                                 //e.g. SDS OFF-PEAK S VW
                                 String ticketName = ticketCode.ticketCode + " " + ticketCode.description.trim() + " " + restriction;
-                                FareDetail fare = new FareDetail(Integer.parseInt(farePence), ticketCode.isOffPeak(),
-                                        ticketName, true, false);
+                                FareDetail fare = new FareDetailBuilder()
+                                        .withPrice(Integer.parseInt(farePence))
+                                        .withOffPeakOnly(ticketCode.isOffPeak())
+                                        .withTicketName(ticketName)
+                                        .withIsDefaultRoute(true)
+                                        .withIsTFL(false)
+                                        .withIsRailcardsValid(true)
+                                        .build();
                                 fares.add(new AtocFare(atocFlowRecord.fromNlc, atocFlowRecord.toNlc,
                                         atocFlowRecord.routeCode, fare));
                                 if (atocFlowRecord.reversible) {

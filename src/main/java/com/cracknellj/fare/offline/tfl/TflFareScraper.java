@@ -2,6 +2,7 @@ package com.cracknellj.fare.offline.tfl;
 
 import com.cracknellj.fare.objects.Fare;
 import com.cracknellj.fare.objects.FareDetail;
+import com.cracknellj.fare.objects.FareDetailBuilder;
 import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -56,10 +57,15 @@ public class TflFareScraper {
                 for (TFLResponseTicket ticket : row.ticketsAvailable) {
                     if (!ticket.ticketType.type.equals("CashSingle")) {
                         String ticketName = "TFL " + (row.contactlessPAYGOnlyFare ? "" : "Oyster / ") + "Contactless";
-                        FareDetail fareDetail = new FareDetail(ticket.cost.multiply(PRICE_MULTIPLICAND).intValue(),
-                                "Off Peak".equals(ticket.ticketTime.type),
-                                ticketName, section.index == 1, true);
-                        fareDetail.routeDescription = row.routeDescription;
+                        FareDetail fareDetail = new FareDetailBuilder()
+                                .withPrice(ticket.cost.multiply(PRICE_MULTIPLICAND).intValue())
+                                .withOffPeakOnly("Off Peak".equals(ticket.ticketTime.type))
+                                .withTicketName(ticketName)
+                                .withRouteDescription(row.routeDescription)
+                                .withIsDefaultRoute(section.index == 1)
+                                .withIsTFL(true)
+                                .withIsRailcardsValid(!row.contactlessPAYGOnlyFare)
+                                .build();
                         fareDetails.add(fareDetail);
                     }
                 }

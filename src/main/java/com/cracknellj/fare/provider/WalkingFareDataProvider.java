@@ -2,10 +2,7 @@ package com.cracknellj.fare.provider;
 
 import com.cracknellj.fare.Haversine;
 import com.cracknellj.fare.io.StationFileReader;
-import com.cracknellj.fare.objects.FareDetail;
-import com.cracknellj.fare.objects.FareDetailCollection;
-import com.cracknellj.fare.objects.FareSet;
-import com.cracknellj.fare.objects.Station;
+import com.cracknellj.fare.objects.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +20,13 @@ public class WalkingFareDataProvider implements FareDataProvider {
                 double distance = Haversine.distance(fromStation, toStation);
                 if (fromStation != toStation && distance < DISTANCE_KM_THRESHOLD) {
                     FareDetailCollection fareDetailCollection = new FareDetailCollection(1);
-                    FareDetail fareDetail = new FareDetail(0, false, "Walk", true, false);
+                    FareDetail fareDetail = new FareDetailBuilder()
+                            .withPrice(0)
+                            .withOffPeakOnly(false)
+                            .withTicketName("Walk")
+                            .withIsDefaultRoute(true)
+                            .withIsTFL(false)
+                            .build();
                     fareDetail.routeDescription = String.format("%.1f km, a %.0f minutes walk", distance, distance * DISTANCE_KM_TO_MINUTES);
                     fareDetailCollection.add(fareDetail);
                     fareSetMap.computeIfAbsent(fromStation.stationId, x -> new FareSet(fromStation.stationId))

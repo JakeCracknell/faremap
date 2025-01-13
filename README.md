@@ -14,7 +14,7 @@ You can start a local web server in `web/`. You will see the station data, but n
 To generate the JSON files in `web/data/fares/`:
 1. Register here: http://data.atoc.org/
 2. Download the latest fares feed and copy all of the files into the `atoc/` directory
-3. Run `MakeFilesJson.java`. It should take less than an hour to run on a reasonably modern PC.
+3. Run `MakeFaresJson.java`. It should take less than an hour to run on a reasonably modern PC.
 
 
 ## Rebuilding TfL data
