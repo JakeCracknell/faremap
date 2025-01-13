@@ -57,14 +57,15 @@ public class TflFareScraper {
                 for (TFLResponseTicket ticket : row.ticketsAvailable) {
                     if (!ticket.ticketType.type.equals("CashSingle")) {
                         String ticketName = "TFL " + (row.contactlessPAYGOnlyFare ? "" : "Oyster / ") + "Contactless";
+                        boolean isOffPeak = "Off Peak".equals(ticket.ticketTime.type);
                         FareDetail fareDetail = new FareDetailBuilder()
                                 .withPrice(ticket.cost.multiply(PRICE_MULTIPLICAND).intValue())
-                                .withOffPeakOnly("Off Peak".equals(ticket.ticketTime.type))
+                                .withOffPeakOnly(isOffPeak)
                                 .withTicketName(ticketName)
                                 .withRouteDescription(row.routeDescription)
                                 .withIsDefaultRoute(section.index == 1)
                                 .withIsTFL(true)
-                                .withIsRailcardsValid(!row.contactlessPAYGOnlyFare)
+                                .withIsRailcardsValid(!row.contactlessPAYGOnlyFare && isOffPeak)
                                 .build();
                         fareDetails.add(fareDetail);
                     }
