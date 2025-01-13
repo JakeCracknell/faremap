@@ -4123,6 +4123,18 @@
     "yearlyUsage": 2520000
   },
   {
+    "stationId": "910GBRENTX",
+    "stationName": "Brent Cross West",
+    "tags": [
+      "TRAIN",
+      "TFLFARE"
+    ],
+    "latitude": 51.5687,
+    "longitude": -0.2269,
+    "crs": "BCZ",
+    "yearlyUsage": 0
+  },
+  {
     "stationId": "910GBNTFORD",
     "stationName": "Brentford",
     "tags": [
@@ -5343,6 +5355,17 @@
     "longitude": -3.81761,
     "crs": "CMO",
     "yearlyUsage": 132166
+  },
+  {
+    "stationId": "910GCMRNBDG",
+    "stationName": "Cameron Bridge",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 56.189693,
+    "longitude": -3.046855,
+    "crs": "CBX",
+    "yearlyUsage": 0
   },
   {
     "stationId": "910GCNDAW",
@@ -9613,6 +9636,17 @@
     "yearlyUsage": 1020364
   },
   {
+    "stationId": "910GELINTN",
+    "stationName": "East Linton",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 55.9856,
+    "longitude": -2.6579,
+    "crs": "ELT",
+    "yearlyUsage": 0
+  },
+  {
     "stationId": "910GEMALING",
     "stationName": "East Malling",
     "tags": [
@@ -13778,6 +13812,17 @@
     "yearlyUsage": 707426
   },
   {
+    "stationId": "910GHBOLTN",
+    "stationName": "Headbolt Lane",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 53.492835,
+    "longitude": -2.878862,
+    "crs": "HBL",
+    "yearlyUsage": 0
+  },
+  {
     "stationId": "910GHEADCRN",
     "stationName": "Headcorn",
     "tags": [
@@ -17279,6 +17324,17 @@
     "yearlyUsage": 556602
   },
   {
+    "stationId": "910GLEVEN",
+    "stationName": "Leven",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 56.1923,
+    "longitude": -3.002,
+    "crs": "LEV",
+    "yearlyUsage": 0
+  },
+  {
     "stationId": "910GLVHM",
     "stationName": "Levenshulme",
     "tags": [
@@ -19035,6 +19091,17 @@
     "longitude": -1.93075,
     "crs": "MSN",
     "yearlyUsage": 179912
+  },
+  {
+    "stationId": "910GMARSHBN",
+    "stationName": "Marsh Barton",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 50.704,
+    "longitude": -3.521,
+    "crs": "MBT",
+    "yearlyUsage": 0
   },
   {
     "stationId": "910GMRSK",
@@ -23026,6 +23093,17 @@
     "yearlyUsage": 2058681
   },
   {
+    "stationId": "910GPTWYPR",
+    "stationName": "Portway Park \u0026 Ride",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 51.488611,
+    "longitude": -2.688056,
+    "crs": "PRI",
+    "yearlyUsage": 0
+  },
+  {
     "stationId": "910GPOSILPK",
     "stationName": "Possilpark \u0026 Parkhouse",
     "tags": [
@@ -23707,6 +23785,17 @@
     "longitude": -0.971863,
     "crs": "RDG",
     "yearlyUsage": 17122000
+  },
+  {
+    "stationId": "910GREDGGPK",
+    "stationName": "Reading Green Park",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 51.426667,
+    "longitude": -1.001389,
+    "crs": "RGP",
+    "yearlyUsage": 0
   },
   {
     "stationId": "910GREDGWST",
@@ -28482,6 +28571,17 @@
     "longitude": -0.339152,
     "crs": "THD",
     "yearlyUsage": 867208
+  },
+  {
+    "stationId": "910GTHANETP",
+    "stationName": "Thanet Parkway",
+    "tags": [
+      "TRAIN"
+    ],
+    "latitude": 51.330843,
+    "longitude": 1.361777,
+    "crs": "THP",
+    "yearlyUsage": 0
   },
   {
     "stationId": "910GTHATCHM",
