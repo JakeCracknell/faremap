@@ -3628,15 +3628,17 @@
     "yearlyUsage": 74764
   },
   {
-    "stationId": "940GZZLUBND",
+    "stationId": "910GBONDST",
     "stationName": "Bond Street",
     "tags": [
       "TUBE",
+      "TRAIN",
+      "TFLRAIL",
       "TFLFARE"
     ],
     "latitude": 51.5143,
     "longitude": -0.149723,
-    "crs": "ZBD",
+    "crs": "BDS",
     "yearlyUsage": 38800000
   },
   {
@@ -5382,7 +5384,9 @@
     "stationId": "940GZZLUCYF",
     "stationName": "Canary Wharf",
     "tags": [
+      "TRAIN",
       "TUBE",
+      "TFLRAIL",
       "TFLFARE"
     ],
     "latitude": 51.5037,
@@ -7943,6 +7947,19 @@
     "longitude": -3.31875,
     "crs": "CUH",
     "yearlyUsage": 66722
+  },
+  {
+    "stationId": "910GCSTMHSXR",
+    "stationName": "Custom House",
+    "tags": [
+      "TRAIN",
+      "TFLRAIL",
+      "TFLFARE"
+    ],
+    "latitude": 51.50990,
+    "longitude": 0.02660,
+    "crs": "CUS",
+    "yearlyUsage": 9238000
   },
   {
     "stationId": "940GZZDLCUS",
@@ -28992,15 +29009,17 @@
     "yearlyUsage": 667730
   },
   {
-    "stationId": "940GZZLUTCR",
+    "stationId": "910GTOTCTRD",
     "stationName": "Tottenham Court Road",
     "tags": [
+      "TRAIN",
       "TUBE",
+      "TFLRAIL",
       "TFLFARE"
     ],
     "latitude": 51.5164,
     "longitude": -0.13041,
-    "crs": "ZTC",
+    "crs": "TCR",
     "yearlyUsage": 41330000
   },
   {
@@ -32109,10 +32128,24 @@
     "yearlyUsage": 162586
   },
   {
+    "stationId": "910GWOLWXR",
+    "stationName": "Woolwich",
+    "tags": [
+      "TRAIN",
+      "TFLRAIL",
+      "TFLFARE"
+    ],
+    "latitude": 51.491578,
+    "longitude": 0.071819,
+    "crs": "WWC",
+    "yearlyUsage": 13237000
+  },
+  {
     "stationId": "910GWOLWCHA",
     "stationName": "Woolwich Arsenal",
     "tags": [
       "TRAIN",
+      "TFLRAIL",
       "TFLFARE"
     ],
     "latitude": 51.49,
