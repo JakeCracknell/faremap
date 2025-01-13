@@ -4,7 +4,7 @@
     "stationName": "Abbey Road DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5319,
     "longitude": 0.003737,
@@ -16,7 +16,7 @@
     "stationName": "Abbey Wood (London)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4911,
     "longitude": 0.121394,
@@ -227,7 +227,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5087,
     "longitude": -0.262971,
@@ -239,7 +239,7 @@
     "stationName": "Acton Main Line",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5172,
     "longitude": -0.266756,
@@ -251,7 +251,7 @@
     "stationName": "Acton Town",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5031,
     "longitude": -0.280462,
@@ -395,7 +395,7 @@
     "stationName": "Albany Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4355,
     "longitude": 0.125737,
@@ -451,7 +451,7 @@
     "stationName": "Aldgate",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5142,
     "longitude": -0.075689,
@@ -463,7 +463,7 @@
     "stationName": "Aldgate East",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.515,
     "longitude": -0.072384,
@@ -486,7 +486,7 @@
     "stationName": "Alexandra Palace",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5979,
     "longitude": -0.120235,
@@ -531,7 +531,7 @@
     "stationName": "All Saints DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.511,
     "longitude": -0.013135,
@@ -587,7 +587,7 @@
     "stationName": "Alperton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5406,
     "longitude": -0.29961,
@@ -709,7 +709,7 @@
     "stationName": "Amersham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6742,
     "longitude": -0.60759,
@@ -721,7 +721,7 @@
     "stationName": "Amersham",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6742,
     "longitude": -0.60759,
@@ -777,7 +777,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4122,
     "longitude": -0.065886,
@@ -789,7 +789,7 @@
     "stationName": "Angel",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5328,
     "longitude": -0.105992,
@@ -922,7 +922,7 @@
     "stationName": "Archway",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5655,
     "longitude": -0.134819,
@@ -1055,7 +1055,7 @@
     "stationName": "Arnos Grove",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6164,
     "longitude": -0.133062,
@@ -1100,7 +1100,7 @@
     "stationName": "Arsenal",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5587,
     "longitude": -0.107457,
@@ -1585,7 +1585,7 @@
     "stationName": "Baker Street",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5229,
     "longitude": -0.15713,
@@ -1619,7 +1619,7 @@
     "stationName": "Balham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4433,
     "longitude": -0.152707,
@@ -1631,7 +1631,7 @@
     "stationName": "Balham",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4433,
     "longitude": -0.152707,
@@ -1720,7 +1720,7 @@
     "stationName": "Bank DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5134,
     "longitude": -0.089095,
@@ -1731,7 +1731,7 @@
     "stationName": "Bank",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5134,
     "longitude": -0.089095,
@@ -1754,7 +1754,7 @@
     "stationName": "Banstead",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3293,
     "longitude": -0.213159,
@@ -1777,7 +1777,7 @@
     "stationName": "Barbican",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5203,
     "longitude": -0.097993,
@@ -1834,7 +1834,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5394,
     "longitude": 0.080988,
@@ -1846,7 +1846,7 @@
     "stationName": "Barking",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5394,
     "longitude": 0.080988,
@@ -1858,7 +1858,7 @@
     "stationName": "Barkingside",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5857,
     "longitude": 0.088585,
@@ -1870,8 +1870,8 @@
     "stationName": "Barking Riverside",
     "tags": [
       "TRAIN",
-      "TUBE",
-      "OYSTER"
+      "TFLFARE",
+      "OVERGROUND"
     ],
     "latitude": 51.519108,
     "longitude": 0.114764,
@@ -1916,7 +1916,7 @@
     "stationName": "Barnehurst",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.465,
     "longitude": 0.159646,
@@ -1928,7 +1928,7 @@
     "stationName": "Barnes",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4671,
     "longitude": -0.242164,
@@ -1940,7 +1940,7 @@
     "stationName": "Barnes Bridge",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.472,
     "longitude": -0.25263,
@@ -2018,7 +2018,7 @@
     "stationName": "Barons Court",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4903,
     "longitude": -0.213427,
@@ -2217,7 +2217,7 @@
     "stationName": "Battersea Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.477,
     "longitude": -0.147533,
@@ -2229,7 +2229,7 @@
     "stationName": "Battersea Power Station",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.47950,
     "longitude": -0.14200,
@@ -2263,7 +2263,7 @@
     "stationName": "Bayford",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7577,
     "longitude": -0.09561,
@@ -2275,7 +2275,7 @@
     "stationName": "Bayswater",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5123,
     "longitude": -0.187938,
@@ -2386,7 +2386,7 @@
     "stationName": "Beckenham Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4246,
     "longitude": -0.015951,
@@ -2398,7 +2398,7 @@
     "stationName": "Beckenham Junction",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4112,
     "longitude": -0.026016,
@@ -2410,7 +2410,7 @@
     "stationName": "Beckton DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5144,
     "longitude": 0.061453,
@@ -2422,7 +2422,7 @@
     "stationName": "Beckton Park DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5088,
     "longitude": 0.054932,
@@ -2434,7 +2434,7 @@
     "stationName": "Becontree",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5403,
     "longitude": 0.127016,
@@ -2556,7 +2556,7 @@
     "stationName": "Bellingham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4329,
     "longitude": -0.019331,
@@ -2579,7 +2579,7 @@
     "stationName": "Belmont",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3438,
     "longitude": -0.198855,
@@ -2602,7 +2602,7 @@
     "stationName": "Belsize Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5503,
     "longitude": -0.164648,
@@ -2625,7 +2625,7 @@
     "stationName": "Belvedere",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4921,
     "longitude": 0.152286,
@@ -2747,7 +2747,7 @@
     "stationName": "Bermondsey",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.498,
     "longitude": -0.063769,
@@ -2792,7 +2792,7 @@
     "stationName": "Berrylands",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.399,
     "longitude": -0.280714,
@@ -2860,7 +2860,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5239,
     "longitude": -0.059568,
@@ -2872,7 +2872,7 @@
     "stationName": "Bethnal Green",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5272,
     "longitude": -0.055506,
@@ -2917,7 +2917,7 @@
     "stationName": "Bexley",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4402,
     "longitude": 0.147903,
@@ -2929,7 +2929,7 @@
     "stationName": "Bexleyheath",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4635,
     "longitude": 0.133735,
@@ -2963,7 +2963,7 @@
     "stationName": "Bickley",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4001,
     "longitude": 0.045241,
@@ -3096,7 +3096,7 @@
     "stationName": "Birkbeck",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4039,
     "longitude": -0.055733,
@@ -3295,7 +3295,7 @@
     "stationName": "Blackfriars",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5096,
     "longitude": -0.104166,
@@ -3307,7 +3307,7 @@
     "stationName": "Blackheath",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4658,
     "longitude": 0.008872,
@@ -3320,7 +3320,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5868,
     "longitude": -0.041185,
@@ -3332,7 +3332,7 @@
     "stationName": "Blackhorse Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5868,
     "longitude": -0.041185,
@@ -3399,7 +3399,7 @@
     "stationName": "Blackwall DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.508,
     "longitude": -0.006969,
@@ -3631,7 +3631,7 @@
     "stationName": "Bond Street",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5143,
     "longitude": -0.149723,
@@ -3698,7 +3698,7 @@
     "stationName": "Borough",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5012,
     "longitude": -0.09337,
@@ -3754,7 +3754,7 @@
     "stationName": "Boston Manor",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4956,
     "longitude": -0.324939,
@@ -3788,7 +3788,7 @@
     "stationName": "Bounds Green",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.607,
     "longitude": -0.124235,
@@ -3800,7 +3800,7 @@
     "stationName": "Bourne End",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5771,
     "longitude": -0.710473,
@@ -3845,7 +3845,7 @@
     "stationName": "Bow Church DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5279,
     "longitude": -0.020936,
@@ -3857,7 +3857,7 @@
     "stationName": "Bow Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5269,
     "longitude": -0.025128,
@@ -3880,7 +3880,7 @@
     "stationName": "Bowes Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.607,
     "longitude": -0.120582,
@@ -4112,7 +4112,7 @@
     "stationName": "Brent Cross",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5766,
     "longitude": -0.213622,
@@ -4124,7 +4124,7 @@
     "stationName": "Brentford",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4875,
     "longitude": -0.309651,
@@ -4137,7 +4137,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6136,
     "longitude": 0.299586,
@@ -4270,7 +4270,7 @@
     "stationName": "Brimsdown",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6556,
     "longitude": -0.030817,
@@ -4348,7 +4348,7 @@
     "stationName": "Brixton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.463,
     "longitude": -0.114531,
@@ -4360,7 +4360,7 @@
     "stationName": "Brixton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.463,
     "longitude": -0.114531,
@@ -4428,7 +4428,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4646,
     "longitude": -0.037537,
@@ -4484,7 +4484,7 @@
     "stationName": "Bromley North",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4083,
     "longitude": 0.016993,
@@ -4496,7 +4496,7 @@
     "stationName": "Bromley South",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4,
     "longitude": 0.017344,
@@ -4508,7 +4508,7 @@
     "stationName": "Bromley-by-Bow",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5248,
     "longitude": -0.011538,
@@ -4532,7 +4532,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5452,
     "longitude": -0.202309,
@@ -4545,7 +4545,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5407,
     "longitude": -0.210128,
@@ -4557,7 +4557,7 @@
     "stationName": "Brookmans Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7211,
     "longitude": -0.204549,
@@ -4635,7 +4635,7 @@
     "stationName": "Broxbourne",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7469,
     "longitude": -0.011087,
@@ -4648,7 +4648,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.594,
     "longitude": -0.069867,
@@ -4737,7 +4737,7 @@
     "stationName": "Buckhurst Hill",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6266,
     "longitude": 0.046757,
@@ -4881,7 +4881,7 @@
     "stationName": "Burnham (Berks)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5235,
     "longitude": -0.646374,
@@ -4948,7 +4948,7 @@
     "stationName": "Burnt Oak",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6028,
     "longitude": -0.264048,
@@ -5049,7 +5049,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6415,
     "longitude": -0.069221,
@@ -5062,7 +5062,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6456,
     "longitude": -0.384752,
@@ -5195,7 +5195,7 @@
     "stationName": "Caledonian Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5485,
     "longitude": -0.118493,
@@ -5208,7 +5208,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.543,
     "longitude": -0.116729,
@@ -5276,7 +5276,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.532,
     "longitude": -0.057279,
@@ -5311,7 +5311,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5418,
     "longitude": -0.138701,
@@ -5323,7 +5323,7 @@
     "stationName": "Camden Town",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5393,
     "longitude": -0.14274,
@@ -5347,7 +5347,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4981,
     "longitude": -0.049667,
@@ -5359,7 +5359,7 @@
     "stationName": "Canada Water",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4981,
     "longitude": -0.049667,
@@ -5370,7 +5370,7 @@
     "stationName": "Canary Wharf DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5037,
     "longitude": -0.019121,
@@ -5382,7 +5382,7 @@
     "stationName": "Canary Wharf",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5037,
     "longitude": -0.019121,
@@ -5405,7 +5405,7 @@
     "stationName": "Canning Town DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.514,
     "longitude": 0.008025,
@@ -5416,7 +5416,7 @@
     "stationName": "Canning Town",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.514,
     "longitude": 0.008025,
@@ -5440,7 +5440,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5115,
     "longitude": -0.090357,
@@ -5453,7 +5453,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5487,
     "longitude": -0.092191,
@@ -5465,7 +5465,7 @@
     "stationName": "Canons Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6077,
     "longitude": -0.294693,
@@ -5709,7 +5709,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6283,
     "longitude": -0.385939,
@@ -5732,7 +5732,7 @@
     "stationName": "Carshalton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3685,
     "longitude": -0.166368,
@@ -5744,7 +5744,7 @@
     "stationName": "Carshalton Beeches",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3574,
     "longitude": -0.169797,
@@ -5778,7 +5778,7 @@
     "stationName": "Castle Bar Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5229,
     "longitude": -0.331549,
@@ -5834,7 +5834,7 @@
     "stationName": "Caterham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.2821,
     "longitude": -0.078307,
@@ -5846,7 +5846,7 @@
     "stationName": "Catford",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4444,
     "longitude": -0.026317,
@@ -5858,7 +5858,7 @@
     "stationName": "Catford Bridge",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4447,
     "longitude": -0.024791,
@@ -5926,7 +5926,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.568,
     "longitude": 0.128958,
@@ -5938,7 +5938,7 @@
     "stationName": "Chafford Hundred",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4856,
     "longitude": 0.287447,
@@ -5951,7 +5951,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6681,
     "longitude": -0.560519,
@@ -5963,7 +5963,7 @@
     "stationName": "Chalk Farm",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5441,
     "longitude": -0.153388,
@@ -5986,7 +5986,7 @@
     "stationName": "Chancery Lane",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5182,
     "longitude": -0.111583,
@@ -6065,7 +6065,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5078,
     "longitude": -0.126137,
@@ -6099,7 +6099,7 @@
     "stationName": "Charlton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4868,
     "longitude": 0.031258,
@@ -6177,7 +6177,7 @@
     "stationName": "Cheam",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3555,
     "longitude": -0.214167,
@@ -6222,7 +6222,7 @@
     "stationName": "Chelsfield",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3563,
     "longitude": 0.10907,
@@ -6278,7 +6278,7 @@
     "stationName": "Chesham",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7052,
     "longitude": -0.611247,
@@ -6291,7 +6291,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7029,
     "longitude": -0.02396,
@@ -6303,7 +6303,7 @@
     "stationName": "Chessington North",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.364,
     "longitude": -0.300699,
@@ -6315,7 +6315,7 @@
     "stationName": "Chessington South",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3565,
     "longitude": -0.308157,
@@ -6404,7 +6404,7 @@
     "stationName": "Chigwell",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6179,
     "longitude": 0.075041,
@@ -6439,7 +6439,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6331,
     "longitude": 0.009897,
@@ -6473,7 +6473,7 @@
     "stationName": "Chipstead",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3093,
     "longitude": -0.169503,
@@ -6496,7 +6496,7 @@
     "stationName": "Chislehurst",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4056,
     "longitude": 0.057418,
@@ -6508,7 +6508,7 @@
     "stationName": "Chiswick",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4811,
     "longitude": -0.267835,
@@ -6520,7 +6520,7 @@
     "stationName": "Chiswick Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4946,
     "longitude": -0.267972,
@@ -6554,7 +6554,7 @@
     "stationName": "Chorleywood",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6542,
     "longitude": -0.518312,
@@ -6566,7 +6566,7 @@
     "stationName": "Chorleywood",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6542,
     "longitude": -0.518312,
@@ -6643,7 +6643,7 @@
     "stationName": "City Thameslink",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5139,
     "longitude": -0.10359,
@@ -6688,7 +6688,7 @@
     "stationName": "Clapham Common",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4617,
     "longitude": -0.138317,
@@ -6701,7 +6701,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4655,
     "longitude": -0.132522,
@@ -6714,7 +6714,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4637,
     "longitude": -0.168997,
@@ -6726,7 +6726,7 @@
     "stationName": "Clapham North",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4651,
     "longitude": -0.130016,
@@ -6738,7 +6738,7 @@
     "stationName": "Clapham South",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4527,
     "longitude": -0.147582,
@@ -6751,7 +6751,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5616,
     "longitude": -0.057025,
@@ -6862,7 +6862,7 @@
     "stationName": "Clock House",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4086,
     "longitude": -0.040657,
@@ -6940,7 +6940,7 @@
     "stationName": "Cockfosters",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6515,
     "longitude": -0.149171,
@@ -7007,7 +7007,7 @@
     "stationName": "Colindale",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5954,
     "longitude": -0.249919,
@@ -7019,7 +7019,7 @@
     "stationName": "Colliers Wood",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4182,
     "longitude": -0.178086,
@@ -7196,7 +7196,7 @@
     "stationName": "Cookham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5575,
     "longitude": -0.722079,
@@ -7373,7 +7373,7 @@
     "stationName": "Coulsdon South",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3158,
     "longitude": -0.137887,
@@ -7385,7 +7385,7 @@
     "stationName": "Coulsdon Town",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.322,
     "longitude": -0.134464,
@@ -7397,7 +7397,7 @@
     "stationName": "Covent Garden",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5131,
     "longitude": -0.124436,
@@ -7519,7 +7519,7 @@
     "stationName": "Crayford",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4483,
     "longitude": 0.178936,
@@ -7597,7 +7597,7 @@
     "stationName": "Crews Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6845,
     "longitude": -0.106887,
@@ -7631,7 +7631,7 @@
     "stationName": "Cricklewood",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5585,
     "longitude": -0.212677,
@@ -7654,7 +7654,7 @@
     "stationName": "Crofton Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4552,
     "longitude": -0.036503,
@@ -7721,7 +7721,7 @@
     "stationName": "Crossharbour DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4957,
     "longitude": -0.014606,
@@ -7778,7 +7778,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5713,
     "longitude": -0.117149,
@@ -7834,7 +7834,7 @@
     "stationName": "Croxley",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.647,
     "longitude": -0.441718,
@@ -7858,7 +7858,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4181,
     "longitude": -0.072605,
@@ -7881,7 +7881,7 @@
     "stationName": "Cuffley",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7087,
     "longitude": -0.109783,
@@ -7948,7 +7948,7 @@
     "stationName": "Custom House (for ExCel) DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5097,
     "longitude": 0.026699,
@@ -7960,7 +7960,7 @@
     "stationName": "Cutty Sark (for Maritime Greenwich) DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4817,
     "longitude": -0.010802,
@@ -8016,7 +8016,7 @@
     "stationName": "Cyprus DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5085,
     "longitude": 0.063925,
@@ -8028,7 +8028,7 @@
     "stationName": "Dagenham Dock",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5262,
     "longitude": 0.145904,
@@ -8040,7 +8040,7 @@
     "stationName": "Dagenham East",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5441,
     "longitude": 0.166017,
@@ -8052,7 +8052,7 @@
     "stationName": "Dagenham Heathway",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5416,
     "longitude": 0.147527,
@@ -8164,7 +8164,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5461,
     "longitude": -0.075137,
@@ -8177,7 +8177,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5481,
     "longitude": -0.075701,
@@ -8277,7 +8277,7 @@
     "stationName": "Dartford",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4474,
     "longitude": 0.219248,
@@ -8388,7 +8388,7 @@
     "stationName": "Debden",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6454,
     "longitude": 0.083782,
@@ -8467,7 +8467,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4682,
     "longitude": -0.089361,
@@ -8501,7 +8501,7 @@
     "stationName": "Deptford",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4788,
     "longitude": -0.02627,
@@ -8513,7 +8513,7 @@
     "stationName": "Deptford Bridge DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4742,
     "longitude": -0.022438,
@@ -8558,7 +8558,7 @@
     "stationName": "Devons Road DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5227,
     "longitude": -0.017615,
@@ -8757,7 +8757,7 @@
     "stationName": "Dollis Hill",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.552,
     "longitude": -0.239068,
@@ -8934,7 +8934,7 @@
     "stationName": "Drayton Green",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5166,
     "longitude": -0.330194,
@@ -8946,7 +8946,7 @@
     "stationName": "Drayton Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5528,
     "longitude": -0.105509,
@@ -9354,7 +9354,7 @@
     "stationName": "Ealing Broadway",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.515,
     "longitude": -0.302131,
@@ -9366,7 +9366,7 @@
     "stationName": "Ealing Broadway",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.515,
     "longitude": -0.302131,
@@ -9378,7 +9378,7 @@
     "stationName": "Ealing Common",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5101,
     "longitude": -0.288265,
@@ -9390,7 +9390,7 @@
     "stationName": "Earl\u0027s Court",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4921,
     "longitude": -0.193378,
@@ -9424,7 +9424,7 @@
     "stationName": "Earlsfield",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4423,
     "longitude": -0.187715,
@@ -9436,7 +9436,7 @@
     "stationName": "Earlswood (Surrey)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.2273,
     "longitude": -0.170823,
@@ -9459,7 +9459,7 @@
     "stationName": "East Acton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5166,
     "longitude": -0.247248,
@@ -9482,7 +9482,7 @@
     "stationName": "East Croydon",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.376,
     "longitude": -0.091172,
@@ -9505,7 +9505,7 @@
     "stationName": "East Dulwich",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4615,
     "longitude": -0.080572,
@@ -9528,7 +9528,7 @@
     "stationName": "East Finchley",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5871,
     "longitude": -0.165012,
@@ -9562,7 +9562,7 @@
     "stationName": "East Ham",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5389,
     "longitude": 0.051186,
@@ -9574,7 +9574,7 @@
     "stationName": "East India DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5094,
     "longitude": -0.002326,
@@ -9619,7 +9619,7 @@
     "stationName": "East Putney",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4592,
     "longitude": -0.211,
@@ -9675,7 +9675,7 @@
     "stationName": "Eastcote",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5765,
     "longitude": -0.397373,
@@ -9808,7 +9808,7 @@
     "stationName": "Eden Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3901,
     "longitude": -0.026355,
@@ -9853,7 +9853,7 @@
     "stationName": "Edgware",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6137,
     "longitude": -0.274928,
@@ -9865,7 +9865,7 @@
     "stationName": "Edgware Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5199,
     "longitude": -0.167832,
@@ -9911,7 +9911,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6249,
     "longitude": -0.061112,
@@ -9967,7 +9967,7 @@
     "stationName": "Elephant \u0026 Castle",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4945,
     "longitude": -0.099185,
@@ -9979,7 +9979,7 @@
     "stationName": "Elephant \u0026 Castle",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4945,
     "longitude": -0.099185,
@@ -10013,7 +10013,7 @@
     "stationName": "Elm Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5498,
     "longitude": 0.19864,
@@ -10025,7 +10025,7 @@
     "stationName": "Elmers End",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3983,
     "longitude": -0.049429,
@@ -10037,7 +10037,7 @@
     "stationName": "Elmstead Woods",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4171,
     "longitude": 0.044274,
@@ -10082,7 +10082,7 @@
     "stationName": "Elstree \u0026 Borehamwood",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6531,
     "longitude": -0.280081,
@@ -10094,7 +10094,7 @@
     "stationName": "Eltham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4556,
     "longitude": 0.052472,
@@ -10117,7 +10117,7 @@
     "stationName": "Elverson Road DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4691,
     "longitude": -0.016728,
@@ -10140,7 +10140,7 @@
     "stationName": "Embankment",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5071,
     "longitude": -0.122666,
@@ -10153,7 +10153,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5686,
     "longitude": 0.220113,
@@ -10187,7 +10187,7 @@
     "stationName": "Enfield Chase",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6533,
     "longitude": -0.090696,
@@ -10199,7 +10199,7 @@
     "stationName": "Enfield Lock",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6709,
     "longitude": -0.028532,
@@ -10212,7 +10212,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.652,
     "longitude": -0.079328,
@@ -10235,7 +10235,7 @@
     "stationName": "Epping",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6937,
     "longitude": 0.113767,
@@ -10247,7 +10247,7 @@
     "stationName": "Epsom",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3344,
     "longitude": -0.268778,
@@ -10259,7 +10259,7 @@
     "stationName": "Epsom Downs",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3237,
     "longitude": -0.238955,
@@ -10293,7 +10293,7 @@
     "stationName": "Erith",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4817,
     "longitude": 0.175055,
@@ -10327,7 +10327,7 @@
     "stationName": "Essex Road",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5407,
     "longitude": -0.096276,
@@ -10352,7 +10352,7 @@
       "TRAIN",
       "TUBE",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5274,
     "longitude": -0.132754,
@@ -10364,7 +10364,7 @@
     "stationName": "Euston Square",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5256,
     "longitude": -0.135829,
@@ -10398,7 +10398,7 @@
     "stationName": "Ewell East",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3453,
     "longitude": -0.24153,
@@ -10410,7 +10410,7 @@
     "stationName": "Ewell West",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.35,
     "longitude": -0.256987,
@@ -10532,7 +10532,7 @@
     "stationName": "Fairlop",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5956,
     "longitude": 0.091004,
@@ -10555,7 +10555,7 @@
     "stationName": "Falconwood",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4592,
     "longitude": 0.079305,
@@ -10710,7 +10710,7 @@
     "stationName": "Farringdon",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5202,
     "longitude": -0.105054,
@@ -10722,7 +10722,7 @@
     "stationName": "Farringdon",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5202,
     "longitude": -0.105054,
@@ -10810,7 +10810,7 @@
     "stationName": "Feltham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4479,
     "longitude": -0.409838,
@@ -10910,7 +10910,7 @@
     "stationName": "Finchley Central",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6009,
     "longitude": -0.192527,
@@ -10922,7 +10922,7 @@
     "stationName": "Finchley Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5468,
     "longitude": -0.179845,
@@ -10935,7 +10935,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5503,
     "longitude": -0.183141,
@@ -10947,7 +10947,7 @@
     "stationName": "Finsbury Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5648,
     "longitude": -0.105876,
@@ -10959,7 +10959,7 @@
     "stationName": "Finsbury Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5648,
     "longitude": -0.105876,
@@ -11159,7 +11159,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5494,
     "longitude": 0.024353,
@@ -11172,7 +11172,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4393,
     "longitude": -0.053157,
@@ -11382,7 +11382,7 @@
     "stationName": "Fulham Broadway",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4801,
     "longitude": -0.195422,
@@ -11394,7 +11394,7 @@
     "stationName": "Fulwell",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4339,
     "longitude": -0.349468,
@@ -11417,7 +11417,7 @@
     "stationName": "Furze Platt",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.533,
     "longitude": -0.728473,
@@ -11462,7 +11462,7 @@
     "stationName": "Gallions Reach DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5089,
     "longitude": 0.071555,
@@ -11474,7 +11474,7 @@
     "stationName": "Gants Hill",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5765,
     "longitude": 0.066185,
@@ -11640,7 +11640,7 @@
     "stationName": "Gatwick Airport",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.1565,
     "longitude": -0.161041,
@@ -11675,7 +11675,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5819,
     "longitude": 0.205964,
@@ -11764,7 +11764,7 @@
     "stationName": "Gipsy Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4245,
     "longitude": -0.083836,
@@ -11919,7 +11919,7 @@
     "stationName": "Gloucester Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4943,
     "longitude": -0.182658,
@@ -11986,7 +11986,7 @@
     "stationName": "Golders Green",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5723,
     "longitude": -0.194039,
@@ -11998,7 +11998,7 @@
     "stationName": "Goldhawk Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.502,
     "longitude": -0.226715,
@@ -12054,7 +12054,7 @@
     "stationName": "Goodge Street",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5206,
     "longitude": -0.134361,
@@ -12067,7 +12067,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5656,
     "longitude": 0.110807,
@@ -12101,7 +12101,7 @@
     "stationName": "Gordon Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6641,
     "longitude": -0.094997,
@@ -12158,7 +12158,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5553,
     "longitude": -0.15077,
@@ -12203,7 +12203,7 @@
     "stationName": "Grange Hill",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6134,
     "longitude": 0.092066,
@@ -12215,7 +12215,7 @@
     "stationName": "Grange Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6426,
     "longitude": -0.097358,
@@ -12293,7 +12293,7 @@
     "stationName": "Grays",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4762,
     "longitude": 0.321832,
@@ -12371,7 +12371,7 @@
     "stationName": "Great Portland Street",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5238,
     "longitude": -0.144262,
@@ -12405,7 +12405,7 @@
     "stationName": "Green Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5069,
     "longitude": -0.142787,
@@ -12462,7 +12462,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5427,
     "longitude": -0.345789,
@@ -12507,7 +12507,7 @@
     "stationName": "Greenwich",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4782,
     "longitude": -0.014096,
@@ -12519,7 +12519,7 @@
     "stationName": "Greenwich DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4782,
     "longitude": -0.014096,
@@ -12585,7 +12585,7 @@
     "stationName": "Grove Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4309,
     "longitude": 0.021726,
@@ -12631,7 +12631,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4917,
     "longitude": -0.275276,
@@ -12643,7 +12643,7 @@
     "stationName": "Gunnersbury",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4917,
     "longitude": -0.275276,
@@ -12709,7 +12709,7 @@
     "stationName": "Hackbridge",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3779,
     "longitude": -0.153907,
@@ -12722,7 +12722,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5471,
     "longitude": -0.056058,
@@ -12735,7 +12735,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5488,
     "longitude": -0.060819,
@@ -12748,7 +12748,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5434,
     "longitude": -0.02492,
@@ -12793,7 +12793,7 @@
     "stationName": "Hadley Wood",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6685,
     "longitude": -0.176172,
@@ -12817,7 +12817,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5387,
     "longitude": -0.075666,
@@ -12840,7 +12840,7 @@
     "stationName": "Hainault",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6037,
     "longitude": 0.093482,
@@ -13006,7 +13006,7 @@
     "stationName": "Hammersmith (Dist\u0026Picc Line)",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4923,
     "longitude": -0.223619,
@@ -13018,7 +13018,7 @@
     "stationName": "Hammersmith (H\u0026C Line)",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4923,
     "longitude": -0.223619,
@@ -13052,7 +13052,7 @@
     "stationName": "Hampstead",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5566,
     "longitude": -0.178487,
@@ -13065,7 +13065,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5552,
     "longitude": -0.165705,
@@ -13077,7 +13077,7 @@
     "stationName": "Hampton (London)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4159,
     "longitude": -0.372119,
@@ -13089,7 +13089,7 @@
     "stationName": "Hampton Court",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4026,
     "longitude": -0.34275,
@@ -13101,7 +13101,7 @@
     "stationName": "Hampton Wick",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4145,
     "longitude": -0.312489,
@@ -13168,7 +13168,7 @@
     "stationName": "Hanger Lane",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5302,
     "longitude": -0.292704,
@@ -13180,7 +13180,7 @@
     "stationName": "Hanwell",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5118,
     "longitude": -0.338583,
@@ -13215,7 +13215,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5363,
     "longitude": -0.257774,
@@ -13227,7 +13227,7 @@
     "stationName": "Harlesden",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5363,
     "longitude": -0.257774,
@@ -13284,7 +13284,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5928,
     "longitude": 0.233129,
@@ -13296,7 +13296,7 @@
     "stationName": "Harpenden",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.8146,
     "longitude": -0.35148,
@@ -13319,7 +13319,7 @@
     "stationName": "Harringay",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5774,
     "longitude": -0.105136,
@@ -13332,7 +13332,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5772,
     "longitude": -0.098144,
@@ -13367,7 +13367,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5922,
     "longitude": -0.334896,
@@ -13379,7 +13379,7 @@
     "stationName": "Harrow \u0026 Wealdstone",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5922,
     "longitude": -0.334896,
@@ -13390,7 +13390,7 @@
     "stationName": "Harrow-on-the-Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5792,
     "longitude": -0.337226,
@@ -13402,7 +13402,7 @@
     "stationName": "Harrow-on-the-Hill",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5792,
     "longitude": -0.337226,
@@ -13513,7 +13513,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6094,
     "longitude": -0.368601,
@@ -13536,7 +13536,7 @@
     "stationName": "Hatfield (Herts)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7639,
     "longitude": -0.215589,
@@ -13592,7 +13592,7 @@
     "stationName": "Hatton Cross",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4667,
     "longitude": -0.423191,
@@ -13681,7 +13681,7 @@
     "stationName": "Haydons Road",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4254,
     "longitude": -0.188815,
@@ -13693,7 +13693,7 @@
     "stationName": "Hayes \u0026 Harlington",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5031,
     "longitude": -0.420683,
@@ -13705,7 +13705,7 @@
     "stationName": "Hayes (Kent)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3763,
     "longitude": 0.010557,
@@ -13784,7 +13784,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6026,
     "longitude": -0.35722,
@@ -13841,7 +13841,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4588,
     "longitude": -0.446419,
@@ -13854,7 +13854,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4716,
     "longitude": -0.489556,
@@ -13867,7 +13867,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4716,
     "longitude": -0.454037,
@@ -14011,7 +14011,7 @@
     "stationName": "Hendon",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5801,
     "longitude": -0.238674,
@@ -14023,7 +14023,7 @@
     "stationName": "Hendon Central",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5833,
     "longitude": -0.226424,
@@ -14057,7 +14057,7 @@
     "stationName": "Henley-on-Thames",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5342,
     "longitude": -0.900212,
@@ -14102,7 +14102,7 @@
     "stationName": "Herne Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4533,
     "longitude": -0.102289,
@@ -14114,7 +14114,7 @@
     "stationName": "Heron Quays DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5034,
     "longitude": -0.021421,
@@ -14137,7 +14137,7 @@
     "stationName": "Hertford East",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.799,
     "longitude": -0.072941,
@@ -14149,7 +14149,7 @@
     "stationName": "Hertford North",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7989,
     "longitude": -0.091788,
@@ -14238,7 +14238,7 @@
     "stationName": "High Barnet",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6505,
     "longitude": -0.194298,
@@ -14272,7 +14272,7 @@
     "stationName": "High Street Kensington",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5011,
     "longitude": -0.192792,
@@ -14307,7 +14307,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6083,
     "longitude": -2.22E-4,
@@ -14331,7 +14331,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5463,
     "longitude": -0.103538,
@@ -14343,7 +14343,7 @@
     "stationName": "Highbury \u0026 Islington",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5463,
     "longitude": -0.103538,
@@ -14355,7 +14355,7 @@
     "stationName": "Highgate",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5775,
     "longitude": -0.145857,
@@ -14400,7 +14400,7 @@
     "stationName": "Hillingdon",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5537,
     "longitude": -0.449828,
@@ -14511,7 +14511,7 @@
     "stationName": "Hither Green",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.452,
     "longitude": -9.44E-4,
@@ -14534,7 +14534,7 @@
     "stationName": "Holborn",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5176,
     "longitude": -0.120475,
@@ -14546,7 +14546,7 @@
     "stationName": "Holland Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5071,
     "longitude": -0.205679,
@@ -14569,7 +14569,7 @@
     "stationName": "Holloway Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5527,
     "longitude": -0.113244,
@@ -14637,7 +14637,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.547,
     "longitude": -0.04236,
@@ -14683,7 +14683,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.45,
     "longitude": -0.045505,
@@ -14761,7 +14761,7 @@
     "stationName": "Horley",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.1688,
     "longitude": -0.161054,
@@ -14784,7 +14784,7 @@
     "stationName": "Hornchurch",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5541,
     "longitude": 0.219116,
@@ -14796,7 +14796,7 @@
     "stationName": "Hornsey",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5865,
     "longitude": -0.111975,
@@ -14885,7 +14885,7 @@
     "stationName": "Hounslow",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4619,
     "longitude": -0.362277,
@@ -14897,7 +14897,7 @@
     "stationName": "Hounslow Central",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4713,
     "longitude": -0.366578,
@@ -14909,7 +14909,7 @@
     "stationName": "Hounslow East",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4732,
     "longitude": -0.356474,
@@ -14921,7 +14921,7 @@
     "stationName": "Hounslow West",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4735,
     "longitude": -0.386544,
@@ -14989,7 +14989,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5315,
     "longitude": -0.075681,
@@ -15188,7 +15188,7 @@
     "stationName": "Hyde Park Corner",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.503,
     "longitude": -0.152441,
@@ -15244,7 +15244,7 @@
     "stationName": "Ickenham",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.562,
     "longitude": -0.442001,
@@ -15268,7 +15268,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5591,
     "longitude": 0.06968,
@@ -15303,7 +15303,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4756,
     "longitude": -0.183084,
@@ -15469,7 +15469,7 @@
     "stationName": "Island Gardens DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4878,
     "longitude": -0.010139,
@@ -15481,7 +15481,7 @@
     "stationName": "Isleworth",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4748,
     "longitude": -0.336907,
@@ -15504,7 +15504,7 @@
     "stationName": "Iver",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5085,
     "longitude": -0.506726,
@@ -15725,7 +15725,7 @@
     "stationName": "Kenley",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3248,
     "longitude": -0.100925,
@@ -15748,7 +15748,7 @@
     "stationName": "Kennington",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4883,
     "longitude": -0.105963,
@@ -15772,7 +15772,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5305,
     "longitude": -0.22505,
@@ -15784,7 +15784,7 @@
     "stationName": "Kensal Green",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5305,
     "longitude": -0.22505,
@@ -15796,7 +15796,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5346,
     "longitude": -0.219957,
@@ -15809,7 +15809,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4962,
     "longitude": -0.210502,
@@ -15821,7 +15821,7 @@
     "stationName": "Kensington (Olympia)",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4962,
     "longitude": -0.210502,
@@ -15832,7 +15832,7 @@
     "stationName": "Kent House",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4122,
     "longitude": -0.045247,
@@ -15844,7 +15844,7 @@
     "stationName": "Kentish Town",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5504,
     "longitude": -0.140545,
@@ -15856,7 +15856,7 @@
     "stationName": "Kentish Town",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5504,
     "longitude": -0.140545,
@@ -15869,7 +15869,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5465,
     "longitude": -0.146655,
@@ -15882,7 +15882,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5818,
     "longitude": -0.316946,
@@ -15894,7 +15894,7 @@
     "stationName": "Kenton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5818,
     "longitude": -0.316946,
@@ -15927,7 +15927,7 @@
     "stationName": "Kew Bridge",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4895,
     "longitude": -0.287108,
@@ -15940,7 +15940,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4771,
     "longitude": -0.285148,
@@ -15952,7 +15952,7 @@
     "stationName": "Kew Gardens",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4771,
     "longitude": -0.285148,
@@ -15985,7 +15985,7 @@
     "stationName": "Kidbrooke",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4621,
     "longitude": 0.027498,
@@ -16030,7 +16030,7 @@
     "stationName": "Kilburn",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5468,
     "longitude": -0.204105,
@@ -16043,7 +16043,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5373,
     "longitude": -0.192237,
@@ -16055,7 +16055,7 @@
     "stationName": "Kilburn Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.535,
     "longitude": -0.194232,
@@ -16155,7 +16155,7 @@
     "stationName": "King George V DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.502,
     "longitude": 0.062624,
@@ -16167,7 +16167,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5317,
     "longitude": -0.123538,
@@ -16267,7 +16267,7 @@
     "stationName": "Kingsbury",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5848,
     "longitude": -0.27879,
@@ -16290,7 +16290,7 @@
     "stationName": "Kingston",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4128,
     "longitude": -0.301166,
@@ -16302,7 +16302,7 @@
     "stationName": "Kingswood",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.2947,
     "longitude": -0.211247,
@@ -16567,7 +16567,7 @@
     "stationName": "Knightsbridge",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5017,
     "longitude": -0.160508,
@@ -16579,7 +16579,7 @@
     "stationName": "Knockholt",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3458,
     "longitude": 0.130847,
@@ -16635,7 +16635,7 @@
     "stationName": "Ladbroke Grove",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5174,
     "longitude": -0.210391,
@@ -16658,7 +16658,7 @@
     "stationName": "Ladywell",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4562,
     "longitude": -0.019041,
@@ -16714,7 +16714,7 @@
     "stationName": "Lambeth North",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4988,
     "longitude": -0.112315,
@@ -16759,7 +16759,7 @@
     "stationName": "Lancaster Gate",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5117,
     "longitude": -0.175494,
@@ -16804,7 +16804,7 @@
     "stationName": "Langdon Park DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5152,
     "longitude": -0.01415,
@@ -16827,7 +16827,7 @@
     "stationName": "Langley (Berks)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5081,
     "longitude": -0.541756,
@@ -16949,7 +16949,7 @@
     "stationName": "Latimer Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5134,
     "longitude": -0.217799,
@@ -17005,7 +17005,7 @@
     "stationName": "Lea Bridge",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5665,
     "longitude": -0.036673,
@@ -17105,7 +17105,7 @@
     "stationName": "Lee",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4498,
     "longitude": 0.013493,
@@ -17139,7 +17139,7 @@
     "stationName": "Leicester Square",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5114,
     "longitude": -0.128426,
@@ -17283,7 +17283,7 @@
     "stationName": "Lewisham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4651,
     "longitude": -0.013016,
@@ -17295,7 +17295,7 @@
     "stationName": "Lewisham DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4651,
     "longitude": -0.013016,
@@ -17317,7 +17317,7 @@
     "stationName": "Leyton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5566,
     "longitude": -0.005523,
@@ -17330,7 +17330,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5697,
     "longitude": -0.008051,
@@ -17342,7 +17342,7 @@
     "stationName": "Leytonstone",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5683,
     "longitude": 0.008194,
@@ -17355,7 +17355,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5636,
     "longitude": 0.008416,
@@ -17411,7 +17411,7 @@
     "stationName": "Limehouse",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5125,
     "longitude": -0.039799,
@@ -17423,7 +17423,7 @@
     "stationName": "Limehouse DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5125,
     "longitude": -0.039799,
@@ -17636,7 +17636,7 @@
       "TUBE",
       "OVERGROUND",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5179,
     "longitude": -0.083162,
@@ -18099,7 +18099,7 @@
     "stationName": "London Blackfriars",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5096,
     "longitude": -0.104166,
@@ -18111,7 +18111,7 @@
     "stationName": "London Bridge",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5059,
     "longitude": -0.086807,
@@ -18123,7 +18123,7 @@
     "stationName": "London Bridge",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5059,
     "longitude": -0.086807,
@@ -18135,7 +18135,7 @@
     "stationName": "London City Airport DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5034,
     "longitude": 0.048749,
@@ -18147,7 +18147,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5412,
     "longitude": -0.057753,
@@ -18357,7 +18357,7 @@
     "stationName": "Loughborough Junction",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4663,
     "longitude": -0.102182,
@@ -18369,7 +18369,7 @@
     "stationName": "Loughton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6414,
     "longitude": 0.055476,
@@ -18403,7 +18403,7 @@
     "stationName": "Lower Sydenham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4248,
     "longitude": -0.033345,
@@ -18448,7 +18448,7 @@
     "stationName": "Luton Airport Parkway",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.8724,
     "longitude": -0.395881,
@@ -18614,7 +18614,7 @@
     "stationName": "Maida Vale",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5298,
     "longitude": -0.185758,
@@ -18637,7 +18637,7 @@
     "stationName": "Maidenhead",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5187,
     "longitude": -0.72266,
@@ -18682,7 +18682,7 @@
     "stationName": "Malden Manor",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3847,
     "longitude": -0.261274,
@@ -18804,7 +18804,7 @@
     "stationName": "Manor House",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5707,
     "longitude": -0.096118,
@@ -18817,7 +18817,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5525,
     "longitude": 0.046342,
@@ -18884,7 +18884,7 @@
     "stationName": "Mansion House",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5121,
     "longitude": -0.094009,
@@ -18896,7 +18896,7 @@
     "stationName": "Marble Arch",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5134,
     "longitude": -0.158953,
@@ -18985,7 +18985,7 @@
     "stationName": "Marlow",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.571,
     "longitude": -0.766431,
@@ -19086,7 +19086,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5461,
     "longitude": 0.005815,
@@ -19099,7 +19099,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5216,
     "longitude": -0.163013,
@@ -19177,7 +19177,7 @@
     "stationName": "Maze Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4826,
     "longitude": 0.002914,
@@ -19299,7 +19299,7 @@
     "stationName": "Meridian Water",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.610034,
     "longitude": -0.050196,
@@ -19322,7 +19322,7 @@
     "stationName": "Merstham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.2642,
     "longitude": -0.150226,
@@ -19444,7 +19444,7 @@
     "stationName": "Mile End",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5251,
     "longitude": -0.03364,
@@ -19489,7 +19489,7 @@
     "stationName": "Mill Hill Broadway",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6131,
     "longitude": -0.24924,
@@ -19501,7 +19501,7 @@
     "stationName": "Mill Hill East",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6082,
     "longitude": -0.209986,
@@ -19645,7 +19645,7 @@
     "stationName": "Mitcham Eastfields",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4077,
     "longitude": -0.154646,
@@ -19657,7 +19657,7 @@
     "stationName": "Mitcham Junction",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3931,
     "longitude": -0.158738,
@@ -19724,7 +19724,7 @@
     "stationName": "Monument",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5107,
     "longitude": -0.085969,
@@ -19736,7 +19736,7 @@
     "stationName": "Moor Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6298,
     "longitude": -0.432454,
@@ -19759,7 +19759,7 @@
     "stationName": "Moorgate",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5183,
     "longitude": -0.088627,
@@ -19771,7 +19771,7 @@
     "stationName": "Moorgate",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5183,
     "longitude": -0.088627,
@@ -19827,7 +19827,7 @@
     "stationName": "Morden",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4021,
     "longitude": -0.194839,
@@ -19839,7 +19839,7 @@
     "stationName": "Morden South",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3961,
     "longitude": -0.199461,
@@ -19917,7 +19917,7 @@
     "stationName": "Mornington Crescent",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5347,
     "longitude": -0.138789,
@@ -19951,7 +19951,7 @@
     "stationName": "Mortlake",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4681,
     "longitude": -0.267106,
@@ -20040,7 +20040,7 @@
     "stationName": "Motspur Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3952,
     "longitude": -0.239531,
@@ -20052,7 +20052,7 @@
     "stationName": "Mottingham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4402,
     "longitude": 0.050054,
@@ -20130,7 +20130,7 @@
     "stationName": "Mudchute DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4907,
     "longitude": -0.014738,
@@ -20263,7 +20263,7 @@
     "stationName": "Neasden",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.554,
     "longitude": -0.249837,
@@ -20363,7 +20363,7 @@
     "stationName": "New Barnet",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6486,
     "longitude": -0.172997,
@@ -20375,7 +20375,7 @@
     "stationName": "New Beckenham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4168,
     "longitude": -0.035273,
@@ -20410,7 +20410,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4763,
     "longitude": -0.032427,
@@ -20423,7 +20423,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4751,
     "longitude": -0.040399,
@@ -20446,7 +20446,7 @@
     "stationName": "New Eltham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4381,
     "longitude": 0.070533,
@@ -20491,7 +20491,7 @@
     "stationName": "New Malden",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4041,
     "longitude": -0.25594,
@@ -20547,7 +20547,7 @@
     "stationName": "New Southgate",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6141,
     "longitude": -0.143038,
@@ -20603,7 +20603,7 @@
     "stationName": "Newbury Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5757,
     "longitude": 0.090004,
@@ -20868,7 +20868,7 @@
     "stationName": "Nine Elms",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.48000,
     "longitude": -0.12850,
@@ -20902,7 +20902,7 @@
     "stationName": "Norbiton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4124,
     "longitude": -0.284025,
@@ -20914,7 +20914,7 @@
     "stationName": "Norbury",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4114,
     "longitude": -0.121926,
@@ -20948,7 +20948,7 @@
     "stationName": "North Acton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5235,
     "longitude": -0.259755,
@@ -20982,7 +20982,7 @@
     "stationName": "North Dulwich",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4545,
     "longitude": -0.087917,
@@ -20994,7 +20994,7 @@
     "stationName": "North Ealing",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5175,
     "longitude": -0.288868,
@@ -21017,7 +21017,7 @@
     "stationName": "North Greenwich",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5005,
     "longitude": 0.004295,
@@ -21029,7 +21029,7 @@
     "stationName": "North Harrow",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5849,
     "longitude": -0.362408,
@@ -21074,7 +21074,7 @@
     "stationName": "North Sheen",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4652,
     "longitude": -0.287876,
@@ -21098,7 +21098,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5626,
     "longitude": -0.303992,
@@ -21110,7 +21110,7 @@
     "stationName": "North Wembley",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5626,
     "longitude": -0.303992,
@@ -21154,7 +21154,7 @@
     "stationName": "Northfields",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4993,
     "longitude": -0.314719,
@@ -21177,7 +21177,7 @@
     "stationName": "Northolt",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5482,
     "longitude": -0.368699,
@@ -21189,7 +21189,7 @@
     "stationName": "Northolt Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5575,
     "longitude": -0.359466,
@@ -21201,7 +21201,7 @@
     "stationName": "Northumberland Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.602,
     "longitude": -0.053932,
@@ -21224,7 +21224,7 @@
     "stationName": "Northwick Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5785,
     "longitude": -0.318056,
@@ -21236,7 +21236,7 @@
     "stationName": "Northwood",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6111,
     "longitude": -0.423829,
@@ -21248,7 +21248,7 @@
     "stationName": "Northwood Hills",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6006,
     "longitude": -0.409464,
@@ -21283,7 +21283,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.397,
     "longitude": -0.075216,
@@ -21295,7 +21295,7 @@
     "stationName": "Notting Hill Gate",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5091,
     "longitude": -0.196104,
@@ -21329,7 +21329,7 @@
     "stationName": "Nunhead",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4668,
     "longitude": -0.052273,
@@ -21396,7 +21396,7 @@
     "stationName": "Oakleigh Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6377,
     "longitude": -0.166209,
@@ -21408,7 +21408,7 @@
     "stationName": "Oakwood",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6477,
     "longitude": -0.132182,
@@ -21431,7 +21431,7 @@
     "stationName": "Ockendon",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.522,
     "longitude": 0.290469,
@@ -21487,7 +21487,7 @@
     "stationName": "Old Street",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5261,
     "longitude": -0.088193,
@@ -21499,7 +21499,7 @@
     "stationName": "Old Street",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5261,
     "longitude": -0.088193,
@@ -21554,7 +21554,7 @@
     "stationName": "Orpington",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3733,
     "longitude": 0.089091,
@@ -21588,7 +21588,7 @@
     "stationName": "Osterley",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4813,
     "longitude": -0.352224,
@@ -21644,7 +21644,7 @@
     "stationName": "Oval",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4818,
     "longitude": -0.112439,
@@ -21700,7 +21700,7 @@
     "stationName": "Oxford Circus",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5152,
     "longitude": -0.141903,
@@ -21746,7 +21746,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.517,
     "longitude": -0.17616,
@@ -21824,7 +21824,7 @@
     "stationName": "Palmers Green",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6183,
     "longitude": -0.110437,
@@ -21891,7 +21891,7 @@
     "stationName": "Park Royal",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5271,
     "longitude": -0.284341,
@@ -21936,7 +21936,7 @@
     "stationName": "Parsons Green",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4753,
     "longitude": -0.20117,
@@ -22015,7 +22015,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.47,
     "longitude": -0.069414,
@@ -22137,7 +22137,7 @@
     "stationName": "Penge East",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4193,
     "longitude": -0.05422,
@@ -22150,7 +22150,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4176,
     "longitude": -0.06084,
@@ -22327,7 +22327,7 @@
     "stationName": "Perivale",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5367,
     "longitude": -0.323446,
@@ -22405,7 +22405,7 @@
     "stationName": "Petts Wood",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3886,
     "longitude": 0.074481,
@@ -22450,7 +22450,7 @@
     "stationName": "Piccadilly Circus",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5101,
     "longitude": -0.133798,
@@ -22473,7 +22473,7 @@
     "stationName": "Pimlico",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4891,
     "longitude": -0.133761,
@@ -22496,7 +22496,7 @@
     "stationName": "Pinner",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5929,
     "longitude": -0.381161,
@@ -22530,7 +22530,7 @@
     "stationName": "Plaistow",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5313,
     "longitude": 0.017451,
@@ -22597,7 +22597,7 @@
     "stationName": "Plumstead",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4898,
     "longitude": 0.084257,
@@ -22719,7 +22719,7 @@
     "stationName": "Ponders End",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6423,
     "longitude": -0.03508,
@@ -22797,7 +22797,7 @@
     "stationName": "Pontoon Dock DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5022,
     "longitude": 0.032115,
@@ -22853,7 +22853,7 @@
     "stationName": "Poplar DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5077,
     "longitude": -0.017384,
@@ -23019,7 +23019,7 @@
     "stationName": "Potters Bar",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6971,
     "longitude": -0.192605,
@@ -23119,7 +23119,7 @@
     "stationName": "Preston Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.572,
     "longitude": -0.295107,
@@ -23175,7 +23175,7 @@
     "stationName": "Prince Regent DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5093,
     "longitude": 0.034158,
@@ -23220,7 +23220,7 @@
     "stationName": "Pudding Mill Lane DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5343,
     "longitude": -0.012755,
@@ -23243,7 +23243,7 @@
     "stationName": "Purfleet",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.481,
     "longitude": 0.236767,
@@ -23255,7 +23255,7 @@
     "stationName": "Purley",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3376,
     "longitude": -0.114035,
@@ -23267,7 +23267,7 @@
     "stationName": "Purley Oaks",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.347,
     "longitude": -0.098856,
@@ -23279,7 +23279,7 @@
     "stationName": "Putney",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4613,
     "longitude": -0.216475,
@@ -23291,7 +23291,7 @@
     "stationName": "Putney Bridge",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4683,
     "longitude": -0.208731,
@@ -23347,7 +23347,7 @@
     "stationName": "Queen\u0027s Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5344,
     "longitude": -0.204882,
@@ -23381,7 +23381,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5344,
     "longitude": -0.204882,
@@ -23394,7 +23394,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4736,
     "longitude": -0.057313,
@@ -23406,7 +23406,7 @@
     "stationName": "Queensbury",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5942,
     "longitude": -0.286219,
@@ -23418,7 +23418,7 @@
     "stationName": "Queenstown Road (Battersea)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.475,
     "longitude": -0.146678,
@@ -23430,7 +23430,7 @@
     "stationName": "Queensway",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5103,
     "longitude": -0.187152,
@@ -23464,7 +23464,7 @@
     "stationName": "Radlett",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6852,
     "longitude": -0.317244,
@@ -23520,7 +23520,7 @@
     "stationName": "Rainham (London)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5167,
     "longitude": 0.190634,
@@ -23598,7 +23598,7 @@
     "stationName": "Ravensbourne",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4142,
     "longitude": -0.007557,
@@ -23610,7 +23610,7 @@
     "stationName": "Ravenscourt Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4941,
     "longitude": -0.235881,
@@ -23655,7 +23655,7 @@
     "stationName": "Rayners Lane",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5751,
     "longitude": -0.371127,
@@ -23667,7 +23667,7 @@
     "stationName": "Raynes Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4092,
     "longitude": -0.230151,
@@ -23679,7 +23679,7 @@
     "stationName": "Reading",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4588,
     "longitude": -0.971863,
@@ -23703,7 +23703,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5585,
     "longitude": -0.068267,
@@ -23715,7 +23715,7 @@
     "stationName": "Redbridge",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5762,
     "longitude": 0.04536,
@@ -23793,7 +23793,7 @@
     "stationName": "Redhill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.2402,
     "longitude": -0.1659,
@@ -23838,7 +23838,7 @@
     "stationName": "Reedham (Surrey)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3311,
     "longitude": -0.123416,
@@ -23850,7 +23850,7 @@
     "stationName": "Regent\u0027s Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5233,
     "longitude": -0.146444,
@@ -23983,7 +23983,7 @@
     "stationName": "Richmond",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4632,
     "longitude": -0.301448,
@@ -23995,7 +23995,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4632,
     "longitude": -0.301448,
@@ -24007,7 +24007,7 @@
     "stationName": "Rickmansworth",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6402,
     "longitude": -0.473273,
@@ -24019,7 +24019,7 @@
     "stationName": "Rickmansworth",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6402,
     "longitude": -0.473273,
@@ -24030,7 +24030,7 @@
     "stationName": "Riddlesdown",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3325,
     "longitude": -0.099387,
@@ -24174,7 +24174,7 @@
     "stationName": "Roding Valley",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6172,
     "longitude": 0.043647,
@@ -24232,7 +24232,7 @@
       "TRAIN",
       "OVERGROUND",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5748,
     "longitude": 0.183237,
@@ -24322,7 +24322,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5008,
     "longitude": -0.052048,
@@ -24378,7 +24378,7 @@
     "stationName": "Royal Albert DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5084,
     "longitude": 0.045935,
@@ -24390,7 +24390,7 @@
     "stationName": "Royal Oak",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5191,
     "longitude": -0.188748,
@@ -24402,7 +24402,7 @@
     "stationName": "Royal Victoria DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5093,
     "longitude": 0.018505,
@@ -24491,7 +24491,7 @@
     "stationName": "Ruislip",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5714,
     "longitude": -0.421898,
@@ -24503,7 +24503,7 @@
     "stationName": "Ruislip Gardens",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5607,
     "longitude": -0.41071,
@@ -24515,7 +24515,7 @@
     "stationName": "Ruislip Manor",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5732,
     "longitude": -0.412973,
@@ -24560,7 +24560,7 @@
     "stationName": "Russell Square",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5231,
     "longitude": -0.124285,
@@ -24649,7 +24649,7 @@
     "stationName": "Rye House",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7694,
     "longitude": 0.005628,
@@ -24683,7 +24683,7 @@
     "stationName": "Salfords (Surrey)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.2017,
     "longitude": -0.162489,
@@ -24816,7 +24816,7 @@
     "stationName": "Sanderstead",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3483,
     "longitude": -0.093678,
@@ -25158,7 +25158,7 @@
     "stationName": "Selhurst",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3919,
     "longitude": -0.0883,
@@ -25215,7 +25215,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.564,
     "longitude": 0.0971,
@@ -25228,7 +25228,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5829,
     "longitude": -0.073306,
@@ -25240,7 +25240,7 @@
     "stationName": "Seven Sisters",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5829,
     "longitude": -0.073306,
@@ -25286,7 +25286,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5115,
     "longitude": -0.056782,
@@ -25298,7 +25298,7 @@
     "stationName": "Shadwell DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5115,
     "longitude": -0.056782,
@@ -25399,7 +25399,7 @@
     "tags": [
       "TRAIN",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6309,
     "longitude": 0.329851,
@@ -25422,7 +25422,7 @@
     "stationName": "Shepherd\u0027s Bush (Central)",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5048,
     "longitude": -0.219213,
@@ -25434,7 +25434,7 @@
     "stationName": "Shepherd\u0027s Bush Market",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5056,
     "longitude": -0.226375,
@@ -25447,7 +25447,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5048,
     "longitude": -0.219213,
@@ -25580,7 +25580,7 @@
     "stationName": "Shiplake",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5115,
     "longitude": -0.882602,
@@ -25692,7 +25692,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5234,
     "longitude": -0.075246,
@@ -25726,7 +25726,7 @@
     "stationName": "Shortlands",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4058,
     "longitude": 0.001784,
@@ -25771,7 +25771,7 @@
     "stationName": "Sidcup",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4339,
     "longitude": 0.103795,
@@ -25817,7 +25817,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6147,
     "longitude": -0.06724,
@@ -25895,7 +25895,7 @@
     "stationName": "Slade Green",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4678,
     "longitude": 0.190491,
@@ -25951,7 +25951,7 @@
     "stationName": "Sloane Square",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4923,
     "longitude": -0.156377,
@@ -25963,7 +25963,7 @@
     "stationName": "Slough",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5119,
     "longitude": -0.59151,
@@ -26041,7 +26041,7 @@
     "stationName": "Snaresbrook",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5807,
     "longitude": 0.02144,
@@ -26120,7 +26120,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4997,
     "longitude": -0.270157,
@@ -26143,7 +26143,7 @@
     "stationName": "South Bermondsey",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4881,
     "longitude": -0.054678,
@@ -26155,7 +26155,7 @@
     "stationName": "South Croydon",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.363,
     "longitude": -0.093457,
@@ -26167,7 +26167,7 @@
     "stationName": "South Ealing",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.501,
     "longitude": -0.307424,
@@ -26190,7 +26190,7 @@
     "stationName": "South Greenford",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5337,
     "longitude": -0.336704,
@@ -26214,7 +26214,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5414,
     "longitude": -0.178878,
@@ -26226,7 +26226,7 @@
     "stationName": "South Harrow",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5649,
     "longitude": -0.352492,
@@ -26238,7 +26238,7 @@
     "stationName": "South Kensington",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4941,
     "longitude": -0.174138,
@@ -26251,7 +26251,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5702,
     "longitude": -0.308448,
@@ -26263,7 +26263,7 @@
     "stationName": "South Kenton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5702,
     "longitude": -0.308448,
@@ -26274,7 +26274,7 @@
     "stationName": "South Merton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.403,
     "longitude": -0.205157,
@@ -26297,7 +26297,7 @@
     "stationName": "South Quay DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5,
     "longitude": -0.015975,
@@ -26309,7 +26309,7 @@
     "stationName": "South Ruislip",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5569,
     "longitude": -0.399076,
@@ -26321,7 +26321,7 @@
     "stationName": "South Ruislip",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5569,
     "longitude": -0.399076,
@@ -26333,7 +26333,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5804,
     "longitude": -0.072103,
@@ -26356,7 +26356,7 @@
     "stationName": "South Wimbledon",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4153,
     "longitude": -0.192005,
@@ -26368,7 +26368,7 @@
     "stationName": "South Woodford",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5919,
     "longitude": 0.027338,
@@ -26391,7 +26391,7 @@
     "stationName": "Southall",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.506,
     "longitude": -0.37861,
@@ -26437,7 +26437,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6487,
     "longitude": -0.052437,
@@ -26504,7 +26504,7 @@
     "stationName": "Southfields",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4451,
     "longitude": -0.206602,
@@ -26516,7 +26516,7 @@
     "stationName": "Southgate",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6323,
     "longitude": -0.127816,
@@ -26561,7 +26561,7 @@
     "stationName": "Southwark",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.504,
     "longitude": -0.10494,
@@ -26705,7 +26705,7 @@
     "stationName": "St Albans City",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7505,
     "longitude": -0.327538,
@@ -26849,7 +26849,7 @@
     "stationName": "St Helier (London)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3899,
     "longitude": -0.198771,
@@ -26884,7 +26884,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.581,
     "longitude": -0.032918,
@@ -26896,7 +26896,7 @@
     "stationName": "St Johns (London)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4694,
     "longitude": -0.022719,
@@ -26930,7 +26930,7 @@
     "stationName": "St Margarets (Herts)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7878,
     "longitude": 0.001269,
@@ -26942,7 +26942,7 @@
     "stationName": "St Margarets (London)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4552,
     "longitude": -0.3202,
@@ -26954,7 +26954,7 @@
     "stationName": "St Mary Cray",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3947,
     "longitude": 0.106384,
@@ -26999,7 +26999,7 @@
     "stationName": "St. James\u0027s Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4995,
     "longitude": -0.133608,
@@ -27011,7 +27011,7 @@
     "stationName": "St. John\u0027s Wood",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5345,
     "longitude": -0.173948,
@@ -27023,7 +27023,7 @@
     "stationName": "St. Paul\u0027s",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5149,
     "longitude": -0.097567,
@@ -27090,7 +27090,7 @@
     "stationName": "Stamford Brook",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4949,
     "longitude": -0.245704,
@@ -27103,7 +27103,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5745,
     "longitude": -0.076682,
@@ -27148,7 +27148,7 @@
     "stationName": "Stanmore",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6198,
     "longitude": -0.303266,
@@ -27204,7 +27204,7 @@
     "stationName": "Star Lane DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5208,
     "longitude": 0.004156,
@@ -27271,7 +27271,7 @@
     "stationName": "Stepney Green",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5219,
     "longitude": -0.046596,
@@ -27393,7 +27393,7 @@
     "stationName": "Stockwell",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4722,
     "longitude": -0.122644,
@@ -27417,7 +27417,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5652,
     "longitude": -0.072887,
@@ -27463,7 +27463,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.544,
     "longitude": -0.275859,
@@ -27475,7 +27475,7 @@
     "stationName": "Stonebridge Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.544,
     "longitude": -0.275859,
@@ -27519,7 +27519,7 @@
     "stationName": "Stoneleigh",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3634,
     "longitude": -0.248665,
@@ -27586,7 +27586,7 @@
     "stationName": "Stratford DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5415,
     "longitude": -0.00241,
@@ -27598,7 +27598,7 @@
     "stationName": "Stratford Und",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5415,
     "longitude": -0.00241,
@@ -27611,7 +27611,7 @@
       "TRAIN",
       "OVERGROUND",
       "TFLRAIL",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5415,
     "longitude": -0.00241,
@@ -27623,7 +27623,7 @@
     "stationName": "Stratford High Street DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5382,
     "longitude": -0.001078,
@@ -27635,7 +27635,7 @@
     "stationName": "Stratford International DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5415,
     "longitude": -0.00241,
@@ -27680,7 +27680,7 @@
     "stationName": "Strawberry Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.439,
     "longitude": -0.339358,
@@ -27692,7 +27692,7 @@
     "stationName": "Streatham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4258,
     "longitude": -0.13155,
@@ -27704,7 +27704,7 @@
     "stationName": "Streatham Common",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4187,
     "longitude": -0.13601,
@@ -27716,7 +27716,7 @@
     "stationName": "Streatham Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4382,
     "longitude": -0.12716,
@@ -27805,7 +27805,7 @@
     "stationName": "Sudbury \u0026 Harrow Road",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5544,
     "longitude": -0.315468,
@@ -27828,7 +27828,7 @@
     "stationName": "Sudbury Hill",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5569,
     "longitude": -0.336435,
@@ -27840,7 +27840,7 @@
     "stationName": "Sudbury Hill Harrow",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5585,
     "longitude": -0.335803,
@@ -27852,7 +27852,7 @@
     "stationName": "Sudbury Town",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5508,
     "longitude": -0.315745,
@@ -27908,7 +27908,7 @@
     "stationName": "Sundridge Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4138,
     "longitude": 0.021446,
@@ -27942,7 +27942,7 @@
     "stationName": "Surbiton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3925,
     "longitude": -0.303958,
@@ -27955,7 +27955,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4932,
     "longitude": -0.047519,
@@ -27967,7 +27967,7 @@
     "stationName": "Sutton (London)",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3595,
     "longitude": -0.191215,
@@ -27990,7 +27990,7 @@
     "stationName": "Sutton Common",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3749,
     "longitude": -0.196343,
@@ -28024,7 +28024,7 @@
     "stationName": "Swanley",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3934,
     "longitude": 0.169225,
@@ -28146,7 +28146,7 @@
     "stationName": "Swiss Cottage",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5437,
     "longitude": -0.174894,
@@ -28159,7 +28159,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4274,
     "longitude": -0.055268,
@@ -28171,7 +28171,7 @@
     "stationName": "Sydenham Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4327,
     "longitude": -0.080339,
@@ -28183,7 +28183,7 @@
     "stationName": "Syon Lane",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4818,
     "longitude": -0.324842,
@@ -28217,7 +28217,7 @@
     "stationName": "Tadworth",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.2916,
     "longitude": -0.235965,
@@ -28317,7 +28317,7 @@
     "stationName": "Taplow",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5236,
     "longitude": -0.68137,
@@ -28329,7 +28329,7 @@
     "stationName": "Tattenham Corner",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3092,
     "longitude": -0.242609,
@@ -28363,7 +28363,7 @@
     "stationName": "Teddington",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4245,
     "longitude": -0.332706,
@@ -28408,7 +28408,7 @@
     "stationName": "Temple",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.511,
     "longitude": -0.11426,
@@ -28453,7 +28453,7 @@
     "stationName": "Thames Ditton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3891,
     "longitude": -0.339152,
@@ -28521,7 +28521,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6925,
     "longitude": -0.034831,
@@ -28544,7 +28544,7 @@
     "stationName": "Theydon Bois",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6718,
     "longitude": 0.103085,
@@ -28633,7 +28633,7 @@
     "stationName": "Thornton Heath",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3988,
     "longitude": -0.100306,
@@ -28843,7 +28843,7 @@
     "stationName": "Tolworth",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3769,
     "longitude": -0.279461,
@@ -28910,7 +28910,7 @@
     "stationName": "Tooting",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4198,
     "longitude": -0.161278,
@@ -28922,7 +28922,7 @@
     "stationName": "Tooting Bec",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4357,
     "longitude": -0.159736,
@@ -28934,7 +28934,7 @@
     "stationName": "Tooting Broadway",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4276,
     "longitude": -0.168374,
@@ -28990,7 +28990,7 @@
     "stationName": "Tottenham Court Road",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5164,
     "longitude": -0.13041,
@@ -29002,7 +29002,7 @@
     "stationName": "Tottenham Hale",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5883,
     "longitude": -0.06024,
@@ -29014,7 +29014,7 @@
     "stationName": "Tottenham Hale",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5883,
     "longitude": -0.06024,
@@ -29026,7 +29026,7 @@
     "stationName": "Totteridge \u0026 Whetstone",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6306,
     "longitude": -0.17921,
@@ -29051,7 +29051,7 @@
       "TRAIN",
       "TUBE",
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.51,
     "longitude": -0.076546,
@@ -29206,7 +29206,7 @@
     "stationName": "Tufnell Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5568,
     "longitude": -0.138433,
@@ -29229,7 +29229,7 @@
     "stationName": "Tulse Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4399,
     "longitude": -0.105077,
@@ -29253,7 +29253,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6726,
     "longitude": -0.047217,
@@ -29265,7 +29265,7 @@
     "stationName": "Turnham Green",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4951,
     "longitude": -0.254555,
@@ -29277,7 +29277,7 @@
     "stationName": "Turnpike Lane",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5903,
     "longitude": -0.102953,
@@ -29311,7 +29311,7 @@
     "stationName": "Twickenham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.45,
     "longitude": -0.330394,
@@ -29323,7 +29323,7 @@
     "stationName": "Twyford",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4755,
     "longitude": -0.863293,
@@ -29501,7 +29501,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5587,
     "longitude": 0.250855,
@@ -29513,7 +29513,7 @@
     "stationName": "Upminster",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5587,
     "longitude": 0.250855,
@@ -29525,7 +29525,7 @@
     "stationName": "Upminster Bridge",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5586,
     "longitude": 0.235809,
@@ -29537,7 +29537,7 @@
     "stationName": "Upney",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5384,
     "longitude": 0.10153,
@@ -29561,7 +29561,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5636,
     "longitude": -0.129513,
@@ -29584,7 +29584,7 @@
     "stationName": "Upper Warlingham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.31,
     "longitude": -0.081148,
@@ -29607,7 +29607,7 @@
     "stationName": "Upton Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5353,
     "longitude": 0.035263,
@@ -29652,7 +29652,7 @@
     "stationName": "Uxbridge",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5466,
     "longitude": -0.477949,
@@ -29675,7 +29675,7 @@
     "stationName": "Vauxhall",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4857,
     "longitude": -0.123303,
@@ -29687,7 +29687,7 @@
     "stationName": "Vauxhall",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4857,
     "longitude": -0.123303,
@@ -29700,7 +29700,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4958,
     "longitude": -0.143826,
@@ -29723,7 +29723,7 @@
     "stationName": "Waddon",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3674,
     "longitude": -0.117336,
@@ -29812,7 +29812,7 @@
     "stationName": "Wallington",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3604,
     "longitude": -0.150833,
@@ -29868,7 +29868,7 @@
     "stationName": "Waltham Cross",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6851,
     "longitude": -0.026558,
@@ -29882,7 +29882,7 @@
       "TRAIN",
       "TUBE",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5829,
     "longitude": -0.019842,
@@ -29895,7 +29895,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5815,
     "longitude": -0.023846,
@@ -29951,7 +29951,7 @@
     "stationName": "Wandsworth Common",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4462,
     "longitude": -0.163386,
@@ -29964,7 +29964,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4702,
     "longitude": -0.13852,
@@ -29976,7 +29976,7 @@
     "stationName": "Wandsworth Town",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.461,
     "longitude": -0.188125,
@@ -29988,7 +29988,7 @@
     "stationName": "Wanstead",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5755,
     "longitude": 0.028527,
@@ -30001,7 +30001,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5517,
     "longitude": 0.026213,
@@ -30014,7 +30014,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5044,
     "longitude": -0.055931,
@@ -30037,7 +30037,7 @@
     "stationName": "Ware",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.808,
     "longitude": -0.028781,
@@ -30060,7 +30060,7 @@
     "stationName": "Wargrave",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4982,
     "longitude": -0.876517,
@@ -30094,7 +30094,7 @@
     "stationName": "Warren Street",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.525,
     "longitude": -0.138321,
@@ -30150,7 +30150,7 @@
     "stationName": "Warwick Avenue",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5233,
     "longitude": -0.183783,
@@ -30218,7 +30218,7 @@
     "tags": [
       "TRAIN",
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5043,
     "longitude": -0.113356,
@@ -30230,7 +30230,7 @@
     "stationName": "Watford",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6574,
     "longitude": -0.417377,
@@ -30243,7 +30243,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6527,
     "longitude": -0.391711,
@@ -30256,7 +30256,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6639,
     "longitude": -0.395928,
@@ -30356,7 +30356,7 @@
     "stationName": "Welham Green",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.7364,
     "longitude": -0.210692,
@@ -30368,7 +30368,7 @@
     "stationName": "Welling",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4648,
     "longitude": 0.10169,
@@ -30413,7 +30413,7 @@
     "stationName": "Welwyn Garden City",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.801,
     "longitude": -0.20407,
@@ -30448,7 +30448,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5523,
     "longitude": -0.296642,
@@ -30460,7 +30460,7 @@
     "stationName": "Wembley Central",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5523,
     "longitude": -0.296642,
@@ -30471,7 +30471,7 @@
     "stationName": "Wembley Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5632,
     "longitude": -0.279262,
@@ -30483,7 +30483,7 @@
     "stationName": "Wembley Stadium",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5544,
     "longitude": -0.285608,
@@ -30528,7 +30528,7 @@
     "stationName": "West Acton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.518,
     "longitude": -0.28098,
@@ -30552,7 +30552,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4872,
     "longitude": -0.195593,
@@ -30564,7 +30564,7 @@
     "stationName": "West Brompton",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4872,
     "longitude": -0.195593,
@@ -30599,7 +30599,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3788,
     "longitude": -0.101939,
@@ -30611,7 +30611,7 @@
     "stationName": "West Drayton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5101,
     "longitude": -0.472234,
@@ -30623,7 +30623,7 @@
     "stationName": "West Dulwich",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4407,
     "longitude": -0.091371,
@@ -30635,7 +30635,7 @@
     "stationName": "West Ealing",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5135,
     "longitude": -0.320133,
@@ -30647,7 +30647,7 @@
     "stationName": "West Finchley",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6094,
     "longitude": -0.188362,
@@ -30659,7 +30659,7 @@
     "stationName": "West Ham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5282,
     "longitude": 0.004997,
@@ -30671,7 +30671,7 @@
     "stationName": "West Ham DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5282,
     "longitude": 0.004997,
@@ -30682,7 +30682,7 @@
     "stationName": "West Ham",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5282,
     "longitude": 0.004997,
@@ -30693,7 +30693,7 @@
     "stationName": "West Hampstead",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5475,
     "longitude": -0.191357,
@@ -30705,7 +30705,7 @@
     "stationName": "West Hampstead Thameslink",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5475,
     "longitude": -0.191357,
@@ -30717,7 +30717,7 @@
     "stationName": "West Harrow",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5797,
     "longitude": -0.3534,
@@ -30740,7 +30740,7 @@
     "stationName": "West India Quay DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.507,
     "longitude": -0.020311,
@@ -30752,7 +30752,7 @@
     "stationName": "West Kensington",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4905,
     "longitude": -0.206636,
@@ -30797,7 +30797,7 @@
     "stationName": "West Norwood",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4317,
     "longitude": -0.10383,
@@ -30809,7 +30809,7 @@
     "stationName": "West Ruislip",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5697,
     "longitude": -0.437816,
@@ -30821,7 +30821,7 @@
     "stationName": "West Ruislip",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5697,
     "longitude": -0.437816,
@@ -30843,7 +30843,7 @@
     "stationName": "West Silvertown DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5028,
     "longitude": 0.02246,
@@ -30865,7 +30865,7 @@
     "stationName": "West Sutton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3659,
     "longitude": -0.205173,
@@ -30877,7 +30877,7 @@
     "stationName": "West Wickham",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3813,
     "longitude": -0.014432,
@@ -30900,7 +30900,7 @@
     "stationName": "Westbourne Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5211,
     "longitude": -0.201065,
@@ -30934,7 +30934,7 @@
     "stationName": "Westcombe Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4842,
     "longitude": 0.018395,
@@ -30990,7 +30990,7 @@
     "stationName": "Westferry DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5094,
     "longitude": -0.02675,
@@ -31024,7 +31024,7 @@
     "stationName": "Westminster",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5016,
     "longitude": -0.125984,
@@ -31212,7 +31212,7 @@
     "stationName": "White City",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.512,
     "longitude": -0.224297,
@@ -31225,7 +31225,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.605,
     "longitude": -0.070914,
@@ -31249,7 +31249,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5195,
     "longitude": -0.059858,
@@ -31261,7 +31261,7 @@
     "stationName": "Whitechapel",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5195,
     "longitude": -0.059858,
@@ -31361,7 +31361,7 @@
     "stationName": "Whitton",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4496,
     "longitude": -0.357681,
@@ -31384,7 +31384,7 @@
     "stationName": "Whyteleafe",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.31,
     "longitude": -0.081148,
@@ -31396,7 +31396,7 @@
     "stationName": "Whyteleafe South",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3034,
     "longitude": -0.076918,
@@ -31518,7 +31518,7 @@
     "stationName": "Willesden Green",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5491,
     "longitude": -0.221537,
@@ -31531,7 +31531,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5326,
     "longitude": -0.243006,
@@ -31543,7 +31543,7 @@
     "stationName": "Willesden Junction",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5326,
     "longitude": -0.243006,
@@ -31609,7 +31609,7 @@
     "stationName": "Wimbledon",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4215,
     "longitude": -0.206444,
@@ -31621,7 +31621,7 @@
     "stationName": "Wimbledon",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4215,
     "longitude": -0.206444,
@@ -31632,7 +31632,7 @@
     "stationName": "Wimbledon Chase",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4096,
     "longitude": -0.214031,
@@ -31644,7 +31644,7 @@
     "stationName": "Wimbledon Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4346,
     "longitude": -0.199719,
@@ -31689,7 +31689,7 @@
     "stationName": "Winchmore Hill",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6339,
     "longitude": -0.1009,
@@ -31712,7 +31712,7 @@
     "stationName": "Windsor \u0026 Eton Central",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4833,
     "longitude": -0.61038,
@@ -31933,7 +31933,7 @@
     "stationName": "Wood Green",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5975,
     "longitude": -0.109886,
@@ -31945,7 +31945,7 @@
     "stationName": "Wood Lane",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5097,
     "longitude": -0.22453,
@@ -31958,7 +31958,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5866,
     "longitude": -0.002405,
@@ -31981,7 +31981,7 @@
     "stationName": "Woodford",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.6069,
     "longitude": 0.03397,
@@ -31994,7 +31994,7 @@
     "tags": [
       "TRAIN",
       "OVERGROUND",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.5493,
     "longitude": 0.044423,
@@ -32050,7 +32050,7 @@
     "stationName": "Woodmansterne",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.319,
     "longitude": -0.154262,
@@ -32062,7 +32062,7 @@
     "stationName": "Woodside Park",
     "tags": [
       "TUBE",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.618,
     "longitude": -0.18542,
@@ -32107,7 +32107,7 @@
     "stationName": "Woolwich Arsenal",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.49,
     "longitude": 0.06917,
@@ -32119,7 +32119,7 @@
     "stationName": "Woolwich Arsenal DLR",
     "tags": [
       "DLR",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.49,
     "longitude": 0.06917,
@@ -32130,7 +32130,7 @@
     "stationName": "Woolwich Dockyard",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.4911,
     "longitude": 0.054642,
@@ -32164,7 +32164,7 @@
     "stationName": "Worcester Park",
     "tags": [
       "TRAIN",
-      "OYSTER"
+      "TFLFARE"
     ],
     "latitude": 51.3813,
     "longitude": -0.245167,

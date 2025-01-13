@@ -6,5 +6,5 @@ public enum StationTag {
     DLR,
     OVERGROUND,
     TFLRAIL,
-    OYSTER
+    TFLFARE
 }

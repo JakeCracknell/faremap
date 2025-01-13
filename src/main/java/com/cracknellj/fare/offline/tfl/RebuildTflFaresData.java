@@ -24,12 +24,12 @@ public class RebuildTflFaresData {
     private static final boolean REWRITE_ALL = false;
     private static final Logger LOG = LogManager.getLogger(RebuildTflFaresData.class);
 
-    private static TflFareScraper tflFareScraper = new TflFareScraper();
+    private static final TflFareScraper tflFareScraper = new TflFareScraper();
     private static List<String> stationIds;
 
     public static void main(String[] args) {
         stationIds = StationFileReader.getStations().stream()
-                .filter(s -> s.tags.contains(StationTag.OYSTER))
+                .filter(s -> s.tags.contains(StationTag.TFLFARE))
                 .map(s -> s.stationId)
                 .sorted().collect(Collectors.toList());
 
