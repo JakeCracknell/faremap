@@ -2286,7 +2286,8 @@
     "stationId": "910GBCNSFLD",
     "stationName": "Beaconsfield",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.6113,
     "longitude": -0.643822,
@@ -8443,7 +8444,8 @@
     "stationId": "910GDENHAM",
     "stationName": "Denham",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5788,
     "longitude": -0.497437,
@@ -8454,7 +8456,8 @@
     "stationId": "910GDENHMGC",
     "stationName": "Denham Golf Club",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5806,
     "longitude": -0.517787,
@@ -11662,7 +11665,8 @@
     "stationId": "910GGERRDSX",
     "stationName": "Gerrards Cross",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.589,
     "longitude": -0.555275,
@@ -14283,7 +14287,8 @@
     "stationId": "910GHWYCOMB",
     "stationName": "High Wycombe",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.6296,
     "longitude": -0.74541,
@@ -25135,7 +25140,8 @@
     "stationId": "910GSEERGRN",
     "stationName": "Seer Green",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.6098,
     "longitude": -0.607818,
