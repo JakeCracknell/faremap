@@ -60,6 +60,7 @@ public class FareDetailBuilder {
             ticketName = "Split Ticket";
             isTFL = splitTicketHops.stream().allMatch(h -> h.fareDetail.isTFL);
             price = splitTicketHops.stream().mapToInt(h -> h.fareDetail.price).sum();
+            offPeakOnly = splitTicketHops.stream().anyMatch(h -> h.fareDetail.offPeakOnly);
             isDefaultRoute = false;
         }
         return new FareDetail(splitTicketHops, price, ticketName, routeDescription, isDefaultRoute, offPeakOnly, isTFL, isRailcardsValid);
