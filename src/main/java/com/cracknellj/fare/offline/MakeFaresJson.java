@@ -30,13 +30,13 @@ import java.util.zip.GZIPOutputStream;
 
 public class MakeFaresJson {
     private static final Logger LOG = LogManager.getLogger(MakeFaresJson.class);
-    public static final Gson GSON = new Gson();
 
     //Takes 30 mins to regenerate everything
     public static void main(String[] args) throws Exception {
         Map<String, Station> stations = StationFileReader.getStationsAsMap();
         CompositeFareDataProvider fareDataProvider = CompositeFareDataProvider.load();
 
+        Files.createDirectories(Paths.get("web", "data", "fares"));
         Set<String> existing = Files.list(Paths.get("web", "data", "fares"))
                 .map(p -> p.getFileName().toString().replace(".json.gz", ""))
                 .collect(Collectors.toSet());
