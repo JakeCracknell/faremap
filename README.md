@@ -1,7 +1,7 @@
 # faremap
 Mapping UK train fares and split tickets, using data from ATOC and TfL.
 
-https://faremap.ml
+https://faremap.cjar.co.uk/
 (currently hosted on [Netlify](https://www.netlify.com/))
 
 ![website preview](https://raw.githubusercontent.com/JakeCracknell/fare_map/master/preview.png)
