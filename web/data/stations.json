@@ -899,7 +899,8 @@
     "stationId": "910GAPSLEY",
     "stationName": "Apsley",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.7325,
     "longitude": -0.462935,
@@ -1199,7 +1200,8 @@
     "stationId": "910GASFDMSX",
     "stationName": "Ashford (Surrey)",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4365,
     "longitude": -0.468071,
@@ -1870,8 +1872,8 @@
     "stationName": "Barking Riverside",
     "tags": [
       "TRAIN",
-      "TFLFARE",
-      "OVERGROUND"
+      "OVERGROUND",
+      "TFLFARE"
     ],
     "latitude": 51.519108,
     "longitude": 0.114764,
@@ -2139,7 +2141,8 @@
     "stationId": "910GBASILDN",
     "stationName": "Basildon",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5681,
     "longitude": 0.456789,
@@ -2161,7 +2164,8 @@
     "stationId": "910GBATABAL",
     "stationName": "Bat \u0026 Ball",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.2898,
     "longitude": 0.194228,
@@ -2231,8 +2235,8 @@
       "TUBE",
       "TFLFARE"
     ],
-    "latitude": 51.47950,
-    "longitude": -0.14200,
+    "latitude": 51.4795,
+    "longitude": -0.142,
     "crs": "ZLT",
     "yearlyUsage": 1782560
   },
@@ -2659,7 +2663,8 @@
     "stationId": "910GBENFLET",
     "stationName": "Benfleet",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5439,
     "longitude": 0.561713,
@@ -2725,7 +2730,8 @@
     "stationId": "910GBERKHMD",
     "stationName": "Berkhamsted",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.7631,
     "longitude": -0.562013,
@@ -3510,7 +3516,8 @@
     "stationId": "910GBLTCHLY",
     "stationName": "Bletchley",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.9953,
     "longitude": -0.73632,
@@ -3631,8 +3638,8 @@
     "stationId": "910GBONDST",
     "stationName": "Bond Street",
     "tags": [
-      "TUBE",
       "TRAIN",
+      "TUBE",
       "TFLRAIL",
       "TFLFARE"
     ],
@@ -4163,7 +4170,8 @@
     "stationId": "910GBCWD",
     "stationName": "Bricket Wood",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.7054,
     "longitude": -0.359115,
@@ -6002,7 +6010,8 @@
     "stationId": "910GCHLKWEL",
     "stationName": "Chalkwell",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5387,
     "longitude": 0.670593,
@@ -6216,7 +6225,8 @@
     "stationId": "910GCHDNGTN",
     "stationName": "Cheddington",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.8579,
     "longitude": -0.662152,
@@ -7979,8 +7989,8 @@
       "TFLRAIL",
       "TFLFARE"
     ],
-    "latitude": 51.50990,
-    "longitude": 0.02660,
+    "latitude": 51.5099,
+    "longitude": 0.0266,
     "crs": "CUS",
     "yearlyUsage": 9238000
   },
@@ -8351,7 +8361,8 @@
     "stationId": "910GDATCHET",
     "stationName": "Datchet",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4831,
     "longitude": -0.579422,
@@ -9330,7 +9341,8 @@
     "stationId": "910GDTNG",
     "stationName": "Dunton Green",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.2965,
     "longitude": 0.170937,
@@ -9684,7 +9696,8 @@
     "stationId": "910GETILBRY",
     "stationName": "East Tilbury",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4848,
     "longitude": 0.412928,
@@ -9998,7 +10011,8 @@
     "stationId": "910GEGHAM",
     "stationName": "Egham",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4296,
     "longitude": -0.546512,
@@ -10541,7 +10555,8 @@
     "stationId": "910GEYNSFD",
     "stationName": "Eynsford",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.3627,
     "longitude": 0.204393,
@@ -11605,7 +11620,8 @@
     "stationId": "910GGRSTH",
     "stationName": "Garston (Herts)",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.6866,
     "longitude": -0.381741,
@@ -13817,7 +13833,7 @@
     "tags": [
       "TRAIN"
     ],
-    "latitude": 53.492835,
+    "latitude": 53.492836,
     "longitude": -2.878862,
     "crs": "HBL",
     "yearlyUsage": 0
@@ -14065,7 +14081,8 @@
     "stationId": "910GHEMLHMP",
     "stationName": "Hemel Hempstead",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.7423,
     "longitude": -0.490774,
@@ -14818,7 +14835,7 @@
     "tags": [
       "TRAIN"
     ],
-    "latitude": 54.763879,
+    "latitude": 54.763878,
     "longitude": -1.307347,
     "crs": "HRE",
     "yearlyUsage": 0
@@ -15021,7 +15038,8 @@
     "stationId": "910GHOWWOOD",
     "stationName": "How Wood (Herts)",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.7177,
     "longitude": -0.34467,
@@ -15736,7 +15754,8 @@
     "stationId": "910GKMPTNPK",
     "stationName": "Kempton Park",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.421,
     "longitude": -0.409751,
@@ -16267,7 +16286,8 @@
     "stationId": "910GKLGL",
     "stationName": "Kings Langley",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.7064,
     "longitude": -0.438422,
@@ -16404,7 +16424,7 @@
     "tags": [
       "TRAIN"
     ],
-    "latitude": 57.243611,
+    "latitude": 57.24361,
     "longitude": -2.350278,
     "crs": "KTR",
     "yearlyUsage": 0
@@ -16736,7 +16756,8 @@
     "stationId": "910GLAINDON",
     "stationName": "Laindon",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5675,
     "longitude": 0.424289,
@@ -17228,7 +17249,8 @@
     "stationId": "910GLHONSEA",
     "stationName": "Leigh-on-Sea",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5413,
     "longitude": 0.640411,
@@ -17239,7 +17261,8 @@
     "stationId": "910GLTNBZRD",
     "stationName": "Leighton Buzzard",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.9163,
     "longitude": -0.677007,
@@ -19390,7 +19413,7 @@
       "TRAIN",
       "TFLFARE"
     ],
-    "latitude": 51.610034,
+    "latitude": 51.610035,
     "longitude": -0.050196,
     "crs": "MRW",
     "yearlyUsage": 33544
@@ -20959,8 +20982,8 @@
       "TUBE",
       "TFLFARE"
     ],
-    "latitude": 51.48000,
-    "longitude": -0.12850,
+    "latitude": 51.48,
+    "longitude": -0.1285,
     "crs": "ZNM",
     "yearlyUsage": 1782560
   },
@@ -21688,7 +21711,8 @@
     "stationId": "910GOTFORD",
     "stationName": "Otford",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.3132,
     "longitude": 0.196779,
@@ -21991,7 +22015,8 @@
     "stationId": "910GPKST",
     "stationName": "Park Street",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.7255,
     "longitude": -0.340276,
@@ -22607,7 +22632,8 @@
     "stationId": "910GPITSEA",
     "stationName": "Pitsea",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5604,
     "longitude": 0.506293,
@@ -23098,7 +23124,7 @@
     "tags": [
       "TRAIN"
     ],
-    "latitude": 51.488611,
+    "latitude": 51.48861,
     "longitude": -2.688056,
     "crs": "PRI",
     "yearlyUsage": 0
@@ -23792,7 +23818,7 @@
     "tags": [
       "TRAIN"
     ],
-    "latitude": 51.426667,
+    "latitude": 51.426666,
     "longitude": -1.001389,
     "crs": "RGP",
     "yearlyUsage": 0
@@ -24209,7 +24235,7 @@
     "tags": [
       "TRAIN"
     ],
-    "latitude": 55.887581,
+    "latitude": 55.88758,
     "longitude": -4.172291,
     "crs": "RRN",
     "yearlyUsage": 0
@@ -25363,7 +25389,8 @@
     "stationId": "910GSVNOAKS",
     "stationName": "Sevenoaks",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.2769,
     "longitude": 0.181669,
@@ -25592,7 +25619,8 @@
     "stationId": "910GSHEPRTN",
     "stationName": "Shepperton",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.3968,
     "longitude": -0.446786,
@@ -25780,7 +25808,8 @@
     "stationId": "910GSHBRYNS",
     "stationName": "Shoeburyness",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.531,
     "longitude": 0.795345,
@@ -25815,7 +25844,8 @@
     "stationId": "910GSHRMKT",
     "stationName": "Shoreham (Kent)",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.3322,
     "longitude": 0.18889,
@@ -26189,7 +26219,7 @@
       "TRAIN"
     ],
     "latitude": 52.33415,
-    "longitude": 0.32770,
+    "longitude": 0.3277,
     "crs": "SOJ",
     "yearlyUsage": 0
   },
@@ -26582,7 +26612,8 @@
     "stationId": "910GSTHCENT",
     "stationName": "Southend Central",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5371,
     "longitude": 0.711727,
@@ -26593,7 +26624,8 @@
     "stationId": "910GSTHNDE",
     "stationName": "Southend East",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.539,
     "longitude": 0.731815,
@@ -26805,7 +26837,8 @@
     "stationId": "910GSTALBNA",
     "stationName": "St Albans Abbey",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.7447,
     "longitude": -0.342569,
@@ -27157,7 +27190,8 @@
     "stationId": "910GSTAINES",
     "stationName": "Staines",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4325,
     "longitude": -0.503164,
@@ -27226,7 +27260,8 @@
     "stationId": "910GSLEHOPE",
     "stationName": "Stanford-le-Hope",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5144,
     "longitude": 0.423036,
@@ -27997,7 +28032,8 @@
     "stationId": "910GSUNBURY",
     "stationName": "Sunbury",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4183,
     "longitude": -0.417783,
@@ -28042,7 +28078,8 @@
     "stationId": "910GSUNYMDS",
     "stationName": "Sunnymeads",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4703,
     "longitude": -0.559374,
@@ -28578,7 +28615,7 @@
     "tags": [
       "TRAIN"
     ],
-    "latitude": 51.330843,
+    "latitude": 51.330845,
     "longitude": 1.361777,
     "crs": "THP",
     "yearlyUsage": 0
@@ -28778,7 +28815,8 @@
     "stationId": "910GTHOPBAY",
     "stationName": "Thorpe Bay",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5376,
     "longitude": 0.761728,
@@ -28877,7 +28915,8 @@
     "stationId": "910GTLBYTWN",
     "stationName": "Tilbury Town",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4624,
     "longitude": 0.354039,
@@ -29275,7 +29314,8 @@
     "stationId": "910GTRING",
     "stationName": "Tring",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.8007,
     "longitude": -0.622439,
@@ -29673,7 +29713,8 @@
     "stationId": "910GUHALIFD",
     "stationName": "Upper Halliford",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4131,
     "longitude": -0.430906,
@@ -29836,7 +29877,8 @@
     "stationId": "910GVRGNWTR",
     "stationName": "Virginia Water",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4018,
     "longitude": -0.562174,
@@ -30254,7 +30296,7 @@
     "tags": [
       "TRAIN"
     ],
-    "latitude": 53.393611,
+    "latitude": 53.393612,
     "longitude": -2.638611,
     "crs": "WAW",
     "yearlyUsage": 0
@@ -30392,7 +30434,8 @@
     "stationId": "910GWATFDN",
     "stationName": "Watford North",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.6757,
     "longitude": -0.389926,
@@ -30853,7 +30896,8 @@
     "stationId": "910GWHORNDN",
     "stationName": "West Horndon",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5679,
     "longitude": 0.340644,
@@ -31047,7 +31091,8 @@
     "stationId": "910GWCLIFF",
     "stationName": "Westcliff-on-Sea",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.5373,
     "longitude": 0.691466,
@@ -31848,7 +31893,8 @@
     "stationId": "910GWSORAER",
     "stationName": "Windsor \u0026 Eton Riverside",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4833,
     "longitude": -0.61038,
@@ -32235,7 +32281,7 @@
       "TFLRAIL",
       "TFLFARE"
     ],
-    "latitude": 51.491578,
+    "latitude": 51.491577,
     "longitude": 0.071819,
     "crs": "WWC",
     "yearlyUsage": 13237000
@@ -32413,7 +32459,8 @@
     "stationId": "910GWRYSBRY",
     "stationName": "Wraysbury",
     "tags": [
-      "TRAIN"
+      "TRAIN",
+      "TFLFARE"
     ],
     "latitude": 51.4577,
     "longitude": -0.541922,
